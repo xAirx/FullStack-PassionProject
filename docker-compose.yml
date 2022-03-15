@@ -1,0 +1,155 @@
+version: "1.0"
+
+networks:
+  incidentnet:
+    driver: bridge
+  promnet:
+    driver: bridge
+  mongonet:
+    driver: bridge
+
+services:
+  #Integration of an 0Auth2 proxy to connect to the cinemataztic cloud (sharing tokens)
+
+  # oauth2-proxy:
+  # image: caarlos0/oauth2_proxy
+  # ports:
+  # - 127.0.0.1:4180:4180
+  # command:
+  # - '-client-id=123'
+  # - '-client-secret=456'
+  # - '-provider=github'
+  # - '-github-org=caarlos0-m'
+  # - '-email-domain=*'
+  # - '-cookie-secret=foo bar 1234'
+  # - '-cookie-secure=false'
+  # - '-upstream=http://nginx:80'
+  # - '-http-address=0.0.0.0:4180'
+  # - '-redirect-url=http://m.carlosbecker.com/oauth2/callback'
+  # - '-set-xauthrequest=true'
+
+  #nginx-reverse-proxy:
+  #image: nginx
+  #ports:
+  #- 80:80
+  #volumes:
+  #- /local/path/to/nginx.conf:/etc/nginx/conf.d/m.conf:ro
+
+  # expose one service - on the port 80, and we mount our config file to the /etc/nginx/conf.d folder.
+  # nginx will be the only thing facing the internet for real, and it will route traffic to the right places.
+
+  prometheus:
+    image: prom/prometheus:latest
+    user: root
+    container_name: prometheus
+    restart: unless-stopped
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus/data:/prometheus
+      - ./alertmanager/alert.rules:/alertmanager/alert.rules
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--web.console.libraries=/etc/prometheus/console_libraries"
+      - "--web.console.templates=/etc/prometheus/consoles"
+      - "--web.enable-lifecycle"
+    expose:
+      - 9090
+      #ports:
+      #- "9090:9090"
+    links:
+      - alertmanager:alertmanager
+      #For later implementation
+      #depends_on:
+      #- nginx-reverse-proxy
+      #- oauth2-proxy
+    networks:
+      - promnet
+
+  alertmanager:
+    restart: unless-stopped
+    image: prom/alertmanager
+    privileged: true
+    volumes:
+      - ./alertmanager/alertmanager.yml:/alertmanager.yml
+    command:
+      - "--config.file=/alertmanager.yml"
+    expose:
+      - 9093
+      #ports:
+      #- "9093:9093"
+      #  depends_on:
+      #    - prometheus
+      #- nginx-reverse-proxy
+      #- oauth2-proxy
+
+  cine-exporter:
+    restart: unless-stopped
+    container_name: cine-node-exporter
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - "--path.procfs=/host/proc"
+      - "--path.rootfs=/rootfs"
+      - "--path.sysfs=/host/sys"
+      - "--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)"
+    expose:
+      - 9100
+      #ports:
+      #- "9100:9100"
+    depends_on:
+      - prometheus
+      - alertmanager
+      #- nginx-reverse-proxy
+      #- oauth2-proxy
+    networks:
+      - promnet
+
+  #mongo-seed:
+  #build: ./mongo-seed
+  #links:
+  #- mongodb
+  #networks:
+  # - mongonet
+
+  #mongo_db:
+  # image: mongo:5.0
+  # environment:
+  #   MONGO_INITDB_ROOT_USERNAME: root
+  #   MONGO_INITDB_ROOT_PASSWORD: rootpassword
+  # ports:
+  #   - 27017:27017
+  #-volumes:
+  # - ./data/mongodb:/data/db
+  #networks:
+  # - mongonet
+
+  #incident-management-system:
+  #  build:
+  #    dockerfile: Dockerfile
+  #    context: "./incident-management-system"
+  #  links:
+  #    - mongo-db
+  #  depends_on:
+  #    - mongo-db
+  #  volumes:
+  #    - /app/node_modules
+  #    - ./incident-management-system:/app
+  #networks:
+  # - incidentnet
+  # - promnet
+
+  #incidents-portal:
+  #  stdin_open: true
+  #  environment:
+  #    - CHOKIDAR_USEPOLLING=true
+  #  build:
+  #    dockerfile: Dockerfile
+  #    context: ./incidents-portal
+  #  volumes:
+  #    - /app/node_modules
+  #    - ./incidents-portal:/app
+  #networks:
+  # - incidentnet
