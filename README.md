@@ -77,10 +77,10 @@ By default, Nginx HTTP server listens for incoming connection and binds on port 
 
 #### **nginx listens on 80 and proxy_forwards to oauth2_proxy and the other services:**
 
-- /prometheus forwards to prometheus;
-- /incidentsportal forwards to Incidents portal frontend;
-- /alertmanager forwards to alertmanager;
-- /cineexporter forwards to cineexporter
+      - /prometheus forwards to prometheus;
+      - /incidentsportal forwards to Incidents portal frontend;
+      - /alertmanager forwards to alertmanager;
+      - /cineexporter forwards to cineexporter
 
 all of the above authenticate using proxy_forward and nginx’s auth_request directive.
 
@@ -104,17 +104,14 @@ If not used, the default is 15 days.
 - We will be able to access Alertmanager in a browser via URL **alertmanager.example.com** because of nginx-proxy. 
 - The docker file will contain: expose: with – VIRTUAL_PORT=**9090** for[ the nginx-proxy](https://techsch.com/tutorials/multiple-websites-jwilder-nginx-proxy-letsencrypt). 
 
-`Example:` 
+#####Code example:
 
-`\#ports:`
-
-   `\#- "**9090**:**91090900**"`
-
-  `environment:`
-
-   `\- VIRTUAL_HOST=prometheus.example.com`
-
-   `\- VIRTUAL_PORT=**9090**`
+            `Example:` 
+            `\#ports:`
+               `\#- "**9090**:**91090900**"`
+              `environment:`
+               `\- VIRTUAL_HOST=prometheus.example.com`
+               `\- VIRTUAL_PORT=**9090**`
    
 &nbsp;
 &nbsp;
@@ -146,74 +143,47 @@ Node Exporter exposes hardware and kernel related metrics on local and remote ho
 - We will be able to access cineexporterin a browser via URL cineexporter**.example.com** because of the nginx-proxy. 
 
 - The docker file will contain: expose: with – VIRTUAL_PORT=**9100** for[ the nginx-proxy](https://techsch.com/tutorials/multiple-websites-jwilder-nginx-proxy-letsencrypt).
-
-  `Example:` 
-
-  \#ports:`
-
-   `\#- "**9100**:**9100**"`
-
-   `environment:`
-
-   `\- VIRTUAL_HOST=prometheus.example.com`
-
-   `\- VIRTUAL_PORT=**9100**`
+   
+#####Code example:
+   
+              `\#ports:`
+               `\#- "**9100**:**9100**"`
+               `environment:`
+               `\- VIRTUAL_HOST=prometheus.example.com`
+               `\- VIRTUAL_PORT=**9100**`
 
   
 
 This project is going to act as an express server which utilizes the promClient to connect to prometheus, the idea here is to collect metrics from the cine-cloud of which contains different endpoints with data from various machines throughout the world. (up to 700 machines).
 
 
+#####Code example:
 
-`Code example:`
+         `import express from 'express'`
+         `import promClient from 'prom-client'`
+         `import { collectMetrics } from './data-fetcher'`
+         `promClient.collectDefaultMetrics()`
 
-`import express from 'express'`
+         `console.log(`
+          `Hello folks. We will setup a process that hits an api every 5 minutes, and update prometheus metrics.`
+         `)`
 
-`import promClient from 'prom-client'`
+         `setInterval(() => {`
+          `collectMetrics()`
+         `}, 5 * 60 * 1000)`
 
-`import { collectMetrics } from './data-fetcher'`
+         `collectMetrics()`
 
-`` 
+         `const metricServer = express()`
 
-`promClient.collectDefaultMetrics()`
+         `metricServer.get('/metrics', (req, res) => {`
+          `console.log('Scraped')`
+          `res.send(promClient.register.metrics())`
+         `})`
 
-`` 
-
-`console.log(`
-
- `Hello folks. We will setup a process that hits an api every 5 minutes, and update prometheus metrics.`
-
-`)`
-
-`` 
-
-`setInterval(() => {`
-
- `collectMetrics()`
-
-`}, 5 * 60 * 1000)`
-
-`` 
-
-`collectMetrics()`
-
-`` 
-
-`const metricServer = express()`
-
-`metricServer.get('/metrics', (req, res) => {`
-
- `console.log('Scraped')`
-
- `res.send(promClient.register.metrics())`
-
-`})`
-
-`metricServer.listen(9991, () =>`
-
- `console.log(🚨 Prometheus listening on port 9991 /metrics)`
-
-`)`
+         `metricServer.listen(9991, () =>`
+          `console.log(🚨 Prometheus listening on port 9991 /metrics)`
+         `)`
 
 &nbsp;
 &nbsp;
@@ -231,17 +201,13 @@ This project is going to act as an express server which utilizes the promClient 
 -  we are able to access Alertmanager in a browser via URL **alertmanager.example.com** because of nginx-proxy.
 - The docker file will contain: expose: with – VIRTUAL_PORT=**9093** for[ the nginx-proxy](https://techsch.com/tutorials/multiple-websites-jwilder-nginx-proxy-letsencrypt). 
 
-`Example:` 
+#####Code example:
 
-`\#ports:`
-
-   `\#- "9093:9093"`
-
-  `environment:`
-
-   `\- VIRTUAL_HOST=prometheus.example.com`
-
-   `\- VIRTUAL_PORT=9093`
+         `\#ports:`
+            `\#- "9093:9093"`
+           `environment:`
+            `\- VIRTUAL_HOST=prometheus.example.com`
+            `\- VIRTUAL_PORT=9093`
 
 &nbsp;
 &nbsp;
@@ -274,46 +240,28 @@ Examples:
 
  
 
-`Example config for alert manager utilizing slack` 
+##### Example config for alert manager utilizing slack
 
 
-`route:`
+         `route:`
+          `receiver: 'slack_gmail'`
 
- `receiver: 'slack_gmail'`
+         `receivers:`
+          `\- name: 'slack_mxroute'`
+           `slack_configs:`
+            `\- send_resolved: true`
+         ​    `text: "{{ .CommonAnnotations.description }}"`
+         ​    `username: 'Prometheus'`
+         ​    `channel: '#<channel-name>'`
+         ​    `api_url: 'https://hooks.slack.com/services/<webhook-id>'`
 
-
-
-`receivers:`
-
- `\- name: 'slack_mxroute'`
-
-  `slack_configs:`
-
-   `\- send_resolved: true`
-
-​    `text: "{{ .CommonAnnotations.description }}"`
-
-​    `username: 'Prometheus'`
-
-​    `channel: '#<channel-name>'`
-
-​    `api_url: 'https://hooks.slack.com/services/<webhook-id>'`
-
-
-
-  `email_configs:`
-
-   `\- to: hello@gmail.com`
-
-​    `from: prometheus_alerts@gmail.com`
-
-​    `smarthost: smtp.gmail.com:587`
-
-​    `auth_username: prometheus_alerts@gmail.com`
-
-​    `auth_password: secret`
-
-​    `send_resolved: true`
+           `email_configs:`
+            `\- to: hello@gmail.com`
+         ​    `from: prometheus_alerts@gmail.com`
+         ​    `smarthost: smtp.gmail.com:587`
+         ​    `auth_username: prometheus_alerts@gmail.com`
+         ​    `auth_password: secret`
+         ​    `send_resolved: true`
 
 &nbsp;
 &nbsp;
@@ -422,7 +370,7 @@ The idea here is to visualize tickets based on the flow from all of the above se
 
 Since we are working with over 700 machines, internationally, a lot of data is to be expected.
 
-Most of the data is meant to be filtered heavily in our Incidents management system.
+As most of the data shaping the incidents as a whole is meant to be filtered heavily in our Incidents management system.
 
 This means that we can have the frontend as dumb as possible and as performant when it comes to doing get calls
 
