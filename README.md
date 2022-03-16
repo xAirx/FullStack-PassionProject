@@ -12,6 +12,8 @@ Modern web based applications consist of multiple services. For example, a backe
 
 ## **A simple Architecture visualization:**
 
+![Architechture](https://user-images.githubusercontent.com/22436080/158710599-b4c81268-ef76-402e-abdc-6feb2865b2cf.jpg)
+
 &nbsp;
 &nbsp;
 &nbsp; 
