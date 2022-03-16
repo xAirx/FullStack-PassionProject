@@ -1,13 +1,19 @@
-# global:
-#   slack_api_url: 'https://api.slack.com/apps/A90S3Q753'
+# route:
+#   receiver: 'slack_gmail'
 
-#     route:
-#       receiver: 'slack'
+# receivers:
+#   - name: 'slack_mxroute'
+#     # slack_configs:
+#     #   - send_resolved: true
+#     #     text: "{{ .CommonAnnotations.description }}"
+#     #     username: 'Prometheus'
+#     #     channel: '#<channel-name>'
+#     #     api_url: 'https://hooks.slack.com/services/<webhook-id>'
 
-#     receivers:
-#       - name: 'slack'
-#         slack_configs:
-#           - send_resolved: true
-#             username: 'tara gurung'
-#             channel: '#general'
-#             api_url: 'https://hooks.slack.com/services/T52GRFN3F/B90NMV1U2/QKj1pZu3ZVY0QONyI5sfsdf'
+#     email_configs:
+#       - to: marcowurtz@hotmail.com
+#         from: prometheus_alerts@gmail.com
+#         smarthost: smtp.gmail.com:587
+#         auth_username: prometheus_alerts@gmail.com
+#         auth_password: secret
+#         send_resolved: true

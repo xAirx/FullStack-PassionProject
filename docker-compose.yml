@@ -1,9 +1,9 @@
-version: "1.0"
+version: '3.8'
 
 networks:
   incidentnet:
     driver: bridge
-  promnet:
+  monitor-net:
     driver: bridge
   mongonet:
     driver: bridge
@@ -39,73 +39,80 @@ services:
   # nginx will be the only thing facing the internet for real, and it will route traffic to the right places.
 
   prometheus:
-    image: prom/prometheus:latest
-    user: root
+    image: prom/prometheus:v2.32.1
     container_name: prometheus
-    restart: unless-stopped
     volumes:
-      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
-      - ./prometheus/data:/prometheus
-      - ./alertmanager/alert.rules:/alertmanager/alert.rules
+      - ./prometheus:/etc/prometheus
+      - prometheus_data:/prometheus
     command:
-      - "--config.file=/etc/prometheus/prometheus.yml"
-      - "--storage.tsdb.path=/prometheus"
-      - "--web.console.libraries=/etc/prometheus/console_libraries"
-      - "--web.console.templates=/etc/prometheus/consoles"
-      - "--web.enable-lifecycle"
-    expose:
-      - 9090
-      #ports:
-      #- "9090:9090"
-    links:
-      - alertmanager:alertmanager
-      #For later implementation
-      #depends_on:
-      #- nginx-reverse-proxy
-      #- oauth2-proxy
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    restart: unless-stopped
+    ports:
+      - "9090:9090"
+    #expose:
+      #- 9090
     networks:
-      - promnet
+      - monitor-net
+    labels:
+      org.label-schema.group: "monitoring"
 
   alertmanager:
-    restart: unless-stopped
-    image: prom/alertmanager
-    privileged: true
+    image: prom/alertmanager:v0.23.0
+    container_name: alertmanager
     volumes:
-      - ./alertmanager/alertmanager.yml:/alertmanager.yml
+      - ./alertmanager:/etc/alertmanager
     command:
-      - "--config.file=/alertmanager.yml"
-    expose:
-      - 9093
-      #ports:
-      #- "9093:9093"
-      #  depends_on:
-      #    - prometheus
-      #- nginx-reverse-proxy
-      #- oauth2-proxy
-
-  cine-exporter:
+      - '--config.file=/etc/alertmanager/config.yml'
+      - '--storage.path=/alertmanager'
     restart: unless-stopped
-    container_name: cine-node-exporter
+    ports:
+      - "9093:9093"
+    #expose:
+      #- 9093
+    networks:
+      - monitor-net
+    labels:
+      org.label-schema.group: "monitoring"
+
+
+  nodeexporter:
+    image: prom/node-exporter:v1.3.1
+    #container_name: node-exporter
+    #build:
+      #dockerfile: Dockerfile
+      #context: ./cineexporter/app
+    #volumes:
+      #- './cineexporter/app:/app'
+      #- './cineexporter/app/node_modules'
+    #image: prom/node-exporter:latest
+    container_name: nodeexporter
     volumes:
       - /proc:/host/proc:ro
       - /sys:/host/sys:ro
       - /:/rootfs:ro
+      #- /:/host:ro,rslave
     command:
-      - "--path.procfs=/host/proc"
-      - "--path.rootfs=/rootfs"
-      - "--path.sysfs=/host/sys"
-      - "--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)"
-    expose:
-      - 9100
-      #ports:
-      #- "9100:9100"
-    depends_on:
-      - prometheus
-      - alertmanager
-      #- nginx-reverse-proxy
-      #- oauth2-proxy
+      - '--path.procfs=/host/proc'
+      - '--path.rootfs=/rootfs'
+      #- '--path.rootfs=/host'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+    restart: unless-stopped
+    #expose:
+      #- 9100
     networks:
-      - promnet
+      - monitor-net
+    labels:
+      org.label-schema.group: "monitoring"
+    ports:
+      - "9100:9100"
+
+
 
   #mongo-seed:
   #build: ./mongo-seed
@@ -139,7 +146,7 @@ services:
   #    - ./incident-management-system:/app
   #networks:
   # - incidentnet
-  # - promnet
+  # - monitor-net
 
   #incidents-portal:
   #  stdin_open: true
@@ -150,6 +157,6 @@ services:
   #    context: ./incidents-portal
   #  volumes:
   #    - /app/node_modules
-  #    - ./incidents-portal:/app
+  #    - ./incidents-portal/app:/app
   #networks:
   # - incidentnet

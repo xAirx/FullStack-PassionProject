@@ -1,26 +1,44 @@
 global:
-  scrape_interval: 5s
+  scrape_interval:     5s # By default, scrape targets every 1 minute.
+  evaluation_interval: 5s # By default, evaluate rules every 1 minute.
+  #scrape_timeout:     10s # By default, a scrape request times out in 10 seconds.
 
-scrape_configs:
-  - job_name: "prometheus"
-    scrape_interval: 5s
-    static_configs:
-      - targets: ["localhost:9090"]
-
-  - job_name: "node"
-    static_configs:
-      #- targets: ["node-exporter:9100"]
-      - targets: ["localhost:9100"]
-
-rule_files:
-  - "/alertmanager/alert.rules"
-
+# Alertmanager configuration
 alerting:
   alertmanagers:
-    - static_configs:
-        - targets: ["localhost:9093"]
-# remote_write:
-#   - url: "https://prometheus-prod-01-eu-west-0.grafana.net/api/prom/push"
-#     basic_auth:
-#       username: "123456"
-#       password: "..."
+  - scheme: http
+    static_configs:
+    - targets:
+      - 'alertmanager:9093'
+
+# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
+rule_files:
+  - "alert.rules"
+
+  # Configuring Prometheus to monitor itself - https://prometheus.io/docs/prometheus/latest/getting_started/
+
+
+
+scrape_configs:
+  - job_name: 'prometheus'
+    # Override the global values and scrape targets for this job every 10 seconds.
+    scrape_interval: 5s
+    static_configs:
+      # Execute query expressions prometheus_abc_xyz
+      - targets: ['localhost:9090']
+
+  - job_name: 'node-exporter'
+    scrape_interval: 5s
+    static_configs:
+      # node-exporter:9100 where node-exporter is service name in docker-compose.yml
+      # Execute non-prometheus_abc_xyz query expressions, e.g., node_load1 etc.
+      - targets: ['node-exporter:9100']
+      # To use with the custom exporter
+      #- targets: ['node-exporter:9991']
+
+#Run grfana on the cloud for testing purposes
+remote_write:
+  - url: https://prometheus-prod-01-eu-west-0.grafana.net/api/prom/push
+    basic_auth:
+      username: "363328"
+      password: eyJrIjoiOTNjMTE0ODM5MjBiZTVkZmYzZGJhYmMzNmY5MzdjNzQyZTgzOWQ4NiIsIm4iOiJQcm9tZXRodXNTZXJ2ZXIiLCJpZCI6NjE2Njk4fQ==
