@@ -3,11 +3,14 @@
 ## Incidents Portal MonoRepo
 
 Modern web based applications consist of multiple services. For example, a backend API and a frontend client. In larger projects, where scaling  becomes an issue, the services can also be split into multiple  microservices. The question arises, how to organize the source code in  such a project. One solution is a monorepo, i. e. one repository for all the source code in the project.
-
+&nbsp;
+&nbsp;
 # Architecture explanation
 
 ## A simple Architecture visualization:
-
+&nbsp;
+&nbsp;
+&nbsp;
 
 ## Docker compose 
 
@@ -15,12 +18,14 @@ We have decided to run Prometheus along with Alert manager, CineExporter, and ou
 
 Configuring one or more of the applications to communicate is made easy by Docker networking in bridge mode. 
 Since I’m using Docker Compose, we can reach each container via their container name as Docker Compose configures every container to be reachable in the Docker network.
-
+&nbsp;
+&nbsp;
 ### Running locally & Pre-requisites
 
 Before we get started installing the Prometheus stack. Ensure you install the latest version of docker and docker-compose on your Docker host machine.
 Installation & Configuration
-
+&nbsp;
+&nbsp;
 ### Starting the stack with docker compose up
 
 Clone the project locally to your Docker host.
@@ -34,7 +39,8 @@ Once configurations are done let's start it up.
 `$ docker-compose up -d`
 
 That's it.
-
+&nbsp;
+&nbsp;
 ### Docker-compose builds:
 
 - Incidents-server - to be implemented
@@ -42,7 +48,8 @@ That's it.
 - CineExporter - currently a default version of a node-exporter for prometheus 
 - Prometheus
 - AlertManager
-
+&nbsp;
+&nbsp;
 ### Oauth2 + Proxy (Reverse NGINX proxy)
 
 https://carlosbecker.com/posts/prometheus-authentication-with-oauth2_proxy/
@@ -61,7 +68,8 @@ all things but nginx listen on 127.0.0.1 only;
 
 all of the above authenticate using proxy_forward and nginx’s auth_request directive.
 
-
+&nbsp;
+&nbsp;
 
 ## Prometheus Server
 
@@ -72,7 +80,8 @@ all of the above authenticate using proxy_forward and nginx’s auth_request dir
 - config.yml – Configurations for applications such as Slack, PagerDuty and Email for Alertmanager to route alerts
 - alert.rules – What metrics to monitor? How long is the duration before it is considered *DOWN*? What message to send out?
 
-
+&nbsp;
+&nbsp;
 
 ## CineExporter
 
@@ -82,9 +91,10 @@ If installed on remote Server A, Prometheus server (using **prometheus.yml**) ca
 
 To run Node Exporter on Prometheus server itself, we add the final  third Docker Compose service. 
 
+&nbsp;
+&nbsp;
 
-
-## Incidents management system 
+## Incidents management system introduction
 
 ### Specs
 
@@ -115,9 +125,10 @@ Examples
 
 ###### https://github.com/cinemataztic/incidents
 
+&nbsp;
+&nbsp;
 
-
-### Prerequisites & Setup 
+## Incidents management systemPrerequisites & Setup 
 
 ### MongoDB
 
@@ -160,7 +171,8 @@ Responded information is used to populate information for incident email-notific
 - Basic usage pertains to installation of the nodemailer package
   using npm install nodemailer.
 
-  
+&nbsp;
+&nbsp;
 
 ## Prometheus Alert Manager & Incidents management system configurations
 
@@ -185,17 +197,20 @@ Also check the alerts in both the Alert Manager and Prometheus Alerts just to un
 - Example: High load test alert - docker run --rm -it busybox sh -c "while true; do :; done"
   Let this run for a few minutes and you will notice the load alert appear.
 
-
+&nbsp;
+&nbsp;
 
 ## IncidentPortal (Ticket management system)
 
-
+&nbsp;
+&nbsp;
 
 ## Troubleshooting
 
 Write more here
 
-
+&nbsp;
+&nbsp;
 
 ## CI/CD with gitlab
 
