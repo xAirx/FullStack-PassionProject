@@ -288,8 +288,11 @@ A custom webhook is currently in the works, exposing specific alerts to our inci
 - A mongo DB is connected to this specific docker instance, also dockerized 
 - Data is seeded via a webhook from AlertManager, of which based on rules will send payloads containing information needed for the CinePortal microfrontends to handle based on forexample region, such as denmark, finland, germany etc.
 - The idea of the cine portal is to visualize tickets based on the flow from all of the above services.
+      
+### Considerations of a working BFF
 - Since we are working with over 700 machines, internationally, a lot of data is to be expected.
 - Most of the data is meant to be filtered heavily in our Incidents management system. combining data from our cineExporter, scraping the cine-cloud services but also various other metrics.
+- An idea would be to work with graphql or simple express depending on the situation.
 
 &nbsp;
 &nbsp;
@@ -377,8 +380,12 @@ Since we are working with over 700 machines, internationally, a lot of data is t
 As most of the data shaping the incidents as a whole is meant to be filtered heavily in our Incidents management system.
 
 This means that we can have the frontend as dumb as possible and as performant when it comes to doing get calls
+      
+&nbsp;
+&nbsp;
+&nbsp;
 
-### A microfrontend for each region.
+### A microfrontend for each region supported by a BFF aggregation layer
  
 Thoughts and considerations are in discussion of a microfrontend approach, each hitting an express endpoint in our incident management system (explained above)
 
