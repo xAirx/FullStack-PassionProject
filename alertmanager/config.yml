@@ -1,19 +1,83 @@
-# route:
-#   receiver: 'slack_gmail'
+# Showcasing slack notifications and integration
 
-# receivers:
-#   - name: 'slack_mxroute'
-#     # slack_configs:
-#     #   - send_resolved: true
-#     #     text: "{{ .CommonAnnotations.description }}"
-#     #     username: 'Prometheus'
-#     #     channel: '#<channel-name>'
-#     #     api_url: 'https://hooks.slack.com/services/<webhook-id>'
+# global:
+#     resolve_timeout: 1m
+#     slack_api_url: 'https://hooks.slack.com/services/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'
 
+#    route:
+#     receiver: 'slack-notifications'
+
+#    receivers:
+#    - name: 'slack-notifications'
+#     slack_configs:
+#     - channel: '#monitoring-instances'
+#       send_resolved: true
+#       icon_url: https://avatars3.githubusercontent.com/u/3380462
+#       title: |-
+#         [{{ .Status | toUpper }}{{ if eq .Status "firing" }}:{{ .Alerts.Firing | len }}{{ end }}] {{ .CommonLabels.alertname }} for {{ .CommonLabels.job }}
+#         {{- if gt (len .CommonLabels) (len .GroupLabels) -}}
+#           {{" "}}(
+#           {{- with .CommonLabels.Remove .GroupLabels.Names }}
+#             {{- range $index, $label := .SortedPairs -}}
+#               {{ if $index }}, {{ end }}
+#               {{- $label.Name }}="{{ $label.Value -}}"
+#             {{- end }}
+#           {{- end -}}
+#           )
+#         {{- end }}
+#       text: >-
+#         {{ range .Alerts -}}
+#         *Alert:* {{ .Annotations.title }}{{ if .Labels.severity }} - `{{ .Labels.severity }}`{{ end }}
+#         *Description:* {{ .Annotations.description }}
+#         *Details:*
+#           {{ range .Labels.SortedPairs }} • *{{ .Name }}:* `{{ .Value }}`
+#           {{ end }}
+#         {{ end }}
+
+
+# Showcasing pagerduty notifications and integration
+
+
+# global:
+#     resolve_timeout: 1m
+#     pagerduty_url: 'https://events.pagerduty.com/v2/enqueue'
+
+#    route:x
+#     receiver: 'pagerduty-notifications'
+
+#    receivers:
+#    - name: 'pagerduty-notifications'
+#     pagerduty_configs:
+#     - service_key: 0c1cc665a594419b6d215e81f4e38f7
+#       send_resolved: trueglobal:
+#     resolve_timeout: 1m
+#     pagerduty_url: 'https://events.pagerduty.com/v2/enqueue'
+
+#    route:x
+#     receiver: 'pagerduty-notifications'
+
+#    receivers:
+#    - name: 'pagerduty-notifications'
+#     pagerduty_configs:
+#     - service_key: 0c1cc665a594419b6d215e81f4e38f7
+#       send_resolved: true
+
+
+# Showcasing gmail notifications and integration
+
+# global:
+#     resolve_timeout: 1m
+
+#    route:
+#     receiver: 'gmail-notifications'
+
+#    receivers:
+#    - name: 'gmail-notifications'
 #     email_configs:
-#       - to: marcowurtz@hotmail.com
-#         from: prometheus_alerts@gmail.com
-#         smarthost: smtp.gmail.com:587
-#         auth_username: prometheus_alerts@gmail.com
-#         auth_password: secret
-#         send_resolved: true
+#     - to: monitoringinstances@gmail.com
+#       from: monitoringinstances@gmail.com
+#       smarthost: smtp.gmail.com:587
+#       auth_username: monitoringinstances@gmail.com
+#       auth_identity: monitoringinstances@gmail.com
+#       auth_password: password
+#       send_resolved: true
