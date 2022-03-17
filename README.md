@@ -294,6 +294,21 @@ A custom webhook is currently in the works, exposing specific alerts to our inci
 - Most of the data is meant to be filtered heavily in our Incidents management system. combining data from our cineExporter, scraping the cine-cloud services but also various other metrics.
 - An idea would be to work with graphql or simple express depending on the situation.
 - Utilizing the nature of graphQL  BFF we are able to make simple queries and handle the data filtering in a simple and easy way.
+      
+                A GraphQL API Gateway needs to handle:
+
+                Lexing of the query
+                Parsing
+                Normalisation (removing whitespace, duplicate fields, etc.)
+                Validation
+                Enforcing field level authorisation
+                Calculating the complexity of the query
+                Enforcing rate limits and quotas
+                Printing the query (because we modified and cleaned it)
+                Sending the request to the upstream
+                Validating that the response conforms to the GraphQL schema
+                Returning the response to the client
+
 
 &nbsp;
 &nbsp;
