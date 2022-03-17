@@ -336,7 +336,7 @@ Examples
 &nbsp;
 &nbsp;
 &nbsp;
-## **Incidents management system
+## Incidents management system
       
 ### Prerequisites & Setup**
 
