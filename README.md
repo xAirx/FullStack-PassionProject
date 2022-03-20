@@ -20,12 +20,7 @@ Modern web based applications consist of multiple services. For example, a backe
 
 # React boilerplate (For future projects and easy start-ups
 
-## **Overview**
-
-
-## Contents: 
-
-## **Setup:**
+## **Contents & ** **Setup:**
 
 ### **Docker images**
 
