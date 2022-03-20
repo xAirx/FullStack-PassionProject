@@ -25,12 +25,11 @@ Modern web based applications consist of multiple services. For example, a backe
 ### **Docker images**
 
 -   React docker image
--   Express/Graphql docker image
+-   Graphql-apollo-express docker image
 -   Mongodb docker image
 -   Mongo seed docker image
--   GraphQL docker image
 
-#### Simple GraphQL-apollo-express server 
+### Simple GraphQL-apollo-express server 
 -   GraphQL server on top of express with graphQL faker
 
 ### **Tooling:**
