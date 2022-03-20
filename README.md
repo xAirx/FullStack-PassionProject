@@ -1,6 +1,6 @@
 # **Introduction to project architecture**
 
-## **Incidents Portal MonoRepo**
+## **Passion-Project MonoRepo**
 
 Modern web based applications consist of multiple services. For example, a backend API and a frontend client. In larger projects, where scaling becomes an issue, the services can also be split into multiple microservices. The question arises, how to organize the source code in such a project. One solution is a monorepo, i. e. one repository for all the source code in the project.  
 
@@ -12,15 +12,19 @@ Modern web based applications consist of multiple services. For example, a backe
 
 ## **A simple Architecture visualization:**
 
-![Architechture](https://user-images.githubusercontent.com/22436080/158712176-072bcd80-1ba4-463d-8b60-df523b81f67b.png)
+![Fullstack Kubernetes Project](https://user-images.githubusercontent.com/22436080/159169929-b05d7d2c-c3c8-421d-920a-329fb69e339c.png)
+
 
 &nbsp;
 &nbsp;
 &nbsp; 
 
+
+# (WIP - Work in progress (MVP) - Prometheus & Node Exporter & Grafana setup.
+
 ## **Docker compose**
 
-We have decided to run Prometheus along with Alert manager, CineExporter, and our Incidents Management System in Docker to allow for easy deployment using Docker Compose.
+I have decided to run Prometheus along with Alert manager, NodeExporter, in Docker to allow for easy deployment using Docker Compose.
 
 Configuring one or more of the applications to communicate is made easy by Docker networking in bridge mode. Since I’m using Docker Compose, we can reach each container via their container name as Docker Compose configures every container to be reachable in the Docker network.  
 
@@ -56,9 +60,7 @@ That's it.
 
 ### **Docker-compose builds:**
 
-- Incidents-server - to be implemented
-- Incidents-portal - to be implemented
-- CineExporter - currently a default version of a node-exporter for prometheus
+- NodeExporter - currently a default version of a node-exporter for prometheus
 - Prometheus
 - AlertManager  
 
@@ -69,20 +71,11 @@ That's it.
 &nbsp;
 &nbsp; 
 
-### **Oauth2 + Proxy (Reverse NGINX proxy)**
-
-https://carlosbecker.com/posts/prometheus-authentication-with-oauth2_proxy/
+### WIP - **Oauth2 + Proxy (Reverse NGINX proxy)**
 
 The general idea is quite simple:
 
 By default, Nginx HTTP server listens for incoming connection and binds on port 80, which represents the standard web port. all things but nginx listen on 127.0.0.1 only;
-
-#### **nginx listens on 80 and proxy_forwards to oauth2_proxy and the other services:**
-
-      - /prometheus forwards to prometheus;
-      - /incidentsportal forwards to Incidents portal frontend;
-      - /alertmanager forwards to alertmanager;
-      - /cineexporter forwards to cineexporter
 
 all of the above authenticate using proxy_forward and nginx’s auth_request directive.
 
@@ -132,7 +125,7 @@ whereas ‘node-exporter:9100’ scrape the Prometheus server for various hardwa
 &nbsp;
 &nbsp; 
 
-## CineExporter (Node exporter)
+## NodeExporter (Node exporter)
 
 **Node Exporter**, like Alertmanager is optional because Prometheus will run fine without it. 
 
@@ -142,7 +135,7 @@ Node Exporter exposes hardware and kernel related metrics on local and remote ho
 
 - Later when the nginx reverse proxy is implemented:
 
-- We will be able to access cineexporterin a browser via URL cineexporter**.example.com** because of the nginx-proxy. 
+- We will be able to access nodeexporter a browser via URL nodeexporter**.example.com** because of the nginx-proxy. 
 
 - The docker file will contain: expose: with – VIRTUAL_PORT=**9100** for[ the nginx-proxy](https://techsch.com/tutorials/multiple-websites-jwilder-nginx-proxy-letsencrypt).
    
@@ -156,7 +149,7 @@ Node Exporter exposes hardware and kernel related metrics on local and remote ho
 
   
 
-This project is going to act as an express server which utilizes the promClient to connect to prometheus, the idea here is to collect metrics from the cine-cloud of which contains different endpoints with data from various machines throughout the world. (up to 700 machines).
+This project is going to act as an express server which utilizes the logClient to connect to prometheus, the idea here is to collect metrics from the mongoDB & of the express / graphQL layer, which contains different endpoints with data.
 
 
 #####Code example:
@@ -230,7 +223,7 @@ Alerting has been added to the stack, Alerts have been added and are managed via
 
 ### Running Test Alerts
 
-*These examples are based on mock data for now which exists within the Cine Exporter ( see the section about the Cine Exporter above)*
+*These examples are based on mock data for now which exists within the Node Exporter ( see the section about the Node Exporter above)*
 
 Examples:
 
@@ -242,7 +235,7 @@ Examples:
 
  
 
-##### Example config for alert manager utilizing slack
+##### Example config for alert manager utilizing slack notifications forexample
 
 
          `route:`
@@ -280,18 +273,16 @@ A custom webhook is currently in the works, exposing specific alerts to our inci
 &nbsp;
 &nbsp; 
 
-## Incidents management system 
+## Express backend and GraphQL Layer
 
 ### **Introduction** 
 
-- The incidents management system is an express server utilizing different endpoints, meant for being the backbone of the CinePortal (See below).
+- An express server utilizing different endpoints, meant for being the backbone of the entire stack 
 - A mongo DB is connected to this specific docker instance, also dockerized 
-- Data is seeded via a webhook from AlertManager, of which based on rules will send payloads containing information needed for the CinePortal microfrontends to handle based on forexample region, such as denmark, finland, germany etc.
-- The idea of the cine portal is to visualize tickets based on the flow from all of the above services.
       
 ### Considerations of an aggretation layer - BFF (GraphQL)
-- Since we are working with over 700 machines, internationally, a lot of data is to be expected.
-- Most of the data is meant to be filtered heavily in our Incidents management system. combining data from our cineExporter, scraping the cine-cloud services but also various other metrics.
+- Since we are working with multiple react microservices connected to a single express, internationally, a lot of data is to be expected.
+- Most of the data is meant to be filtered heavily in our express api.
 - An idea would be to work with graphql or simple express depending on the situation.
 - Utilizing the nature of graphQL  BFF we are able to make simple queries and handle the data filtering in a simple and easy way.
       
@@ -313,97 +304,31 @@ A custom webhook is currently in the works, exposing specific alerts to our inci
 &nbsp;
 &nbsp;
 &nbsp;
-
-### **Specs**
-
-Track incidents: open, inprogress, closed Notify by e-mail when a new incident is opened Provide endpoints (or event listeners) allowing other services to open and close incidents Provide endpoints allowing a cloud-based UI to visualise the tickets
-
-&nbsp;
-&nbsp;
-&nbsp;
-  
-### **Objectives:**
-
-- Provide a better overview with alerts of problems on our web-based admin platform.
-- This is handled front-end only for now. It should be tracked server side as well, so the right people can be alerted fast. Right now we have to wait for someone to log into cloud and notice the errors.
-- Track incidents: when a machine goes into a failed state (e.g. wrong resolution or game download errors) the starttime of this incident state should be noted.
-- Notify as fast as possible: someone should be notified about this incident, so they have a better chance of fixing it before next show.
-
-&nbsp;
-&nbsp;
-&nbsp;
-  
-Examples
-
-- A power outage turns off all equipment in the cinema - including the cinemataztic box. The cinema forgets to turn on cinemataztic box again. Result: the game fails to start at the next show, resulting in black screen for the guests.
-- Stop the node_exporter container and you should notice shortly the alert arrive in the incidents Portal as well as an email to the configured email.
-- The machine is disconnected from the projector, and upon connecting again it fails to set the correct image resolution on the video output. Result: The game doesn’t look right when shown to the audience (perhaps cropped or only covering 1/2 of the screen).
-- We regularly push new games to the units in the cinema halls. The units usually just downloads these automatically. However, sometimes this goes wrong e.g. due to bad internet connection in the cinema or capacity issues on our severs. Result: The game is not shown to the cinema audience.
-
-###### **To read more see the original repo here:**
-
-###### [**https://github.com/cinemataztic/incidents**](https://github.com/cinemataztic/incidents)
-
-  
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-## Incidents management system
+      
+## Express, and MongoDB setup
       
 ### Prerequisites & Setup**
 
 ### **MongoDB**
 
-- Endpoints are provided allowing a cloud-based UI (See "incident-portal" further down) to visualise the tickets via MongoDB
 - Mongo DB is part of the stack and runs in a docker container.
-- Mongodb is used to store information regarding ongoing incidents with players which are triggered on the field.
-- Mongodb stores the following information with regards to an incident such as the following, a. Ticket ID b. Creation Date c. Updated Date d. Cinema ID e. Cinema Name f. Screen ID g. Screen Name h. Error ID i. Error Description
-- A detailed overview of the model used to specify the above mentioned information can be found under server/models
-- Responded information is used to populate information for incident email-notification and management.
+- Mongodb is used to store information 
 
 ### **Mongo Seed**
 
  Runs in a docker container and seeds our mongoDB when we start the stack up.
 
-### **Send Grid**
+### **Mongo Express**
 
-- A SendGrid API key is needed.
-- SendGrid is used as a platform to transport information about the incident to the concerned person(s) via email.
-- Basic usage pertains to installation of the SendGrid package using npm install nodemailer-sendgrid-transport.
-
-### **Nodemailer**
-
-- Used nodemailer to send emails.
-
-- Basic usage pertains to installation of the nodemailer package using npm install nodemailer.
+ Runs in a docker container and gives a GUI during development phase for quick testing and debugging.
 
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
 
-## IncidentPortal (Ticket management system)
-
-The idea here is to visualize tickets based on the flow from all of the above services.
-
-Since we are working with over 700 machines, internationally, a lot of data is to be expected.
-
-As most of the data shaping the incidents as a whole is meant to be filtered heavily in our Incidents management system.
-
-This means that we can have the frontend as dumb as possible and as performant when it comes to doing get calls
-      
-&nbsp;
-&nbsp;
-&nbsp;
-
-### A microfrontend for each region supported by a BFF aggregation layer (GraphQL)
+### A microfrontend for each project supported by a BFF aggregation layer (GraphQL)
  
-Thoughts and considerations are in discussion of a microfrontend approach, each hitting an express endpoint in our incident management system (explained above)
+Thoughts and considerations are in discussion of a microfrontend approach, each hitting an express endpoint in our system (explained above)
       
 Utilizing the nature of graphQL  BFF we are able to make simple queries and handle the data filtering in a simple and easy way.
 
@@ -422,11 +347,4 @@ Write more here
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;
-&nbsp;
-  
-## Future development: CI/CD with gitlab
 
-https://www.padok.fr/en/blog/ci-cd-monorepo-node-gitlab
-
-https://faun.pub/full-ci-cd-with-docker-github-actions-digitalocean-droplets-container-registry-db2938db8246
