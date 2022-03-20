@@ -12,13 +12,88 @@ Modern web based applications consist of multiple services. For example, a backe
 
 ## **A simple Architecture visualization:**
 
-![Fullstack Kubernetes Project(1)](https://user-images.githubusercontent.com/22436080/159171067-9ea15bfb-104a-445c-b650-9724a0cbe38d.png)
-
+![Fullstack Kubernetes Project(3)](https://user-images.githubusercontent.com/22436080/159190211-ae8e3cf2-eb51-419f-ac7d-ee71ffc08a92.png)
 
 &nbsp;
 &nbsp;
 &nbsp; 
 
+# React boilerplate (For future projects and easy start-ups
+
+## **Overview**
+
+
+## Contents: 
+
+## **Setup:**
+
+### **Docker images**
+
+-   React docker image
+-   Express/Graphql docker image
+-   Mongodb docker image
+-   Mongo seed docker image
+-   GraphQL docker image
+
+#### Simple GraphQL-apollo-express server 
+-   GraphQL server on top of express with graphQL faker
+
+### **Tooling:**
+-   Eslint+husky+prettier+commitizen setup
+-   Setup .envs' for local and production values
+
+### **Starter frontend**
+####  Setup APIHandler and a simple generic component using
+-   Best practices folder structure
+-   Setup MUI basic components
+-   Typescript
+-   React query
+
+### MSW setup (Mock service worker setup)
+
+ - Mock Service Worker (MSW) is a library for mocking, or faking, a
+   backend API. This is extremely useful when you are developing new
+   features into your application, or when you are running tests.
+
+### **Simple CI/CD github actions setup (extendable for usage across the board)**
+-   integrate into docker image and simple hosting example
+
+
+
+## Docker development and production docker setup 
+
+A ReactJs application containerized for development and production.
+
+		`Nginx` for serving production build of our ReactJs application.
+
+#### Explaining the environments:
+
+### Intro:
+
+Alpine is used as a base image.
+A multi stage build is used
+  - Dependencies (os level and application dependencies), using npm ci (
+  -  Runner stage, run the application - ENTRYPOINT.
+
+##### Development environment 
+- Hot reloading on code changes
+
+##### Production environment
+ - Optimized, building static assets and served through a web server or CDN.
+ - Here Nginx is used to serve static assets.
+ - The Production and development docker configs are as "close" to each
+   other as possible to minimize unforeseen issues once deployed.
+ - When the react application is "BUILD", the output is optimized static
+   assets, (html, css and the js file)
+ - To serve these files we use Nginx
+
+	
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp; 
 
 # (WIP - Work in progress (MVP) - Prometheus & Node Exporter & Grafana setup.
 
