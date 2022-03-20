@@ -1,15 +1,13 @@
 version: '3.8'
 
 networks:
-  incidentnet:
-    driver: bridge
-  monitor-net:
+  log-net:
     driver: bridge
   mongonet:
     driver: bridge
 
 services:
-  #Integration of an 0Auth2 proxy to connect to the cinemataztic cloud (sharing tokens)
+  # WIP - MVP - Integration of an 0Auth2 proxy
 
   # oauth2-proxy:
   # image: caarlos0/oauth2_proxy
@@ -57,9 +55,9 @@ services:
     #expose:
       #- 9090
     networks:
-      - monitor-net
+      - log-net
     labels:
-      org.label-schema.group: "monitoring"
+     org.label-schema.group: "health,logging & monitoring"
 
   alertmanager:
     image: prom/alertmanager:v0.23.0
@@ -75,9 +73,9 @@ services:
     #expose:
       #- 9093
     networks:
-      - monitor-net
+      - log-net
     labels:
-      org.label-schema.group: "monitoring"
+      org.label-schema.group: "health,logging & monitoring"
 
 
   nodeexporter:
@@ -106,9 +104,9 @@ services:
     #expose:
       #- 9100
     networks:
-      - monitor-net
+      - log-net
     labels:
-      org.label-schema.group: "monitoring"
+      org.label-schema.group: "health,logging & monitoring"
     ports:
       - "9100:9100"
 
@@ -120,6 +118,7 @@ services:
   #- mongodb
   #networks:
   # - mongonet
+
 
   #mongo_db:
   # image: mongo:5.0
@@ -133,30 +132,33 @@ services:
   #networks:
   # - mongonet
 
-  #incident-management-system:
+
+  #express
   #  build:
   #    dockerfile: Dockerfile
-  #    context: "./incident-management-system"
+  #    context: "./express-server"
   #  links:
   #    - mongo-db
   #  depends_on:
   #    - mongo-db
   #  volumes:
   #    - /app/node_modules
-  #    - ./incident-management-system:/app
+  #    - ./express-server:/app
   #networks:
-  # - incidentnet
-  # - monitor-net
+  # - mongo-net
 
-  #incidents-portal:
-  #  stdin_open: true
-  #  environment:
-  #    - CHOKIDAR_USEPOLLING=true
+
+  #micro_react_1
   #  build:
   #    dockerfile: Dockerfile
-  #    context: ./incidents-portal
+  #    context: "./react-boilerplate"
+  #  links:
+  #    - mongo-db
+  #  depends_on:
+  #    - mongo-db
+  #    - express
   #  volumes:
   #    - /app/node_modules
-  #    - ./incidents-portal/app:/app
+  #    - ./react-boilerplate:/app
   #networks:
-  # - incidentnet
+  # - mongo-net
