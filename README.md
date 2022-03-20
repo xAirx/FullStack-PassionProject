@@ -12,7 +12,7 @@ Modern web based applications consist of multiple services. For example, a backe
 
 ## **A simple Architecture visualization:**
 
-![Fullstack Kubernetes Project](https://user-images.githubusercontent.com/22436080/159169929-b05d7d2c-c3c8-421d-920a-329fb69e339c.png)
+![Fullstack Kubernetes Project(1)](https://user-images.githubusercontent.com/22436080/159171067-9ea15bfb-104a-445c-b650-9724a0cbe38d.png)
 
 
 &nbsp;
