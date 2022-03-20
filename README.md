@@ -70,7 +70,9 @@ A storybook setup - a shared component library so its easy to extend them to oth
 ### **Simple CI/CD github actions setup (extendable for usage across the board)**
 -   integrate into docker image and simple hosting example
 
-
+ &nbsp;
+ &nbsp;
+ &nbsp;
 
 ## Docker development and production docker setup 
 
@@ -100,12 +102,12 @@ A multi stage build is used
  - To serve these files we use Nginx
 
 	
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp; 
+ &nbsp;
+ &nbsp;
+ &nbsp;
+ &nbsp;
+ &nbsp;
+ &nbsp; 
 
 # (WIP - Work in progress (MVP) - Prometheus & Node Exporter & Grafana setup.
 
