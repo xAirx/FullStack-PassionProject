@@ -61,6 +61,8 @@ Modern web based applications consist of multiple services. For example, a backe
 
 ### Storybook npm package - with MUI (Simple unit-tests)
 	A storybook setup - a shared component library so its easy to extend them to other projects, this storybook setup will handle the nitty gritty unit-testing such as dom / closely related UI tests.
+	
+	- A specific pipeline (CI/CD for deploying storybook with NPM)
 
 #### Example
 
@@ -82,7 +84,7 @@ Modern web based applications consist of multiple services. For example, a backe
 	   backend API. This is extremely useful when you are developing new
 	   features into your application, or when you are running tests.
 
-### **Simple CI/CD gitlab setup (extendable for usage across the board)**
+### ** CI/CD github actions setup (extendable for usage across the board)**
 	-   integrate into docker image and simple hosting example
 
  &nbsp;
