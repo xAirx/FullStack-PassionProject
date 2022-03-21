@@ -86,6 +86,7 @@ Modern web based applications consist of multiple services. For example, a backe
 
 ### ** CI/CD github actions setup (extendable for usage across the board)**
 	-   integrate into docker image and simple hosting example
+	-   Docker Swarm and Docker Compose deployments with GitHub Actions
 
  &nbsp;
  &nbsp;
