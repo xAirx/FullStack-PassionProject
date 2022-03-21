@@ -18,6 +18,15 @@ Modern web based applications consist of multiple services. For example, a backe
 &nbsp;
 &nbsp; 
 
+## docker-compose(dev):
+
+    docker-compose -f docker-compose.dev.yml up --build
+
+##  docker-compose(prod):
+
+    docker-compose -f docker-compose.prod.yml up --build
+
+
 
 # React boilerplate (For future projects and easy start-ups
 
@@ -27,54 +36,56 @@ Modern web based applications consist of multiple services. For example, a backe
 
 ### **Docker images**
 
--   React docker image
--   Express docker image
--   Graphql-apollo-express docker image
--   Mongodb docker image
--   Mongo seed docker image
+	-   React docker image
+	-   Express docker image
+	-   Graphql-apollo-express docker image
+	-   Mongodb docker image
+	-   Mongo seed docker image
 
 ### Simple express server
-- Simple express server to connect to the react frontend because why not.
+	- Simple express server to connect to the react frontend because why not.
 
 ### Simple GraphQL-apollo-express server 
--   GraphQL server on top of express with graphQL faker - the preferred backend choice..
+	-   GraphQL server on top of express with graphQL faker - the preferred backend choice..
 
 ### **Tooling:**
--   Eslint+husky+prettier+commitizen setup
--   Setup .envs' for local and production values
+	-   Eslint+husky+prettier+commitizen setup
+	-   Setup .envs' for local and production values
 
 ### **Starter frontend**
 ####  Setup APIHandler and a simple generic component using
--   Best practices folder structure
--   Setup MUI basic components
--   Typescript
--   React query
+	-   Best practices folder structure
+	-   Setup MUI basic components
+	-   Typescript
+	-   React query
 
 ### Storybook npm package - with MUI (Simple unit-tests)
-A storybook setup - a shared component library so its easy to extend them to other projects, this storybook setup will handle the nitty gritty unit-testing such as dom / closely related UI tests.
+	A storybook setup - a shared component library so its easy to extend them to other projects, this storybook setup will handle the nitty gritty unit-testing such as dom / closely related UI tests.
+	
+	- A specific pipeline (CI/CD for deploying storybook with NPM)
 
 #### Example
 
- - Think of testing that handles testing on props etc.
+	 - Think of testing that handles testing on props etc.
 
 ### Unit-tests
 
- - Jest, and React-testing-library. Simple tests that focuses on testing the contracts between the back end and front end layers. Where as solid component testing is abstracted away into the Storybook setup.
+	 - Jest, and React-testing-library. Simple tests that focuses on testing the contracts between the back end and front end layers. Where as solid component testing is abstracted away into the Storybook setup.
 
 #### Example: 
 
- - Think mocking API responses, checking for loading and error states.
- 
- - Testing a modal is opened or closed as a result of a POST being successful or reverse.
+	 - Think mocking API responses, checking for loading and error states.
+
+	 - Testing a modal is opened or closed as a result of a POST being successful or reverse.
 
 ### MSW setup (Mock service worker setup)
 
- - Mock Service Worker (MSW) is a library for mocking, or faking, a
-   backend API. This is extremely useful when you are developing new
-   features into your application, or when you are running tests.
+	 - Mock Service Worker (MSW) is a library for mocking, or faking, a
+	   backend API. This is extremely useful when you are developing new
+	   features into your application, or when you are running tests.
 
-### **Simple CI/CD gitlab setup (extendable for usage across the board)**
--   integrate into docker image and simple hosting example
+### ** CI/CD github actions setup (extendable for usage across the board)**
+	-   integrate into docker image and simple hosting example
 
  &nbsp;
  &nbsp;
@@ -90,22 +101,22 @@ A ReactJs application containerized for development and production.
 
 ### Intro:
 
-Alpine is used as a base image.
-A multi stage build is used
-  - Dependencies (os level and application dependencies), using npm ci (
-  -  Runner stage, run the application - ENTRYPOINT.
+	Alpine is used as a base image.
+	A multi stage build is used
+	  - Dependencies (os level and application dependencies), using npm ci (
+	  -  Runner stage, run the application - ENTRYPOINT.
 
 ##### Development environment 
-- Hot reloading on code changes
+	- Hot reloading on code changes
 
 ##### Production environment
- - Optimized, building static assets and served through a web server or CDN.
- - Here Nginx is used to serve static assets.
- - The Production and development docker configs are as "close" to each
-   other as possible to minimize unforeseen issues once deployed.
- - When the react application is "BUILD", the output is optimized static
-   assets, (html, css and the js file)
- - To serve these files we use Nginx
+	 - Optimized, building static assets and served through a web server or CDN.
+	 - Here Nginx is used to serve static assets.
+	 - The Production and development docker configs are as "close" to each
+	   other as possible to minimize unforeseen issues once deployed.
+	 - When the react application is "BUILD", the output is optimized static
+	   assets, (html, css and the js file)
+	 - To serve these files we use Nginx
 
 	
  &nbsp;
@@ -119,9 +130,9 @@ A multi stage build is used
 
 ## **Docker compose**
 
-I have decided to run Prometheus along with Alert manager, NodeExporter, in Docker to allow for easy deployment using Docker Compose.
+	I have decided to run Prometheus along with Alert manager, NodeExporter, in Docker to allow for easy deployment using Docker Compose.
 
-Configuring one or more of the applications to communicate is made easy by Docker networking in bridge mode. Since I’m using Docker Compose, we can reach each container via their container name as Docker Compose configures every container to be reachable in the Docker network.  
+	Configuring one or more of the applications to communicate is made easy by Docker networking in bridge mode. Since I’m using Docker Compose, we can reach each container via their container name as Docker Compose configures every container to be reachable in the Docker network.  
 
 &nbsp;
 &nbsp;
@@ -129,25 +140,7 @@ Configuring one or more of the applications to communicate is made easy by Docke
 
 ### **Running locally & Pre-requisites**
 
-Before we get started installing the Prometheus stack. Ensure you install the latest version of docker and docker-compose on your Docker host machine. Installation & Configuration  
-
-&nbsp;
-&nbsp;
-&nbsp; 
-
-### **Starting the stack with docker compose up**
-
-Clone the project locally to your Docker host.
-
-If you would like to change which targets should be monitored or make configuration changes edit the /prometheus/prometheus.yml file. The targets section is where you define what should be monitored by Prometheus.
-
-The names defined in this file are actually sourced from the service name in the docker-compose file. If you wish to change names of the services you can add the "container_name" parameter in the docker-compose.yml file.
-
-Once configurations are done let's start it up.
-
-`$ docker-compose up -d`
-
-That's it.  
+	Before we get started installing the Prometheus stack. Ensure you install the latest version of docker and docker-compose on your Docker host machine. Installation & Configuration  
 
 &nbsp;
 &nbsp;
@@ -155,9 +148,9 @@ That's it.
 
 ### **Docker-compose builds:**
 
-- NodeExporter - currently a default version of a node-exporter for prometheus
-- Prometheus
-- AlertManager  
+	- NodeExporter - currently a default version of a node-exporter for prometheus
+	- Prometheus
+	- AlertManager  
 
 &nbsp;
 &nbsp;
@@ -168,11 +161,11 @@ That's it.
 
 ### WIP - **Oauth2 + Proxy (Reverse NGINX proxy)**
 
-The general idea is quite simple:
+	The general idea is quite simple:
 
-By default, Nginx HTTP server listens for incoming connection and binds on port 80, which represents the standard web port. all things but nginx listen on 127.0.0.1 only;
+	By default, Nginx HTTP server listens for incoming connection and binds on port 80, which represents the standard web port. all things but nginx listen on 127.0.0.1 only;
 
-all of the above authenticate using proxy_forward and nginx’s auth_request directive.
+	all of the above authenticate using proxy_forward and nginx’s auth_request directive.
 
 &nbsp;
 &nbsp;
@@ -183,16 +176,16 @@ all of the above authenticate using proxy_forward and nginx’s auth_request dir
 
 ## Prometheus Server
 
-The time series data collected is stored in the **./prometheus** directory. 
+	The time series data collected is stored in the **./prometheus** directory. 
 
-We can refer to Prometheus docs on[ storage](https://prometheus.io/docs/prometheus/latest/storage/) to see the on-disk layout of the server’s data directory. The lines –config.file is pretty standard across all web tutorials and –storage.tsdb.retention.time is optional as this determines when to remove old data. 
+	We can refer to Prometheus docs on[ storage](https://prometheus.io/docs/prometheus/latest/storage/) to see the on-disk layout of the server’s data directory. The lines –config.file is pretty standard across all web tutorials and –storage.tsdb.retention.time is optional as this determines when to remove old data. 
 
-If not used, the default is 15 days. 
+	If not used, the default is 15 days. 
 
-- ports: – “9090:9090” in the docker file is only required If you wish to curl or access http://localhost:**9090**/** 
-- Later when he nginx reverse proxy is implemented:
-- We will be able to access Alertmanager in a browser via URL **alertmanager.example.com** because of nginx-proxy. 
-- The docker file will contain: expose: with – VIRTUAL_PORT=**9090** for[ the nginx-proxy](https://techsch.com/tutorials/multiple-websites-jwilder-nginx-proxy-letsencrypt). 
+	- ports: – “9090:9090” in the docker file is only required If you wish to curl or access http://localhost:**9090**/** 
+	- Later when he nginx reverse proxy is implemented:
+	- We will be able to access Alertmanager in a browser via URL **alertmanager.example.com** because of nginx-proxy. 
+	- The docker file will contain: expose: with – VIRTUAL_PORT=**9090** for[ the nginx-proxy](https://techsch.com/tutorials/multiple-websites-jwilder-nginx-proxy-letsencrypt). 
 
 #####Code example:
 
@@ -209,9 +202,9 @@ If not used, the default is 15 days.
 
 ### Prometheus server and prometheus.yml specificities
 
-targets: ‘localhost:9090’ tells Prometheus server to collect metrics related to **prometheus monitoring operation** with related query expressions starting with **prometheus_** (e.g. *prometheus_build_info* and *prometheus_engine_queries* etc.) 
+	targets: ‘localhost:9090’ tells Prometheus server to collect metrics related to **prometheus monitoring operation** with related query expressions starting with **prometheus_** (e.g. *prometheus_build_info* and *prometheus_engine_queries* etc.) 
 
-whereas ‘node-exporter:9100’ scrape the Prometheus server for various hardware monitoring metrics of Linux, including temperature, fans, and voltages.
+	whereas ‘node-exporter:9100’ scrape the Prometheus server for various hardware monitoring metrics of Linux, including temperature, fans, and voltages.
 
 &nbsp;
 &nbsp;
@@ -222,18 +215,18 @@ whereas ‘node-exporter:9100’ scrape the Prometheus server for various hardwa
 
 ## NodeExporter (Node exporter)
 
-**Node Exporter**, like Alertmanager is optional because Prometheus will run fine without it. 
+	**Node Exporter**, like Alertmanager is optional because Prometheus will run fine without it. 
 
-Node Exporter exposes hardware and kernel related metrics on local and remote hosts. If installed on remote Server A, Prometheus server (using **prometheus.yml**) can be configured to scrape metrics via URL, e.g., **http://<serverA-ip>:9100/metrics**.
+	Node Exporter exposes hardware and kernel related metrics on local and remote hosts. If installed on remote Server A, Prometheus server (using **prometheus.yml**) can be configured to scrape metrics via URL, e.g., **http://<serverA-ip>:9100/metrics**.
 
-- ports: – “9100:9100” in the docker file is only required If you wish to curl or access **http://localhost:9100/** 
+	- ports: – “9100:9100” in the docker file is only required If you wish to curl or access **http://localhost:9100/** 
 
-- Later when the nginx reverse proxy is implemented:
+	- Later when the nginx reverse proxy is implemented:
 
-- We will be able to access nodeexporter a browser via URL nodeexporter**.example.com** because of the nginx-proxy. 
+	- We will be able to access nodeexporter a browser via URL nodeexporter**.example.com** because of the nginx-proxy. 
 
-- The docker file will contain: expose: with – VIRTUAL_PORT=**9100** for[ the nginx-proxy](https://techsch.com/tutorials/multiple-websites-jwilder-nginx-proxy-letsencrypt).
-   
+	- The docker file will contain: expose: with – VIRTUAL_PORT=**9100** for[ the nginx-proxy](https://techsch.com/tutorials/multiple-websites-jwilder-nginx-proxy-letsencrypt).
+
 #####Code example:
    
               `\#ports:`
@@ -284,12 +277,12 @@ This project is going to act as an express server which utilizes the logClient t
 
 ## Prometheus Alert Manager 
 
-- In order to use **Alertmanager**, we add it as a Docker service. 
-- The data for Alertmanager is stored in the alertmanager directory. 
-- Ports: – “9093:9093” in the docker file is only required If you wish to curl or access http://localhost:9093/** 
-- Later when the nginx reverse proxy is implemented:
--  we are able to access Alertmanager in a browser via URL **alertmanager.example.com** because of nginx-proxy.
-- The docker file will contain: expose: with – VIRTUAL_PORT=**9093** for[ the nginx-proxy](https://techsch.com/tutorials/multiple-websites-jwilder-nginx-proxy-letsencrypt). 
+	- In order to use **Alertmanager**, we add it as a Docker service. 
+	- The data for Alertmanager is stored in the alertmanager directory. 
+	- Ports: – “9093:9093” in the docker file is only required If you wish to curl or access http://localhost:9093/** 
+	- Later when the nginx reverse proxy is implemented:
+	-  we are able to access Alertmanager in a browser via URL **alertmanager.example.com** because of nginx-proxy.
+	- The docker file will contain: expose: with – VIRTUAL_PORT=**9093** for[ the nginx-proxy](https://techsch.com/tutorials/multiple-websites-jwilder-nginx-proxy-letsencrypt). 
 
 #####Code example:
 
@@ -303,13 +296,13 @@ This project is going to act as an express server which utilizes the logClient t
 &nbsp;
 &nbsp;
 
-Alerting has been added to the stack, Alerts have been added and are managed via  - prometheus/alert.rules
+#### Alerting has been added to the stack, Alerts have been added and are managed via  - prometheus/alert.rules
 
-- AlertManager configuration - alertmanager/config.yml
+	- AlertManager configuration - alertmanager/config.yml
 
-- View Prometheus alerts http://<Host IP Address>:9090/alerts
+	- View Prometheus alerts http://<Host IP Address>:9090/alerts
 
-- View Alert Manager http://<Host IP Address>:9093
+	- View Alert Manager http://<Host IP Address>:9093
 
 &nbsp;
 &nbsp;
@@ -318,15 +311,15 @@ Alerting has been added to the stack, Alerts have been added and are managed via
 
 ### Running Test Alerts
 
-*These examples are based on mock data for now which exists within the Node Exporter ( see the section about the Node Exporter above)*
+	*These examples are based on mock data for now which exists within the Node Exporter ( see the section about the Node Exporter above)*
 
-Examples:
+	Examples:
 
-- *Also check the alerts in both the Alert Manager and Prometheus Alerts just to understand how they flow through the system.*
+	- *Also check the alerts in both the Alert Manager and Prometheus Alerts just to understand how they flow through the system.*
 
-- Example: High load test alert - docker run --rm -it busybox sh -c "while true; do :; done"
+	- Example: High load test alert - docker run --rm -it busybox sh -c "while true; do :; done"
 
-- Let this run for a few minutes and you will notice the load alert appear.
+	- Let this run for a few minutes and you will notice the load alert appear.
 
  
 
@@ -359,7 +352,7 @@ Examples:
 
 ### AlertManager and custom webhooks.
 
-A custom webhook is currently in the works, exposing specific alerts to our incidents management system (see below for explanation)
+	A custom webhook is currently in the works, exposing specific alerts to our incidents management system (see below for explanation)
 
 &nbsp;
 &nbsp;
@@ -372,14 +365,14 @@ A custom webhook is currently in the works, exposing specific alerts to our inci
 
 ### **Introduction** 
 
-- An express server utilizing different endpoints, meant for being the backbone of the entire stack 
-- A mongo DB is connected to this specific docker instance, also dockerized 
-      
-### Considerations of an aggretation layer - BFF (GraphQL)
-- Since we are working with multiple react microservices connected to a single express, internationally, a lot of data is to be expected.
-- Most of the data is meant to be filtered heavily in our express api.
-- An idea would be to work with graphql or simple express depending on the situation.
-- Utilizing the nature of graphQL  BFF we are able to make simple queries and handle the data filtering in a simple and easy way.
+	- An express server utilizing different endpoints, meant for being the backbone of the entire stack 
+	- A mongo DB is connected to this specific docker instance, also dockerized 
+
+	### Considerations of an aggretation layer - BFF (GraphQL)
+	- Since we are working with multiple react microservices connected to a single express, internationally, a lot of data is to be expected.
+	- Most of the data is meant to be filtered heavily in our express api.
+	- An idea would be to work with graphql or simple express depending on the situation.
+	- Utilizing the nature of graphQL  BFF we are able to make simple queries and handle the data filtering in a simple and easy way.
       
                 A GraphQL API Gateway needs to handle:
 
@@ -406,26 +399,26 @@ A custom webhook is currently in the works, exposing specific alerts to our inci
 
 ### **MongoDB**
 
-- Mongo DB is part of the stack and runs in a docker container.
-- Mongodb is used to store information 
+	- Mongo DB is part of the stack and runs in a docker container.
+	- Mongodb is used to store information 
 
 ### **Mongo Seed**
 
- Runs in a docker container and seeds our mongoDB when we start the stack up.
+	 Runs in a docker container and seeds our mongoDB when we start the stack up.
 
 ### **Mongo Express**
 
- Runs in a docker container and gives a GUI during development phase for quick testing and debugging.
+	 Runs in a docker container and gives a GUI during development phase for quick testing and debugging.
 
 &nbsp;
 &nbsp;
 &nbsp;
 
 ### A microfrontend for each project supported by a BFF aggregation layer (GraphQL)
- 
-Thoughts and considerations are in discussion of a microfrontend approach, each hitting an express endpoint in our system (explained above)
-      
-Utilizing the nature of graphQL  BFF we are able to make simple queries and handle the data filtering in a simple and easy way.
+
+	Thoughts and considerations are in discussion of a microfrontend approach, each hitting an express endpoint in our system (explained above)
+
+	Utilizing the nature of graphQL  BFF we are able to make simple queries and handle the data filtering in a simple and easy way.
 
 &nbsp;
 &nbsp;
@@ -436,7 +429,7 @@ Utilizing the nature of graphQL  BFF we are able to make simple queries and hand
 
 ## Troubleshooting
 
-Write more here
+	Write more here
 
 &nbsp;
 &nbsp;
