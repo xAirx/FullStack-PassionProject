@@ -154,11 +154,11 @@ services:
 
 
     express-api-prod:
-        build:
-          #Either a path to a directory containing a Dockerfile, or a url to a git repository.
-          context:  ./FullStack-React-Docker-Boilerplate/backend/fullstack-react-docker-boilerplate/
-          # Run DockerFile.prod for now.
-          dockerfile:  ./FullStack-React-Docker-Boilerplate/backend/prod/Dockerfile
+          build:
+            #Either a path to a directory containing a Dockerfile, or a url to a git repository.
+            context:  ./FullStack-React-Docker-Boilerplate/backend/fullstack-react-docker-boilerplate/
+            # Run DockerFile.prod for now.
+            dockerfile:  ./FullStack-React-Docker-Boilerplate/backend/prod/Dockerfile
           restart: always
           image: express-api
           container_name: example express api
@@ -186,7 +186,9 @@ services:
     #      - MONGO_INITDB_ROOT_PASSWORD=rootpass
     #    volumes:
     #      - mongodb-data
-#
+    #    networks:
+    #      - mongonet
+
     #mongo-express:
     #    image: mongo-express
     #    container_name: mongo-express
@@ -196,6 +198,9 @@ services:
     #      - ME_CONFIG_MONGODB_ADMINUSERNAME=rootuser
     #      - ME_CONFIG_MONGODB_ADMINPASSWORD=rootpass
     #      - ME_CONFIG_MONGODB_SERVER=mongodb
+    #    networks:
+    #      - mongonet
+
     #mongo-seed:
     #      image: stefanwalther/mongo-seed
     #      container_name: mongo-seed
@@ -212,3 +217,5 @@ services:
     #
     #  volumes:
     #    mongodb:
+    #    networks:
+    #      - mongonet

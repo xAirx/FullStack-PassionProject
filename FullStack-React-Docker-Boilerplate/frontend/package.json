@@ -38,7 +38,6 @@
     "Husky",
     "Prettier"
   ],
-  "license": "MIT",
   "eslintConfig": {
     "extends": "react-app"
   },
