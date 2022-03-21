@@ -5,6 +5,12 @@ import 'typeface-roboto';
 import App from './containers/App';
 import * as serviceWorker from './serviceWorker';
 
+// Start the mocking conditionally.
+if (process.env.NODE_ENV === 'development') {
+  const { worker } = require('./mocks/browser')
+  worker.start()
+}
+
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
