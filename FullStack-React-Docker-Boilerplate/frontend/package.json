@@ -18,20 +18,26 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "cross-env CI=true react-scripts test --env=jsdom --coverage",
-    "test:watch": "react-scripts test",
-    "eject": "react-scripts eject",
+    "test:watch": "react-scripts test --watch",
     "doc:code": "typedoc",
-    "lint:check": "eslint 'src/**'"
+    "lint:check": "eslint 'src/**'",
+    "update": "npx msw init public --no-save",
+    "test": "yarn test:unit && yarn test:e2e",
+    "test:unit": "react-scripts test --env=jest-environment-jsdom-sixteen",
+    "eject": "react-scripts eject"
   },
-  "repository": "git+https://github.com/SimpliRoute/react-boilerplate.git",
   "keywords": [
     "Typescript",
     "React",
     "Redux",
-    "Boilerplate"
+    "Boilerplate",
+    "MockServiceWorker",
+    "Docker",
+    "MUI",
+    "Eslint",
+    "Husky",
+    "Prettier"
   ],
-  "author": "SimpliRoute Developers <developers@simpliroute.com>",
   "license": "MIT",
   "eslintConfig": {
     "extends": "react-app"
