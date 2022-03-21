@@ -64,19 +64,22 @@ Modern web based applications consist of multiple services. For example, a backe
 	
 	- A specific pipeline (CI/CD for deploying storybook with NPM)
 
-#### Example
 
-	 - Think of testing that handles testing on props etc.
-
-### Unit-tests
+#### Storybook and Unit-tests
 
 	 - Jest, and React-testing-library. Simple tests that focuses on testing the contracts between the back end and front end layers. Where as solid component testing is abstracted away into the Storybook setup.
 
-#### Example: 
+##### Example: 
 
 	 - Think mocking API responses, checking for loading and error states.
 
 	 - Testing a modal is opened or closed as a result of a POST being successful or reverse.
+
+### Unit-tests outside of storybook 
+
+##### Example
+
+	 - Think of testing that handles testing on props etc.
 
 ### MSW setup (Mock service worker setup)
 
