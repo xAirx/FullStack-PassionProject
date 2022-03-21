@@ -23,15 +23,21 @@ Modern web based applications consist of multiple services. For example, a backe
 
 ## **Contents & Setup:**
 
+## Nginx Reverse proxy example added.
+
 ### **Docker images**
 
 -   React docker image
+-   Express docker image
 -   Graphql-apollo-express docker image
 -   Mongodb docker image
 -   Mongo seed docker image
 
+### Simple express server
+- Simple express server to connect to the react frontend because why not.
+
 ### Simple GraphQL-apollo-express server 
--   GraphQL server on top of express with graphQL faker
+-   GraphQL server on top of express with graphQL faker - the preferred backend choice..
 
 ### **Tooling:**
 -   Eslint+husky+prettier+commitizen setup
@@ -67,7 +73,7 @@ A storybook setup - a shared component library so its easy to extend them to oth
    backend API. This is extremely useful when you are developing new
    features into your application, or when you are running tests.
 
-### **Simple CI/CD github actions setup (extendable for usage across the board)**
+### **Simple CI/CD gitlab setup (extendable for usage across the board)**
 -   integrate into docker image and simple hosting example
 
  &nbsp;
