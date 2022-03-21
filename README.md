@@ -18,6 +18,15 @@ Modern web based applications consist of multiple services. For example, a backe
 &nbsp;
 &nbsp; 
 
+## docker-compose(dev):
+
+    docker-compose -f docker-compose.dev.yml up --build
+
+##  docker-compose(prod):
+
+    docker-compose -f docker-compose.prod.yml up --build
+
+
 
 # React boilerplate (For future projects and easy start-ups
 
