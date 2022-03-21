@@ -18,6 +18,7 @@ Modern web based applications consist of multiple services. For example, a backe
 &nbsp;
 &nbsp; 
 
+
 # React boilerplate (For future projects and easy start-ups
 
 ## **Contents & Setup:**
@@ -43,6 +44,23 @@ Modern web based applications consist of multiple services. For example, a backe
 -   Typescript
 -   React query
 
+### Storybook npm package - with MUI (Simple unit-tests)
+A storybook setup - a shared component library so its easy to extend them to other projects, this storybook setup will handle the nitty gritty unit-testing such as dom / closely related UI tests.
+
+#### Example
+
+ - Think of testing that handles testing on props etc.
+
+### Unit-tests
+
+ - Jest, and React-testing-library. Simple tests that focuses on testing the contracts between the back end and front end layers. Where as solid component testing is abstracted away into the Storybook setup.
+
+#### Example: 
+
+ - Think mocking API responses, checking for loading and error states.
+ 
+ - Testing a modal is opened or closed as a result of a POST being successful or reverse.
+
 ### MSW setup (Mock service worker setup)
 
  - Mock Service Worker (MSW) is a library for mocking, or faking, a
@@ -52,7 +70,9 @@ Modern web based applications consist of multiple services. For example, a backe
 ### **Simple CI/CD github actions setup (extendable for usage across the board)**
 -   integrate into docker image and simple hosting example
 
-
+ &nbsp;
+ &nbsp;
+ &nbsp;
 
 ## Docker development and production docker setup 
 
@@ -82,12 +102,12 @@ A multi stage build is used
  - To serve these files we use Nginx
 
 	
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp; 
+ &nbsp;
+ &nbsp;
+ &nbsp;
+ &nbsp;
+ &nbsp;
+ &nbsp; 
 
 # (WIP - Work in progress (MVP) - Prometheus & Node Exporter & Grafana setup.
 
