@@ -30,72 +30,67 @@ Modern web based applications consist of multiple services. For example, a backe
 
 # React boilerplate (For future projects and easy start-ups
 
+
+# React boilerplate (For future projects and easy start-ups
+
 ## **Contents & Setup:**
 
-## Nginx Reverse proxy example added.
+##  React BoilerPlate
+
+### Main tools
+- [React](https://reactjs.org/docs/getting-started.html) 
+- [Typescript](https://www.typescriptlang.org/) 
+- [Apollo-link-rest (Graphql)](https://www.apollographql.com/docs/react/api/link/apollo-link-rest/)  A REST endpoint wrapper with GraphQL client on top
+- [React query](https://react-query.tanstack.com/) A simple fetchHook is setup for easy usage
+- [Recoil](https://recoiljs.org/) For simple state management with a small footprint
+- [React Router](https://reactrouter.com/web/guides/quick-start) for routing
+- [Tailwind CSS v3](https://tailwindcss.com) with a [basic reset for form styles](https://github.com/tailwindlabs/tailwindcss-forms)
+- [PWA](https://github.com/antfu/vite-plugin-pwa) with [17/17 Lighthouse score](https://web.dev/pwa-checklist/).
+- [Vite](https://vitejs.dev/guide/) for bundling and codesplitting (goodbye webpack)
+- [Absolute Imports](https://github.com/aleclarson/vite-tsconfig-paths) - Avoid ./././
+
+### More Tooling
+-   [Husky](https://github.com/typicode/husky) - Git pre hooks
+- [Prettier-Standard](https://github.com/sheerun/prettier-standard) for formatting and linting
+- [lint-staged](https://github.com/okonet/lint-staged) with precommit task for linting
+- [Commitizen](https://github.com/commitizen/cz-cli) intercepting your commits to help you add nice formatted messages
+- [Renovate](https://github.com/renovatebot/renovate) for automated dependency updates
+- [git-notify](https://github.com/jevakallio/git-notify) for communicating important updates during git pull to your team
+- [git-standup](https://github.com/kamranahmedse/git-standup) to recall what you did yesterday
+-  Github Actions CI preconfigured for running lint + tests (Barebone (ready for adaptation for many usecases)
+- [dependency updates](https://renovatebot.com/), [CodeQL Analysis](https://securitylab.github.com/tools/codeql), running tests and code coverage with [Codecov](https://about.codecov.io/).
+
+## Setup
+
+
+## Getting started (without docker)
+
+- [ ] `yarn standup` (receive a pretty list of things you did on your last working day)
+- [ ] `yarn dev` (standard dev server) -  start a development server with hot reload.
+- [ ]  `yarn format` (format and lint the codebase following prettier-standard rules)
+
+- [ ] yarn commit - will run a flow composed of:
+-   [Husky](https://github.com/typicode/husky)
+-   Linting with: [ESLint](https://eslint.org), [stylelint](https://stylelint.io) & [Prettier](https://prettier.io)
+-   [lint-staged](https://github.com/okonet/lint-staged)
+-   [Commitizen](https://github.com/commitizen/cz-cli)
+
+
+
+
+
+## Docker images and docker-compose
+
+	- [ ] `docker-compose up will run the images configured in the docker-compose.yml file.
 
 ### **Docker images**
 
-	-   React docker image
-	-   Express docker image
-	-   Graphql-apollo-express docker image
-	-   Mongodb docker image
-	-   Mongo seed docker image
+-   React docker image 
+-   React-native docker image
+-   Mongodb docker image
+-   Mongo seed docker image
+-   Simple-express-api docker image
 
-### Simple express server
-	- Simple express server to connect to the react frontend because why not.
-
-### Simple GraphQL-apollo-express server 
-	-   GraphQL server on top of express with graphQL faker - the preferred backend choice..
-
-### **Tooling:**
-	-   Eslint+husky+prettier+commitizen setup
-	-   Setup .envs' for local and production values
-
-### **Starter frontend**
-####  Setup APIHandler and a simple generic component using
-	-   Best practices folder structure
-	-   Setup MUI basic components
-	-   Typescript
-	-   React query
-
-### Storybook npm package - with MUI (Simple unit-tests)
-	A storybook setup - a shared component library so its easy to extend them to other projects, this storybook setup will handle the nitty gritty unit-testing such as dom / closely related UI tests.
-	
-	- A specific pipeline (CI/CD for deploying storybook with NPM)
-
-
-#### Storybook and Unit-tests
-
-	 - Jest, and React-testing-library. Simple tests that focuses on testing the contracts between the back end and front end layers. Where as solid component testing is abstracted away into the Storybook setup.
-
-##### Example: 
-
-	 - Think mocking API responses, checking for loading and error states.
-
-	 - Testing a modal is opened or closed as a result of a POST being successful or reverse.
-
-### Unit-tests outside of storybook 
-
-##### Example
-
-	 - Think of testing that handles testing on props etc.
-
-### MSW setup (Mock service worker setup)
-
-	 - Mock Service Worker (MSW) is a library for mocking, or faking, a
-	   backend API. This is extremely useful when you are developing new
-	   features into your application, or when you are running tests.
-
-### ** CI/CD github actions setup (extendable for usage across the board)**
-	-   integrate into docker image and simple hosting example
-	-   Docker Swarm and Docker Compose deployments with GitHub Actions
-
- &nbsp;
- &nbsp;
- &nbsp;
-
-## Docker development and production docker setup 
 
 A ReactJs application containerized for development and production.
 
@@ -103,24 +98,38 @@ A ReactJs application containerized for development and production.
 
 #### Explaining the environments:
 
-### Intro:
-
-	Alpine is used as a base image.
-	A multi stage build is used
-	  - Dependencies (os level and application dependencies), using npm ci (
-	  -  Runner stage, run the application - ENTRYPOINT.
-
 ##### Development environment 
 	- Hot reloading on code changes
 
 ##### Production environment
 	 - Optimized, building static assets and served through a web server or CDN.
 	 - Here Nginx is used to serve static assets.
-	 - The Production and development docker configs are as "close" to each
-	   other as possible to minimize unforeseen issues once deployed.
-	 - When the react application is "BUILD", the output is optimized static
-	   assets, (html, css and the js file)
+	 - The Production and development docker configs are as "close" to each other as possible to minimize unforeseen issues once deployed.
+	 - When the react application is "BUILD", the output is optimized static assets, (html, css and the js file)
 	 - To serve these files we use Nginx
+
+
+## Future additions:
+
+
+### Storybook component library
+- Storybook published as an npm package - with framework of choice (or custom build for infinite posibillities.
+
+
+
+### Storybook & Unit-tests (Low level)
+
+ - Jest, and React-testing-library. Simple tests that focuses on testing the contracts between the back end and front end layers. Where as solid component testing is abstracted away into the Storybook setup.
+
+
+### Unit-tests (High Level)
+##### Example: 
+
+ - Think mocking API responses, checking for loading and error states.
+ 
+ - Testing a modal is opened or closed as a result of a POST being successful or reverse.
+
+
 
 	
  &nbsp;
