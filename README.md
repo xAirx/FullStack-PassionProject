@@ -16,28 +16,6 @@ Modern web based applications consist of multiple services. For example, a backe
 
 ![Fullstack Kubernetes Project(3)](https://user-images.githubusercontent.com/22436080/159190211-ae8e3cf2-eb51-419f-ac7d-ee71ffc08a92.png)
 
-
-
-## docker-compose(dev):
-
-    docker-compose -f docker-compose.dev.yml up --build
-
-##  docker-compose(prod):
-
-    docker-compose -f docker-compose.prod.yml up --build
-
-## Setup .env file for docker-compose
-
-	The latest Docker Compose allows you to access environment variables from your compose file. So you can source your environment variables, then run Compose like so:
-
-	```
-	set -a
-	source .my-env
-	docker-compose up -d
-
-	```
-
-
 &nbsp;
 
 # React boilerplate (For future projects and easy start-ups
@@ -72,34 +50,21 @@ Modern web based applications consist of multiple services. For example, a backe
 
 &nbsp;
 
-## Setup
 
 
-## Getting started (without docker)
-
-- [ ] `yarn standup` (receive a pretty list of things you did on your last working day)
-- [ ] `yarn dev` (standard dev server) -  start a development server with hot reload.
-- [ ]  `yarn format` (format and lint the codebase following prettier-standard rules)
-
-- [ ] yarn commit - will run a flow composed of:
--   [Husky](https://github.com/typicode/husky)
--   Linting with: [ESLint](https://eslint.org), [stylelint](https://stylelint.io) & [Prettier](https://prettier.io)
--   [lint-staged](https://github.com/okonet/lint-staged)
--   [Commitizen](https://github.com/commitizen/cz-cli)
-
-	
+## Getting started with docker 
 
 &nbsp;
-
 
 ### **Docker images**
 
 -   React docker image 
--   React-native docker image
 -   Mongodb docker image
 -   Mongo seed docker image
--   Simple-express-api docker image
+-   Express-api docker image
+-   Graphql docker image
 
+&nbsp;
 
 A ReactJs application containerized for development and production.
 
@@ -116,6 +81,44 @@ A ReactJs application containerized for development and production.
 	 - The Production and development docker configs are as "close" to each other as possible to minimize unforeseen issues once deployed.
 	 - When the react application is "BUILD", the output is optimized static assets, (html, css and the js file)
 	 - To serve these files we use Nginx
+
+
+### docker-compose(dev):
+
+    docker-compose -f docker-compose.dev.yml up --build
+
+###  docker-compose(prod):
+
+    docker-compose -f docker-compose.prod.yml up --build
+
+### Setup .env file for docker-compose
+
+	The latest Docker Compose allows you to access environment variables from your compose file. So you can source your environment variables, then run Compose like so:
+
+	```
+	set -a
+	source .my-env
+	docker-compose up -d
+
+	```
+
+&nbsp;
+
+## Commands
+
+- [ ] `yarn standup` (receive a pretty list of things you did on your last working day)
+- [ ] `yarn dev` (standard dev server) -  start a development server with hot reload.
+- [ ]  `yarn format` (format and lint the codebase following prettier-standard rules)
+- [ ] `yarn generate`
+Generates GraphQL schema by running the the [GraphQL Code Generator](https://graphql-code-generator.com/). The GraphQL server  must be available at [http://localhost:5002/graphql](http://localhost:5002/graphql) for code generation 
+
+- [ ] yarn commit - will run a flow composed of:
+-   [Husky](https://github.com/typicode/husky)
+-   Linting with: [ESLint](https://eslint.org), [stylelint](https://stylelint.io) & [Prettier](https://prettier.io)
+-   [lint-staged](https://github.com/okonet/lint-staged)
+-   [Commitizen](https://github.com/commitizen/cz-cli)
+
+  
 
 
 &nbsp;
