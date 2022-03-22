@@ -58,7 +58,7 @@ Modern web based applications consist of multiple services. For example, a backe
 ### **Docker images**
 
 -   React docker image - http://localhost:3000
--   Express-api docker image - http://localhost:5000
+-   Express-api docker image - http://localhost:4000
 -   Graphql(standard apollo-express) docker image - http://localhost:5002/graphql  
 -   GraphQL(FakerQL) docker image  - http://localhost:6000/graphql 
 -   Mongodb docker image - http://localhost:27017
