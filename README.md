@@ -36,27 +36,27 @@ Modern web based applications consist of multiple services. For example, a backe
 
 
 ### Main tools
-- [] [React](https://reactjs.org/docs/getting-started.html) 
-- [] [Typescript](https://www.typescriptlang.org/) 
-- [] [Apollo-link-rest (Graphql)](https://www.apollographql.com/docs/react/api/link/apollo-link-rest/)  A REST endpoint wrapper with GraphQL client on top
-- [] [React query](https://react-query.tanstack.com/) A simple fetchHook is setup for easy usage
-- [] [Recoil](https://recoiljs.org/) For simple state management with a small footprint
-- [] [React Router](https://reactrouter.com/web/guides/quick-start) for routing
-- [] [Tailwind CSS v3](https://tailwindcss.com) with a [basic reset for form styles](https://github.com/tailwindlabs/tailwindcss-forms)
-- [] [PWA](https://github.com/antfu/vite-plugin-pwa) with [17/17 Lighthouse score](https://web.dev/pwa-checklist/).
-- [] [Vite](https://vitejs.dev/guide/) for bundling and codesplitting (goodbye webpack)
-- [] [Absolute Imports](https://github.com/aleclarson/vite-tsconfig-paths) - Avoid ./././
+- [ ] [React](https://reactjs.org/docs/getting-started.html) 
+- [ ] [Typescript](https://www.typescriptlang.org/) 
+- [ ] [Apollo-link-rest (Graphql)](https://www.apollographql.com/docs/react/api/link/apollo-link-rest/)  A REST endpoint wrapper with GraphQL client on top
+- [ ] [React query](https://react-query.tanstack.com/) A simple fetchHook is setup for easy usage
+- [ ] [Recoil](https://recoiljs.org/) For simple state management with a small footprint
+- [ ] [React Router](https://reactrouter.com/web/guides/quick-start) for routing
+- [ ] [Tailwind CSS v3](https://tailwindcss.com) with a [basic reset for form styles](https://github.com/tailwindlabs/tailwindcss-forms)
+- [ ] [PWA](https://github.com/antfu/vite-plugin-pwa) with [17/17 Lighthouse score](https://web.dev/pwa-checklist/).
+- [ ] [Vite](https://vitejs.dev/guide/) for bundling and codesplitting (goodbye webpack)
+- [ ] [Absolute Imports](https://github.com/aleclarson/vite-tsconfig-paths) - Avoid ./././
 
 ### More Tooling
-- []   [Husky](https://github.com/typicode/husky) - Git pre hooks
-- [] [Prettier-Standard](https://github.com/sheerun/prettier-standard) for formatting and linting
-- [] [lint-staged](https://github.com/okonet/lint-staged) with precommit task for linting
-- [] [Commitizen](https://github.com/commitizen/cz-cli) intercepting your commits to help you add nice formatted messages
-- [] [Renovate](https://github.com/renovatebot/renovate) for automated dependency updates
-- [] [git-notify](https://github.com/jevakallio/git-notify) for communicating important updates during git pull to your team
-- [] [git-standup](https://github.com/kamranahmedse/git-standup) to recall what you did yesterday
-- []  Github Actions CI preconfigured for running lint + tests (Barebone (ready for adaptation for many usecases)
-- [] [dependency updates](https://renovatebot.com/), [CodeQL Analysis](https://securitylab.github.com/tools/codeql), running tests and code coverage with [Codecov](https://about.codecov.io/).
+- [ ]   [Husky](https://github.com/typicode/husky) - Git pre hooks
+- [ ] [Prettier-Standard](https://github.com/sheerun/prettier-standard) for formatting and linting
+- [ ] [lint-staged](https://github.com/okonet/lint-staged) with precommit task for linting
+- [ ] [Commitizen](https://github.com/commitizen/cz-cli) intercepting your commits to help you add nice formatted messages
+- [ ] [Renovate](https://github.com/renovatebot/renovate) for automated dependency updates
+- [ ] [git-notify](https://github.com/jevakallio/git-notify) for communicating important updates during git pull to your team
+- [ ] [git-standup](https://github.com/kamranahmedse/git-standup) to recall what you did yesterday
+- [ ]  Github Actions CI preconfigured for running lint + tests (Barebone (ready for adaptation for many usecases)
+- [ ] [dependency updates](https://renovatebot.com/), [CodeQL Analysis](https://securitylab.github.com/tools/codeql), running tests and code coverage with [Codecov](https://about.codecov.io/).
 
 &nbsp;
 
