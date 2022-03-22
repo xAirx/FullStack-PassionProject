@@ -82,11 +82,11 @@ Modern web based applications consist of multiple services. For example, a backe
 
 ### **Docker images**
 
--   React docker image 
--   React-native docker image
--   Mongodb docker image
--   Mongo seed docker image
--   Simple-express-api docker image
+- [x ]  React docker image 
+- [x ]   React-native docker image
+- [x ]   Mongodb docker image
+- [x ]   Mongo seed docker image
+- [x ]   Simple-express-api docker image
 
 
 A ReactJs application containerized for development and production.
