@@ -97,7 +97,8 @@ A ReactJs application containerized for development and production.
 
 	```
 	set -a
-	source .my-env
+	source /home/mpw/Github/FullStack-PassionProject/FullStack-React-Docker-B
+oilerplate/ .env
 	docker-compose up -d
 
 	```
