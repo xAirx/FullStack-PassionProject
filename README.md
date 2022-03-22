@@ -27,8 +27,7 @@ Modern web based applications consist of multiple services. For example, a backe
 ### Main tools
 - [React](https://reactjs.org/docs/getting-started.html) 
 - [Typescript](https://www.typescriptlang.org/) 
-- [Apollo-link-rest (Graphql)](https://www.apollographql.com/docs/react/api/link/apollo-link-rest/)  A REST endpoint wrapper with GraphQL client on top - to simulate the features of a
-	BFF on top of an express API, this should be removed if you want to use the REST API alone, or the graphQL api alone.
+- [Apollo-link-rest (Graphql)](https://www.apollographql.com/docs/react/api/link/apollo-link-rest/)  A REST endpoint wrapper with GraphQL client on top - to simulate the features of a BFF on top of an express API, this should be removed if you want to use the REST API alone, or the graphQL api alone.
 - [React query](https://react-query.tanstack.com/) A simple fetchHook is setup for easy usage
 - [Recoil](https://recoiljs.org/) For simple state management with a small footprint
 - [React Router](https://reactrouter.com/web/guides/quick-start) for routing
@@ -58,11 +57,12 @@ Modern web based applications consist of multiple services. For example, a backe
 
 ### **Docker images**
 
--   React docker image 
--   Mongodb docker image
--   Mongo seed docker image
--   Express-api docker image
--   Graphql docker image
+-   React docker image - http://localhost:3000
+-   Express-api docker image - http://localhost:5000
+-   Graphql(standard apollo-express) docker image - http://localhost:5002/graphql  
+-   GraphQL(FakerQL) docker image  - http://localhost:6000/graphql 
+-   Mongodb docker image - http://localhost:27017
+-   Mongo seed docker image 
 
 &nbsp;
 
