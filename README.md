@@ -46,6 +46,7 @@ Modern web based applications consist of multiple services. For example, a backe
 - [ ] [PWA](https://github.com/antfu/vite-plugin-pwa) with [17/17 Lighthouse score](https://web.dev/pwa-checklist/).
 - [ ] [Vite](https://vitejs.dev/guide/) for bundling and codesplitting (goodbye webpack)
 - [ ] [Absolute Imports](https://github.com/aleclarson/vite-tsconfig-paths) - Avoid ./././
+- [ ] [Mirage](https://miragejs.com/) API and Test mocking in real time.
 
 ### More Tooling
 - [ ]   [Husky](https://github.com/typicode/husky) - Git pre hooks
