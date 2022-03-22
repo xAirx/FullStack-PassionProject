@@ -157,17 +157,26 @@ Generates GraphQL schema by running the the [GraphQL Code Generator](https://gra
 
 ### **Introduction** 
 
-	- An express server utilizing different endpoints, meant for being the backbone of the entire stack 
-	- A mongo DB is connected to this specific docker instance, also dockerized 
 
+#### Express server 
+	An express server utilizing different endpoints, meant for being the backbone of the entire stack 
+	A mongo DB is connected to this specific docker instance, also dockerized 
+	
+#### Graphql server (NON-BFF)
+
+	This application was built using the [Apollo Server](https://www.apollographql.com/docs/apollo-server/) GraphQL server and the Node.js apollo-server-express middleware.
+
+	The GraphQL schema is generated using the [GraphQL Code Generator](https://graphql-code-generator.com/).
+	
+
+#### Graphql server (BFF)
 	### Considerations of an aggretation layer - BFF (GraphQL)
 	- Since we are working with multiple react microservices connected to a single express, internationally, a lot of data is to be expected.
 	- Most of the data is meant to be filtered heavily in our express api.
 	- An idea would be to work with graphql or simple express depending on the situation.
 	- Utilizing the nature of graphQL  BFF we are able to make simple queries and handle the data filtering in a simple and easy way.
       
-                A GraphQL API Gateway needs to handle:
-
+        A GraphQL API Gateway needs to handle:
                 Lexing of the query
                 Parsing
                 Normalisation (removing whitespace, duplicate fields, etc.)
@@ -186,9 +195,9 @@ Generates GraphQL schema by running the the [GraphQL Code Generator](https://gra
 
 ## Express / GraphQL and MongoDB setup
 
-The express server runs standalone  and connects to the mongoDB on 27017/restAPI
+	The express server runs standalone and connects to the mongoDB on 27017/restAPI
 
-The GraphQL server runs standalone and connects to the mongoDB on 27017/graphql-api
+	The GraphQL server runs standalone and connects to the mongoDB on 27017/graphql-api
 
 	For now a small wrapper is used in the boilerplate to simulate the features of a
 	BFF on top of an express API, this should be removed if you want to use the REST API alone.
