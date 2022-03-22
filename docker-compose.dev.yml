@@ -213,33 +213,33 @@ services:
     #        networks:
     #         - mongonet
 
-    #example-graphql-backend:
-    #       build:
-    #         context: ${BACKEND_PATH}/GqlGeneratorexample-graphql-backend
-    #         dockerfile: ${BACKEND_PATH}/GqlGeneratorexample-graphql-backend/dev/Dockerfile
-    #       ports:
-    #         - 5002:5002
-    #       depends_on:
-    #         - mongodb
-    #        # ENVIRONMET_VARIABLE_NAME: "environment variable value"
-    #       environment:
-    #         - mongoURI=mongodb://mongodb:27017/graphql-api
-    #        networks:
-    #         - mongonet
+     example-graphql-backend:
+            build:
+              context: ${BACKEND_PATH}/GqlGeneratorexample-graphql-backend
+              dockerfile: ${BACKEND_PATH}/GqlGeneratorexample-graphql-backend/dev/Dockerfile
+            ports:
+              - 5002:5002
+             #depends_on:
+             # - mongodb
+             #  ENVIRONMET_VARIABLE_NAME: "environment variable value"
+            environment:
+              - mongoURI=mongodb://mongodb:27017/graphql-api
+            networks:
+              - mongonet
 
-    #mongo-db:
-    #      image: mongo
-    #      container_name: mongodb
-    #      ports:
-    #        - 27017:27017
-    #      # ENVIRONMET_VARIABLE_NAME: "environment variable value"
-    #      environment:
-    #        - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USER]
-    #        - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASS]
-    #      volumes:
-    #        - mongodb-data
-    #      networks:
-    #        - mongonet
+    mongo-db:
+          image: mongo
+          container_name: mongodb
+          ports:
+            - 27017:27017
+          # ENVIRONMET_VARIABLE_NAME: "environment variable value"
+          environment:
+            - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USER]
+            - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASS]
+          volumes:
+            - mongodb-data
+          networks:
+            - mongonet
 #
 
     #mongo-express:
