@@ -82,6 +82,23 @@ A ReactJs application containerized for development and production.
 	 - When the react application is "BUILD", the output is optimized static assets, (html, css and the js file)
 	 - To serve these files we use Nginx
 
+&nbsp;
+
+## Commands
+
+- [ ] `yarn standup` (receive a pretty list of things you did on your last working day)
+- [ ] `yarn dev` (standard dev server) -  start a development server with hot reload.
+- [ ]  `yarn format` (format and lint the codebase following prettier-standard rules)
+- [ ] `yarn generate`
+Generates GraphQL schema by running the the [GraphQL Code Generator](https://graphql-code-generator.com/). The GraphQL server  must be available at [http://localhost:5002/graphql](http://localhost:5002/graphql) for code generation
+
+- [ ] yarn commit - will run a flow composed of:
+-   [Husky](https://github.com/typicode/husky)
+-   Linting with: [ESLint](https://eslint.org), [stylelint](https://stylelint.io) & [Prettier](https://prettier.io)
+-   [lint-staged](https://github.com/okonet/lint-staged)
+-   [Commitizen](https://github.com/commitizen/cz-cli)
+
+
 
 ### docker-compose(dev):
 
@@ -102,25 +119,6 @@ oilerplate/ .env
 	docker-compose up -d
 
 	```
-
-&nbsp;
-
-## Commands
-
-- [ ] `yarn standup` (receive a pretty list of things you did on your last working day)
-- [ ] `yarn dev` (standard dev server) -  start a development server with hot reload.
-- [ ]  `yarn format` (format and lint the codebase following prettier-standard rules)
-- [ ] `yarn generate`
-Generates GraphQL schema by running the the [GraphQL Code Generator](https://graphql-code-generator.com/). The GraphQL server  must be available at [http://localhost:5002/graphql](http://localhost:5002/graphql) for code generation
-
-- [ ] yarn commit - will run a flow composed of:
--   [Husky](https://github.com/typicode/husky)
--   Linting with: [ESLint](https://eslint.org), [stylelint](https://stylelint.io) & [Prettier](https://prettier.io)
--   [lint-staged](https://github.com/okonet/lint-staged)
--   [Commitizen](https://github.com/commitizen/cz-cli)
-
-
-
 
 &nbsp;
 
