@@ -1,4 +1,4 @@
-import { logger } from './../logger';
+import { logger } from '../logger';
 import { GraphqlContext } from './context';
 import { GetGreetingResponse, Resolvers } from './generated/resolvers';
 import GreetingService from '../greeting/service';

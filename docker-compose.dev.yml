@@ -128,12 +128,37 @@ services:
 # in our prod server we are going to map our current directory to the containers /app directory
 # where our application runs in.
 
+# Parameters description
+
+#     db & graphql: Names of the services run by Docker Compose.
+#     container_name: Guess what? It’s the container name!
+#     image: Name of the image to use to run the container.
+#     build: When a build context is provided, Docker Compose will build a custom image using the Dockerfile located in the context folder.
+#     context: Indicates the folder where to find the Dockerfile to build the image.
+#     volumes: Mapping between the project folder on your host machine and the PostgreSQL folder in your container, in format host_folder:container_folder. All the files generated in the container_folder will be copied in the host_folder so that you can preserve and retrieve your data when stopping/restarting the container. Replace the host folder by the destination of your choice. If it does not exist it will be automatically created.
+#     environment: Environment variables for the container. POSTGRES_PASSWORD sets the password of PostgreSQL superuser. Value is 1234 in the example above but you should pick a stronger password of your choice. This variable should not be written in the docker-compose file but rather in a .env file which must not be committed in your Git repository.
+#     expose: Port number of the container to be exposed to the outside.
+#     ports: Port, mapping between the port of your host machine and the port of your container, in format host_port:container_port.
+#     networks: Networks are used to group and connect containers as part of a same network.
+#     command: Command to be executed after the container starts. Each argument must be provided in a separate list item.
+
+
+
+#    Ports mentioned in docker-compose.yml will be shared among different services started by the docker-compose.
+#    Ports will be exposed to the host machine to a random port or a given port.
+
+
+
+#    Expose ports without publishing them to the host machine - they’ll only be accessible to linked services. Only the internal port can be specified.
+#    Ports are not exposed to host machines, only exposed to other services.
+
+
     react-boilerplate:
         build:
           #Either a path to a directory containing a Dockerfile, or a url to a git repository.
-          context: ./FullStack-React-Docker-Boilerplate/frontend/fullstack-react-docker-boilerplate/
+          context: ${FRONTEND_PATH}
           # Run DockerFile.dev for now.
-          dockerfile: ./FullStack-React-Docker-Boilerplate/frontend/dev/Dockerfile
+          dockerfile: ${FRONTEND_PATH}/dev/Dockerfile
         restart: always
         image: react-boilerplate-frontend_image
         container_name:  react-boilerplate-frontend-dev
@@ -141,61 +166,96 @@ services:
          - 3000:3000
         #The React development server will be running inside the container and will be watching the src folder.
         volumes:
-            -  ./FullStack-React-Docker-Boilerplate/frontend/react-boilerplate/src:/app/src
+            -  ${FRONTEND_PATH}/src:/app/src
         #links:
         #    - express
         environment:
          #React specific....
           - CHOKIDAR_USEPOLLING=true
-        depends_on:
-          -  express-api
+        #depends_on:
+        #  -  express-api
         networks:
             - mongonet
 
 
-    express-api-dev:
-        build:
-          #Either a path to a directory containing a Dockerfile, or a url to a git repository.
-          context:  ./FullStack-React-Docker-Boilerplate/backend/fullstack-react-docker-boilerplate/
-          # Run DockerFile.dev for now.
-          dockerfile:  ./FullStack-React-Docker-Boilerplate/backend/dev/Dockerfile
-          restart: always
-          image: express-api
-          container_name: example express api
-          ports:
-           - 5000:5000
-          env_file:
-          -  ./FullStack-React-Docker-Boilerplate/backend/example-express-backend/.env
-          # environment:
-          #   - MONGODB_URL=mongodb://mongo:27017/restAPI
-          volumes:
-              - ./FullStack-React-Docker-Boilerplate/backend/example-express-backend/src:/app/src
-              #- ./backend/example-express-backend/node_modules
-          depends_on:
-              - mongo-db
-          networks:
-              - mongonet
+    #example-express-api:
+    #    build:
+    #      #Either a path to a directory containing a Dockerfile, or a url to a git repository.
+    #      context:  ${BACKEND_PATH}/example-express-backend/
+    #      # Run DockerFile.dev for now.
+    #      dockerfile:  ${BACKEND_PATH}/example-express-backend/dev/Dockerfile
+    #      restart: always
+    #      image: express-api
+    #      container_name: example express api
+    #      ports:
+    #       - 4000:4000
+    #      environment:
+    #          - MONGODB_URL=mongodb://mongo:27017/restAPI
+    #      volumes:
+    #          - ${BACKEND_PATH}/example-express-backend/src:/app/src
+    #          #- ./backend/example-express-backend/node_modules
+    #      depends_on:
+    #          - mongo-db
+    #      networks:
+    #          - mongonet
+
+    #fakerQL:
+    #       build:
+    #         context: ${BACKEND_PATH}/fakerQL
+    #         dockerfile: ${BACKEND_PATH}/fakerQL/dev/Dockerfile
+    #       ports:
+    #         - 6000:6000
+    #       depends_on:
+    #         - mongodb
+    #        # ENVIRONMET_VARIABLE_NAME: "environment variable value"
+    #       environment:
+    #         - mongoURI=mongodb://mongodb:27017/graphql-api
+    #        networks:
+    #         - mongonet
+
+    #example-graphql-backend:
+    #       build:
+    #         context: ${BACKEND_PATH}/GqlGeneratorexample-graphql-backend
+    #         dockerfile: ${BACKEND_PATH}/GqlGeneratorexample-graphql-backend/dev/Dockerfile
+    #       ports:
+    #         - 5002:5002
+    #       depends_on:
+    #         - mongodb
+    #        # ENVIRONMET_VARIABLE_NAME: "environment variable value"
+    #       environment:
+    #         - mongoURI=mongodb://mongodb:27017/graphql-api
+    #        networks:
+    #         - mongonet
 
     #mongo-db:
-    #    image: mongo
-    #    container_name: mongodb
-    #    ports:
-    #      - 27017:27017
-    #    environment:
-    #      - MONGO_INITDB_ROOT_USERNAME=rootuser
-    #      - MONGO_INITDB_ROOT_PASSWORD=rootpass
-    #    volumes:
-    #      - mongodb-data
+    #      image: mongo
+    #      container_name: mongodb
+    #      ports:
+    #        - 27017:27017
+    #      # ENVIRONMET_VARIABLE_NAME: "environment variable value"
+    #      environment:
+    #        - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USER]
+    #        - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASS]
+    #      volumes:
+    #        - mongodb-data
+    #      networks:
+    #        - mongonet
 #
+
     #mongo-express:
     #    image: mongo-express
     #    container_name: mongo-express
     #    ports:
     #      - 8081:8081
     #    environment:
-    #      - ME_CONFIG_MONGODB_ADMINUSERNAME=rootuser
-    #      - ME_CONFIG_MONGODB_ADMINPASSWORD=rootpass
+    #      - ME_CONFIG_MONGODB_ADMINUSERNAME=${MONGOEXPRESS_LOGIN}
+    #      - ME_CONFIG_MONGODB_ADMINPASSWORD=${MONGOEXPRESS_PASSWORD}
     #      - ME_CONFIG_MONGODB_SERVER=mongodb
+    #     networks:
+    #        - mongonet
+#
+
+
     #mongo-seed:
     #      image: stefanwalther/mongo-seed
     #      container_name: mongo-seed
@@ -212,3 +272,18 @@ services:
     #
     #  volumes:
     #    mongodb:
+
+
+   # react-native-app:
+   #       build:
+   #         #Either a path to a directory containing a Dockerfile, or a url to a git repository.
+   #         context:  ./react-native/
+   #         # Run DockerFile.dev for now.
+   #         dockerfile:  ./react-native/Dockerfile
+   #       ports:
+   #         - 19000:19000
+   #         - 19001:19001
+   #         - 19002:19002
+   #       # ENVIRONMET_VARIABLE_NAME: "environment variable value"
+   #       environment:
+   #         - EXPO_DEVTOOLS_LISTEN_ADDRESS=${EXPO_DEV_TOOLS_LISTEN_ADRESS]
