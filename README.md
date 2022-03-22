@@ -26,6 +26,17 @@ Modern web based applications consist of multiple services. For example, a backe
 
     docker-compose -f docker-compose.prod.yml up --build
 
+## Setup .env file for docker-compose
+
+	The latest Docker Compose allows you to access environment variables from your compose file. So you can source your environment variables, then run Compose like so:
+
+	```
+	set -a
+	source .my-env
+	docker-compose up -d
+
+	```
+
 
 &nbsp;
 
@@ -36,28 +47,28 @@ Modern web based applications consist of multiple services. For example, a backe
 
 
 ### Main tools
-- [ ] [React](https://reactjs.org/docs/getting-started.html) 
-- [ ] [Typescript](https://www.typescriptlang.org/) 
-- [ ] [Apollo-link-rest (Graphql)](https://www.apollographql.com/docs/react/api/link/apollo-link-rest/)  A REST endpoint wrapper with GraphQL client on top
-- [ ] [React query](https://react-query.tanstack.com/) A simple fetchHook is setup for easy usage
-- [ ] [Recoil](https://recoiljs.org/) For simple state management with a small footprint
-- [ ] [React Router](https://reactrouter.com/web/guides/quick-start) for routing
-- [ ] [Tailwind CSS v3](https://tailwindcss.com) with a [basic reset for form styles](https://github.com/tailwindlabs/tailwindcss-forms)
-- [ ] [PWA](https://github.com/antfu/vite-plugin-pwa) with [17/17 Lighthouse score](https://web.dev/pwa-checklist/).
-- [ ] [Vite](https://vitejs.dev/guide/) for bundling and codesplitting (goodbye webpack)
-- [ ] [Absolute Imports](https://github.com/aleclarson/vite-tsconfig-paths) - Avoid ./././
-- [ ] [Mirage](https://miragejs.com/) API and Test mocking in real time.
+- [React](https://reactjs.org/docs/getting-started.html) 
+- [Typescript](https://www.typescriptlang.org/) 
+- [Apollo-link-rest (Graphql)](https://www.apollographql.com/docs/react/api/link/apollo-link-rest/)  A REST endpoint wrapper with GraphQL client on top - to simulate the features of a
+	BFF on top of an express API, this should be removed if you want to use the REST API alone, or the graphQL api alone.
+- [React query](https://react-query.tanstack.com/) A simple fetchHook is setup for easy usage
+- [Recoil](https://recoiljs.org/) For simple state management with a small footprint
+- [React Router](https://reactrouter.com/web/guides/quick-start) for routing
+- [Tailwind CSS v3](https://tailwindcss.com) with a [basic reset for form styles](https://github.com/tailwindlabs/tailwindcss-forms)
+- [PWA](https://github.com/antfu/vite-plugin-pwa) with [17/17 Lighthouse score](https://web.dev/pwa-checklist/).
+- [Vite](https://vitejs.dev/guide/) for bundling and codesplitting (goodbye webpack)
+- [Absolute Imports](https://github.com/aleclarson/vite-tsconfig-paths) - Avoid ./././
 
 ### More Tooling
-- [ ]   [Husky](https://github.com/typicode/husky) - Git pre hooks
-- [ ] [Prettier-Standard](https://github.com/sheerun/prettier-standard) for formatting and linting
-- [ ] [lint-staged](https://github.com/okonet/lint-staged) with precommit task for linting
-- [ ] [Commitizen](https://github.com/commitizen/cz-cli) intercepting your commits to help you add nice formatted messages
-- [ ] [Renovate](https://github.com/renovatebot/renovate) for automated dependency updates
-- [ ] [git-notify](https://github.com/jevakallio/git-notify) for communicating important updates during git pull to your team
-- [ ] [git-standup](https://github.com/kamranahmedse/git-standup) to recall what you did yesterday
-- [ ]  Github Actions CI preconfigured for running lint + tests (Barebone (ready for adaptation for many usecases)
-- [ ] [dependency updates](https://renovatebot.com/), [CodeQL Analysis](https://securitylab.github.com/tools/codeql), running tests and code coverage with [Codecov](https://about.codecov.io/).
+-   [Husky](https://github.com/typicode/husky) - Git pre hooks
+- [Prettier-Standard](https://github.com/sheerun/prettier-standard) for formatting and linting
+- [lint-staged](https://github.com/okonet/lint-staged) with precommit task for linting
+- [Commitizen](https://github.com/commitizen/cz-cli) intercepting your commits to help you add nice formatted messages
+- [Renovate](https://github.com/renovatebot/renovate) for automated dependency updates
+- [git-notify](https://github.com/jevakallio/git-notify) for communicating important updates during git pull to your team
+- [git-standup](https://github.com/kamranahmedse/git-standup) to recall what you did yesterday
+-  Github Actions CI preconfigured for running lint + tests (Barebone (ready for adaptation for many usecases)
+- [dependency updates](https://renovatebot.com/), [CodeQL Analysis](https://securitylab.github.com/tools/codeql), running tests and code coverage with [Codecov](https://about.codecov.io/).
 
 &nbsp;
 
@@ -83,11 +94,11 @@ Modern web based applications consist of multiple services. For example, a backe
 
 ### **Docker images**
 
-- [x]  React docker image 
-- [x]   React-native docker image
-- [x]   Mongodb docker image
-- [x]   Mongo seed docker image
-- [x]   Simple-express-api docker image
+-   React docker image 
+-   React-native docker image
+-   Mongodb docker image
+-   Mongo seed docker image
+-   Simple-express-api docker image
 
 
 A ReactJs application containerized for development and production.
@@ -136,6 +147,101 @@ A ReactJs application containerized for development and production.
 &nbsp;
 
 &nbsp;
+
+
+
+## Express backend and GraphQL Layer
+
+### **Introduction** 
+
+	- An express server utilizing different endpoints, meant for being the backbone of the entire stack 
+	- A mongo DB is connected to this specific docker instance, also dockerized 
+
+	### Considerations of an aggretation layer - BFF (GraphQL)
+	- Since we are working with multiple react microservices connected to a single express, internationally, a lot of data is to be expected.
+	- Most of the data is meant to be filtered heavily in our express api.
+	- An idea would be to work with graphql or simple express depending on the situation.
+	- Utilizing the nature of graphQL  BFF we are able to make simple queries and handle the data filtering in a simple and easy way.
+      
+                A GraphQL API Gateway needs to handle:
+
+                Lexing of the query
+                Parsing
+                Normalisation (removing whitespace, duplicate fields, etc.)
+                Validation
+                Enforcing field level authorisation
+                Calculating the complexity of the query
+                Enforcing rate limits and quotas
+                Printing the query (because we modified and cleaned it)
+                Sending the request to the upstream
+                Validating that the response conforms to the GraphQL schema
+                Returning the response to the client
+
+
+&nbsp;
+
+
+## Express / GraphQL and MongoDB setup
+
+The express server runs standalone  and connects to the mongoDB on 27017/restAPI
+
+The GraphQL server runs standalone and connects to the mongoDB on 27017/graphql-api
+
+	For now a small wrapper is used in the boilerplate to simulate the features of a
+	BFF on top of an express API, this should be removed if you want to use the REST API alone.
+      
+### Prerequisites & Setup**
+
+### **MongoDB**
+
+	- Mongo DB is part of the stack and runs in a docker container.
+	- Mongodb is used to store information 
+
+### **Mongo Seed**
+
+	 Runs in a docker container and seeds our mongoDB when we start the stack up.
+
+### **Mongo Express**
+
+	 Runs in a docker container and gives a GUI during development phase for quick testing and debugging.
+
+
+&nbsp;
+
+&nbsp;
+
+
+### A "microfrontend" for each project supported by a BFF aggregation layer (GraphQL)
+
+	Thoughts and considerations are in discussion of a microfrontend approach, each hitting an express endpoint in our system (explained above)
+
+	Utilizing the nature of graphQL  BFF we are able to make simple queries and handle the data filtering in a simple and easy way.
+
+&nbsp;
+
+&nbsp;
+
+
+&nbsp;
+
+&nbsp;
+
+
+&nbsp;
+
+&nbsp;
+
+
+&nbsp;
+
+&nbsp;
+
+
+&nbsp;
+
+&nbsp;
+
+
 
 
 # (WIP - Work in progress (MVP) - Prometheus & Node Exporter & Grafana setup.
