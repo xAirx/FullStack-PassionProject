@@ -27,6 +27,9 @@ Modern web based applications consist of multiple services. For example, a backe
     docker-compose -f docker-compose.prod.yml up --build
 
 
+&nbsp;
+
+&nbsp;
 
 # React boilerplate (For future projects and easy start-ups
 
@@ -60,6 +63,10 @@ Modern web based applications consist of multiple services. For example, a backe
 -  Github Actions CI preconfigured for running lint + tests (Barebone (ready for adaptation for many usecases)
 - [dependency updates](https://renovatebot.com/), [CodeQL Analysis](https://securitylab.github.com/tools/codeql), running tests and code coverage with [Codecov](https://about.codecov.io/).
 
+&nbsp;
+
+&nbsp;
+
 ## Setup
 
 
@@ -76,10 +83,10 @@ Modern web based applications consist of multiple services. For example, a backe
 -   [Commitizen](https://github.com/commitizen/cz-cli)
 
 	
-\
-\
-\
-\
+
+&nbsp;
+
+&nbsp;
 
 
 ### **Docker images**
@@ -108,6 +115,11 @@ A ReactJs application containerized for development and production.
 	 - To serve these files we use Nginx
 
 
+&nbsp;
+
+&nbsp;
+
+
 ## Future additions:
 
 
@@ -129,10 +141,11 @@ A ReactJs application containerized for development and production.
  - Testing a modal is opened or closed as a result of a POST being successful or reverse.
 
 
-\
-\
-\
-\
+
+&nbsp;
+
+&nbsp;
+
 
 # (WIP - Work in progress (MVP) - Prometheus & Node Exporter & Grafana setup.
 
@@ -142,15 +155,17 @@ A ReactJs application containerized for development and production.
 
 	Configuring one or more of the applications to communicate is made easy by Docker networking in bridge mode. Since I’m using Docker Compose, we can reach each container via their container name as Docker Compose configures every container to be reachable in the Docker network.  
 
-\
-\
+
+&nbsp;
+
 
 ### **Running locally & Pre-requisites**
 
 	Before we get started installing the Prometheus stack. Ensure you install the latest version of docker and docker-compose on your Docker host machine. Installation & Configuration  
 
-\
-\
+
+&nbsp;
+
 
 ### **Docker-compose builds:**
 
@@ -158,10 +173,11 @@ A ReactJs application containerized for development and production.
 	- Prometheus
 	- AlertManager  
 
-\
-\
-\
-\
+
+&nbsp;
+
+&nbsp;
+
 
 ### WIP - **Oauth2 + Proxy (Reverse NGINX proxy)**
 
@@ -171,10 +187,11 @@ A ReactJs application containerized for development and production.
 
 	all of the above authenticate using proxy_forward and nginx’s auth_request directive.
 
-\
-\
-\
-\
+
+&nbsp;
+
+&nbsp;
+
 
 ## Prometheus Server
 
@@ -198,8 +215,11 @@ A ReactJs application containerized for development and production.
                `\- VIRTUAL_HOST=prometheus.example.com`
                `\- VIRTUAL_PORT=**9090**`
    
-\
-\
+
+&nbsp;
+
+&nbsp;
+
 
 ### Prometheus server and prometheus.yml specificities
 
@@ -207,10 +227,11 @@ A ReactJs application containerized for development and production.
 
 	whereas ‘node-exporter:9100’ scrape the Prometheus server for various hardware monitoring metrics of Linux, including temperature, fans, and voltages.
 
-\
-\
-\
-\
+
+&nbsp;
+
+&nbsp;
+
 
 ## NodeExporter (Node exporter)
 
@@ -267,10 +288,10 @@ This project is going to act as an express server which utilizes the logClient t
           `console.log(🚨 Prometheus listening on port 9991 /metrics)`
          `)`
 
-\
-\
-\
-\
+
+&nbsp;
+
+&nbsp;
 
 
 ## Prometheus Alert Manager 
@@ -290,8 +311,10 @@ This project is going to act as an express server which utilizes the logClient t
             `\- VIRTUAL_HOST=prometheus.example.com`
             `\- VIRTUAL_PORT=9093`
 
-\
-\
+
+&nbsp;
+
+&nbsp;
 
 #### Alerting has been added to the stack, Alerts have been added and are managed via  - prometheus/alert.rules
 
@@ -301,8 +324,10 @@ This project is going to act as an express server which utilizes the logClient t
 
 	- View Alert Manager http://<Host IP Address>:9093
 
-\
-\
+
+&nbsp;
+
+&nbsp;
 
 
 ### Running Test Alerts
@@ -342,17 +367,16 @@ This project is going to act as an express server which utilizes the logClient t
          ​    `auth_password: secret`
          ​    `send_resolved: true`
 
-\
-\
+
+&nbsp;
+
 
 ### AlertManager and custom webhooks.
 
 	A custom webhook is currently in the works, exposing specific alerts to our incidents management system (see below for explanation)
 
-\
-\
-\
-\
+&nbsp;
+
 
 
 ## Express backend and GraphQL Layer
@@ -383,11 +407,9 @@ This project is going to act as an express server which utilizes the logClient t
                 Returning the response to the client
 
 
-\
-\
-\
-\
-      
+&nbsp;
+
+
 ## Express, and MongoDB setup
       
 ### Prerequisites & Setup**
@@ -405,27 +427,28 @@ This project is going to act as an express server which utilizes the logClient t
 
 	 Runs in a docker container and gives a GUI during development phase for quick testing and debugging.
 
-\
-\
 
-### A microfrontend for each project supported by a BFF aggregation layer (GraphQL)
+&nbsp;
+
+&nbsp;
+
+
+### A "microfrontend" for each project supported by a BFF aggregation layer (GraphQL)
 
 	Thoughts and considerations are in discussion of a microfrontend approach, each hitting an express endpoint in our system (explained above)
 
 	Utilizing the nature of graphQL  BFF we are able to make simple queries and handle the data filtering in a simple and easy way.
 
-\
-\
-\
-\
+&nbsp;
+
+&nbsp;
 
 
 ## Troubleshooting
 
 	Write more here
 
-\
-\
-\
-\
 
+&nbsp;
+
+&nbsp;
