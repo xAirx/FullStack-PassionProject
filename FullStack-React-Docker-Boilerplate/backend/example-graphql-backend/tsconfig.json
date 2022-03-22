@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "lib": ["es2017", "dom"],
+    "moduleResolution": "node",
+    "strict": false,
+    "rootDir": "./src",
+    "outDir": "./build",
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "noEmitOnError": true,
+    "allowJs": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["src/test/*"]
+}

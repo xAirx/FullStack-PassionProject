@@ -1,0 +1,17 @@
+type Mutation {
+  createGreeting(
+    input: CreateGreetingInput!
+  ): CreateGreetingOutput!
+}
+
+input CreateGreetingInput {
+  id: ID!
+  message: String!
+  greeter: String!
+}
+
+type CreateGreetingOutput {
+  id: ID!
+  message: String!
+  greeter: String!
+}

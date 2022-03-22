@@ -5,7 +5,7 @@ FROM node:16-alpine AS dependencies
 # to understand why libc6-compat might be needed.
 RUN apk add --no-cache libc6-compat
 
-WORKDIR /frontend
+WORKDIR /backend/GqlGeneratorexample-graphql-backend/
 
 COPY package.json package-lock.json ./
 
@@ -14,10 +14,10 @@ RUN npm ci
 # React app build stage.
 FROM node:alpine AS runner
 
-WORKDIR /frontend
+WORKDIR /backend/GqlGeneratorexample-graphql-backend/
 
 COPY . .
 
-COPY --from=dependencies ./frontend/node_modules ./frontend/fullstack-react-docker-boilerplate/node_modules
+COPY --from=dependencies ./backend/GqlGeneratorexample-graphql-backend/node_modules ./backend/GqlGeneratorexample-graphql-backend/node_modules
 
-ENTRYPOINT ["npm", "run", "start"]
+CMD [ "npm", "run", "dev" ]

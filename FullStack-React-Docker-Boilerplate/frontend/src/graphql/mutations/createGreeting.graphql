@@ -1,0 +1,7 @@
+mutation CreateGreeting($input: CreateGreetingInput!) {
+  createGreeting(input: $input) {
+    greeter
+    id
+    message
+  }
+}
