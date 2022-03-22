@@ -75,13 +75,14 @@ Modern web based applications consist of multiple services. For example, a backe
 -   [lint-staged](https://github.com/okonet/lint-staged)
 -   [Commitizen](https://github.com/commitizen/cz-cli)
 
+	
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp; 
 
-
-
-
-## Docker images and docker-compose
-
-	- [ ] `docker-compose up will run the images configured in the docker-compose.yml file.
 
 ### **Docker images**
 
@@ -132,12 +133,12 @@ A ReactJs application containerized for development and production.
 
 
 	
- &nbsp;
- &nbsp;
- &nbsp;
- &nbsp;
- &nbsp;
- &nbsp; 
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp; 
 
 # (WIP - Work in progress (MVP) - Prometheus & Node Exporter & Grafana setup.
 
