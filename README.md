@@ -5,7 +5,9 @@
 Modern web based applications consist of multiple services. For example, a backend API and a frontend client. In larger projects, where scaling becomes an issue, the services can also be split into multiple microservices. The question arises, how to organize the source code in such a project. One solution is a monorepo, i. e. one repository for all the source code in the project.  
 
 \
+&nbsp;
 \
+&nbsp;
 
 # **Architecture explanation**
 
@@ -14,7 +16,9 @@ Modern web based applications consist of multiple services. For example, a backe
 ![Fullstack Kubernetes Project(3)](https://user-images.githubusercontent.com/22436080/159190211-ae8e3cf2-eb51-419f-ac7d-ee71ffc08a92.png)
 
 \
+&nbsp;
 \
+&nbsp;
 
 ## docker-compose(dev):
 
