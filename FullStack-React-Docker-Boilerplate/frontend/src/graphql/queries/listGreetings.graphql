@@ -1,7 +1,0 @@
-query listGreetings {
-  greetings {
-    greeter
-    id
-    message
-  }
-}

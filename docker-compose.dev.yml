@@ -152,71 +152,37 @@ services:
 #    Expose ports without publishing them to the host machine - they’ll only be accessible to linked services. Only the internal port can be specified.
 #    Ports are not exposed to host machines, only exposed to other services.
 
-
-    react-boilerplate:
+    ReactBoilerplate:
         build:
           #Either a path to a directory containing a Dockerfile, or a url to a git repository.
-          context: ${FRONTEND_PATH}
+          context: ./${FRONTEND_PATH}
           # Run DockerFile.dev for now.
-          dockerfile: ${FRONTEND_PATH}/dev/Dockerfile
+          dockerfile: ${FRONTEND_PATH}/ReactBoilerplate/Dockerfile
         restart: always
-        image: react-boilerplate-frontend_image
-        container_name:  react-boilerplate-frontend-dev
+        image: react-ReactBoilerplate_image
+        container_name: react-ReactBoilerplate-dev
         ports:
-         - 3000:3000
+           - 3002:3002
         #The React development server will be running inside the container and will be watching the src folder.
         volumes:
-            -  ${FRONTEND_PATH}/src:/app/src
+            -  ${FRONTEND_PATH}/ReactBoilerplate/src:/app/src
         #links:
         #    - express
+        env_file:
+            - .env
         environment:
          #React specific....
-          - CHOKIDAR_USEPOLLING=true
+            - CHOKIDAR_USEPOLLING=true
         #depends_on:
         #  -  express-api
         networks:
             - mongonet
 
 
-    #example-express-api:
-    #    build:
-    #      #Either a path to a directory containing a Dockerfile, or a url to a git repository.
-    #      context:  ${BACKEND_PATH}/example-express-backend/
-    #      # Run DockerFile.dev for now.
-    #      dockerfile:  ${BACKEND_PATH}/example-express-backend/dev/Dockerfile
-    #      restart: always
-    #      image: express-api
-    #      container_name: example express api
-    #      ports:
-    #       - 4000:4000
-    #      environment:
-    #          - MONGODB_URL=mongodb://mongo:27017/restAPI
-    #      volumes:
-    #          - ${BACKEND_PATH}/example-express-backend/src:/app/src
-    #          #- ./backend/example-express-backend/node_modules
-    #      depends_on:
-    #          - mongo-db
-    #      networks:
-    #          - mongonet
-
-    #fakerQL:
-    #       build:
-    #         context: ${BACKEND_PATH}/fakerQL
-    #         dockerfile: ${BACKEND_PATH}/fakerQL/dev/Dockerfile
-    #       ports:
-    #         - 6000:6000
-    #       depends_on:
-    #         - mongodb
-    #        # ENVIRONMET_VARIABLE_NAME: "environment variable value"
-    #       environment:
-    #         - mongoURI=mongodb://mongodb:27017/graphql-api
-    #        networks:
-    #         - mongonet
-
-     example-graphql-backend:
+    ReactBoilerplate-backend:
             build:
-              context: ${BACKEND_PATH}/GqlGeneratorexample-graphql-backend
-              dockerfile: ${BACKEND_PATH}/GqlGeneratorexample-graphql-backend/dev/Dockerfile
+            context: ${BACKEND_PATH}/boilerplate-backend
+            dockerfile: ${BACKEND_PATH}/boilerplate-backend/Dockerfile
             ports:
               - 5002:5002
              #depends_on:
@@ -227,63 +193,90 @@ services:
             networks:
               - mongonet
 
-    mongo-db:
-          image: mongo
-          container_name: mongodb
-          ports:
-            - 27017:27017
-          # ENVIRONMET_VARIABLE_NAME: "environment variable value"
-          environment:
-            - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USER]
-            - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASS]
-          volumes:
-            - mongodb-data
-          networks:
-            - mongonet
-#
 
-    #mongo-express:
-    #    image: mongo-express
-    #    container_name: mongo-express
-    #    ports:
-    #      - 8081:8081
-    #    environment:
-    #      - ME_CONFIG_MONGODB_ADMINUSERNAME=${MONGOEXPRESS_LOGIN}
-    #      - ME_CONFIG_MONGODB_ADMINPASSWORD=${MONGOEXPRESS_PASSWORD}
-    #      - ME_CONFIG_MONGODB_SERVER=mongodb
-    #     networks:
-    #        - mongonet
-#
-
-
-    #mongo-seed:
-    #      image: stefanwalther/mongo-seed
-    #      container_name: mongo-seed
+    #todoapp-express-api:
+    #      build:
+    #      #Either a path to a directory containing a Dockerfile, or a url to a git repository.
+    #        context:  ${BACKEND_PATH}/todoapp-express-backend/
+    #        #Run DockerFile.dev for now.
+    #        dockerfile:  ${BACKEND_PATH}/todoapp-express-backend/Dockerfile
+    #      restart: always
+    #      image: express-api
+    #      container_name: todoapp express api
+    #      ports:
+    #        - 4000:4000
+    #      env_file:
+    #        - .env
     #      environment:
-    #        - MONGODB_HOST=mongo
-    #        - MONGODB_PORT=27017
+    #        - MONGODB_URL=mongodb://mongo:27017/restAPI
     #      volumes:
-    #        - ./config/db-seed:/data
+    #        - ${BACKEND_PATH}/todoapp-express-backend/src:/app/src
+    #         # - ./backend/example-express-backend/node_modules
     #      depends_on:
-    #        - mongo
-    #      command: [
-    #        "mongoimport --host mongo --port 27017 --db sammlerio --mode upsert --type json --file /data/auth-service~~user.json --jsonArray"
-    #      ]
-    #
-    #  volumes:
-    #    mongodb:
+    #        - mongo-db
+    #      networks:
+    #        - mongonet
+
+    #mongo-db:
+    #         image: mongo
+    #         container_name: mongodb
+    #         ports:
+    #           - 27017:27017
+    #         # ENVIRONMET_VARIABLE_NAME: "environment variable value"
+    #         env_file:
+    #           - .env
+    #         environment:
+    #           - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USER}
+    #           - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
+    #         volumes:
+    #           - mongodb-data
+    #         networks:
+    #           - mongonet
 
 
-   # react-native-app:
-   #       build:
-   #         #Either a path to a directory containing a Dockerfile, or a url to a git repository.
-   #         context:  ./react-native/
-   #         # Run DockerFile.dev for now.
-   #         dockerfile:  ./react-native/Dockerfile
-   #       ports:
-   #         - 19000:19000
-   #         - 19001:19001
-   #         - 19002:19002
-   #       # ENVIRONMET_VARIABLE_NAME: "environment variable value"
-   #       environment:
-   #         - EXPO_DEVTOOLS_LISTEN_ADDRESS=${EXPO_DEV_TOOLS_LISTEN_ADRESS]
+
+      #fakerQL:
+      #       build:
+      #         context: ${BACKEND_PATH}/fakerQL
+      #         dockerfile: ${BACKEND_PATH}/fakerQL/Dockerfile
+      #       ports:
+      #         - 6000:6000
+      #       depends_on:
+      #         - mongodb
+      #        # ENVIRONMET_VARIABLE_NAME: "environment variable value"
+      #       environment:
+      #         - mongoURI=mongodb://mongodb:27017/graphql-api
+      #        networks:
+      #         - mongonet
+
+
+      #mongo-express:
+      #    image: mongo-express
+      #    container_name: mongo-express
+      #    ports:
+      #      - 8081:8081
+      #    environment:
+      #      - ME_CONFIG_MONGODB_ADMINUSERNAME=${MONGOEXPRESS_LOGIN}
+      #      - ME_CONFIG_MONGODB_ADMINPASSWORD=${MONGOEXPRESS_PASSWORD}
+      #      - ME_CONFIG_MONGODB_SERVER=mongodb
+      #     networks:
+      #        - mongonet
+  #
+
+
+      #mongo-seed:
+      #      image: stefanwalther/mongo-seed
+      #      container_name: mongo-seed
+      #      environment:
+      #        - MONGODB_HOST=mongo
+      #        - MONGODB_PORT=27017
+      #      volumes:
+      #        - ./config/db-seed:/data
+      #      depends_on:
+      #        - mongo
+      #      command: [
+      #        "mongoimport --host mongo --port 27017 --db sammlerio --mode upsert --type json --file /data/auth-service~~user.json --jsonArray"
+      #      ]
+      #
+      #  volumes:
+      #    mongodb:

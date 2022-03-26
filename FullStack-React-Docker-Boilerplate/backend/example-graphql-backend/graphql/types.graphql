@@ -1,5 +1,0 @@
-type Greeting {
-  id: ID
-  message: String
-  greeter: String
-}

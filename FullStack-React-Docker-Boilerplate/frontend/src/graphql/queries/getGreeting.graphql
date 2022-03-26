@@ -1,9 +1,0 @@
-query GetGreeting($input: getGreetingRequest!) {
-  getGreeting(input: $input) {
-    greeting {
-      greeter
-      id
-      message
-    }
-  }
-}
