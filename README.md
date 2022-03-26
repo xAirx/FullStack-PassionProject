@@ -29,26 +29,38 @@ Modern web based applications consist of multiple services. For example, a backe
 - [ ] [Typescript](https://www.typescriptlang.org/) 
 - [ ] [Apollo-link-rest (Graphql)](https://www.apollographql.com/docs/react/api/link/apollo-link-rest/)  A REST endpoint wrapper with GraphQL client on top - to simulate the features of a
 	BFF on top of an express API, this should be removed if you want to use the REST API alone, or the graphQL api alone.
- - [ ] [React query](https://react-query.tanstack.com/) A simple fetchHook is setup for easy usage
- - [ ] [Recoil](https://recoiljs.org/) For simple state management with a small footprint
+- [ ] [React query](https://react-query.tanstack.com/) A simple fetchHook is setup for easy usage
+- [ ] [Recoil](https://recoiljs.org/) For simple state management with a small footprint
 - [ ] [React Router](https://reactrouter.com/web/guides/quick-start) for routing
- - [ ] [Tailwind CSS v3](https://tailwindcss.com) with a [basic reset for form styles](https://github.com/tailwindlabs/tailwindcss-forms)
+- [ ] [Tailwind CSS v3](https://tailwindcss.com) with a [basic reset for form styles](https://github.com/tailwindlabs/tailwindcss-forms)
 - [ ] [PWA](https://github.com/antfu/vite-plugin-pwa) with [17/17 Lighthouse score](https://web.dev/pwa-checklist/).
 - [ ] [Vite](https://vitejs.dev/guide/) for bundling and codesplitting (goodbye webpack)
 - [ ] [Absolute Imports](https://github.com/aleclarson/vite-tsconfig-paths) - Avoid ./././
+- [ ] [https://www.graphql-code-generator.com/](Graphql Generator integration) - Syncs backend and frontend types seamlessly.
+- [ ] [https://testing-library.com/docs/react-testing-library/intro/]Unit-tests & React Testing Library
 
 ### More Tooling
-- [ ]   [Husky](https://github.com/typicode/husky) - Git pre hooks
+- [ ] [Husky](https://github.com/typicode/husky) - Git pre hooks
 - [ ] [Prettier-Standard](https://github.com/sheerun/prettier-standard) for formatting and linting
 - [ ] [lint-staged](https://github.com/okonet/lint-staged) with precommit task for linting
 - [ ] [Commitizen](https://github.com/commitizen/cz-cli) intercepting your commits to help you add nice formatted messages
 - [ ] [Renovate](https://github.com/renovatebot/renovate) for automated dependency updates
 - [ ] [git-notify](https://github.com/jevakallio/git-notify) for communicating important updates during git pull to your team
 - [ ] [git-standup](https://github.com/kamranahmedse/git-standup) to recall what you did yesterday
-- [ ]  Github Actions CI preconfigured for running lint + tests (Barebone (ready for adaptation for many usecases)
- - [ ] [dependency updates](https://renovatebot.com/), [CodeQL Analysis](https://securitylab.github.com/tools/codeql), running tests and code coverage with [Codecov](https://about.codecov.io/).
+- [ ] [Github Actions CI](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde) preconfigured for running lint + tests + Dockerhub (Barebone (ready for adaptation for many usecases
+- [ ] [dependency updates](https://renovatebot.com/), [CodeQL Analysis](https://securitylab.github.com/tools/codeql), running tests and code coverage with [Codecov](https://about.codecov.io/).
 
 &nbsp;
+
+### Backend
+- [ ] [GraphQL](https://graphql.org/) for backend magic
+- [ ] [GraphQL Generator integration ](https://www.graphql-code-generator.com/) for instant generated types for the backend and frontend
+- [ ] [GraphQL-Dataloader](https://github.com/graphql/dataloader) for performance reasons and caching
+- [ ] [TypeScript-Graphql](TypeScript-Graphql) - obviously..
+- [ ] [Unit-testing](https://blog.testproject.io/2020/06/23/testing-graphql-api/) for future testing
+- [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
+- [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
+
 
 
 
@@ -56,7 +68,7 @@ Modern web based applications consist of multiple services. For example, a backe
 
 &nbsp;
 
-### **Docker images**
+### **Example Docker images**
 
 -   React docker image
 -   Mongodb docker image
