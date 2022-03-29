@@ -36,7 +36,6 @@ Modern web based applications consist of multiple services. For example, a backe
 - [ ] [PWA](https://github.com/antfu/vite-plugin-pwa) with [17/17 Lighthouse score](https://web.dev/pwa-checklist/).
 - [ ] [Vite](https://vitejs.dev/guide/) for bundling and codesplitting (goodbye webpack)
 - [ ] [Absolute Imports](https://github.com/aleclarson/vite-tsconfig-paths) - Avoid ./././
-- [ ] [https://www.graphql-code-generator.com/](Graphql Generator integration) - Syncs backend and frontend types seamlessly.
 - [ ] [https://testing-library.com/docs/react-testing-library/intro/]Unit-tests & React Testing Library
 
 ### More Tooling
