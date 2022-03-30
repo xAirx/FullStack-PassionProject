@@ -63,7 +63,7 @@ Modern web based applications consist of multiple services. For example, a backe
 - [ ] Login / register - JWT Auth, Nodemon, Cors, Cross-env
 
 
-#### Branch #1 Simple Graphql-apollo-express setup 
+#### Branch #2 Simple Graphql-apollo-express setup 
 
 - [ ] [React query](https://react-query.tanstack.com/) React Query Api controller
 - [ ] [Typescript](https://www.typescriptlang.org/) 
