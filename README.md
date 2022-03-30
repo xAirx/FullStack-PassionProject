@@ -16,53 +16,10 @@ Modern web based applications consist of multiple services. For example, a backe
 
 ![Fullstack Kubernetes Project(3)](https://user-images.githubusercontent.com/22436080/159190211-ae8e3cf2-eb51-419f-ac7d-ee71ffc08a92.png)
 
+	The Idea is that I can have several projects, a React Native project, A simple React project, among others, that can be spun up fast and run together with either technology choice in the backend.
+	
 &nbsp;
-
-# React boilerplate (For future projects and easy start-ups
-
-
-## **Contents & Setup:**
-
-
-### Main tools
-- [ ] [React](https://reactjs.org/docs/getting-started.html) 
-- [ ] [Typescript](https://www.typescriptlang.org/) 
-- [ ] [Apollo-link-rest (Graphql)](https://www.apollographql.com/docs/react/api/link/apollo-link-rest/)  A REST endpoint wrapper with GraphQL client on top - to simulate the features of a
-	BFF on top of an express API, this should be removed if you want to use the REST API alone, or the graphQL api alone.
-- [ ] [React query](https://react-query.tanstack.com/) A simple fetchHook is setup for easy usage
-- [ ] [Recoil](https://recoiljs.org/) For simple state management with a small footprint
-- [ ] [React Router](https://reactrouter.com/web/guides/quick-start) for routing
-- [ ] [Tailwind CSS v3](https://tailwindcss.com) with a [basic reset for form styles](https://github.com/tailwindlabs/tailwindcss-forms)
-- [ ] [PWA](https://github.com/antfu/vite-plugin-pwa) with [17/17 Lighthouse score](https://web.dev/pwa-checklist/).
-- [ ] [Vite](https://vitejs.dev/guide/) for bundling and codesplitting (goodbye webpack)
-- [ ] [Absolute Imports](https://github.com/aleclarson/vite-tsconfig-paths) - Avoid ./././
-- [ ] [https://www.graphql-code-generator.com/](Graphql Generator integration) - Syncs backend and frontend types seamlessly.
-- [ ] [https://testing-library.com/docs/react-testing-library/intro/]Unit-tests & React Testing Library
-
-### More Tooling
-- [ ] [Husky](https://github.com/typicode/husky) - Git pre hooks
-- [ ] [Prettier-Standard](https://github.com/sheerun/prettier-standard) for formatting and linting
-- [ ] [lint-staged](https://github.com/okonet/lint-staged) with precommit task for linting
-- [ ] [Commitizen](https://github.com/commitizen/cz-cli) intercepting your commits to help you add nice formatted messages
-- [ ] [Renovate](https://github.com/renovatebot/renovate) for automated dependency updates
-- [ ] [git-notify](https://github.com/jevakallio/git-notify) for communicating important updates during git pull to your team
-- [ ] [git-standup](https://github.com/kamranahmedse/git-standup) to recall what you did yesterday
-- [ ] [Github Actions CI](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde) preconfigured for running lint + tests + Dockerhub (Barebone (ready for adaptation for many usecases
-- [ ] [dependency updates](https://renovatebot.com/), [CodeQL Analysis](https://securitylab.github.com/tools/codeql), running tests and code coverage with [Codecov](https://about.codecov.io/).
-
 &nbsp;
-
-### Backend
-- [ ] [GraphQL](https://graphql.org/) for backend magic
-- [ ] [GraphQL Generator integration ](https://www.graphql-code-generator.com/) for instant generated types for the backend and frontend
-- [ ] [GraphQL-Dataloader](https://github.com/graphql/dataloader) for performance reasons and caching
-- [ ] [TypeScript-Graphql](TypeScript-Graphql) - obviously..
-- [ ] [Unit-testing](https://blog.testproject.io/2020/06/23/testing-graphql-api/) for future testing
-- [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
-- [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
-
-
-
 
 ## Getting started with docker
 
@@ -70,11 +27,15 @@ Modern web based applications consist of multiple services. For example, a backe
 
 ### **Example Docker images**
 
--   React docker image
--   Mongodb docker image
--   Mongo seed docker image
--   Express-api docker image
--   Graphql docker image
+- [ ]   React docker image
+- [ ]   Mongodb docker image
+- [ ]   Mongo seed docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
+- [ ]   Express-api docker image
+- [ ]   Graphql docker image
+
+		The express server runs standalone  and connects to the mongoDB on 27017/restAPI
+
+		The GraphQL server runs standalone and connects to the mongoDB on 27017/graphql-api
 
 &nbsp;
 
@@ -98,11 +59,10 @@ A ReactJs application containerized for development and production.
 
 ## Commands
 
-- [ ] `yarn standup` (receive a pretty list of things you did on your last working day)
-- [ ] `yarn dev` (standard dev server) -  start a development server with hot reload.
-- [ ]  `yarn format` (format and lint the codebase following prettier-standard rules)
-- [ ] `yarn generate`
-Generates GraphQL schema by running the the [GraphQL Code Generator](https://graphql-code-generator.com/). The GraphQL server  must be available at [http://localhost:5002/graphql](http://localhost:5002/graphql) for code generation
+- [ ] `yarn standup` - (receive a pretty list of things you did on your last working day)
+- [ ] `yarn dev` - (standard dev server) -  start a development server with hot reload.
+- [ ]  `yarn format` - (format and lint the codebase following prettier-standard rules)
+- [ ] `yarn generate` - Generates GraphQL schema by running the the [GraphQL Code Generator](https://graphql-code-generator.com/). The GraphQL server  must be available at [http://localhost:5002/graphql](http://localhost:5002/graphql) for code generation
 
 - [ ] yarn commit - will run a flow composed of:
 -   [Husky](https://github.com/typicode/husky)
@@ -132,6 +92,93 @@ oilerplate/ .env
 
 	```
 
+&nbsp;
+&nbsp;
+
+
+# React boilerplate (For future projects and easy start-ups
+
+
+## **Contents & Setup:**
+
+
+### Main tools
+- [ ] [React](https://reactjs.org/docs/getting-started.html) 
+- [ ] [Typescript](https://www.typescriptlang.org/) 
+- [ ] [Apollo-link-rest (Graphql)](https://www.apollographql.com/docs/react/api/link/apollo-link-rest/)  A REST endpoint wrapper with GraphQL client on top - to simulate the features of a
+	BFF on top of an express API, this should be removed if you want to use the REST API alone, or the graphQL api alone.
+- [ ] [React query](https://react-query.tanstack.com/) A simple fetchHook is setup for easy usage
+- [ ] [Recoil](https://recoiljs.org/) For simple state management with a small footprint
+- [ ] [React Router](https://reactrouter.com/web/guides/quick-start) for routing
+- [ ] [Tailwind CSS v3](https://tailwindcss.com) with a [basic reset for form styles](https://github.com/tailwindlabs/tailwindcss-forms)
+- [ ] [PWA](https://github.com/antfu/vite-plugin-pwa) with [17/17 Lighthouse score](https://web.dev/pwa-checklist/).
+- [ ] [Vite](https://vitejs.dev/guide/) for bundling and codesplitting (goodbye webpack)
+- [ ] [Absolute Imports](https://github.com/aleclarson/vite-tsconfig-paths) - Avoid ./././
+- [ ] [https://testing-library.com/docs/react-testing-library/intro/]Unit-tests & React Testing Library
+
+### More Tooling
+- [ ] [Husky](https://github.com/typicode/husky) - Git pre hooks
+- [ ] [Prettier-Standard](https://github.com/sheerun/prettier-standard) for formatting and linting
+- [ ] [lint-staged](https://github.com/okonet/lint-staged) with precommit task for linting
+- [ ] [Commitizen](https://github.com/commitizen/cz-cli) intercepting your commits to help you add nice formatted messages
+- [ ] [Renovate](https://github.com/renovatebot/renovate) for automated dependency updates
+- [ ] [git-notify](https://github.com/jevakallio/git-notify) for communicating important updates during git pull to your team
+- [ ] [git-standup](https://github.com/kamranahmedse/git-standup) to recall what you did yesterday
+- [ ] [Github Actions CI](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde) preconfigured for running lint + tests + Dockerhub (Barebone (ready for adaptation for many usecases
+- [ ] [dependency updates](https://renovatebot.com/), [CodeQL Analysis](https://securitylab.github.com/tools/codeql), running tests and code coverage with [Codecov](https://about.codecov.io/).
+
+&nbsp;
+&nbsp;
+
+# Backend Boilerplate
+
+### Backend consists of several setups on different branches:
+	
+	The Backends are connected to the mongoDB which needs to be spun up via the docker image.
+
+### Express (Todo-App Example)
+- [ ] [React query](https://react-query.tanstack.com/) React Query Api controller
+- [ ] [Typescript](https://www.typescriptlang.org/) For types...
+- [ ] [Express](https://www.npmjs.com/package/express) For magic.
+- [ ] [Mongoose](https://www.npmjs.com/package/mongoose) For Schemas.
+- [ ] Login / register - JWT Auth, Nodemon, Cors, Cross-env
+
+
+#### Simple Graphql-apollo-express setup 
+
+- [ ] [React query](https://react-query.tanstack.com/) React Query Api controller
+- [ ] [Typescript](https://www.typescriptlang.org/) 
+- [ ] [Graphql-Request](https://www.npmjs.com/package/graphql-request)
+- [ ] [GraphQL](https://graphql.org/) for backend magic
+- [ ] [GraphQL Generator integration ](https://www.graphql-code-generator.com/) for instant generated types for the backend and frontend
+- [ ] [GraphQL-Dataloader](https://github.com/graphql/dataloader) for performance reasons and caching
+- [ ] [TypeScript-Graphql](TypeScript-Graphql) - obviously..
+- [ ] [Unit-testing](https://blog.testproject.io/2020/06/23/testing-graphql-api/) for future testing
+- [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
+- [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
+- [ ] Login / register - JWT Auth, Nodemon, Cors, Cross-env
+
+
+#### Microservice preperation - Grapqhl as bff on top of express backend (Todo-App Example expanded)
+
+- [ ] [React query](https://react-query.tanstack.com/) React Query Api controller
+- [ ] [GraphQL](https://graphql.org/) for backend magic
+- [ ] [Graphql-Request](https://www.npmjs.com/package/graphql-request)
+- [ ] [GraphQL Generator integration ](https://www.graphql-code-generator.com/) for instant generated types for the backend and frontend
+- [ ] [GraphQL-Dataloader](https://github.com/graphql/dataloader) for performance reasons and caching
+- [ ] [Typescript](https://www.typescriptlang.org/) 
+- [ ] [TypeScript-Graphql](TypeScript-Graphql) - obviously..
+- [ ] [Unit-testing](https://blog.testproject.io/2020/06/23/testing-graphql-api/) for future testing
+- [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
+- [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
+- [ ] Login / register - JWT Auth, Nodemon, Cors, Cross-env
+
+
+# CI/CD - Auto-deploy a Docker app to own VPS with GitHub Actions 
+
+	More info to be written here.
+
+&nbsp;
 &nbsp;
 
 
@@ -193,48 +240,6 @@ oilerplate/ .env
 
 
 &nbsp;
-
-
-## Express / GraphQL and MongoDB setup
-
-The express server runs standalone  and connects to the mongoDB on 27017/restAPI
-
-The GraphQL server runs standalone and connects to the mongoDB on 27017/graphql-api
-
-	For now a small wrapper is used in the boilerplate to simulate the features of a
-	BFF on top of an express API, this should be removed if you want to use the REST API alone.
-
-### Prerequisites & Setup**
-
-### **MongoDB**
-
-	- Mongo DB is part of the stack and runs in a docker container.
-	- Mongodb is used to store information
-
-### **Mongo Seed**
-
-	 Runs in a docker container and seeds our mongoDB when we start the stack up.
-
-### **Mongo Express**
-
-	 Runs in a docker container and gives a GUI during development phase for quick testing and debugging.
-
-
-&nbsp;
-
-&nbsp;
-
-
-### A "microfrontend" for each project supported by a BFF aggregation layer (GraphQL)
-
-	Thoughts and considerations are in discussion of a microfrontend approach, each hitting an express endpoint in our system (explained above)
-
-	Utilizing the nature of graphQL  BFF we are able to make simple queries and handle the data filtering in a simple and easy way.
-
-&nbsp;
-
-&nbsp;
-
 
 &nbsp;
 
