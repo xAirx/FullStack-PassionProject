@@ -51,7 +51,23 @@ Modern web based applications consist of multiple services. For example, a backe
 
 &nbsp;
 
-### Backend
+### Backend consists of several setups on different branches:
+	
+	The Backends are connected to the mongoDB which needs to be spun up via the docker image.
+
+### Branch #1 Express (Todo-App Example)
+- [ ] [React query](https://react-query.tanstack.com/) React Query Api controller
+- [ ] [Typescript](https://www.typescriptlang.org/) For types...
+- [ ] [Express](https://www.npmjs.com/package/express) For magic.
+- [ ] [Mongoose](https://www.npmjs.com/package/mongoose) For Schemas.
+- [ ] Login / register - JWT Auth, Nodemon, Cors, Cross-env
+
+
+#### Branch #1 Simple Graphql-apollo-express setup 
+
+- [ ] [React query](https://react-query.tanstack.com/) React Query Api controller
+- [ ] [Typescript](https://www.typescriptlang.org/) 
+- [ ] [Graphql-Request](https://www.npmjs.com/package/graphql-request)
 - [ ] [GraphQL](https://graphql.org/) for backend magic
 - [ ] [GraphQL Generator integration ](https://www.graphql-code-generator.com/) for instant generated types for the backend and frontend
 - [ ] [GraphQL-Dataloader](https://github.com/graphql/dataloader) for performance reasons and caching
@@ -59,7 +75,22 @@ Modern web based applications consist of multiple services. For example, a backe
 - [ ] [Unit-testing](https://blog.testproject.io/2020/06/23/testing-graphql-api/) for future testing
 - [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
 - [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
+- [ ] Login / register - JWT Auth, Nodemon, Cors, Cross-env
 
+
+#### Branch #3 Microservice preperation - Grapqhl as bff on top of express backend (Todo-App Example expanded)
+
+- [ ] [React query](https://react-query.tanstack.com/) React Query Api controller
+- [ ] [GraphQL](https://graphql.org/) for backend magic
+- [ ] [Graphql-Request](https://www.npmjs.com/package/graphql-request)
+- [ ] [GraphQL Generator integration ](https://www.graphql-code-generator.com/) for instant generated types for the backend and frontend
+- [ ] [GraphQL-Dataloader](https://github.com/graphql/dataloader) for performance reasons and caching
+- [ ] [Typescript](https://www.typescriptlang.org/) 
+- [ ] [TypeScript-Graphql](TypeScript-Graphql) - obviously..
+- [ ] [Unit-testing](https://blog.testproject.io/2020/06/23/testing-graphql-api/) for future testing
+- [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
+- [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
+- [ ] Login / register - JWT Auth, Nodemon, Cors, Cross-env
 
 
 
@@ -97,11 +128,10 @@ A ReactJs application containerized for development and production.
 
 ## Commands
 
-- [ ] `yarn standup` (receive a pretty list of things you did on your last working day)
-- [ ] `yarn dev` (standard dev server) -  start a development server with hot reload.
-- [ ]  `yarn format` (format and lint the codebase following prettier-standard rules)
-- [ ] `yarn generate`
-Generates GraphQL schema by running the the [GraphQL Code Generator](https://graphql-code-generator.com/). The GraphQL server  must be available at [http://localhost:5002/graphql](http://localhost:5002/graphql) for code generation
+- [ ] `yarn standup` - (receive a pretty list of things you did on your last working day)
+- [ ] `yarn dev` - (standard dev server) -  start a development server with hot reload.
+- [ ]  `yarn format` - (format and lint the codebase following prettier-standard rules)
+- [ ] `yarn generate` - Generates GraphQL schema by running the the [GraphQL Code Generator](https://graphql-code-generator.com/). The GraphQL server  must be available at [http://localhost:5002/graphql](http://localhost:5002/graphql) for code generation
 
 - [ ] yarn commit - will run a flow composed of:
 -   [Husky](https://github.com/typicode/husky)
