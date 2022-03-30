@@ -16,8 +16,10 @@ Modern web based applications consist of multiple services. For example, a backe
 
 ![Fullstack Kubernetes Project(3)](https://user-images.githubusercontent.com/22436080/159190211-ae8e3cf2-eb51-419f-ac7d-ee71ffc08a92.png)
 
+	The Idea is that I can have several projects, a React Native project, A simple React project, among others, that can be spun up fast and run together with either technology choice in the backend.
+	
 &nbsp;
-
+&nbsp;
 
 ## Getting started with docker
 
@@ -30,6 +32,10 @@ Modern web based applications consist of multiple services. For example, a backe
 - [ ]   Mongo seed docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
 - [ ]   Express-api docker image
 - [ ]   Graphql docker image
+
+		The express server runs standalone  and connects to the mongoDB on 27017/restAPI
+
+		The GraphQL server runs standalone and connects to the mongoDB on 27017/graphql-api
 
 &nbsp;
 
@@ -122,12 +128,15 @@ oilerplate/ .env
 - [ ] [dependency updates](https://renovatebot.com/), [CodeQL Analysis](https://securitylab.github.com/tools/codeql), running tests and code coverage with [Codecov](https://about.codecov.io/).
 
 &nbsp;
+&nbsp;
+
+# Backend Boilerplate
 
 ### Backend consists of several setups on different branches:
 	
 	The Backends are connected to the mongoDB which needs to be spun up via the docker image.
 
-### Branch #1 Express (Todo-App Example)
+### Express (Todo-App Example)
 - [ ] [React query](https://react-query.tanstack.com/) React Query Api controller
 - [ ] [Typescript](https://www.typescriptlang.org/) For types...
 - [ ] [Express](https://www.npmjs.com/package/express) For magic.
@@ -135,7 +144,7 @@ oilerplate/ .env
 - [ ] Login / register - JWT Auth, Nodemon, Cors, Cross-env
 
 
-#### Branch #2 Simple Graphql-apollo-express setup 
+#### Simple Graphql-apollo-express setup 
 
 - [ ] [React query](https://react-query.tanstack.com/) React Query Api controller
 - [ ] [Typescript](https://www.typescriptlang.org/) 
@@ -150,7 +159,7 @@ oilerplate/ .env
 - [ ] Login / register - JWT Auth, Nodemon, Cors, Cross-env
 
 
-#### Branch #3 Microservice preperation - Grapqhl as bff on top of express backend (Todo-App Example expanded)
+#### Microservice preperation - Grapqhl as bff on top of express backend (Todo-App Example expanded)
 
 - [ ] [React query](https://react-query.tanstack.com/) React Query Api controller
 - [ ] [GraphQL](https://graphql.org/) for backend magic
@@ -165,6 +174,12 @@ oilerplate/ .env
 - [ ] Login / register - JWT Auth, Nodemon, Cors, Cross-env
 
 
+# CI/CD - Auto-deploy a Docker app to own VPS with GitHub Actions 
+
+	More info to be written here.
+
+&nbsp;
+&nbsp;
 
 
 
@@ -225,48 +240,6 @@ oilerplate/ .env
 
 
 &nbsp;
-
-
-## Express / GraphQL and MongoDB setup
-
-The express server runs standalone  and connects to the mongoDB on 27017/restAPI
-
-The GraphQL server runs standalone and connects to the mongoDB on 27017/graphql-api
-
-	For now a small wrapper is used in the boilerplate to simulate the features of a
-	BFF on top of an express API, this should be removed if you want to use the REST API alone.
-
-### Prerequisites & Setup**
-
-### **MongoDB**
-
-	- Mongo DB is part of the stack and runs in a docker container.
-	- Mongodb is used to store information
-
-### **Mongo Seed**
-
-	 Runs in a docker container and seeds our mongoDB when we start the stack up.
-
-### **Mongo Express**
-
-	 Runs in a docker container and gives a GUI during development phase for quick testing and debugging.
-
-
-&nbsp;
-
-&nbsp;
-
-
-### A "microfrontend" for each project supported by a BFF aggregation layer (GraphQL)
-
-	Thoughts and considerations are in discussion of a microfrontend approach, each hitting an express endpoint in our system (explained above)
-
-	Utilizing the nature of graphQL  BFF we are able to make simple queries and handle the data filtering in a simple and easy way.
-
-&nbsp;
-
-&nbsp;
-
 
 &nbsp;
 
