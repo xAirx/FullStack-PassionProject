@@ -111,8 +111,8 @@ oilerplate/ .env
 - [ ] [Recoil](https://recoiljs.org/) For simple state management with a small footprint
 - [ ] [React Router](https://reactrouter.com/web/guides/quick-start) for routing
 - [ ] [Tailwind CSS v3](https://tailwindcss.com) with a [basic reset for form styles](https://github.com/tailwindlabs/tailwindcss-forms)
-- [ ] [PWA](https://github.com/antfu/vite-plugin-pwa) with [17/17 Lighthouse score](https://web.dev/pwa-checklist/).
-- [ ] [Vite](https://vitejs.dev/guide/) for bundling and codesplitting (goodbye webpack)
+- [ ] [Vite-PWA](https://github.com/antfu/vite-plugin-pwa) with [17/17 Lighthouse score](https://web.dev/pwa-checklist/).
+- [ ] [Vite](https://vitejs.dev/guide/) for bundling and codesplitting (goodbye webpack a bundler where everything works out of the box with vite ....... finally.)
 - [ ] [Absolute Imports](https://github.com/aleclarson/vite-tsconfig-paths) - Avoid ./././
 - [ ] [https://testing-library.com/docs/react-testing-library/intro/]Unit-tests & React Testing Library
 
