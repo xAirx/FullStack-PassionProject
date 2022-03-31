@@ -1,0 +1,5 @@
+MONGO_ROOT_USER=myUserAdmin
+MONGO_ROOT_PASSWORD=abc123
+MONGOEXPRESS_LOGIN=myUserAdmin
+MONGOEXPRESS_PASSWORD=abc123
+MONGO_URL=mongodb+srv://myUserAdmin:abc123@localhost:27017/db?ssl=false

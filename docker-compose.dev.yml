@@ -1,14 +1,12 @@
-version: "3.8"
+version: '3.3'
 
 networks:
-  react-express:
+  mongo-compose-network:
+    driver: bridge
   express-mongo:
-  mongo-mongo:
-
-#volumes:
-    #db-data:
-    #reactapp:
-    #expressapi:
+    driver: bridge
+  react-express:
+    driver: bridge
 
 services:
   # WIP - MVP - Integration of an 0Auth2 proxy
@@ -150,17 +148,19 @@ services:
   #    Ports are not exposed to host machines, only exposed to other services.
 
   frontend:
-    build: ./monorepo/frontend/app/Dockerfile.dev
+    build:
+      context: ./frontend/app
+      dockerfile: Dockerfile.dev
     restart: always
-    stdin_open: true
     image: frontend-image
     container_name: frontend-image
-    ports:
-      - 3002:3002
-    #The React development server will be running inside the container and will be watching the src folder.
+    stdin_open: true
     volumes:
-      - ./monorepo/frontend/app:/usr/src/app
+      - ./frontend/app:/app
       - /usr/src/app/node_modules
+    ports:
+      - 4002:400
+    #The React development server will be running inside the container and will be watching the src folder.
     #links:
     #    - express
     env_file:
@@ -176,75 +176,71 @@ services:
       - react-express
 
   backend:
-    #build:
-    #  context: ${BACKEND_PATH}todoapp-express-backend/app/
-    #  dockerfile: ${BACKEND_PATH}todoapp-express-backend/app/Dockerfile
-    container_name: backend
+    build:
+      context: ./backend/todoapp-express-backend/app
+      dockerfile: Dockerfile.dev
     restart: always
-    build: ./monorepo/backend/todoapp-express-backend/app/
+    image: backend-image
+    container_name: backend
     volumes:
-      - ./monorepo/backend/app:/usr/src/app
+      - ./backend/todoapp-express-backend/app:/app
       - /usr/src/app/node_modules
     ports:
       - 4000:4000
+    links:
+      - mongo
       #depends_on:
       # - mongodb
       #  ENVIRONMET_VARIABLE_NAME: "environment variable value"
+    #According to your docker-compose.yaml file you can access you mongo container on 127.0.0.1:27017
+    #only from host machine.
+    #In order to access it from NodeJS backend container you should use db:27017.
     environment:
-      - mongoURI=mongodb://mongodb:27017/restAPI
+      - mongoURI=mongodb://mongo:27017/admin
     depends_on:
-      - mongo-db
+      - mongo
     networks:
       - express-mongo
       - react-express
+    #expose:
+    #  - 4000
 
-  mongo-db:
-      container_name: mongo
-      restart: always
-      image: mongo:4.2.0
-      ports:
-        - 27017:27017
-        # ENVIRONMET_VARIABLE_NAME: "environment variable value"
-      env_file:
-        - .env
-      environment:
-        - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USER}
-        - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
-      volumes:
-       - ./data:/data/db
-      networks:
-       - express-mongo
-      expose:
-       - 27017
+  mongodb:
+     image: mongo
+     container_name: mongodb
+     restart: always
+     ports:
+      - 27017:27017
+     environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+     volumes:
+      - mongodb:/data/db
 
+     command: mongod
+     networks:
+      - express-mongo
+      - mongo-compose-network
+     expose:
+      - 27017
 
   mongo-express:
-       image: mongo-express
-       container_name: mongo-express
-       ports:
-         - 8081:8081
-       environment:
-         - ME_CONFIG_MONGODB_ADMINUSERNAME=${MONGOEXPRESS_LOGIN}
-         - ME_CONFIG_MONGODB_ADMINPASSWORD=${MONGOEXPRESS_PASSWORD}
-         - ME_CONFIG_MONGODB_SERVER=mongodb
-       depends_on:
-          - mongo-db
-       networks:
-         - mongo-mongo
+    container_name: mongo-express
+    image: mongo-express
+    depends_on:
+      - mongodb
+    networks:
+      - mongo-compose-network
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=password
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+      #- ME_CONFIG_BASICAUTH_USERNAME=admin
+      #- ME_CONFIG_BASICAUTH_PASSWORD=password
+    ports:
+      - '8081:8081'
+    volumes:
+      - mongodb:/data/db
 
-
-  mongo-seed:
-        image: stefanwalther/mongo-seed
-        container_name: mongo-seed
-        environment:
-          - MONGODB_HOST=mongo
-          - MONGODB_PORT=27017
-        volumes:
-          - ./data:/data/db
-        depends_on:
-          - mongo-db
-        networks:
-         - mongo-mongo
-        command: [
-          "mongoimport --host mongo --port 27017 --db sammlerio --mode upsert --type json --file /data/auth-service~~user.json --jsonArray"
-        ]
+volumes:
+  mongodb:

@@ -2,6 +2,7 @@
   "scripts": {
     "format:check": "prettier --check .",
     "format:write": "prettier --write .",
+    "lint:all": "prettier --write . && eslint --fix .",
     "lint:check": "eslint .",
     "lint:fix": "eslint --fix .",
     "lint-staged": "lint-staged",
@@ -46,5 +47,8 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
+  },
+  "dependencies": {
+    "axios": "^0.26.1"
   }
 }

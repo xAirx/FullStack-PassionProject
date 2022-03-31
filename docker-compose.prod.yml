@@ -1,4 +1,4 @@
-version: "3.8"
+version: '3.8'
 
 networks:
   react-express:
@@ -6,9 +6,9 @@ networks:
   mongo-mongo:
 
 #volumes:
-    #db-data:
-    #reactapp:
-    #expressapi:
+#db-data:
+#reactapp:
+#expressapi:
 
 services:
   # WIP - MVP - Integration of an 0Auth2 proxy
@@ -199,52 +199,51 @@ services:
       - react-express
 
   mongo-db:
-      container_name: mongo
-      restart: always
-      image: mongo:4.2.0
-      ports:
-        - 27017:27017
-        # ENVIRONMET_VARIABLE_NAME: "environment variable value"
-      env_file:
-        - .env
-      environment:
-        - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USER}
-        - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
-      volumes:
-       - ./data:/data/db
-      networks:
-       - express-mongo
-      expose:
-       - 27017
-
+    container_name: mongo
+    restart: always
+    image: mongo:4.2.0
+    ports:
+      - 27017:27017
+      # ENVIRONMET_VARIABLE_NAME: "environment variable value"
+    env_file:
+      - .env
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USER}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
+    volumes:
+      - ./data:/data/db
+    networks:
+      - express-mongo
+    expose:
+      - 27017
 
   mongo-express:
-       image: mongo-express
-       container_name: mongo-express
-       ports:
-         - 8081:8081
-       environment:
-         - ME_CONFIG_MONGODB_ADMINUSERNAME=${MONGOEXPRESS_LOGIN}
-         - ME_CONFIG_MONGODB_ADMINPASSWORD=${MONGOEXPRESS_PASSWORD}
-         - ME_CONFIG_MONGODB_SERVER=mongodb
-       depends_on:
-          - mongo-db
-       networks:
-         - mongo-mongo
-
+    image: mongo-express
+    container_name: mongo-express
+    ports:
+      - 8081:8081
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=${MONGOEXPRESS_LOGIN}
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=${MONGOEXPRESS_PASSWORD}
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+    depends_on:
+      - mongo-db
+    networks:
+      - mongo-mongo
 
   mongo-seed:
-        image: stefanwalther/mongo-seed
-        container_name: mongo-seed
-        environment:
-          - MONGODB_HOST=mongo
-          - MONGODB_PORT=27017
-        volumes:
-          - ./data:/data/db
-        depends_on:
-          - mongo-db
-        networks:
-         - mongo-mongo
-        command: [
-          "mongoimport --host mongo --port 27017 --db sammlerio --mode upsert --type json --file /data/auth-service~~user.json --jsonArray"
-        ]
+    image: stefanwalther/mongo-seed
+    container_name: mongo-seed
+    environment:
+      - MONGODB_HOST=mongo
+      - MONGODB_PORT=27017
+    volumes:
+      - ./data:/data/db
+    depends_on:
+      - mongo-db
+    networks:
+      - mongo-mongo
+    command:
+      [
+        'mongoimport --host mongo --port 27017 --db sammlerio --mode upsert --type json --file /data/auth-service~~user.json --jsonArray'
+      ]
