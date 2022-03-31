@@ -74,7 +74,7 @@ A ReactJs application containerized for development and production.
 
 ### docker-compose(dev):
 
-    docker-compose -f docker-compose.dev.yml up --build
+    docker-compose -f docker-compose.dev.yml up -d
 
 ###  docker-compose(prod):
 
