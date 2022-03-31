@@ -62,8 +62,7 @@ Modern web based applications consist of multiple services. For example, a backe
 
                  #Authenticate as the user administrator.
                        exit
-                       #mongo -u "myUserAdmin" -p "abc123" \
-                       #  --authenticationDatabase "admin"
+                       mongo -u myUserAdmin -p abc123 --authenticationDatabase admin
 
                  # Show dbs
                  # use db
