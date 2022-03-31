@@ -25,6 +25,21 @@ Modern web based applications consist of multiple services. For example, a backe
 
 - [ ] React docker image
 - [ ] Mongodb docker image
+
+        Setting up mongodb: 
+            mongo
+            use admin
+            db.createUser(
+             {
+                 user: "user_name",
+                 pwd: "user_pass",
+                 roles: [
+                       { role: "userAdminAnyDatabase", db: "admin" },
+                       { role: "readWriteAnyDatabase", db: "admin" },
+                       { role: "dbAdminAnyDatabase", db: "admin" }
+                    ]
+             })
+
 - [ ] Mongo seed docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
 - [ ] Express-api docker image
 - [ ] Graphql docker image
