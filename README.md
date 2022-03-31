@@ -26,19 +26,41 @@ Modern web based applications consist of multiple services. For example, a backe
 - [ ] React docker image
 - [ ] Mongodb docker image
 
-        Setting up mongodb: 
-            mongo
-            use admin
-            db.createUser(
-             {
-                 user: "user_name",
-                 pwd: "user_pass",
-                 roles: [
-                       { role: "userAdminAnyDatabase", db: "admin" },
-                       { role: "readWriteAnyDatabase", db: "admin" },
-                       { role: "dbAdminAnyDatabase", db: "admin" }
-                    ]
-             })
+      Setting up mongodb first time : 
+      
+      https://www.freecodecamp.org/news/learn-mongodb-a4ce205e7739/
+      
+      #Procedure
+      
+      #Start MongoDB without access control.
+            #- Meaning comment out the below
+
+                #/////////// #Comment these out on first setup:////////////
+                # ENVIRONMET_VARIABLE_NAME: "environment variable value"
+                #env_file:
+                #  - .env
+                #environment:
+                #- MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USER}
+                #- MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
+                #//////////////////////////////////////////////////////////
+
+                 #Create the user administrator.
+                       #use admin
+                       #db.createUser(
+                       #  {
+                       #    user: "myUserAdmin",
+                       #    pwd: "abc123",
+                       #    roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+                       #  }
+                       #)
+
+                 #Authenticate as the user administrator.
+
+                       #mongo -u "myUserAdmin" -p "abc123" \
+                       #  --authenticationDatabase "admin"
+
+                 # Show dbs
+                 # use db
 
 - [ ] Mongo seed docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
 - [ ] Express-api docker image
