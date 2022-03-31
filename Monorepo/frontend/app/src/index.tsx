@@ -1,14 +1,17 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-import "./index.css";
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
-ReactDOM.render(<App />, document.getElementById("root"));
-
-// hot reloading. It works by replacing a module of the application
-// during runtime with an updated one so that it’s available for instant use.
-
-// if (module.hot) {
-//   module.hot.accept();
-// }
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();

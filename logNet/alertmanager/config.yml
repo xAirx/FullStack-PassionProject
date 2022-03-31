@@ -34,9 +34,7 @@
 #           {{ end }}
 #         {{ end }}
 
-
 # Showcasing pagerduty notifications and integration
-
 
 # global:
 #     resolve_timeout: 1m
@@ -61,7 +59,6 @@
 #     pagerduty_configs:
 #     - service_key: 0c1cc665a594419b6d215e81f4e38f7
 #       send_resolved: true
-
 
 # Showcasing gmail notifications and integration
 

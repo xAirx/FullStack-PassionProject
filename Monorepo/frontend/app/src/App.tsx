@@ -1,24 +1,32 @@
-import React from "react";
+import logo from './logo.svg';
+import './App.css';
 
-import { Text } from "@cinemataztic/cine-ui";
+function App () {
 
-const App = () => {
+  const data = "string";
 
-  const test = "string";
-
-  const testFunction = (test: string) => {
+  const testf = (tests: any, test: any) => {
+      return test
   }
 
   return (
-    <div className="h-screen min-h-full px-4 overflow-y-auto bg-primary">
-      <Text color="primary" className="py-8">
-        Hello, World!
-      </Text>
-      <div className="h-auto p-5 text-white bg-secondary rounded-xl">
-        <Text color="default">Let's get started.</Text>
-      </div>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
-};
+}
 
 export default App;

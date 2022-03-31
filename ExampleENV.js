@@ -1,0 +1,7 @@
+// MONGO_ROOT_USER = devroot
+// MONGO_ROOT_PASSWORD = devroot
+// MONGOEXPRESS_LOGIN = dev
+// MONGOEXPRESS_PASSWORD = dev
+// EXPO_DEV_TOOLS_LISTEN_ADRESS = 0.0.0.0
+// FRONTEND_PATH = /Monorepo/frontend /
+// BACKEND_PATH=/Monorepo/backend /
