@@ -50,6 +50,7 @@ Modern web based applications consist of multiple services. For example, a backe
                 #//////////////////////////////////////////////////////////
 
                  #Create the user administrator.
+                       #mongo
                        #use admin
                        #db.createUser(
                        #  {
