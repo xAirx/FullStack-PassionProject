@@ -17,6 +17,11 @@ Modern web based applications consist of multiple services. For example, a backe
 &nbsp;
 &nbsp;
 
+## Setting up ENV files
+
+    Each of the projects has an ExampleENV.json file.
+    This is needed to start the projects
+
 ## Getting started with docker
 
 &nbsp;
@@ -25,6 +30,14 @@ Modern web based applications consist of multiple services. For example, a backe
 
 - [ ] React docker image
 - [ ] Mongodb docker image
+
+                 #mongo
+                 #use admin
+                 db.auth("admin", "password")    
+                 # Show dbs
+                 # use db
+                 
+
 - [ ] Mongo seed docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
 - [ ] Express-api docker image
 - [ ] Graphql docker image
