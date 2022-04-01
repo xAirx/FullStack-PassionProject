@@ -13,12 +13,12 @@ app.use(todoRoutes)
 //According to your docker-compose.yaml file you can access you mongo container on 127.0.0.1:27017
 //only from host machine.
 //In order to access it from NodeJS backend container you should use db:27017.
-//const uri: string = `mongodb://admin:password@mongo:27017/?authSource=admin"`
+const uri: string = `process.env.MONGODB_URI`
 const options = { useNewUrlParser: true, useUnifiedTopology: true }
 mongoose.set('useFindAndModify', false)
 
 mongoose
-  .connect("mongodb://admin:password@mongodb:27017", options)
+  .connect(uri, options)
   .then(() =>
     app.listen(PORT, () =>
       console.log(`Server running on http://localhost:${PORT}`)

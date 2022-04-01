@@ -159,7 +159,7 @@ services:
       - ./frontend/app:/app
       - /usr/src/app/node_modules
     ports:
-      - 4002:400
+      - 5000:5000
     #The React development server will be running inside the container and will be watching the src folder.
     #links:
     #    - express
@@ -196,7 +196,7 @@ services:
     #only from host machine.
     #In order to access it from NodeJS backend container you should use db:27017.
     environment:
-      - mongoURI=mongodb://mongo:27017/admin
+      - mongoURI=${MONGO_URI}
     depends_on:
       - mongo
     networks:
@@ -212,8 +212,8 @@ services:
      ports:
       - 27017:27017
      environment:
-      - MONGO_INITDB_ROOT_USERNAME=admin
-      - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USER}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
      volumes:
       - mongodb:/data/db
 
@@ -224,17 +224,25 @@ services:
      expose:
       - 27017
 
+  mongo-seed:
+    build: ./backend/mongo-seed
+    restart: always
+    image: mongo-seed
+    container_name: mongo-seed
+    networks:
+      - mongo-compose-network
+
   mongo-express:
-    container_name: mongo-express
     image: mongo-express
+    container_name: mongo-express
     depends_on:
       - mongodb
     networks:
       - mongo-compose-network
     environment:
-      - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
-      - ME_CONFIG_MONGODB_ADMINPASSWORD=password
-      - ME_CONFIG_MONGODB_SERVER=mongodb
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=${MONGO_ROOT_USER}
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=${MONGO_ROOT_PASSWORD}
+      - ME_CONFIG_MONGODB_SERVER=${MONGO_SERVER}
       #- ME_CONFIG_BASICAUTH_USERNAME=admin
       #- ME_CONFIG_BASICAUTH_PASSWORD=password
     ports:
