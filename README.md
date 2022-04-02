@@ -33,13 +33,13 @@ Modern web based applications consist of multiple services. For example, a backe
         
 ### Codesee will show which files and where deepsource has reccomended changes and give a DIFF tool to see the exact changes in each component.
 It also comes with a heatmap, which easily can give an overview of where the code is being refactored or developed the most.
-<img src=https://user-images.githubusercontent.com/22436080/161400979-1a21703b-9acb-49c6-8d2d-86e94fbf3b90.png width="200" height="400"/>
-<img src=https://user-images.githubusercontent.com/22436080/161401207-4b1a7fdd-0cfe-470f-99ae-9d5242444cc9.png width="200" height="400"/> 
+<img src=https://user-images.githubusercontent.com/22436080/161400979-1a21703b-9acb-49c6-8d2d-86e94fbf3b90.png width="300" height="600">
+<img src=https://user-images.githubusercontent.com/22436080/161401207-4b1a7fdd-0cfe-470f-99ae-9d5242444cc9.png width="300" height="600"/> 
 
        
 ### Example of Renovate bumping packages and working together with codeQL, and GitGuardian
-<img src=https://user-images.githubusercontent.com/22436080/161400772-b5c86a25-5c54-438b-8374-835f9e74538c.png width="200" height="400"/>
-<img src=https://user-images.githubusercontent.com/22436080/161400745-5a85b03a-a253-4a54-9826-d87b16b95f50.png width="200" height="400"/>
+<img src=https://user-images.githubusercontent.com/22436080/161400772-b5c86a25-5c54-438b-8374-835f9e74538c.png width="300" height="600"/>
+<img src=https://user-images.githubusercontent.com/22436080/161400745-5a85b03a-a253-4a54-9826-d87b16b95f50.png width="300" height="600"/>
 
 &nbsp;
 &nbsp;
@@ -49,7 +49,7 @@ It also comes with a heatmap, which easily can give an overview of where the cod
 
 ## **A simple Architecture visualization:**
 
-<img src=https://user-images.githubusercontent.com/22436080/159190211-ae8e3cf2-eb51-419f-ac7d-ee71ffc08a92.png width="200" height="400")
+<img src=https://user-images.githubusercontent.com/22436080/159190211-ae8e3cf2-eb51-419f-ac7d-ee71ffc08a92.png width="300" height="600"/>
 
     The Idea is that I can have several projects, a React Native project, A simple React project, among others, that can be spun up fast and run together with either technology choice in the backend.
 
