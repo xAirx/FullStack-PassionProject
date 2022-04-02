@@ -57,7 +57,6 @@ Renovate                   |  Renovate
 
 &nbsp;
 &nbsp;
-&nbsp;
 
 # **Architecture explanation**
 
@@ -82,6 +81,7 @@ Renovate                   |  Renovate
                  # Show dbs
                  # use db
 &nbsp;
+&nbsp;
               
 ### NVM usage for cross env node versions    
 
@@ -92,11 +92,11 @@ Renovate                   |  Renovate
 
     Running either of the above commands downloads a script and runs it. The script clones the nvm repository to `~/.nvm`, and attempts to add the source lines from the snippet below to the correct profile file (`~/.bash_profile`, `~/.zshrc`, `~/.profile`, or `~/.bashrc`).
 
+&nbsp;
+&nbsp;
+
+
 ## Getting started with docker
-
-&nbsp;
-&nbsp;
-
 
 ### **Example Docker images**
 
@@ -134,8 +134,6 @@ A ReactJs application containerized for development and production.
 &nbsp;
 &nbsp;
 
-
-
 ## Commands
 
     "dev:frontend": "config for your needs: - yarn --cwd ./packages/frontend run dev ",
@@ -163,10 +161,10 @@ A ReactJs application containerized for development and production.
 
 
 - [x] yarn commit - will run a flow composed of:
-- [Husky](https://github.com/typicode/husky)
-- Linting with: [ESLint](https://eslint.org), [stylelint](https://stylelint.io) & [Prettier](https://prettier.io)
-- [lint-staged](https://github.com/okonet/lint-staged)
-- [Commitizen](https://github.com/commitizen/cz-cli)
+- [x] [Husky](https://github.com/typicode/husky)
+- [x] Linting with: [ESLint](https://eslint.org), [stylelint](https://stylelint.io) & [Prettier](https://prettier.io)
+- [x] [lint-staged](https://github.com/okonet/lint-staged)
+- [x] [Commitizen](https://github.com/commitizen/cz-cli)
 
 &nbsp;
 &nbsp;
