@@ -8,12 +8,12 @@ Modern web based applications consist of multiple services. For example, a backe
 
 ## The monorepo structure is managed with 
 
-- [ ] [Lerna](https://lerna.js.org/) and created out of the [Renli Monorepo Template](https://github.com/renli-tech/monorepo)
-- [ ] [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) will scan all files in each repository to look for relevant package files. It will also group upgrades from the same monorepo into a single PR to ensure tests pass and PR noise is reduced. Natively supports Lerna and Yarn Workspaces with zero configuration necessary.
-- [ ] [Deepsource.io](https://deepsource.io/) helps you write clean code on every pull-request. Built for engineering teams who move fast and don’t break things. 
-- [ ] [Codesee](https://www.codesee.io/) Auto-syncing code diagrams to drive collaboration, improve code reviews, reduce onboarding friction, and more. See the map here: https://app.codesee.io/maps/90748150-b28d-11ec-bc79-99929b29d669
-- [ ] [Sentry](https://sentry.io/welcome) Tracking to performance monitoring, developers can see what actually matters, solve quicker, and learn continuously about their applications - from the frontend to the backend.
-- [ ] [CI/CD - CircleCI & Docker hub -> Heroku](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde) preconfigured for running lint + tests + Dockerhub 
+- [x] [Lerna](https://lerna.js.org/) and created out of the [Renli Monorepo Template](https://github.com/renli-tech/monorepo)
+- [x] [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) will scan all files in each repository to look for relevant package files. It will also group upgrades from the same monorepo into a single PR to ensure tests pass and PR noise is reduced. Natively supports Lerna and Yarn Workspaces with zero configuration necessary.
+- [x] [Deepsource.io](https://deepsource.io/) helps you write clean code on every pull-request. Built for engineering teams who move fast and don’t break things. 
+- [x] [Codesee](https://www.codesee.io/) Auto-syncing code diagrams to drive collaboration, improve code reviews, reduce onboarding friction, and more. See the map here: https://app.codesee.io/maps/90748150-b28d-11ec-bc79-99929b29d669
+- [x] [Sentry](https://sentry.io/welcome) Tracking to performance monitoring, developers can see what actually matters, solve quicker, and learn continuously about their applications - from the frontend to the backend.
+- [x] [CI/CD - CircleCI & Docker hub -> Heroku](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde) preconfigured for running lint + tests + Dockerhub 
 
        https://github.com/marketplace/actions/deploy-to-heroku
        https://www.heroku.com/deploy-with-docker
