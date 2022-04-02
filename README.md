@@ -27,19 +27,19 @@ Modern web based applications consist of multiple services. For example, a backe
 ## Example of Deepsource working together with Codesee:
 
 ### DeepSource will scan the project for issues, will scan all commits, and branches and will help with hooking into PR's as well.
-<img src=https://user-images.githubusercontent.com/22436080/161400950-3c48227e-f8b0-4c13-899a-c0e0a958f691.png width="200" height="400")
-<img src=https://user-images.githubusercontent.com/22436080/161400796-7a196b57-320e-4e49-bd6d-ef4e72e755b9.png width="200" height="400")        
+<img src=https://user-images.githubusercontent.com/22436080/161400950-3c48227e-f8b0-4c13-899a-c0e0a958f691.png width="200" height="400"/>
+<img src=https://user-images.githubusercontent.com/22436080/161400796-7a196b57-320e-4e49-bd6d-ef4e72e755b9.png width="200" height="400"/>        
       
         
 ### Codesee will show which files and where deepsource has reccomended changes and give a DIFF tool to see the exact changes in each component.
 It also comes with a heatmap, which easily can give an overview of where the code is being refactored or developed the most.
-<img src=https://user-images.githubusercontent.com/22436080/161400979-1a21703b-9acb-49c6-8d2d-86e94fbf3b90.png width="200" height="400")
-<img src=https://user-images.githubusercontent.com/22436080/161401207-4b1a7fdd-0cfe-470f-99ae-9d5242444cc9.png width="200" height="400")  
+<img src=https://user-images.githubusercontent.com/22436080/161400979-1a21703b-9acb-49c6-8d2d-86e94fbf3b90.png width="200" height="400"/>
+<img src=https://user-images.githubusercontent.com/22436080/161401207-4b1a7fdd-0cfe-470f-99ae-9d5242444cc9.png width="200" height="400"/> 
 
        
 ### Example of Renovate bumping packages and working together with codeQL, and GitGuardian
-<img src=https://user-images.githubusercontent.com/22436080/161400772-b5c86a25-5c54-438b-8374-835f9e74538c.png width="200" height="400")
-<img src=https://user-images.githubusercontent.com/22436080/161400745-5a85b03a-a253-4a54-9826-d87b16b95f50.png width="200" height="400")
+<img src=https://user-images.githubusercontent.com/22436080/161400772-b5c86a25-5c54-438b-8374-835f9e74538c.png width="200" height="400"/>
+<img src=https://user-images.githubusercontent.com/22436080/161400745-5a85b03a-a253-4a54-9826-d87b16b95f50.png width="200" height="400"/>
 
 &nbsp;
 &nbsp;
