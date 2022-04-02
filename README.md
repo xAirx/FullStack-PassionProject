@@ -6,19 +6,43 @@ Modern web based applications consist of multiple services. For example, a backe
 
 &nbsp;
 
-The monorepo structure is managed with
+The monorepo structure is managed with 
 
 - [ ] [Lerna](https://lerna.js.org/) and created out of the [Renli Monorepo Template](https://github.com/renli-tech/monorepo)
 - [ ] [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) will scan all files in each repository to look for relevant package files. It will also group upgrades from the same monorepo into a single PR to ensure tests pass and PR noise is reduced. Natively supports Lerna and Yarn Workspaces with zero configuration necessary.
-- [ ] [Deepsource.io](https://deepsource.io/) helps you write clean code on every pull-request. Built for engineering teams who move fast and don’t break things.
+- [ ] [Deepsource.io](https://deepsource.io/) helps you write clean code on every pull-request. Built for engineering teams who move fast and don’t break things. 
 - [ ] [Codesee](https://www.codesee.io/) Auto-syncing code diagrams to drive collaboration, improve code reviews, reduce onboarding friction, and more. See the map here: https://app.codesee.io/maps/90748150-b28d-11ec-bc79-99929b29d669
 - [ ] [Sentry](https://sentry.io/welcome) Tracking to performance monitoring, developers can see what actually matters, solve quicker, and learn continuously about their applications - from the frontend to the backend.
-- [ ] [CI/CD - CircleCI & Docker hub -> Heroku](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde) preconfigured for running lint + tests + Dockerhub
+- [ ] [CI/CD - CircleCI & Docker hub -> Heroku](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde) preconfigured for running lint + tests + Dockerhub 
 
        https://github.com/marketplace/actions/deploy-to-heroku
        https://www.heroku.com/deploy-with-docker
        https://medium.com/nexton/deploying-docker-images-to-heroku-with-circleci-713c764e248d
+      
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
 
+Example of Deepsource working together with Codesee:
+
+DeepSource will scan the project for issues, will scan all commits, and branches and will help with hooking into PR's as well.
+[Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086720497)
+[Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086721847)        
+      
+        
+Codesee will show which files and where deepsource has reccomended changes and give a DIFF tool to see the exact changes in each component.
+It also comes with a heatmap, which easily can give an overview of where the code is being refactored or developed the most.
+![Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086720291)
+![Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086722106)  
+
+       
+Example of Renovate bumping packages and working together with codeQL, and GitGuardian
+![Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086720291)
+![Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issue-1190736233)
+
+&nbsp;
+&nbsp;
 &nbsp;
 &nbsp;
 
@@ -41,28 +65,29 @@ The monorepo structure is managed with
 ## Getting started with docker
 
 &nbsp;
+&nbsp;
+
 
 ### **Example Docker images**
 
 - [ ] React docker image
 - [ ] Mongodb docker image
 
-                   #mongo
-                   #use admin
-                   db.auth("admin", "password")
-                   # Show dbs
-                   # use db
-
-  &nbsp;
-
-### NVM usage for cross env node versions
-
+                 #mongo
+                 #use admin
+                 db.auth("admin", "password")    
+                 # Show dbs
+                 # use db
+&nbsp;
+              
+### NVM usage for cross env node versions    
     Install & Update Script
 
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-
+  
 
     Running either of the above commands downloads a script and runs it. The script clones the nvm repository to `~/.nvm`, and attempts to add the source lines from the snippet below to the correct profile file (`~/.bash_profile`, `~/.zshrc`, `~/.profile`, or `~/.bashrc`).
+
 
 - [ ] Mongo seed docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
 - [ ] Express-api docker image
@@ -101,11 +126,16 @@ A ReactJs application containerized for development and production.
 - [ ] `yarn format` - (format and lint the codebase following prettier-standard rules)
 - [ ] `yarn generate` - Generates GraphQL schema by running the the [GraphQL Code Generator](https://graphql-code-generator.com/). The GraphQL server must be available at [http://localhost:5002/graphql](http://localhost:5002/graphql) for code generation
 
+
+
+
 - [ ] yarn commit - will run a flow composed of:
 - [Husky](https://github.com/typicode/husky)
 - Linting with: [ESLint](https://eslint.org), [stylelint](https://stylelint.io) & [Prettier](https://prettier.io)
 - [lint-staged](https://github.com/okonet/lint-staged)
 - [Commitizen](https://github.com/commitizen/cz-cli)
+
+
 
 ### docker-compose(dev):
 
@@ -131,20 +161,22 @@ docker-compose up -d
 &nbsp;
 &nbsp;
 
+
 ### Packages
 
 This is a list of all the packages in the repo and what they are used for.
 
-| Package                                  | Description                                  |
-| ---------------------------------------- | -------------------------------------------- |
-| [Frontend]("./packages/Web/")            | React Boilerplate + boilerplate Api Handlers |
-| [ReactNative]("./packages/ReactNative/") | Expo React Native App                        |
-| [Express]("./packages/Express/")         | Express Boilerplate Api Examples             |
-| [Grapqhl]("./packages/Grapqhl/")         | A Server with GraphQl and Express            |
-| [GqlTools]("./packages/GqlTools/")       | Contains GraphQL CodeGen Hooks and Type Defs |
-| [Storybook]("./packages/storybook/")     | WIP - Future storybook                       |
+| Package                          | Description                                         |
+| -------------------------------- | --------------------------------------------------- |
+| [Frontend]("./packages/Web/")    | React Boilerplate + boilerplate Api Handlers        |         
+| [ReactNative]("./packages/ReactNative/")| Expo React Native App                        |
+| [Express]("./packages/Express/")    | Express Boilerplate Api Examples                 |
+| [Grapqhl]("./packages/Grapqhl/")  | A Server with GraphQl and Express                  |
+| [GqlTools]("./packages/GqlTools/") | Contains GraphQL CodeGen Hooks and Type Defs      |
+| [Storybook]("./packages/storybook/") | WIP - Future storybook                          |
 
 #### Future experimentation may happen with VITE, Rollup and other cool tools.
+
 
 # React boilerplates (For future projects and easy start-ups
 
@@ -171,7 +203,7 @@ This is a list of all the packages in the repo and what they are used for.
 - [ ] [Commitizen](https://github.com/commitizen/cz-cli) intercepting your commits to help you add nice formatted messages
 - [ ] [Absolute Imports](https://medium.com/geekculture/making-life-easier-with-absolute-imports-react-in-javascript-and-typescript-bbdab8a8a3a1) - Avoid ./././
 - [ ] [Renovate](https://github.com/renovatebot/renovate) for automated dependency updates
-      (Barebone (ready for adaptation for many usecases
+(Barebone (ready for adaptation for many usecases
 - [ ] [dependency updates](https://renovatebot.com/), [CodeQL Analysis](https://securitylab.github.com/tools/codeql), running tests and code coverage with [Codecov](https://about.codecov.io/).
 
 &nbsp;
@@ -192,7 +224,15 @@ This is a list of all the packages in the repo and what they are used for.
 
 &nbsp;
 
+
 ### Express API with Auth (Expanded with various tools like)
+
+
+
+
+
+
+
 
 #### Simple Graphql-apollo-express setup (Todo-App Example)
 
@@ -207,10 +247,11 @@ This is a list of all the packages in the repo and what they are used for.
 - [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
 - [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
 
+
 &nbsp;
 
-#### Grapqhl Api Example with JWT Auth and various tools.
 
+#### Grapqhl Api Example with JWT Auth and various tools.
 - [ ] [GraphQL](https://graphql.org/) for backend magic
 - [ ] [GraphQL Generator integration ](https://www.graphql-code-generator.com/) for instant generated types for the backend and frontend
 - [ ] [GraphQL-Dataloader](https://github.com/graphql/dataloader) for performance reasons and caching
@@ -222,6 +263,7 @@ This is a list of all the packages in the repo and what they are used for.
 
 &nbsp;
 
+
 ### GrapQL Experimenting with federated GraphQL Microservices.
 
 - [ ] [GraphQL](https://graphql.org/) for backend magic
@@ -232,6 +274,7 @@ This is a list of all the packages in the repo and what they are used for.
 - [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
 - [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
 - [Apollo Federation](https://www.apollographql.com/docs/federation/) - For Managing GraphQL Schema
+
 
 &nbsp;
 
@@ -246,6 +289,11 @@ This is a list of all the packages in the repo and what they are used for.
 - [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
 - [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
 
+
+
+
+
+
 &nbsp;
 &nbsp;
 
@@ -254,13 +302,11 @@ This is a list of all the packages in the repo and what they are used for.
 ### Storybook component library
 
 - Storybook published as an npm package - with framework of choice (or custom build for infinite posibillities.
-  &nbsp;
-
+&nbsp;
 ### Storybook & Unit-tests (Low level)
 
 - Jest, and React-testing-library. Simple tests that focuses on testing the contracts between the back end and front end layers. Where as solid component testing is abstracted away into the Storybook setup.
-  &nbsp;
-
+&nbsp;
 ### Unit-tests (High Level)
 
 ##### Example:
