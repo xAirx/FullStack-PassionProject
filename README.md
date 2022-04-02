@@ -38,8 +38,8 @@ It also comes with a heatmap, which easily can give an overview of where the cod
 
        
 ### Example of Renovate bumping packages and working together with codeQL, and GitGuardian
-<img src=https://user-images.githubusercontent.com/22436080/161400772-b5c86a25-5c54-438b-8374-835f9e74538c.png width="400" height="300"/>
-<img src=https://user-images.githubusercontent.com/22436080/161400745-5a85b03a-a253-4a54-9826-d87b16b95f50.png width="400" height="300"/>
+<img src=https://user-images.githubusercontent.com/22436080/161400772-b5c86a25-5c54-438b-8374-835f9e74538c.png width="600" height="300"/>
+<img src=https://user-images.githubusercontent.com/22436080/161400745-5a85b03a-a253-4a54-9826-d87b16b95f50.png width="600" height="300"/>
 
 &nbsp;
 &nbsp;
@@ -49,7 +49,7 @@ It also comes with a heatmap, which easily can give an overview of where the cod
 
 ## **A simple Architecture visualization:**
 
-<img src=https://user-images.githubusercontent.com/22436080/159190211-ae8e3cf2-eb51-419f-ac7d-ee71ffc08a92.png width="400" height="400"/>
+<img src=https://user-images.githubusercontent.com/22436080/159190211-ae8e3cf2-eb51-419f-ac7d-ee71ffc08a92.png width="900" height="400"/>
 
     The Idea is that I can have several projects, a React Native project, A simple React project, among others, that can be spun up fast and run together with either technology choice in the backend.
 
