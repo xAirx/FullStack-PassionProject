@@ -27,8 +27,8 @@ The monorepo structure is managed with
 Example of Deepsource working together with Codesee:
 
 DeepSource will scan the project for issues, will scan all commits, and branches and will help with hooking into PR's as well.
-[Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086720497.png)
-[Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086721847.png)        
+![Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086720497.png)
+![Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086721847.png)        
       
         
 Codesee will show which files and where deepsource has reccomended changes and give a DIFF tool to see the exact changes in each component.
