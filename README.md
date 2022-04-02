@@ -6,7 +6,7 @@ Modern web based applications consist of multiple services. For example, a backe
 
 &nbsp;
 
-The monorepo structure is managed with 
+## The monorepo structure is managed with 
 
 - [ ] [Lerna](https://lerna.js.org/) and created out of the [Renli Monorepo Template](https://github.com/renli-tech/monorepo)
 - [ ] [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) will scan all files in each repository to look for relevant package files. It will also group upgrades from the same monorepo into a single PR to ensure tests pass and PR noise is reduced. Natively supports Lerna and Yarn Workspaces with zero configuration necessary.
@@ -24,22 +24,22 @@ The monorepo structure is managed with
 &nbsp;
 &nbsp;
 
-Example of Deepsource working together with Codesee:
+## Example of Deepsource working together with Codesee:
 
 DeepSource will scan the project for issues, will scan all commits, and branches and will help with hooking into PR's as well.
-![DeepsourceExample](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086720497.png)
-![DeepsourceExample](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086721847.png)        
+![DeepsourceExample](https://user-images.githubusercontent.com/22436080/161400950-3c48227e-f8b0-4c13-899a-c0e0a958f691.png)
+![DeepsourceExample](https://user-images.githubusercontent.com/22436080/161400796-7a196b57-320e-4e49-bd6d-ef4e72e755b9.png)        
       
         
 Codesee will show which files and where deepsource has reccomended changes and give a DIFF tool to see the exact changes in each component.
 It also comes with a heatmap, which easily can give an overview of where the code is being refactored or developed the most.
-![CodeseeExample](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086720291.png)
-![CodeseeExample](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086722106.png)  
+![CodeseeExample](https://user-images.githubusercontent.com/22436080/161400979-1a21703b-9acb-49c6-8d2d-86e94fbf3b90.png)
+![CodeseeExample](https://user-images.githubusercontent.com/22436080/161401207-4b1a7fdd-0cfe-470f-99ae-9d5242444cc9.png)  
 
        
 Example of Renovate bumping packages and working together with codeQL, and GitGuardian
-![Renovate](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086720291.png)
-![Renovate](https://github.com/xAirx/FullStack-PassionProject/issues/31#issue-1190736233.png)
+![Renovate](https://user-images.githubusercontent.com/22436080/161400772-b5c86a25-5c54-438b-8374-835f9e74538c.png)
+![Renovate](https://user-images.githubusercontent.com/22436080/161400745-5a85b03a-a253-4a54-9826-d87b16b95f50.png)
 
 &nbsp;
 &nbsp;
@@ -88,10 +88,10 @@ Example of Renovate bumping packages and working together with codeQL, and GitGu
 
     Running either of the above commands downloads a script and runs it. The script clones the nvm repository to `~/.nvm`, and attempts to add the source lines from the snippet below to the correct profile file (`~/.bash_profile`, `~/.zshrc`, `~/.profile`, or `~/.bashrc`).
 
-
-- [ ] Mongo seed docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
-- [ ] Express-api docker image
-- [ ] Graphql docker image
+- [x] React App Docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
+- [x] Mongo seed docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
+- [x] Express-api docker image
+- [x] Graphql docker image
 
       The express server runs standalone  and connects to the mongoDB on 27017/restAPI
 
