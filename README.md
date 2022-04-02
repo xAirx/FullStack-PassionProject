@@ -6,7 +6,14 @@ Modern web based applications consist of multiple services. For example, a backe
 
 &nbsp;
 
-The monorepo structure is managed with [Lerna](https://lerna.js.org/) and created out of the [Renli Monorepo Template](https://github.com/renli-tech/monorepo)
+The monorepo structure is managed with 
+
+- [ ] [Lerna](https://lerna.js.org/) and created out of the [Renli Monorepo Template](https://github.com/renli-tech/monorepo)
+- [ ] [Deepsource.io](https://deepsource.io/) helps you write clean code on every pull-request. Built for engineering teams who move fast and don’t break things. 
+- [ ] [Codesee](https://www.codesee.io/) Auto-syncing code diagrams to drive collaboration, improve code reviews, reduce onboarding friction, and more.
+- [ ] [Sentry](https://sentry.io/welcome) Tracking to performance monitoring, developers can see what actually matters, solve quicker, and learn continuously about their applications - from the frontend to the backend.
+- [ ] [Heroku](https://lerna.js.org/) and created out of the [Renli Monorepo Template](https://github.com/renli-tech/monorepo)
+
 
 
 &nbsp;
@@ -128,9 +135,12 @@ docker-compose up -d
 
 # CI/CD - Auto-deploy a Docker app to own VPS with GitHub Actions
 
-- [ ] [Github Actions CI](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde) preconfigured for running lint + tests + Dockerhub 
+- [ ] [CircleCI & Docker hub -> Heroku](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde) preconfigured for running lint + tests + Dockerhub 
 
-        # Your workflow name.
+       https://github.com/marketplace/actions/deploy-to-heroku
+       https://www.heroku.com/deploy-with-docker
+       
+       # Your workflow name.
         name: Deploy to heroku.
 
         # Run workflow on every push to master branch.
