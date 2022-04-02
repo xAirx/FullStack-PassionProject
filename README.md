@@ -27,19 +27,19 @@ The monorepo structure is managed with
 Example of Deepsource working together with Codesee:
 
 DeepSource will scan the project for issues, will scan all commits, and branches and will help with hooking into PR's as well.
-[Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086720497)
-[Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086721847)        
+[Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086720497.png)
+[Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086721847.png)        
       
         
 Codesee will show which files and where deepsource has reccomended changes and give a DIFF tool to see the exact changes in each component.
 It also comes with a heatmap, which easily can give an overview of where the code is being refactored or developed the most.
-![Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086720291)
-![Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086722106)  
+![Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086720291.png)
+![Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086722106.png)  
 
        
 Example of Renovate bumping packages and working together with codeQL, and GitGuardian
-![Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086720291)
-![Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issue-1190736233)
+![Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086720291.png)
+![Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issue-1190736233.png)
 
 &nbsp;
 &nbsp;
