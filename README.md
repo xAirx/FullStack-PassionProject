@@ -6,6 +6,12 @@ Modern web based applications consist of multiple services. For example, a backe
 
 &nbsp;
 
+The monorepo structure is managed with [Lerna](https://lerna.js.org/) and created out of the [Renli Monorepo Template](https://github.com/renli-tech/monorepo)
+
+
+&nbsp;
+&nbsp;
+
 # **Architecture explanation**
 
 ## **A simple Architecture visualization:**
@@ -105,79 +111,6 @@ docker-compose up -d
 &nbsp;
 &nbsp;
 
-# React boilerplate (For future projects and easy start-ups
-
-## **Contents & Setup:**
-
-### Main tools
-
-- [ ] [React](https://reactjs.org/docs/getting-started.html)
-- [ ] [Typescript](https://www.typescriptlang.org/)
-- [ ] [Apollo-link-rest (Graphql)](https://www.apollographql.com/docs/react/api/link/apollo-link-rest/) A REST endpoint wrapper with GraphQL client on top - to simulate the features of a
-      BFF on top of an express API, this should be removed if you want to use the REST API alone, or the graphQL api alone.
-- [ ] [React query](https://react-query.tanstack.com/) A simple fetchHook is setup for easy usage
-- [ ] [Recoil](https://recoiljs.org/) For simple state management with a small footprint
-- [ ] [React Router](https://reactrouter.com/web/guides/quick-start) for routing
-- [ ] [Tailwind CSS v3](https://tailwindcss.com) with a [basic reset for form styles](https://github.com/tailwindlabs/tailwindcss-forms)
-- [ ] [Absolute Imports](https://github.com/aleclarson/vite-tsconfig-paths) - Avoid ./././
-- [ ] [https://testing-library.com/docs/react-testing-library/intro/]Unit-tests & React Testing Library
-
-### More Tooling
-
-- [ ] [Husky](https://github.com/typicode/husky) - Git pre hooks
-- [ ] [Prettier-Standard](https://github.com/sheerun/prettier-standard) for formatting and linting
-- [ ] [lint-staged](https://github.com/okonet/lint-staged) with precommit task for linting
-- [ ] [Commitizen](https://github.com/commitizen/cz-cli) intercepting your commits to help you add nice formatted messages
-- [ ] [Renovate](https://github.com/renovatebot/renovate) for automated dependency updates
-- [ ] [git-notify](https://github.com/jevakallio/git-notify) for communicating important updates during git pull to your team
-- [ ] [git-standup](https://github.com/kamranahmedse/git-standup) to recall what you did yesterday
-- [ ] [Github Actions CI](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde) preconfigured for running lint + tests + Dockerhub (Barebone (ready for adaptation for many usecases
-- [ ] [dependency updates](https://renovatebot.com/), [CodeQL Analysis](https://securitylab.github.com/tools/codeql), running tests and code coverage with [Codecov](https://about.codecov.io/).
-
-&nbsp;
-&nbsp;
-
-# Backend Boilerplate
-
-### Backend consists of several setups on different branches:
-
-    The Backends are connected to the mongoDB which needs to be spun up via the docker image.
-
-### Express (Todo-App Example)
-
-- [ ] [React query](https://react-query.tanstack.com/) React Query Api controller
-- [ ] [Typescript](https://www.typescriptlang.org/) For types...
-- [ ] [Express](https://www.npmjs.com/package/express) For magic.
-- [ ] [Mongoose](https://www.npmjs.com/package/mongoose) For Schemas.
-- [ ] Login / register - JWT Auth, Nodemon, Cors, Cross-env
-
-#### Simple Graphql-apollo-express setup (Todo-App Example)
-
-- [ ] [React query](https://react-query.tanstack.com/) React Query Api controller
-- [ ] [Typescript](https://www.typescriptlang.org/)
-- [ ] [Graphql-Request](https://www.npmjs.com/package/graphql-request)
-- [ ] [GraphQL](https://graphql.org/) for backend magic
-- [ ] [GraphQL Generator integration ](https://www.graphql-code-generator.com/) for instant generated types for the backend and frontend
-- [ ] [GraphQL-Dataloader](https://github.com/graphql/dataloader) for performance reasons and caching
-- [ ] [TypeScript-Graphql](TypeScript-Graphql) - obviously..
-- [ ] [Unit-testing](https://blog.testproject.io/2020/06/23/testing-graphql-api/) for future testing
-- [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
-- [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
-- [ ] Login / register - JWT Auth, Nodemon, Cors, Cross-env
-
-#### Microservice preperation - Grapqhl as bff on top of express backend (Todo-App Example expanded)
-
-- [ ] [React query](https://react-query.tanstack.com/) React Query Api controller
-- [ ] [GraphQL](https://graphql.org/) for backend magic
-- [ ] [Graphql-Request](https://www.npmjs.com/package/graphql-request)
-- [ ] [GraphQL Generator integration ](https://www.graphql-code-generator.com/) for instant generated types for the backend and frontend
-- [ ] [GraphQL-Dataloader](https://github.com/graphql/dataloader) for performance reasons and caching
-- [ ] [Typescript](https://www.typescriptlang.org/)
-- [ ] [TypeScript-Graphql](TypeScript-Graphql) - obviously..
-- [ ] [Unit-testing](https://blog.testproject.io/2020/06/23/testing-graphql-api/) for future testing
-- [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
-- [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
-- [ ] Login / register - JWT Auth, Nodemon, Cors, Cross-env
 
 # CI/CD - Auto-deploy a Docker app to own VPS with GitHub Actions
 
@@ -236,7 +169,126 @@ docker-compose up -d
               # For more information look at https://devcenter.heroku.com/articles/process-model
               process_type: web
 
-   
+&nbsp;
+&nbsp;
+
+
+### Packages
+
+This is a list of all the packages in the repo and what they are used for.
+
+| Package                          | Description                                         |
+| -------------------------------- | --------------------------------------------------- |
+| [Frontend]("./packages/Web/")    | React Boilerplate + boilerplate Api Handlers        |         
+| [ReactNative]("./packages/ReactNative/")| Expo React Native App                        |
+| [Express]("./packages/Express/")    | Express Boilerplate Api Examples                 |
+| [Grapqhl]("./packages/Grapqhl/")  | A Server with GraphQl and Express                  |
+| [GqlTools]("./packages/lettuce/") | Contains GraphQL CodeGen Hooks and Type Definitions|
+| [Storybook]("./packages/storybook/") | WIP - Future storybook                          |
+
+#### Future experimentation may happen with VITE, Rollup and other cool tools.
+
+- [Rollup]() - For bundling packages
+
+
+# React boilerplate (For future projects and easy start-ups
+
+## **Contents & Setup:**
+
+### Main tools
+
+- [ ] [React](https://reactjs.org/docs/getting-started.html)
+- [ ] [Typescript](https://www.typescriptlang.org/)
+- [ ] [React query](https://react-query.tanstack.com/) A simple fetchHook is setup for easy usage
+- [ ] [Recoil](https://recoiljs.org/) Examples of using a simple state management with a small footprint
+- [ ] [React Router](https://reactrouter.com/web/guides/quick-start) for routing
+- [ ] [Tailwind CSS v3](https://tailwindcss.com) with a [basic reset for form styles](https://github.com/tailwindlabs/tailwindcss-forms)
+- [ ] [Absolute Imports](https://github.com/aleclarson/vite-tsconfig-paths) - Avoid ./././
+- [ ] [https://testing-library.com/docs/react-testing-library/intro/]Unit-tests & React Testing Library
+- [ ] [React Native](https://reactnative.dev) - As Mobile App Framwork
+- [ ] [Expo](https://expo.dev) - For managed workflow in React Native
+
+### More Tooling
+
+- [ ] [Husky](https://github.com/typicode/husky) - Git pre hooks
+- [ ] [Prettier-Standard](https://github.com/sheerun/prettier-standard) for formatting and linting
+- [ ] [lint-staged](https://github.com/okonet/lint-staged) with precommit task for linting
+- [ ] [Commitizen](https://github.com/commitizen/cz-cli) intercepting your commits to help you add nice formatted messages
+- [ ] [Absolute Imports](https://github.com/aleclarson/vite-tsconfig-paths) - Avoid ./././
+- [ ] [Renovate](https://github.com/renovatebot/renovate) for automated dependency updates
+- [ ] [git-notify](https://github.com/jevakallio/git-notify) for communicating important updates during git pull to your team
+- [ ] [git-standup](https://github.com/kamranahmedse/git-standup) to recall what you did yesterday
+- [ ] [Github Actions CI](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde) preconfigured for running lint + tests + Dockerhub (Barebone (ready for adaptation for many usecases
+- [ ] [dependency updates](https://renovatebot.com/), [CodeQL Analysis](https://securitylab.github.com/tools/codeql), running tests and code coverage with [Codecov](https://about.codecov.io/).
+
+&nbsp;
+&nbsp;
+
+# Backend Boilerplate
+
+### Backend consists of several setups for boilerplate purposes and exploration
+
+    The Backends are connected to the mongoDB which needs to be spun up via the docker image.
+
+### Express API (Todo-App Example)
+
+- [x] [Typescript](https://www.typescriptlang.org/) For types...
+- [x] [Express](https://www.npmjs.com/package/express) For magic.
+- [x] [Mongoose](https://www.npmjs.com/package/mongoose) For Schemas.
+- [x] Login / register - JWT Auth, Nodemon, Cors, Cross-env
+
+&nbsp;
+
+
+### Express API with Auth (Expanded with various tools like)
+
+
+
+
+
+
+
+
+#### Simple Graphql-apollo-express setup (Todo-App Example)
+
+- [ ] [React query](https://react-query.tanstack.com/) React Query Api controller
+- [ ] [Typescript](https://www.typescriptlang.org/)
+- [ ] [Graphql-Request](https://www.npmjs.com/package/graphql-request)
+- [ ] [GraphQL](https://graphql.org/) for backend magic
+- [ ] [GraphQL Generator integration ](https://www.graphql-code-generator.com/) for instant generated types for the backend and frontend
+- [ ] [GraphQL-Dataloader](https://github.com/graphql/dataloader) for performance reasons and caching
+- [ ] [TypeScript-Graphql](TypeScript-Graphql) - obviously..
+- [ ] [Unit-testing](https://blog.testproject.io/2020/06/23/testing-graphql-api/) for future testing
+- [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
+- [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
+- [Apollo Federation](https://www.apollographql.com/docs/federation/) - For Managing GraphQL Schema
+
+&nbsp;
+
+
+#### Grapqhl Api Example with JWT Auth and various tools.
+- [ ] Login / register - JWT Auth, Nodemon, Cors, Cross-env
+
+&nbsp;
+
+
+#### ON HOLD - Microservice preperation - Grapqhl as bff on top of express backend (Todo-App Example expanded)
+
+- [ ] [React query](https://react-query.tanstack.com/) React Query Api controller
+- [ ] [GraphQL](https://graphql.org/) for backend magic
+- [ ] [Graphql-Request](https://www.npmjs.com/package/graphql-request)
+- [ ] [GraphQL Generator integration ](https://www.graphql-code-generator.com/) for instant generated types for the backend and frontend
+- [ ] [GraphQL-Dataloader](https://github.com/graphql/dataloader) for performance reasons and caching
+- [ ] [Typescript](https://www.typescriptlang.org/)
+- [ ] [TypeScript-Graphql](TypeScript-Graphql) - obviously..
+- [ ] [Unit-testing](https://blog.testproject.io/2020/06/23/testing-graphql-api/) for future testing
+- [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
+- [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
+- [Apollo Federation](https://www.apollographql.com/docs/federation/) - For Managing GraphQL Schema
+
+
+
+
 
 &nbsp;
 &nbsp;
@@ -246,11 +298,11 @@ docker-compose up -d
 ### Storybook component library
 
 - Storybook published as an npm package - with framework of choice (or custom build for infinite posibillities.
-
+&nbsp;
 ### Storybook & Unit-tests (Low level)
 
 - Jest, and React-testing-library. Simple tests that focuses on testing the contracts between the back end and front end layers. Where as solid component testing is abstracted away into the Storybook setup.
-
+&nbsp;
 ### Unit-tests (High Level)
 
 ##### Example:
