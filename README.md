@@ -74,17 +74,7 @@ Renovate                   |  Renovate
 
     Each of the projects has an ExampleENV.json file.
     This is needed to start the projects
-
-## Getting started with docker
-
-&nbsp;
-&nbsp;
-
-
-### **Example Docker images**
-
-- [ ] React docker image
-- [ ] Mongodb docker image
+    
 
                  #mongo
                  #use admin
@@ -94,6 +84,7 @@ Renovate                   |  Renovate
 &nbsp;
               
 ### NVM usage for cross env node versions    
+
     Install & Update Script
 
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
@@ -101,6 +92,16 @@ Renovate                   |  Renovate
 
     Running either of the above commands downloads a script and runs it. The script clones the nvm repository to `~/.nvm`, and attempts to add the source lines from the snippet below to the correct profile file (`~/.bash_profile`, `~/.zshrc`, `~/.profile`, or `~/.bashrc`).
 
+## Getting started with docker
+
+&nbsp;
+&nbsp;
+
+
+### **Example Docker images**
+
+- [x] React docker image
+- [x] Mongodb docker image
 - [x] React App Docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
 - [x] Mongo seed docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
 - [x] Express-api docker image
@@ -132,17 +133,35 @@ A ReactJs application containerized for development and production.
 
 &nbsp;
 
+
+
 ## Commands
 
-- [ ] `yarn standup` - (receive a pretty list of things you did on your last working day)
-- [ ] `yarn dev` - (standard dev server) - start a development server with hot reload.
-- [ ] `yarn format` - (format and lint the codebase following prettier-standard rules)
-- [ ] `yarn generate` - Generates GraphQL schema by running the the [GraphQL Code Generator](https://graphql-code-generator.com/). The GraphQL server must be available at [http://localhost:5002/graphql](http://localhost:5002/graphql) for code generation
+    "dev:frontend": "config for your needs: - yarn --cwd ./packages/frontend run dev ",
+    "dev:reactnative": "config for your needs: - yarn --cwd ./packages/reactnative expo start --host tunnel ",
+    "dev:express": "config for your needs: - yarn --cwd ./packages/express run dev ",
+    "dev:grapqhl": "config for your needs: - yarn --cwd ./packages/grapqhl run dev ",
+    "dev:storybook": "config for your needs: - yarn --cwd ./packages/storybook run dev ",
+    "hooks:uninstall": "husky uninstall",
+    "hooks:install": "husky install",
+    "bootstrap": "lerna bootstrap --use-workspaces && yarn hooks:install",
+    "prettier": "prettier \"**/*.{md,css,scss,yaml,yml}\"",
+    "fix": "run-s fix:*",
+    "fix:code": "yarn lint:code --fix",
+    "fix:other": "yarn prettier --write",
+    "lint": "run-p --continue-on-error lint:*",
+    "lint:code": "eslint --ignore-path .gitignore --ignore-path .prettierignore --ignore-path .eslintignore --ext .ts,.tsx .",
+    "lint:other": "yarn prettier --check",
+    "lint-staged": "lint-staged",
+    "commit": "lint-staged && git-cz",
+    "postinstall": "cd ./packages/reactnative && expo-yarn-workspaces postinstall",
+    "prebootstrap": "yarn",
+    "grapqhl:addNewSubgraph": "yarn --cwd ./packages/grapqhl/grapqlapollofederationexample run addNewSubgraph",
+    "createGraph": "yarn --cwd ./packages/grapqhl/grapqlapollofederationexample run ts-node src/cli/createGraph.ts",
+    "test": "lerna run --stream test"
 
 
-
-
-- [ ] yarn commit - will run a flow composed of:
+- [x] yarn commit - will run a flow composed of:
 - [Husky](https://github.com/typicode/husky)
 - Linting with: [ESLint](https://eslint.org), [stylelint](https://stylelint.io) & [Prettier](https://prettier.io)
 - [lint-staged](https://github.com/okonet/lint-staged)
