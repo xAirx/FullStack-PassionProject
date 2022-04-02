@@ -10,12 +10,13 @@ The monorepo structure is managed with
 
 - [ ] [Lerna](https://lerna.js.org/) and created out of the [Renli Monorepo Template](https://github.com/renli-tech/monorepo)
 - [ ] [Deepsource.io](https://deepsource.io/) helps you write clean code on every pull-request. Built for engineering teams who move fast and don’t break things. 
-- [ ] [Codesee](https://www.codesee.io/) Auto-syncing code diagrams to drive collaboration, improve code reviews, reduce onboarding friction, and more.
+- [ ] [Codesee](https://www.codesee.io/) Auto-syncing code diagrams to drive collaboration, improve code reviews, reduce onboarding friction, and more. See the map here: https://app.codesee.io/maps/90748150-b28d-11ec-bc79-99929b29d669
 - [ ] [Sentry](https://sentry.io/welcome) Tracking to performance monitoring, developers can see what actually matters, solve quicker, and learn continuously about their applications - from the frontend to the backend.
-- [ ] [Heroku](https://lerna.js.org/) and created out of the [Renli Monorepo Template](https://github.com/renli-tech/monorepo)
+- [ ] [CI/CD - CircleCI & Docker hub -> Heroku](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde) preconfigured for running lint + tests + Dockerhub 
 
-
-
+       https://github.com/marketplace/actions/deploy-to-heroku
+       https://www.heroku.com/deploy-with-docker
+      
 &nbsp;
 &nbsp;
 
@@ -128,72 +129,6 @@ oilerplate/ .env
 docker-compose up -d
 
     ```
-
-&nbsp;
-&nbsp;
-
-
-# CI/CD - Auto-deploy a Docker app to own VPS with GitHub Actions
-
-- [ ] [CircleCI & Docker hub -> Heroku](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde) preconfigured for running lint + tests + Dockerhub 
-
-       https://github.com/marketplace/actions/deploy-to-heroku
-       https://www.heroku.com/deploy-with-docker
-       
-       # Your workflow name.
-        name: Deploy to heroku.
-
-        # Run workflow on every push to master branch.
-        on:
-          push:
-            branches: [master]
-
-        # Your workflows jobs.
-        jobs:
-          build:
-            runs-on: ubuntu-latest
-            steps:
-              # Check-out your repository.
-              - name: Checkout
-                uses: actions/checkout@v2
-
-
-
-          - name: Build, Push and Release a Docker container to Heroku. # Your custom step name
-            uses: gonuit/heroku-docker-deploy@v1.3.3 # GitHub action name (leave it as it is).
-            with:
-              # Below you must provide variables for your Heroku app.
-
-              # The email address associated with your Heroku account.
-              # If you don't want to use repository secrets (which is recommended) you can do:
-              # email: my.email@example.com
-              email: ${{ secrets.HEROKU_EMAIL }}
-
-              # Heroku API key associated with provided user's email.
-              # Api Key is available under your Heroku account settings.
-              heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-
-              # Name of the heroku application to which the build is to be sent.
-              heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
-
-              # (Optional, default: "./")
-              # Dockerfile directory.
-              # For example, if you have a Dockerfile in the root of your project, leave it as follows:
-              dockerfile_directory: ./
-
-              # (Optional, default: "Dockerfile")
-              # Dockerfile name.
-              dockerfile_name: Dockerfile
-
-              # (Optional, default: "")
-              # Additional options of docker build command.
-              docker_options: "--no-cache"
-
-              # (Optional, default: "web")
-              # Select the process type for which you want the docker container to be uploaded.
-              # By default, this argument is set to "web".
-              # For more information look at https://devcenter.heroku.com/articles/process-model
-              process_type: web
 
 &nbsp;
 &nbsp;
