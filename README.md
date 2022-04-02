@@ -81,11 +81,16 @@ A ReactJs application containerized for development and production.
 - [ ] `yarn format` - (format and lint the codebase following prettier-standard rules)
 - [ ] `yarn generate` - Generates GraphQL schema by running the the [GraphQL Code Generator](https://graphql-code-generator.com/). The GraphQL server must be available at [http://localhost:5002/graphql](http://localhost:5002/graphql) for code generation
 
+
+
+
 - [ ] yarn commit - will run a flow composed of:
 - [Husky](https://github.com/typicode/husky)
 - Linting with: [ESLint](https://eslint.org), [stylelint](https://stylelint.io) & [Prettier](https://prettier.io)
 - [lint-staged](https://github.com/okonet/lint-staged)
 - [Commitizen](https://github.com/commitizen/cz-cli)
+
+
 
 ### docker-compose(dev):
 
@@ -113,6 +118,8 @@ docker-compose up -d
 
 
 # CI/CD - Auto-deploy a Docker app to own VPS with GitHub Actions
+
+- [ ] [Github Actions CI](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde) preconfigured for running lint + tests + Dockerhub 
 
         # Your workflow name.
         name: Deploy to heroku.
@@ -183,15 +190,13 @@ This is a list of all the packages in the repo and what they are used for.
 | [ReactNative]("./packages/ReactNative/")| Expo React Native App                        |
 | [Express]("./packages/Express/")    | Express Boilerplate Api Examples                 |
 | [Grapqhl]("./packages/Grapqhl/")  | A Server with GraphQl and Express                  |
-| [GqlTools]("./packages/lettuce/") | Contains GraphQL CodeGen Hooks and Type Definitions|
+| [GqlTools]("./packages/GqlTools/") | Contains GraphQL CodeGen Hooks and Type Defs      |
 | [Storybook]("./packages/storybook/") | WIP - Future storybook                          |
 
 #### Future experimentation may happen with VITE, Rollup and other cool tools.
 
-- [Rollup]() - For bundling packages
 
-
-# React boilerplate (For future projects and easy start-ups
+# React boilerplates (For future projects and easy start-ups
 
 ## **Contents & Setup:**
 
@@ -214,17 +219,15 @@ This is a list of all the packages in the repo and what they are used for.
 - [ ] [Prettier-Standard](https://github.com/sheerun/prettier-standard) for formatting and linting
 - [ ] [lint-staged](https://github.com/okonet/lint-staged) with precommit task for linting
 - [ ] [Commitizen](https://github.com/commitizen/cz-cli) intercepting your commits to help you add nice formatted messages
-- [ ] [Absolute Imports](https://github.com/aleclarson/vite-tsconfig-paths) - Avoid ./././
+- [ ] [Absolute Imports](https://medium.com/geekculture/making-life-easier-with-absolute-imports-react-in-javascript-and-typescript-bbdab8a8a3a1) - Avoid ./././
 - [ ] [Renovate](https://github.com/renovatebot/renovate) for automated dependency updates
-- [ ] [git-notify](https://github.com/jevakallio/git-notify) for communicating important updates during git pull to your team
-- [ ] [git-standup](https://github.com/kamranahmedse/git-standup) to recall what you did yesterday
-- [ ] [Github Actions CI](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde) preconfigured for running lint + tests + Dockerhub (Barebone (ready for adaptation for many usecases
+(Barebone (ready for adaptation for many usecases
 - [ ] [dependency updates](https://renovatebot.com/), [CodeQL Analysis](https://securitylab.github.com/tools/codeql), running tests and code coverage with [Codecov](https://about.codecov.io/).
 
 &nbsp;
 &nbsp;
 
-# Backend Boilerplate
+# Backend Boilerplates
 
 ### Backend consists of several setups for boilerplate purposes and exploration
 
@@ -261,30 +264,49 @@ This is a list of all the packages in the repo and what they are used for.
 - [ ] [Unit-testing](https://blog.testproject.io/2020/06/23/testing-graphql-api/) for future testing
 - [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
 - [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
-- [Apollo Federation](https://www.apollographql.com/docs/federation/) - For Managing GraphQL Schema
+
 
 &nbsp;
 
 
 #### Grapqhl Api Example with JWT Auth and various tools.
+- [ ] [GraphQL](https://graphql.org/) for backend magic
+- [ ] [GraphQL Generator integration ](https://www.graphql-code-generator.com/) for instant generated types for the backend and frontend
+- [ ] [GraphQL-Dataloader](https://github.com/graphql/dataloader) for performance reasons and caching
+- [ ] [Typescript](https://www.typescriptlang.org/)
+- [ ] [TypeScript-Graphql](TypeScript-Graphql) - obviously..
+- [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
+- [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
 - [ ] Login / register - JWT Auth, Nodemon, Cors, Cross-env
 
 &nbsp;
 
 
-#### ON HOLD - Microservice preperation - Grapqhl as bff on top of express backend (Todo-App Example expanded)
+### GrapQL Experimenting with federated GraphQL Microservices.
 
-- [ ] [React query](https://react-query.tanstack.com/) React Query Api controller
+- [ ] [GraphQL](https://graphql.org/) for backend magic
+- [ ] [GraphQL Generator integration ](https://www.graphql-code-generator.com/) for instant generated types for the backend and frontend
+- [ ] [GraphQL-Dataloader](https://github.com/graphql/dataloader) for performance reasons and caching
+- [ ] [Typescript](https://www.typescriptlang.org/)
+- [ ] [TypeScript-Graphql](TypeScript-Graphql) - obviously..
+- [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
+- [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
+- [Apollo Federation](https://www.apollographql.com/docs/federation/) - For Managing GraphQL Schema
+
+
+&nbsp;
+
+#### ON HOLD - Microservice preperation - Grapqhl example as bff on top of express backend (Todo-App Example expanded)
+
 - [ ] [GraphQL](https://graphql.org/) for backend magic
 - [ ] [Graphql-Request](https://www.npmjs.com/package/graphql-request)
 - [ ] [GraphQL Generator integration ](https://www.graphql-code-generator.com/) for instant generated types for the backend and frontend
 - [ ] [GraphQL-Dataloader](https://github.com/graphql/dataloader) for performance reasons and caching
 - [ ] [Typescript](https://www.typescriptlang.org/)
 - [ ] [TypeScript-Graphql](TypeScript-Graphql) - obviously..
-- [ ] [Unit-testing](https://blog.testproject.io/2020/06/23/testing-graphql-api/) for future testing
 - [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
 - [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
-- [Apollo Federation](https://www.apollographql.com/docs/federation/) - For Managing GraphQL Schema
+
 
 
 
