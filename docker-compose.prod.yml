@@ -201,7 +201,7 @@ services:
   mongo-db:
     container_name: mongo
     restart: always
-    image: mongo:4.2.0
+    image: mongo:4.4.13
     ports:
       - 27017:27017
       # ENVIRONMET_VARIABLE_NAME: "environment variable value"
