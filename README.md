@@ -27,19 +27,19 @@ The monorepo structure is managed with
 Example of Deepsource working together with Codesee:
 
 DeepSource will scan the project for issues, will scan all commits, and branches and will help with hooking into PR's as well.
-![Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086720497.png)
-![Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086721847.png)        
+![DeepsourceExample](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086720497.png)
+![DeepsourceExample](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086721847.png)        
       
         
 Codesee will show which files and where deepsource has reccomended changes and give a DIFF tool to see the exact changes in each component.
 It also comes with a heatmap, which easily can give an overview of where the code is being refactored or developed the most.
-![Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086720291.png)
-![Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086722106.png)  
+![CodeseeExample](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086720291.png)
+![CodeseeExample](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086722106.png)  
 
        
 Example of Renovate bumping packages and working together with codeQL, and GitGuardian
-![Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086720291.png)
-![Fullstack Kubernetes Project(3)](https://github.com/xAirx/FullStack-PassionProject/issues/31#issue-1190736233.png)
+![Renovate](https://github.com/xAirx/FullStack-PassionProject/issues/31#issuecomment-1086720291.png)
+![Renovate](https://github.com/xAirx/FullStack-PassionProject/issues/31#issue-1190736233.png)
 
 &nbsp;
 &nbsp;
@@ -50,7 +50,7 @@ Example of Renovate bumping packages and working together with codeQL, and GitGu
 
 ## **A simple Architecture visualization:**
 
-![Fullstack Kubernetes Project(3)](https://user-images.githubusercontent.com/22436080/159190211-ae8e3cf2-eb51-419f-ac7d-ee71ffc08a92.png)
+![Fullstack Kubernetes Project(6)](https://user-images.githubusercontent.com/22436080/159190211-ae8e3cf2-eb51-419f-ac7d-ee71ffc08a92.png)
 
     The Idea is that I can have several projects, a React Native project, A simple React project, among others, that can be spun up fast and run together with either technology choice in the backend.
 
