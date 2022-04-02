@@ -28,7 +28,7 @@ Modern web based applications consist of multiple services. For example, a backe
 
 ### DeepSource will scan the project for issues, will scan all commits, and branches and will help with hooking into PR's as well.
 <img src=https://user-images.githubusercontent.com/22436080/161400950-3c48227e-f8b0-4c13-899a-c0e0a958f691.png width="400" height="400"/>
-<img src=https://user-images.githubusercontent.com/22436080/161400796-7a196b57-320e-4e49-bd6d-ef4e72e755b9.png width="400" height="400"/>        
+<img src=https://user-images.githubusercontent.com/22436080/161400796-7a196b57-320e-4e49-bd6d-ef4e72e755b9.png width="600" height="400"/>        
       
         
 ### Codesee will show which files and where deepsource has reccomended changes and give a DIFF tool to see the exact changes in each component.
