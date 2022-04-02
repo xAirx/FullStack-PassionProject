@@ -38,7 +38,7 @@ It also comes with a heatmap, which easily can give an overview of where the cod
 
        
 ### Example of Renovate bumping packages and working together with codeQL, and GitGuardian
-<img src=https://user-images.githubusercontent.com/22436080/161400772-b5c86a25-5c54-438b-8374-835f9e74538c.png width="500" height="400"/>
+<img src=https://user-images.githubusercontent.com/22436080/161400772-b5c86a25-5c54-438b-8374-835f9e74538c.png width="600" height="400"/>
 <img src=https://user-images.githubusercontent.com/22436080/161400745-5a85b03a-a253-4a54-9826-d87b16b95f50.png width="600" height="300"/> 
 
 &nbsp;
