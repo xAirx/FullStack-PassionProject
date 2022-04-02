@@ -132,6 +132,7 @@ A ReactJs application containerized for development and production.
      - To serve these files we use Nginx
 
 &nbsp;
+&nbsp;
 
 
 
@@ -167,7 +168,8 @@ A ReactJs application containerized for development and production.
 - [lint-staged](https://github.com/okonet/lint-staged)
 - [Commitizen](https://github.com/commitizen/cz-cli)
 
-
+&nbsp;
+&nbsp;
 
 ### docker-compose(dev):
 
@@ -207,8 +209,10 @@ This is a list of all the packages in the repo and what they are used for.
 | [GqlTools]("./packages/GqlTools/") | Contains GraphQL CodeGen Hooks and Type Defs      |
 | [Storybook]("./packages/storybook/") | WIP - Future storybook                          |
 
-#### Future experimentation may happen with VITE, Rollup and other cool tools.
+ - Future experimentation may happen with VITE, Rollup and other cool tools.
 
+&nbsp;
+&nbsp;
 
 # React boilerplates (For future projects and easy start-ups
 
@@ -216,27 +220,27 @@ This is a list of all the packages in the repo and what they are used for.
 
 ### Main tools
 
-- [ ] [React](https://reactjs.org/docs/getting-started.html)
-- [ ] [Typescript](https://www.typescriptlang.org/)
-- [ ] [React query](https://react-query.tanstack.com/) A simple fetchHook is setup for easy usage
+- [x] [React](https://reactjs.org/docs/getting-started.html)
+- [x] [Typescript](https://www.typescriptlang.org/)
+- [x] [React query](https://react-query.tanstack.com/) A simple fetchHook is setup for easy usage
 - [ ] [Recoil](https://recoiljs.org/) Examples of using a simple state management with a small footprint
 - [ ] [React Router](https://reactrouter.com/web/guides/quick-start) for routing
-- [ ] [Tailwind CSS v3](https://tailwindcss.com) with a [basic reset for form styles](https://github.com/tailwindlabs/tailwindcss-forms)
-- [ ] [Absolute Imports](https://github.com/aleclarson/vite-tsconfig-paths) - Avoid ./././
-- [ ] [https://testing-library.com/docs/react-testing-library/intro/]Unit-tests & React Testing Library
-- [ ] [React Native](https://reactnative.dev) - As Mobile App Framwork
-- [ ] [Expo](https://expo.dev) - For managed workflow in React Native
+- [x] [Tailwind CSS v3](https://tailwindcss.com) with a [basic reset for form styles](https://github.com/tailwindlabs/tailwindcss-forms)
+- [x] [Absolute Imports](https://github.com/aleclarson/vite-tsconfig-paths) - Avoid ./././
+- [x] [https://testing-library.com/docs/react-testing-library/intro/]Unit-tests & React Testing Library
+- [x] [React Native](https://reactnative.dev) - As Mobile App Framwork
+- [x] [Expo](https://expo.dev) - For managed workflow in React Native
 
 ### More Tooling
 
-- [ ] [Husky](https://github.com/typicode/husky) - Git pre hooks
-- [ ] [Prettier-Standard](https://github.com/sheerun/prettier-standard) for formatting and linting
-- [ ] [lint-staged](https://github.com/okonet/lint-staged) with precommit task for linting
-- [ ] [Commitizen](https://github.com/commitizen/cz-cli) intercepting your commits to help you add nice formatted messages
-- [ ] [Absolute Imports](https://medium.com/geekculture/making-life-easier-with-absolute-imports-react-in-javascript-and-typescript-bbdab8a8a3a1) - Avoid ./././
-- [ ] [Renovate](https://github.com/renovatebot/renovate) for automated dependency updates
+- [x] [Husky](https://github.com/typicode/husky) - Git pre hooks
+- [x] [Prettier-Standard](https://github.com/sheerun/prettier-standard) for formatting and linting
+- [x] [lint-staged](https://github.com/okonet/lint-staged) with precommit task for linting
+- [x] [Commitizen](https://github.com/commitizen/cz-cli) intercepting your commits to help you add nice formatted messages
+- [x] [Absolute Imports](https://medium.com/geekculture/making-life-easier-with-absolute-imports-react-in-javascript-and-typescript-bbdab8a8a3a1) - Avoid ./././
+- [x] [Renovate](https://github.com/renovatebot/renovate) for automated dependency updates
 (Barebone (ready for adaptation for many usecases
-- [ ] [dependency updates](https://renovatebot.com/), [CodeQL Analysis](https://securitylab.github.com/tools/codeql), running tests and code coverage with [Codecov](https://about.codecov.io/).
+- [x] [dependency updates](https://renovatebot.com/), [CodeQL Analysis](https://securitylab.github.com/tools/codeql), running tests and code coverage with [Codecov](https://about.codecov.io/).
 
 &nbsp;
 &nbsp;
@@ -255,16 +259,15 @@ This is a list of all the packages in the repo and what they are used for.
 - [x] Login / register - JWT Auth, Nodemon, Cors, Cross-env
 
 &nbsp;
-
+&nbsp;
 
 ### Express API with Auth (Expanded with various tools like)
 
 
 
 
-
-
-
+&nbsp;
+&nbsp;
 
 #### Simple Graphql-apollo-express setup (Todo-App Example)
 
@@ -281,7 +284,7 @@ This is a list of all the packages in the repo and what they are used for.
 
 
 &nbsp;
-
+&nbsp;
 
 #### Grapqhl Api Example with JWT Auth and various tools.
 - [ ] [GraphQL](https://graphql.org/) for backend magic
@@ -309,6 +312,7 @@ This is a list of all the packages in the repo and what they are used for.
 
 
 &nbsp;
+&nbsp;
 
 #### ON HOLD - Microservice preperation - Grapqhl example as bff on top of express backend (Todo-App Example expanded)
 
@@ -320,9 +324,6 @@ This is a list of all the packages in the repo and what they are used for.
 - [ ] [TypeScript-Graphql](TypeScript-Graphql) - obviously..
 - [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
 - [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
-
-
-
 
 
 
@@ -379,21 +380,13 @@ This is a list of all the packages in the repo and what they are used for.
                 Returning the response to the client
 
 &nbsp;
-
 &nbsp;
-
 &nbsp;
-
 &nbsp;
-
 &nbsp;
-
 &nbsp;
-
 &nbsp;
-
 &nbsp;
-
 &nbsp;
 
 # (WIP - Work in progress (MVP) - Prometheus & Node Exporter & Grafana setup.
