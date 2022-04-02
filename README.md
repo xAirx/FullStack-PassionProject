@@ -16,6 +16,7 @@ The monorepo structure is managed with
 
        https://github.com/marketplace/actions/deploy-to-heroku
        https://www.heroku.com/deploy-with-docker
+       https://medium.com/nexton/deploying-docker-images-to-heroku-with-circleci-713c764e248d
       
 &nbsp;
 &nbsp;
