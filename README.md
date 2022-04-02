@@ -69,7 +69,7 @@ Renovate                   |  Renovate
 &nbsp;
 &nbsp;
 
-## Setting up ENV files
+### Setting up ENV files
 
     Each of the projects has an ExampleENV.json file.
     This is needed to start the projects
