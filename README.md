@@ -210,10 +210,10 @@ This is a list of all the packages in the repo and what they are used for.
 ### Main tools
 
 - [x] [React](https://reactjs.org/docs/getting-started.html)
+- [ ] [Next.js](https://nextjs.org/)
 - [x] [Typescript](https://www.typescriptlang.org/)
 - [x] [React query](https://react-query.tanstack.com/) A simple fetchHook is setup for easy usage
 - [ ] [Recoil](https://recoiljs.org/) Examples of using a simple state management with a small footprint
-- [ ] [React Router](https://reactrouter.com/web/guides/quick-start) for routing
 - [x] [Tailwind CSS v3](https://tailwindcss.com) with a [basic reset for form styles](https://github.com/tailwindlabs/tailwindcss-forms)
 - [x] [Absolute Imports](https://github.com/aleclarson/vite-tsconfig-paths) - Avoid ./././
 - [x] [https://testing-library.com/docs/react-testing-library/intro/]Unit-tests & React Testing Library
