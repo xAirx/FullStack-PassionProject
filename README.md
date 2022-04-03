@@ -179,7 +179,7 @@ Remember to add the component to the index.ts export for exporting the component
 ### Installing library into other projects 
 
 ```
-npm i --save git+https://github.com/xAirx/react-component-library.git#branch-name
+yarn add mpw-storybook@latest
 ```
 
 ### Usage 
