@@ -97,10 +97,10 @@ Modern web based applications consist of multiple services. For example, a backe
 
 
 - [x] React App Docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
-- [x] Express-api docker image
-- [x] Graphql docker image
+- [x] Barebones Express-api docker image
+- [ ] Graphql docker image
 - [x] Mongodb docker image
-- [] Mongo seed docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
+- [x] Mongo seed docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
 
       The express server runs standalone  and connects to the MongoDB 
 
@@ -149,8 +149,7 @@ A ReactJs application containerized for development and production.
     "commit": "lint-staged && git-cz",
     "postinstall": "cd ./packages/reactnative && expo-yarn-workspaces postinstall",
     "prebootstrap": "yarn",
-    "grapqhl:addNewSubgraph": "yarn --cwd ./packages/grapqhl/grapqlapollofederationexample run addNewSubgraph",
-    "createGraph": "yarn --cwd ./packages/grapqhl/grapqlapollofederationexample run ts-node src/cli/createGraph.ts",
+    
 
 - [x] yarn commit - will run a flow composed of:
 - [x] [Husky](https://github.com/typicode/husky)
@@ -191,11 +190,10 @@ This is a list of all the packages in the repo and what they are used for.
 
 | Package                                  | Description                                  |
 | ---------------------------------------- | -------------------------------------------- |
-| [Frontend]("./packages/Web/")            | React Boilerplate + boilerplate Api Handlers |
-| [ReactNative]("./packages/ReactNative/") | Expo React Native App                        |
-| [Express]("./packages/Express/")         | Express Boilerplate Api Examples             |
-| [Grapqhl]("./packages/Grapqhl/")         | A Server with GraphQl and Express            |
-| [GqlTools]("./packages/GqlTools/")       | Contains GraphQL CodeGen Hooks and Type Defs |
+| [Frontend]("./frontend/")                | Next.js boilerplate                          |
+| [ReactNative]("./ReactNative/")          | Expo React Native App                        |
+| [Express]("./backend/**/")               | Express Boilerplate Api Examples             |
+| [Grapqhl]("./backend/Grapqhl/**")        | A Server with GraphQl and Express            |
 | [Storybook]("./packages/storybook/")     | WIP - Future storybook                       |
 
 - Future experimentation may happen with VITE, Rollup and other cool tools.
@@ -203,22 +201,29 @@ This is a list of all the packages in the repo and what they are used for.
 &nbsp;
 &nbsp;
 
-# React boilerplates (For future projects and easy start-ups
+# React Next.js (For future projects and easy start-ups)
 
 ## **Contents & Setup:**
 
 ### Main tools
 
 - [x] [React](https://reactjs.org/docs/getting-started.html)
-- [ ] [Next.js](https://nextjs.org/)
+- [x] [Next.js](https://nextjs.org/)
 - [x] [Typescript](https://www.typescriptlang.org/)
 - [x] [React query](https://react-query.tanstack.com/) A simple fetchHook is setup for easy usage
-- [ ] [Recoil](https://recoiljs.org/) Examples of using a simple state management with a small footprint
+- [x] [Recoil](https://recoiljs.org/) Examples of using a simple state management with a small footprint
 - [x] [Tailwind CSS v3](https://tailwindcss.com) with a [basic reset for form styles](https://github.com/tailwindlabs/tailwindcss-forms)
 - [x] [Absolute Imports](https://github.com/aleclarson/vite-tsconfig-paths) - Avoid ./././
 - [x] [https://testing-library.com/docs/react-testing-library/intro/]Unit-tests & React Testing Library
-- [x] [React Native](https://reactnative.dev) - As Mobile App Framwork
-- [x] [Expo](https://expo.dev) - For managed workflow in React Native
+
+
+### Backend for Next.js Project (Firebase)
+
+- [x] Authentication + OAuth
+- [x] Cloud Firestore
+- [x] Realtime Database 
+- [x] Storage
+
 
 ### More Tooling
 
@@ -246,11 +251,10 @@ This is a list of all the packages in the repo and what they are used for.
 
 &nbsp;
 &nbsp;
-
-### Express API with Auth (Expanded with various tools like)
-
 &nbsp;
 &nbsp;
+&nbsp;
+
 
 #### Simple Graphql-apollo-express setup (Todo-App Example)
 
