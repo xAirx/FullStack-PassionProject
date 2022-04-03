@@ -138,7 +138,6 @@ A ReactJs application containerized for development and production.
     "dev:storybook": "config for your needs: - yarn --cwd ./packages/storybook run dev ",
     "hooks:uninstall": "husky uninstall",
     "hooks:install": "husky install",
-    "bootstrap": "lerna bootstrap --use-workspaces && yarn hooks:install",
     "prettier": "prettier \"**/*.{md,css,scss,yaml,yml}\"",
     "fix": "run-s fix:*",
     "fix:code": "yarn lint:code --fix",
@@ -152,7 +151,6 @@ A ReactJs application containerized for development and production.
     "prebootstrap": "yarn",
     "grapqhl:addNewSubgraph": "yarn --cwd ./packages/grapqhl/grapqlapollofederationexample run addNewSubgraph",
     "createGraph": "yarn --cwd ./packages/grapqhl/grapqlapollofederationexample run ts-node src/cli/createGraph.ts",
-    "test": "lerna run --stream test"
 
 - [x] yarn commit - will run a flow composed of:
 - [x] [Husky](https://github.com/typicode/husky)
