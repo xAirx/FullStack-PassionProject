@@ -1,17 +1,17 @@
-import { atom, selector } from "recoil";
-import { User } from "./types";
-import { getUsers } from "./service";
+import { atom, selector } from 'recoil';
+import { User } from './types';
+import { getUsers } from './service';
 
 export const selectedUserEmailState = atom<string>({
-  key: "selectedUserEmailState",
-  default: ""
+  key: 'selectedUserEmailState',
+  default: '',
 });
 
 /**
  * Populate the default selector return value with a service call.
  */
 export const allUsersState = selector<User[]>({
-  key: "allUsersState",
+  key: 'allUsersState',
   get: async ({ get }) => {
     // Referencing another state element (atom) creates a dependency:
     // Any change to the value of `selectedUserEmailState` will cause
@@ -25,7 +25,7 @@ export const allUsersState = selector<User[]>({
       console.error(`allUsersState -> getUsers() ERROR: \n${error}`);
       return [];
     }
-  }
+  },
 });
 
 /**
@@ -37,6 +37,6 @@ export const allUsersState = selector<User[]>({
  * consume `userListState`.
  */
 export const userListState = atom<User[]>({
-  key: "userListState",
-  default: allUsersState
+  key: 'userListState',
+  default: allUsersState,
 });

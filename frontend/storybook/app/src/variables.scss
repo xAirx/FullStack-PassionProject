@@ -6,13 +6,13 @@ $harvey-green: #005f20;
 $harvey-blue: #070bce;
 
 :root {
-  --background: #fff;
-  --font-color: #494949;
+	--background: #fff;
+	--font-color: #494949;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #3c3c3c;
-    --font-color: #fafafa;
-  }
+	:root {
+		--background: #3c3c3c;
+		--font-color: #fafafa;
+	}
 }
