@@ -12,7 +12,7 @@ Modern web based applications consist of multiple services. For example, a backe
 - [x] [Deepsource.io](https://deepsource.io/) helps you write clean code on every pull-request. Built for engineering teams who move fast and don’t break things.
 - [x] [Codesee](https://www.codesee.io/) Auto-syncing code diagrams to drive collaboration, improve code reviews, reduce onboarding friction, and more. See the map here: https://app.codesee.io/maps/90748150-b28d-11ec-bc79-99929b29d669
 - [x] [Sentry](https://sentry.io/welcome) Tracking to performance monitoring, developers can see what actually matters, solve quicker, and learn continuously about their applications - from the frontend to the backend.
-- [x] [CI/CD - CircleCI & Docker hub -> Heroku](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde) 
+- [x] [CI/CD - CircleCI & Docker hub -> Heroku](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde)
 - [ ] Circle-CI boilerplate preconfigured for running lint + tests + Dockerhub deploys and storybook npm package publish hooks.
 
        https://github.com/marketplace/actions/deploy-to-heroku
@@ -96,15 +96,16 @@ Modern web based applications consist of multiple services. For example, a backe
 
 This is a list of all the packages in the repo and what they are used for.
 
-| Package                                  | Description                                   |
-| ---------------------------------------- | ----------------------------------------------|
-| [Frontend]("./frontend/")                | Next.js boilerplate (uses components from storybook)|
-| [ReactNative]("./ReactNative/")          | Expo React Native App                         | 
-| [Express]("./backend/**/")               | Express Boilerplate Api Examples              |
-| [Grapqhl]("./backend/Grapqhl/**")        | A Server with GraphQl and Express             |
-| [Storybook]("./frontend/.storybook")     | Storybook running in docker                   | 
+| Package                              | Description                                          |
+| ------------------------------------ | ---------------------------------------------------- |
+| [Frontend]("./frontend/")            | Next.js boilerplate (uses components from storybook) |
+| [ReactNative]("./ReactNative/")      | Expo React Native App                                |
+| [Express]("./backend/**/")           | Express Boilerplate Api Examples                     |
+| [Grapqhl]("./backend/Grapqhl/**")    | A Server with GraphQl and Express                    |
+| [Storybook]("./frontend/.storybook") | Storybook running in docker                          |
 
-##### TODO: 
+##### TODO:
+
     - Future experimentation may happen with VITE, Rollup and other cool tools.
 
 &nbsp;
@@ -125,17 +126,14 @@ This is a list of all the packages in the repo and what they are used for.
 - [x] [Absolute Imports](https://github.com/aleclarson/vite-tsconfig-paths) - Avoid ./././
 - [x] [https://testing-library.com/docs/react-testing-library/intro/]Unit-tests & React Testing Library
 
-
 ### Storybook component library
 
-- [x]  Storybook published as an npm package - with framework of choice (or custom build for infinite posibillities.
-- [x]  Rollup
-- [x]  SCSS
-- [x]  TypeScript
-- [x]  Storybook to help you create and show off your components
-- [x]  Jest and React Testing Library enabling testing of the components
-
-
+- [x] Storybook published as an npm package - with framework of choice (or custom build for infinite posibillities.
+- [x] Rollup
+- [x] SCSS
+- [x] TypeScript
+- [x] Storybook to help you create and show off your components
+- [x] Jest and React Testing Library enabling testing of the components
 
 #### Storybook & Unit-tests (Low level)
 
@@ -157,9 +155,8 @@ This is a list of all the packages in the repo and what they are used for.
 
 - [x] Authentication + OAuth
 - [x] Cloud Firestore
-- [x] Realtime Database 
+- [x] Realtime Database
 - [x] Storage
-
 
 ### More Tooling
 
@@ -172,8 +169,7 @@ This is a list of all the packages in the repo and what they are used for.
 &nbsp;
 &nbsp;
 
-
-## Getting started locally 
+## Getting started locally
 
 ### Commands
 
@@ -195,7 +191,6 @@ This is a list of all the packages in the repo and what they are used for.
     "commit": "lint-staged && git-cz",
     "postinstall": "cd ./packages/reactnative && expo-yarn-workspaces postinstall",
     "prebootstrap": "yarn",
-    
 
 - [x] yarn commit - will run a flow composed of:
 - [x] [Husky](https://github.com/typicode/husky)
@@ -206,11 +201,9 @@ This is a list of all the packages in the repo and what they are used for.
 &nbsp;
 &nbsp;
 
-
 ## Getting started with docker
 
 ### **Example Docker images**
-
 
 - [x] React App Docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
 - [x] Barebones Express-api docker image
@@ -218,9 +211,8 @@ This is a list of all the packages in the repo and what they are used for.
 - [x] Mongodb docker image
 - [x] Mongo seed docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
 
-      The express server runs standalone  and connects to the MongoDB 
-      The GraphQL server runs standalone and connects to the MongoDB 
-
+      The express server runs standalone  and connects to the MongoDB
+      The GraphQL server runs standalone and connects to the MongoDB
 
 &nbsp;
 
@@ -298,7 +290,6 @@ docker-compose up -d
 &nbsp;
 &nbsp;
 
-
 #### Simple Graphql-apollo-express setup (Todo-App Example)
 
 - [ ] [React query](https://react-query.tanstack.com/) React Query Api controller
@@ -328,7 +319,6 @@ docker-compose up -d
 
 &nbsp;
 
-
 #### ON HOLD - Microservice preperation - Grapqhl example as bff on top of express backend (Todo-App Example expanded)
 
 - [ ] [GraphQL](https://graphql.org/) for backend magic
@@ -356,7 +346,6 @@ docker-compose up -d
 
 &nbsp;
 &nbsp;
-
 
 ## Express backend and GraphQL Layer
 
