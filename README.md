@@ -95,16 +95,16 @@ Modern web based applications consist of multiple services. For example, a backe
 
 ### **Example Docker images**
 
-- [x] React docker image
-- [x] Mongodb docker image
+
 - [x] React App Docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
-- [x] Mongo seed docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
 - [x] Express-api docker image
 - [x] Graphql docker image
+- [x] Mongodb docker image
+- [] Mongo seed docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
 
-      The express server runs standalone  and connects to the mongoDB on 27017/restAPI
+      The express server runs standalone  and connects to the MongoDB 
 
-      The GraphQL server runs standalone and connects to the mongoDB on 27017/graphql-api
+      The GraphQL server runs standalone and connects to the MongoDB 
 
 &nbsp;
 
@@ -281,19 +281,6 @@ This is a list of all the packages in the repo and what they are used for.
 
 &nbsp;
 
-### GrapQL Experimenting with federated GraphQL Microservices.
-
-- [ ] [GraphQL](https://graphql.org/) for backend magic
-- [ ] [GraphQL Generator integration ](https://www.graphql-code-generator.com/) for instant generated types for the backend and frontend
-- [ ] [GraphQL-Dataloader](https://github.com/graphql/dataloader) for performance reasons and caching
-- [ ] [Typescript](https://www.typescriptlang.org/)
-- [ ] [TypeScript-Graphql](TypeScript-Graphql) - obviously..
-- [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
-- [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
-- [Apollo Federation](https://www.apollographql.com/docs/federation/) - For Managing GraphQL Schema
-
-&nbsp;
-&nbsp;
 
 #### ON HOLD - Microservice preperation - Grapqhl example as bff on top of express backend (Todo-App Example expanded)
 
@@ -305,6 +292,20 @@ This is a list of all the packages in the repo and what they are used for.
 - [ ] [TypeScript-Graphql](TypeScript-Graphql) - obviously..
 - [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
 - [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
+
+&nbsp;
+&nbsp;
+
+### GrapQL Experimenting with federated GraphQL Microservices.
+
+- [ ] [GraphQL](https://graphql.org/) for backend magic
+- [ ] [GraphQL Generator integration ](https://www.graphql-code-generator.com/) for instant generated types for the backend and frontend
+- [ ] [GraphQL-Dataloader](https://github.com/graphql/dataloader) for performance reasons and caching
+- [ ] [Typescript](https://www.typescriptlang.org/)
+- [ ] [TypeScript-Graphql](TypeScript-Graphql) - obviously..
+- [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
+- [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
+- [Apollo Federation](https://www.apollographql.com/docs/federation/) - For Managing GraphQL Schema
 
 &nbsp;
 &nbsp;
