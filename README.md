@@ -220,6 +220,8 @@ This is a list of all the packages in the repo and what they are used for.
 ### Storybook
 
 - [x] Story generation with PLOP.js
+- [x] VScode extension - Storybook helper
+- [x] VScode extension - StoryExplorer
 
 
 ### Backend for Next.js Project (Firebase)
