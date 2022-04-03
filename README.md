@@ -148,7 +148,6 @@ npm run generate YourComponentName
 ```
 
 This will generate:
-s
 ```
 /src
   /YourComponentName
