@@ -6,7 +6,7 @@ Modern web based applications consist of multiple services. For example, a backe
 
 &nbsp;
 
-## The monorepo structure is managed with
+## The "monorepo" structure is managed with
 
 - [x] [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) will scan all files in each repository to look for relevant package files. It will also group upgrades from the same monorepo into a single PR to ensure tests pass and PR noise is reduced. Natively supports Lerna and Yarn Workspaces with zero configuration necessary.
 - [x] [Deepsource.io](https://deepsource.io/) helps you write clean code on every pull-request. Built for engineering teams who move fast and don’t break things.
@@ -91,101 +91,7 @@ Modern web based applications consist of multiple services. For example, a backe
 &nbsp;
 &nbsp;
 
-## Getting started with docker
-
-### **Example Docker images**
-
-
-- [x] React App Docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
-- [x] Barebones Express-api docker image
-- [ ] Graphql docker image
-- [x] Mongodb docker image
-- [x] Mongo seed docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
-- [ ] Storybook Docker image
-
-      The express server runs standalone  and connects to the MongoDB 
-      The GraphQL server runs standalone and connects to the MongoDB 
-      The storybook server runs standalone and exposes the apps components.
-
-&nbsp;
-
-A ReactJs application containerized for development and production.
-
-    	`Nginx` for serving production build of our ReactJs application.
-
-#### Explaining the environments:
-
-##### Development environment
-
-    - Hot reloading on code changes
-
-##### Production environment
-
-     - Optimized, building static assets and served through a web server or CDN.
-     - Here Nginx is used to serve static assets.
-     - The Production and development docker configs are as "close" to each other as possible to minimize unforeseen issues once deployed.
-     - When the react application is "BUILD", the output is optimized static assets, (html, css and the js file)
-     - To serve these files we use Nginx
-
-&nbsp;
-&nbsp;
-
-## Commands
-
-    "dev:frontend": "config for your needs: - yarn --cwd ./packages/frontend run dev ",
-    "dev:reactnative": "config for your needs: - yarn --cwd ./packages/reactnative expo start --host tunnel ",
-    "dev:express": "config for your needs: - yarn --cwd ./packages/express run dev ",
-    "dev:grapqhl": "config for your needs: - yarn --cwd ./packages/grapqhl run dev ",
-    "dev:storybook": "config for your needs: - yarn --cwd ./packages/storybook run dev ",
-    "hooks:uninstall": "husky uninstall",
-    "hooks:install": "husky install",
-    "prettier": "prettier \"**/*.{md,css,scss,yaml,yml}\"",
-    "fix": "run-s fix:*",
-    "fix:code": "yarn lint:code --fix",
-    "fix:other": "yarn prettier --write",
-    "lint": "run-p --continue-on-error lint:*",
-    "lint:code": "eslint --ignore-path .gitignore --ignore-path .prettierignore --ignore-path .eslintignore --ext .ts,.tsx .",
-    "lint:other": "yarn prettier --check",
-    "lint-staged": "lint-staged",
-    "commit": "lint-staged && git-cz",
-    "postinstall": "cd ./packages/reactnative && expo-yarn-workspaces postinstall",
-    "prebootstrap": "yarn",
-    
-
-- [x] yarn commit - will run a flow composed of:
-- [x] [Husky](https://github.com/typicode/husky)
-- [x] Linting with: [ESLint](https://eslint.org), [stylelint](https://stylelint.io) & [Prettier](https://prettier.io)
-- [x] [lint-staged](https://github.com/okonet/lint-staged)
-- [x] [Commitizen](https://github.com/commitizen/cz-cli)
-
-&nbsp;
-&nbsp;
-
-### docker-compose(dev):
-
-    docker-compose -f docker-compose.dev.yml up -d
-
-### docker-compose(prod):
-
-    docker-compose -f docker-compose.prod.yml up --build
-
-### Setup .env file for docker-compose
-
-    The latest Docker Compose allows you to access environment variables from your compose file. So you can source your environment variables, then run Compose like so:
-
-    ```
-    set -a
-    source /home/mpw/Github/FullStack-PassionProject/FullStack-React-Docker-B
-
-oilerplate/ .env
-docker-compose up -d
-
-    ```
-
-&nbsp;
-&nbsp;
-
-### Packages
+## Project structure
 
 This is a list of all the packages in the repo and what they are used for.
 
@@ -259,7 +165,114 @@ This is a list of all the packages in the repo and what they are used for.
 &nbsp;
 &nbsp;
 
-# Backend Boilerplates
+
+## Getting started locally 
+
+### Commands
+
+    "dev:frontend": "config for your needs: - yarn --cwd ./packages/frontend run dev ",
+    "dev:reactnative": "config for your needs: - yarn --cwd ./packages/reactnative expo start --host tunnel ",
+    "dev:express": "config for your needs: - yarn --cwd ./packages/express run dev ",
+    "dev:grapqhl": "config for your needs: - yarn --cwd ./packages/grapqhl run dev ",
+    "dev:storybook": "config for your needs: - yarn --cwd ./packages/storybook run dev ",
+    "hooks:uninstall": "husky uninstall",
+    "hooks:install": "husky install",
+    "prettier": "prettier \"**/*.{md,css,scss,yaml,yml}\"",
+    "fix": "run-s fix:*",
+    "fix:code": "yarn lint:code --fix",
+    "fix:other": "yarn prettier --write",
+    "lint": "run-p --continue-on-error lint:*",
+    "lint:code": "eslint --ignore-path .gitignore --ignore-path .prettierignore --ignore-path .eslintignore --ext .ts,.tsx .",
+    "lint:other": "yarn prettier --check",
+    "lint-staged": "lint-staged",
+    "commit": "lint-staged && git-cz",
+    "postinstall": "cd ./packages/reactnative && expo-yarn-workspaces postinstall",
+    "prebootstrap": "yarn",
+    
+
+- [x] yarn commit - will run a flow composed of:
+- [x] [Husky](https://github.com/typicode/husky)
+- [x] Linting with: [ESLint](https://eslint.org), [stylelint](https://stylelint.io) & [Prettier](https://prettier.io)
+- [x] [lint-staged](https://github.com/okonet/lint-staged)
+- [x] [Commitizen](https://github.com/commitizen/cz-cli)
+
+&nbsp;
+&nbsp;
+
+
+## Getting started with docker
+
+### **Example Docker images**
+
+
+- [x] React App Docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
+- [x] Barebones Express-api docker image
+- [ ] Graphql docker image
+- [x] Mongodb docker image
+- [x] Mongo seed docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
+
+      The express server runs standalone  and connects to the MongoDB 
+      The GraphQL server runs standalone and connects to the MongoDB 
+
+
+&nbsp;
+
+A ReactJs application containerized for development and production.
+
+    	`Nginx` for serving production build of our ReactJs application.
+
+#### Explaining the environments:
+
+##### Development environment
+
+    - Hot reloading on code changes
+
+##### Production environment
+
+     - Optimized, building static assets and served through a web server or CDN.
+     - Here Nginx is used to serve static assets.
+     - The Production and development docker configs are as "close" to each other as possible to minimize unforeseen issues once deployed.
+     - When the react application is "BUILD", the output is optimized static assets, (html, css and the js file)
+     - To serve these files we use Nginx
+
+&nbsp;
+&nbsp;
+
+### docker-compose(dev):
+
+    docker-compose -f docker-compose.dev.yml up -d
+
+### docker-compose(prod):
+
+    docker-compose -f docker-compose.prod.yml up --build
+
+### Setup .env file for docker-compose
+
+    The latest Docker Compose allows you to access environment variables from your compose file. So you can source your environment variables, then run Compose like so:
+
+    ```
+    set -a
+    source /home/mpw/Github/FullStack-PassionProject/FullStack-React-Docker-B
+
+oilerplate/ .env
+docker-compose up -d
+
+    ```
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+# Backend Boilerplates (WIP)
 
 ### Backend consists of several setups for boilerplate purposes and exploration
 
