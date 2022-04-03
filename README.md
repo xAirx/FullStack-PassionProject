@@ -1,6 +1,6 @@
 # **Introduction to project architecture**
 
-## **Passion-Project MonoRepo**
+## **Passion-Project "MonoRepo" **
 
 Modern web based applications consist of multiple services. For example, a backend API and a frontend client. In larger projects, where scaling becomes an issue, the services can also be split into multiple microservices. The question arises, how to organize the source code in such a project. One solution is a monorepo, i. e. one repository for all the source code in the project.
 
