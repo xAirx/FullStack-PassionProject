@@ -2,7 +2,7 @@
 [![Build status](https://badge.buildkite.com/90ff98db996bb137c5be1bdce666c4b1ce68a25b17af0a6a04.svg?branch=master)](https://buildkite.com/xairx/react-component-library)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Tests](https://github.com/tpg/vitamin/actions/workflows/php.yml/badge.svg)](https://github.com/tpg/vitamin/actions/workflows/php.yml)
-
+[![npm version](https://badge.fury.io/js/mpw-storybook.svg)](https://badge.fury.io/js/mpw-storybook)
 
 # **Introduction to project architecture**
 
