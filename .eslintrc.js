@@ -1,20 +1,34 @@
 module.exports = {
-  root: true,
-  extends: ['airbnb-base', 'plugin:eslint-plugin/recommended'],
-  plugins: ['eslint-plugin'],
   env: {
-    es6: true,
-    node: true
+    browser: true,
+    node: true,
+    es6: true
   },
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:jest/recommended',
+    'plugin:prettier/@typescript-eslint',
+    //Prettier
+    'react-app',
+    'plugin:jsx-a11y/recommended',
+    'plugin:prettier/recommended',
+    'prettier'
+  ],
+
+  plugins: ['jsx-a11y', 'prettier'],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 6,
     ecmaFeatures: {
       jsx: true
     },
-    sourceType: 'script'
+    ecmaVersion: 2020,
+    sourceType: 'module'
   },
   rules: {
-    'comma-dangle': [2, 'always-multiline'],
+    'endOfLine': 'off',
+    'indent': ['error', 2, { "MemberExpression": 1 }],
+    'comma-dangle': [0, 'always-multiline'],
     'object-shorthand': [
       2,
       'always',
@@ -70,15 +84,9 @@ module.exports = {
   },
   overrides: [
     {
-      files: 'tests/**',
+      files: ['*.js'],
       rules: {
-        'no-template-curly-in-string': 1
-      }
-    },
-    {
-      files: 'markdown.config.js',
-      rules: {
-        'no-console': 0
+        '@typescript-eslint/explicit-module-boundary-types': 'off'
       }
     }
   ]

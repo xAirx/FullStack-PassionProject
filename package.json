@@ -1,55 +1,125 @@
 {
-  "scripts": {
-    "format:check": "prettier --check .",
-    "format:write": "prettier --write .",
-    "lint:all": "prettier --write . && eslint --fix .",
-    "lint:check": "eslint .",
-    "lint:fix": "eslint --fix .",
-    "lint-staged": "lint-staged",
-    "commit": "lint-staged && git-cz"
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^16.2.3",
-    "@commitlint/config-conventional": "^16.2.1",
-    "@typescript-eslint/eslint-plugin": "^5.17.0",
-    "@typescript-eslint/parser": "^5.17.0",
-    "commitizen": "^4.2.4",
-    "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.12.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-env": "^23.0.2",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-jest": "^26.1.3",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-mocha-no-only": "^1.1.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.29.4",
-    "lint-staged": "^12.3.7",
-    "prettier": "2.6.2"
-  },
-  "hooks": {
-    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "npx prettier --write",
-      "eslint --ext .js,.jsx,.ts,.tsx --fix-dry-run"
-    ]
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "dependencies": {
-    "axios": "^0.26.1",
-    "eslint-plugin-eslint-plugin": "^4.1.0"
-  }
+	"scripts": {
+		"dev:frontend": "config for your needs: - yarn --cwd ./packages/frontend run dev ",
+		"dev:reactnative": "config for your needs: - yarn --cwd ./packages/reactnative expo start --host tunnel ",
+		"dev:express": "config for your needs: - yarn --cwd ./packages/express run dev ",
+		"dev:grapqhl": "config for your needs: - yarn --cwd ./packages/grapqhl run dev ",
+		"dev:storybook": "config for your needs: - yarn --cwd ./packages/storybook run dev ",
+		"hooks:uninstall": "husky uninstall",
+		"hooks:install": "husky install",
+		"prettier": "prettier \"**/*.{md,css,scss,yaml,yml}\"",
+		"fix": "run-s fix:*",
+		"fix:code": "yarn lint:code --fix",
+		"fix:other": "yarn prettier --write",
+		"lint": "run-p --continue-on-error lint:*",
+		"lint:code": "eslint --ignore-path .gitignore --ignore-path .prettierignore --ignore-path .eslintignore --ext .ts,.tsx .",
+		"lint:other": "yarn prettier --check",
+		"lint-staged": "lint-staged",
+		"commit": "lint-staged && git-cz",
+		"requirements-check": "node check_node_version.js",
+		"postinstall": "npm run requirements-check",
+		"todoadd": "cd ./packages/reactnative && expo-yarn-workspaces postinstall",
+		"prebootstrap": "yarn",
+		"bootstrap": "yarn hooks:install"
+	},
+	"config": {
+		"commitizen": {
+			"path": "cz-conventional-changelog"
+		}
+	},
+	"devDependencies": {
+		"@babel/core": "7.16.0",
+		"@babel/eslint-parser": "7.16.3",
+		"@babel/node": "7.16.0",
+		"@babel/preset-env": "^7.16.4",
+		"@babel/runtime": "7.16.3",
+		"@commitlint/cli": "16.0.1",
+		"@commitlint/config-conventional": "16.0.0",
+		"@rollup/plugin-babel": "5.3.0",
+		"@rollup/plugin-commonjs": "21.0.1",
+		"@rollup/plugin-json": "4.1.0",
+		"@rollup/plugin-node-resolve": "13.0.6",
+		"@types/fs-extra": "9.0.13",
+		"@types/inquirer": "8.1.3",
+		"@types/jest": "^27.0.2",
+		"@types/lodash.camelcase": "4.3.6",
+		"@types/node": "16.11.7",
+		"@types/prettier": "2.4.2",
+		"@typescript-eslint/eslint-plugin": "^5.17.0",
+		"@typescript-eslint/parser": "^5.17.0",
+		"babel-jest": "27.3.1",
+		"babel-loader": "8.2.3",
+		"babel-preset-expo": "8.5.1",
+		"chalk": "4.1.2",
+		"commitizen": "^4.2.4",
+		"commitlint": "16.0.1",
+		"cross-env": "7.0.3",
+		"cz-conventional-changelog": "^3.3.0",
+		"eslint": "^8.12.0",
+		"eslint-config-airbnb": "^19.0.4",
+		"eslint-config-env": "^23.0.2",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-config-react-app": "^6.0.0",
+		"eslint-plugin-flowtype": "^8.0.3",
+		"eslint-plugin-import": "^2.25.4",
+		"eslint-plugin-jest": "^26.1.3",
+		"eslint-plugin-jsx-a11y": "^6.5.1",
+		"eslint-plugin-mocha-no-only": "^1.1.1",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-prettier": "^4.0.0",
+		"eslint-plugin-react": "^7.29.4",
+		"eslint-plugin-react-hooks": "^4.3.0",
+		"eslint-plugin-testing-library": "^5.0.0",
+		"fs-extra": "10.0.0",
+		"husky": "7.0.4",
+		"inquirer": "8.2.0",
+		"jest": "27.3.1",
+		"lint-staged": "^12.3.7",
+		"lodash.camelcase": "4.3.0",
+		"nodemon": "2.0.15",
+		"npm-run-all": "4.1.5",
+		"prettier": "2.6.2",
+		"prettier-eslint": "13.0.0",
+		"rimraf": "3.0.2",
+		"ts-jest": "27.0.7",
+		"ts-node": "^10.4.0",
+		"tslib": "2.3.1",
+		"typedoc": "0.22.9",
+		"typescript": "^4.4.4"
+	},
+	"hooks": {
+		"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+	},
+	"lint-staged": {
+		"*.{js,jsx,ts,tsx}": [
+			"yarn fix:code"
+		],
+		"*.{md,css,scss,yaml,yml}": [
+			"yarn fix:other"
+		]
+	},
+	"commitlint": {
+		"extends": [
+			"@commitlint/config-conventional"
+		]
+	},
+	"dependencies": {
+		"axios": "^0.26.1",
+		"babel-eslint": "^10.1.0",
+		"eslint-plugin-eslint-plugin": "^4.1.0",
+		"semver": "^7.3.5"
+	},
+	"browserslist": [
+		"last 2 Chrome versions",
+		"last 2 Opera versions",
+		"last 2 Firefox versions",
+		"last 2 Edge versions",
+		"last 2 Safari versions",
+		"last 2 iOS versions",
+		"last 2 ChromeAndroid versions"
+	],
+	"engineStrict": true,
+	"engines": {
+		"node": ">=14.19.1"
+	}
 }

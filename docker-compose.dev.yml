@@ -206,22 +206,22 @@ services:
     #  - 4000
 
   mongodb:
-     image: mongo
-     container_name: mongodb
-     restart: always
-     ports:
+    image: mongo
+    container_name: mongodb
+    restart: always
+    ports:
       - 27017:27017
-     environment:
+    environment:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USER}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
-     volumes:
+    volumes:
       - mongodb:/data/db
 
-     command: mongod
-     networks:
+    command: mongod
+    networks:
       - express-mongo
       - mongo-compose-network
-     expose:
+    expose:
       - 27017
 
   mongo-seed:

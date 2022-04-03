@@ -245,5 +245,5 @@ services:
       - mongo-mongo
     command:
       [
-        'mongoimport --host mongo --port 27017 --db sammlerio --mode upsert --type json --file /data/auth-service~~user.json --jsonArray'
+        'mongoimport --host mongo --port 27017 --db sammlerio --mode upsert --type json --file /data/auth-service~~user.json --jsonArray',
       ]

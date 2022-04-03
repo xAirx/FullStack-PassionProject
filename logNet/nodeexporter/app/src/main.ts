@@ -16,10 +16,10 @@ collectMetrics()
 
 const metricServer = express()
 metricServer.get('/metrics', (req, res) => {
-  console.log('Scraped')
-  res.send(promClient.register.metrics())
-})
+    console.log('Scraped')
+    res.send(promClient.register.metrics())
+  })
 
 metricServer.listen(9991, () =>
-  console.log(`🚨 Prometheus listening on port 9991 /metrics`)
+    console.log(`🚨 Prometheus listening on port 9991 /metrics`)
 )
