@@ -95,16 +95,15 @@ Modern web based applications consist of multiple services. For example, a backe
 
 ### **Example Docker images**
 
-
 - [x] React App Docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
 - [x] Express-api docker image
 - [x] Graphql docker image
 - [x] Mongodb docker image
 - [] Mongo seed docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
 
-      The express server runs standalone  and connects to the MongoDB 
+      The express server runs standalone  and connects to the MongoDB
 
-      The GraphQL server runs standalone and connects to the MongoDB 
+      The GraphQL server runs standalone and connects to the MongoDB
 
 &nbsp;
 
@@ -280,7 +279,6 @@ This is a list of all the packages in the repo and what they are used for.
 - [ ] Login / register - JWT Auth, Nodemon, Cors, Cross-env
 
 &nbsp;
-
 
 #### ON HOLD - Microservice preperation - Grapqhl example as bff on top of express backend (Todo-App Example expanded)
 
