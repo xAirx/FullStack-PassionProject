@@ -227,9 +227,6 @@ This is a list of all the packages in the repo and what they are used for.
 - [x] [lint-staged](https://github.com/okonet/lint-staged) with precommit task for linting
 - [x] [Commitizen](https://github.com/commitizen/cz-cli) intercepting your commits to help you add nice formatted messages
 - [x] [Absolute Imports](https://medium.com/geekculture/making-life-easier-with-absolute-imports-react-in-javascript-and-typescript-bbdab8a8a3a1) - Avoid ./././
-- [x] [Renovate](https://github.com/renovatebot/renovate) for automated dependency updates
-      (Barebone (ready for adaptation for many usecases
-- [x] [dependency updates](https://renovatebot.com/), [CodeQL Analysis](https://securitylab.github.com/tools/codeql), running tests and code coverage with [Codecov](https://about.codecov.io/).
 
 &nbsp;
 &nbsp;
