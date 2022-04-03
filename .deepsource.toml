@@ -1,15 +1,31 @@
 version = 1
 
+exclude_patterns = [
+  "**/node_modules/",
+  "dist/**",
+  "src/examples/**",
+  "src/demo/**"
+]
+
 [[analyzers]]
 name = "docker"
 enabled = true
+
+  [analyzers.meta]
+  dockerfile_paths = [
+    "Dockerfile.dev",
+    "Dockerfile.prod"
+  ]
 
 [[analyzers]]
 name = "javascript"
 enabled = true
 
   [analyzers.meta]
+  environment = ["browser"]
   plugins = ["react"]
+  style_guide = "airbnb"
+  dialect = "typescript"
 
 [[transformers]]
 name = "prettier"
