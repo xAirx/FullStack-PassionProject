@@ -2,27 +2,33 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    es6: true
+    es6: true,
   },
-  plugins: ['@typescript-eslint', 'simple-import-sort', 'unused-imports', 'jsx-a11y', 'prettier'],
+  plugins: [
+    '@typescript-eslint',
+    'simple-import-sort',
+    'unused-imports',
+    'jsx-a11y',
+    'prettier',
+  ],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:jest/recommended',
     'plugin:prettier/@typescript-eslint',
-    //Prettier
+    // Prettier
     'react-app',
     'plugin:jsx-a11y/recommended',
     'plugin:prettier/recommended',
-    'prettier'
+    'prettier',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     ecmaVersion: 2020,
-    sourceType: 'module'
+    sourceType: 'module',
   },
   rules: {
     'no-unused-vars': 'off',
@@ -35,7 +41,7 @@ module.exports = {
       { props: 'never', children: 'never' },
     ],
 
-    //#region  //*=========== Unused Import ===========
+    // #region  //*=========== Unused Import ===========
     '@typescript-eslint/no-unused-vars': 'off',
     'unused-imports/no-unused-imports': 'warn',
     'unused-imports/no-unused-vars': [
@@ -47,9 +53,9 @@ module.exports = {
         argsIgnorePattern: '^_',
       },
     ],
-    //#endregion  //*======== Unused Import ===========
+    // #endregion  //*======== Unused Import ===========
 
-    //#region  //*=========== Import Sort ===========
+    // #region  //*=========== Import Sort ===========
     'simple-import-sort/exports': 'warn',
     'simple-import-sort/imports': [
       'warn',
@@ -86,17 +92,17 @@ module.exports = {
         ],
       },
     ],
-    //#endregion  //*======== Import Sort ===========
-    'endOfLine': 'off',
-    'indent': ['error', 2, { "MemberExpression": 1 }],
+    // #endregion  //*======== Import Sort ===========
+    endOfLine: 'off',
+    indent: ['error', 2, { MemberExpression: 1 }],
     'comma-dangle': [0, 'always-multiline'],
     'object-shorthand': [
       2,
       'always',
       {
         ignoreConstructors: false,
-        avoidQuotes: false // this is the override vs airbnb
-      }
+        avoidQuotes: false, // this is the override vs airbnb
+      },
     ],
     'max-len': [
       2,
@@ -104,15 +110,15 @@ module.exports = {
       {
         ignoreStrings: true,
         ignoreTemplateLiterals: true,
-        ignoreComments: true
-      }
+        ignoreComments: true,
+      },
     ],
     'consistent-return': 0,
 
     'prefer-destructuring': [
       2,
       { array: false, object: false },
-      { enforceForRenamedProperties: false }
+      { enforceForRenamedProperties: false },
     ],
     'prefer-object-spread': 2, // until node 8 is required
     'prefer-rest-params': 2, // until node 6 is required
@@ -126,8 +132,8 @@ module.exports = {
       2,
       {
         selector: 'ObjectPattern',
-        message: 'Object destructuring is not compatible with Node v4'
-      }
+        message: 'Object destructuring is not compatible with Node v4',
+      },
     ],
     strict: [0, 'safe'],
     'valid-jsdoc': [
@@ -135,20 +141,20 @@ module.exports = {
       {
         requireReturn: false,
         requireParamDescription: false,
-        requireReturnDescription: false
-      }
+        requireReturnDescription: false,
+      },
     ],
 
     'eslint-plugin/consistent-output': 0,
     'eslint-plugin/require-meta-schema': 0,
-    'eslint-plugin/require-meta-type': 0
+    'eslint-plugin/require-meta-type': 0,
   },
   overrides: [
     {
       files: ['*.js'],
       rules: {
-        '@typescript-eslint/explicit-module-boundary-types': 'off'
-      }
-    }
-  ]
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+      },
+    },
+  ],
 };

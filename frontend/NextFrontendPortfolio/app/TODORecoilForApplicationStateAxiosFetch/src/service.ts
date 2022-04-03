@@ -1,6 +1,6 @@
-import axios from "axios";
-import { UserApiData } from "./types";
-import { getUserApiUrl } from "./configuration";
+import axios from 'axios';
+import { UserApiData } from './types';
+import { getUserApiUrl } from './configuration';
 
 export async function getUsers() {
   const userApiUrl = getUserApiUrl();
