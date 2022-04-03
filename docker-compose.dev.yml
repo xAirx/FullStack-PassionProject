@@ -5,7 +5,7 @@ networks:
     driver: bridge
   express-mongo:
     driver: bridge
-  react-express:
+  react-to-api:
     driver: bridge
 
 services:
@@ -149,14 +149,15 @@ services:
 
   frontend:
     build:
-      context: ./frontend/app
+      # set Context to any frontend library, such as the storybook, frontend framework, or any app.
+      context: ./frontend/storybook
       dockerfile: Dockerfile.dev
     restart: always
     image: frontend-image
     container_name: frontend-image
     stdin_open: true
     volumes:
-      - ./frontend/app:/app
+      - ./frontend/storybook/app:/app
       - /usr/src/app/node_modules
     ports:
       - 5000:5000
@@ -170,10 +171,10 @@ services:
       - CHOKIDAR_USEPOLLING=true
     #depends_on:
     #  -  express-api
-    depends_on:
-      - backend
+    #depends_on:
+    #  - backend
     networks:
-      - react-express
+      - react-to-api
 
   backend:
     build:
@@ -201,7 +202,7 @@ services:
       - mongo
     networks:
       - express-mongo
-      - react-express
+      - react-to-api
     #expose:
     #  - 4000
 

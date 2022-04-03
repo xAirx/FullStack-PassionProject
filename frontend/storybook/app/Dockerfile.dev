@@ -1,0 +1,53 @@
+# Dependency installation stage.
+FROM node:16-alpine AS dependencies
+
+# pull official base image
+#FROM node:13.12.0-alpine
+
+RUN mkdir -p /usr/src/app
+
+# set working directory
+WORKDIR /app
+
+# add `/app/node_modules/.bin` to $PATH
+#ENV PATH /app/node_modules/.bin:$PATH
+
+# install app dependencies
+COPY package.json ./
+COPY package-lock.json ./
+#RUN npm ci
+RUN npm install --silent
+#RUN npm install react-scripts@3.4.1 -g
+#RUN npm install react-scripts@3.4.1 -g --silent
+
+# add app
+COPY . ./
+
+# start app
+#CMD ["npm", "start"]
+
+
+
+#FROM node:lts-buster
+#
+## Create app directory
+#WORKDIR /usr/src/app
+#
+## Copy dependency definitions
+#COPY package.json /usr/src/app
+#COPY package-lock.json /usr/src/app
+#
+## Install dependecies
+##RUN npm set progress=false \
+##    && npm config set depth 0 \
+##    && npm i install
+#RUN npm ci
+#
+## Get all the code needed to run the app
+#COPY . /usr/src/app
+#
+## Expose the port the app runs in
+#EXPOSE 3000
+#
+## Serve the app
+CMD [ "npm", "start" ]

@@ -1,10 +1,10 @@
 {
 	"scripts": {
-		"dev:frontend": "config for your needs: - yarn --cwd ./packages/frontend run dev ",
-		"dev:reactnative": "config for your needs: - yarn --cwd ./packages/reactnative expo start --host tunnel ",
-		"dev:express": "config for your needs: - yarn --cwd ./packages/express run dev ",
-		"dev:grapqhl": "config for your needs: - yarn --cwd ./packages/grapqhl run dev ",
-		"dev:storybook": "config for your needs: - yarn --cwd ./packages/storybook run dev ",
+		"dev:frontend": "yarn --cwd ./frontend/NextFrontendPortfolio run dev ",
+		"dev:reactnative": "yarn --cwd ./reactnative expo start --host tunnel ",
+		"dev:express": "yarn --cwd ./express run dev ",
+		"dev:grapqhl": "yarn --cwd ./grapqhl run dev ",
+		"dev:storybook": "yarn --cwd ./storybook run dev ",
 		"hooks:uninstall": "husky uninstall",
 		"hooks:install": "husky install",
 		"prettier": "prettier \"**/*.{md,css,scss,yaml,yml}\"",
@@ -18,9 +18,12 @@
 		"commit": "lint-staged && git-cz",
 		"requirements-check": "node check_node_version.js",
 		"postinstall": "npm run requirements-check",
-		"todoadd": "cd ./packages/reactnative && expo-yarn-workspaces postinstall",
-		"prebootstrap": "yarn",
-		"bootstrap": "yarn hooks:install"
+		"prebootstrap": "npm install yarn --save-dev",
+		"bootstrap": "yarn hooks:install",
+		"storybook-component-tests": "yarn --cwd ./frontend/storybook run test",
+		"storybook-build": "yarn --cwd ./frontend/storybook run build",
+		"storybook-run": "yarn --cwd ./frontend/storybook run storybook",
+		"storybook-export": "yarn --cwd ./frontend/storybook run storybook:export"
 	},
 	"config": {
 		"commitizen": {
@@ -33,6 +36,8 @@
 		"@babel/node": "7.16.0",
 		"@babel/preset-env": "^7.16.4",
 		"@babel/runtime": "7.16.3",
+		"@codesee/babel-plugin-instrument": "^0.223.0",
+		"@codesee/tracker": "^0.223.0",
 		"@commitlint/cli": "16.0.1",
 		"@commitlint/config-conventional": "16.0.0",
 		"@rollup/plugin-babel": "5.3.0",
@@ -45,6 +50,7 @@
 		"@types/lodash.camelcase": "4.3.6",
 		"@types/node": "16.11.7",
 		"@types/prettier": "2.4.2",
+		"@types/react-datepicker": "^4.3.4",
 		"@typescript-eslint/eslint-plugin": "^5.17.0",
 		"@typescript-eslint/parser": "^5.17.0",
 		"babel-jest": "27.3.1",
@@ -107,6 +113,10 @@
 		"axios": "^0.26.1",
 		"babel-eslint": "^10.1.0",
 		"eslint-plugin-eslint-plugin": "^4.1.0",
+		"react-datepicker": "^4.7.0",
+		"react-dropzone": "^12.0.4",
+		"react-hook-form": "^7.29.0",
+		"react-image-lightbox": "^5.1.4",
 		"semver": "^7.3.5"
 	},
 	"browserslist": [
