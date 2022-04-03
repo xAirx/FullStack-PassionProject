@@ -13,7 +13,7 @@ Modern web based applications consist of multiple services. For example, a backe
 - [x] [Codesee](https://www.codesee.io/) Auto-syncing code diagrams to drive collaboration, improve code reviews, reduce onboarding friction, and more. See the map here: https://app.codesee.io/maps/90748150-b28d-11ec-bc79-99929b29d669
 - [x] [Sentry](https://sentry.io/welcome) Tracking to performance monitoring, developers can see what actually matters, solve quicker, and learn continuously about their applications - from the frontend to the backend.
 - [x] [CI/CD - CircleCI & Docker hub -> Heroku](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde) 
-- [ ] Circle-CI boilerplate preconfigured for running lint + tests + Dockerhub deploys and storybook npm package publish hooks.
+- [ ] Circle-CI boilerplate preconfigured for docker image - Dockerhub deploys -> Heroku (Container registry).
 
        https://github.com/marketplace/actions/deploy-to-heroku
        https://www.heroku.com/deploy-with-docker
@@ -293,6 +293,7 @@ export default App;
 - [ ] Graphql docker image
 - [x] Mongodb docker image
 - [x] Mongo seed docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
+- [x] Storybook Docker image 
 
       The express server runs standalone  and connects to the MongoDB 
       The GraphQL server runs standalone and connects to the MongoDB 
