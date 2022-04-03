@@ -12,7 +12,8 @@ Modern web based applications consist of multiple services. For example, a backe
 - [x] [Deepsource.io](https://deepsource.io/) helps you write clean code on every pull-request. Built for engineering teams who move fast and don’t break things.
 - [x] [Codesee](https://www.codesee.io/) Auto-syncing code diagrams to drive collaboration, improve code reviews, reduce onboarding friction, and more. See the map here: https://app.codesee.io/maps/90748150-b28d-11ec-bc79-99929b29d669
 - [x] [Sentry](https://sentry.io/welcome) Tracking to performance monitoring, developers can see what actually matters, solve quicker, and learn continuously about their applications - from the frontend to the backend.
-- [x] [CI/CD - CircleCI & Docker hub -> Heroku](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde) preconfigured for running lint + tests + Dockerhub
+- [x] [CI/CD - CircleCI & Docker hub -> Heroku](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde) 
+- [ ] Circle-CI boilerplate preconfigured for running lint + tests + Dockerhub deploys and storybook npm package publish hooks.
 
        https://github.com/marketplace/actions/deploy-to-heroku
        https://www.heroku.com/deploy-with-docker
@@ -127,8 +128,14 @@ This is a list of all the packages in the repo and what they are used for.
 
 ### Storybook component library
 
-    - Storybook published as an npm package - with framework of choice (or custom build for infinite posibillities.
-      &nbsp;
+- [x]  Storybook published as an npm package - with framework of choice (or custom build for infinite posibillities.
+- [x]  Rollup
+- [x]  SCSS
+- [x]  TypeScript
+- [x]  Storybook to help you create and show off your components
+- [x]  Jest and React Testing Library enabling testing of the components
+
+
 
 #### Storybook & Unit-tests (Low level)
 
