@@ -188,15 +188,17 @@ docker-compose up -d
 
 This is a list of all the packages in the repo and what they are used for.
 
-| Package                                  | Description                                  |
-| ---------------------------------------- | -------------------------------------------- |
-| [Frontend]("./frontend/")                | Next.js boilerplate                          |
-| [ReactNative]("./ReactNative/")          | Expo React Native App                        |
-| [Express]("./backend/**/")               | Express Boilerplate Api Examples             |
-| [Grapqhl]("./backend/Grapqhl/**")        | A Server with GraphQl and Express            |
-| [Storybook]("./packages/storybook/")     | WIP - Future storybook                       |
+| Package                                  | Description                                   |
+| ---------------------------------------- | ----------------------------------------------|
+| [Frontend]("./frontend/")                | Next.js boilerplate                           |
+| [ReactNative]("./ReactNative/")          | Expo React Native App                         | 
+| [Express]("./backend/**/")               | Express Boilerplate Api Examples              |
+| [Grapqhl]("./backend/Grapqhl/**")        | A Server with GraphQl and Express             |
+| [Storybook]("./frontend/NextFrontendPortfolio/.storybook")| Storybook implemented into next.js boilerplate| 
 
-- Future experimentation may happen with VITE, Rollup and other cool tools.
+##### TODO: 
+    - Storybook - (Add as its own package and docker image.
+    - Future experimentation may happen with VITE, Rollup and other cool tools.
 
 &nbsp;
 &nbsp;
