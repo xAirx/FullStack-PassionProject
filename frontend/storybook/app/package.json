@@ -1,6 +1,6 @@
 {
 	"name": "mpw-storybook",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"main": "build/index.js",
 	"module": "build/index.esm.js",
 	"files": [
@@ -18,8 +18,7 @@
 		"prepublishOnly": "npm run build"
 	},
 	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/HarveyD/react-component-library.git"
+		"type": "git"
 	},
 	"keywords": [
 		"React",
@@ -30,12 +29,8 @@
 		"Sass",
 		"Storybook"
 	],
-	"author": "Harvey Delaney",
+	"author": "Marco Wurtz",
 	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/HarveyD/react-component-library/issues"
-	},
-	"homepage": "https://github.com/HarveyD/react-component-library#readme",
 	"peerDependencies": {
 		"react": ">=16.8.0",
 		"react-dom": ">=16.8.0"

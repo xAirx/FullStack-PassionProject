@@ -1,6 +1,6 @@
 {
 	"scripts": {
-		"dev:frontend": "yarn --cwd ./frontend/NextFrontendPortfolio run dev ",
+		"dev:frontend": "yarn --cwd ./frontend/NextFrontendPortfolio/app run dev ",
 		"dev:reactnative": "yarn --cwd ./reactnative expo start --host tunnel ",
 		"dev:express": "yarn --cwd ./express run dev ",
 		"dev:grapqhl": "yarn --cwd ./grapqhl run dev ",
@@ -22,7 +22,7 @@
 		"bootstrap": "yarn hooks:install",
 		"storybook-component-tests": "yarn --cwd ./frontend/storybook run test",
 		"storybook-build": "yarn --cwd ./frontend/storybook run build",
-		"storybook-run": "yarn --cwd ./frontend/storybook run storybook",
+		"storybook": "yarn --cwd ./frontend/storybook/app run storybook",
 		"storybook-export": "yarn --cwd ./frontend/storybook run storybook:export"
 	},
 	"config": {
