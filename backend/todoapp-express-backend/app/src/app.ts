@@ -18,8 +18,8 @@ const options = { useNewUrlParser: true, useUnifiedTopology: true };
 mongoose.set('useFindAndModify', false);
 
 mongoose
-  .connect(uri, options)
-  .then(() => app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`)))
-  .catch(error => {
-    throw error;
-  });
+	.connect(uri, options)
+	.then(() => app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`)))
+	.catch(error => {
+		throw error;
+	});
