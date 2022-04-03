@@ -136,6 +136,77 @@ This is a list of all the packages in the repo and what they are used for.
 - [x]  Jest and React Testing Library enabling testing of the components
 
 
+#### Usage
+
+#### Storybook export
+Serve the story-book-static files in the dir, on github pages etc.
+
+#### Generating new components
+Creating a "new component template"
+```
+npm run generate YourComponentName
+```
+
+This will generate:
+s
+```
+/src
+  /YourComponentName
+    YourComponentName.tsx
+    YourComponentName.stories.tsx
+    YourComponentName.test.tsx
+    YourComponentName.types.ts
+    YourComponentName.scss
+```
+
+Remember to add the component to the index.ts export for exporting the component.
+
+### Publish via NPM
+
+  Make sure npm login is run.
+  update name field in package.json to reflect npm package in private or public repo.
+  
+  run
+  ```
+  npm publish
+  ```
+  
+### Installing library into other projects 
+
+```
+npm i --save git+https://github.com/xAirx/react-component-library.git#branch-name
+```
+
+### Usage 
+
+```TSX
+import React from "react";
+import { TestComponent } from "xairx-component-library";
+
+const App = () => (
+  <div className="app-container">
+    <h1>Hello I'm consuming the component library</h1>
+    <TestComponent theme="primary" />
+  </div>
+);
+
+export default App;
+```
+
+### Rollup-plugin-copy - SASS variable exports
+
+  Will export scss files from the storybook into the build folder. 
+  Allowing for use in the project via the storybook library
+  
+  ```Sass
+    @import '~xairx-component-library/build/typography';
+
+    .example-container {
+        @include heading;
+
+        color: $harvey-white;
+    }
+  ```
 
 #### Storybook & Unit-tests (Low level)
 
@@ -195,6 +266,11 @@ This is a list of all the packages in the repo and what they are used for.
     "commit": "lint-staged && git-cz",
     "postinstall": "cd ./packages/reactnative && expo-yarn-workspaces postinstall",
     "prebootstrap": "yarn",
+    "storybook-component-tests": "yarn --cwd ./packages/frontend/storybook run test",
+		"storybook-build": "yarn --cwd ./packages/frontend/storybook run build",
+		"storybook-run": "yarn --cwd ./packages/frontend/storybook run storybook",
+		"storybook-export": "yarn --cwd ./packages/frontend/storybook run storybook:export"
+    
     
 
 - [x] yarn commit - will run a flow composed of:
@@ -259,10 +335,8 @@ A ReactJs application containerized for development and production.
 
     ```
     set -a
-    source /home/mpw/Github/FullStack-PassionProject/FullStack-React-Docker-B
-
-oilerplate/ .env
-docker-compose up -d
+    source /home/mpw/Github/FullStack-PassionProject/FullStack-React-Docker-Boilerplate/ .env
+    docker-compose up -d
 
     ```
 
