@@ -101,10 +101,11 @@ Modern web based applications consist of multiple services. For example, a backe
 - [ ] Graphql docker image
 - [x] Mongodb docker image
 - [x] Mongo seed docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
+- [ ] Storybook Docker image
 
       The express server runs standalone  and connects to the MongoDB 
-
       The GraphQL server runs standalone and connects to the MongoDB 
+      The storybook server runs standalone and exposes the apps components.
 
 &nbsp;
 
@@ -190,14 +191,13 @@ This is a list of all the packages in the repo and what they are used for.
 
 | Package                                  | Description                                   |
 | ---------------------------------------- | ----------------------------------------------|
-| [Frontend]("./frontend/")                | Next.js boilerplate                           |
+| [Frontend]("./frontend/")                | Next.js boilerplate (uses components from storybook)|
 | [ReactNative]("./ReactNative/")          | Expo React Native App                         | 
 | [Express]("./backend/**/")               | Express Boilerplate Api Examples              |
 | [Grapqhl]("./backend/Grapqhl/**")        | A Server with GraphQl and Express             |
-| [Storybook]("./frontend/NextFrontendPortfolio/.storybook")| Storybook implemented into next.js boilerplate| 
+| [Storybook]("./frontend/.storybook")     | Storybook running in docker                   | 
 
 ##### TODO: 
-    - Storybook - (Add as its own package and docker image.
     - Future experimentation may happen with VITE, Rollup and other cool tools.
 
 &nbsp;
@@ -219,12 +219,26 @@ This is a list of all the packages in the repo and what they are used for.
 - [x] [https://testing-library.com/docs/react-testing-library/intro/]Unit-tests & React Testing Library
 
 
-### Storybook
+### Storybook component library
 
-- [x] Story generation with PLOP.js
-- [x] VScode extension - Storybook helper
-- [x] VScode extension - StoryExplorer
+    - Storybook published as an npm package - with framework of choice (or custom build for infinite posibillities.
+      &nbsp;
 
+#### Storybook & Unit-tests (Low level)
+
+    - Jest, and React-testing-library. Simple tests that focuses on testing the contracts between the back end and front end layers. Where as solid component testing is abstracted away into the Storybook setup.
+      &nbsp;
+
+#### Unit-tests (High Level)
+
+##### Example:
+
+    - Think mocking API responses, checking for loading and error states.
+
+    - Testing a modal is opened or closed as a result of a POST being successful or reverse.
+
+&nbsp;
+&nbsp;
 
 ### Backend for Next.js Project (Firebase)
 
@@ -323,29 +337,6 @@ This is a list of all the packages in the repo and what they are used for.
 &nbsp;
 &nbsp;
 
-## Future additions:
-
-### Storybook component library
-
-- Storybook published as an npm package - with framework of choice (or custom build for infinite posibillities.
-  &nbsp;
-
-### Storybook & Unit-tests (Low level)
-
-- Jest, and React-testing-library. Simple tests that focuses on testing the contracts between the back end and front end layers. Where as solid component testing is abstracted away into the Storybook setup.
-  &nbsp;
-
-### Unit-tests (High Level)
-
-##### Example:
-
-- Think mocking API responses, checking for loading and error states.
-
-- Testing a modal is opened or closed as a result of a POST being successful or reverse.
-
-&nbsp;
-
-&nbsp;
 
 ## Express backend and GraphQL Layer
 
