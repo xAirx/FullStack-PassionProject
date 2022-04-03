@@ -217,6 +217,11 @@ This is a list of all the packages in the repo and what they are used for.
 - [x] [https://testing-library.com/docs/react-testing-library/intro/]Unit-tests & React Testing Library
 
 
+### Storybook
+
+- [x] Story generation with PLOP.js
+
+
 ### Backend for Next.js Project (Firebase)
 
 - [x] Authentication + OAuth
