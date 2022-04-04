@@ -1,5 +1,5 @@
-import React from 'react';
 import { TestComponent } from 'mpw-storybook';
+import React from 'react';
 
 const App = () => (
   <div className='app-container'>

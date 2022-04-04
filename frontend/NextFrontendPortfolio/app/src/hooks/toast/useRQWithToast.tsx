@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { UseQueryResult } from 'react-query';
 import toast from 'react-hot-toast';
+import { UseQueryResult } from 'react-query';
 
 import { DEFAULT_TOAST_MESSAGE } from '@/constant/toast';
 

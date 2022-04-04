@@ -1,7 +1,8 @@
+import { TestComponent } from 'mpw-storybook';
 import { AppProps } from 'next/app';
 import { QueryClient, QueryClientProvider, QueryOptions } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import { TestComponent } from 'mpw-storybook';
+
 import '@/styles/globals.css';
 
 import axiosClient from '@/lib/axios';
@@ -25,7 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <DismissableToast />
-      <TestComponent heading={'test'} content={test} />
+      <TestComponent heading='test' content={test} />
       <Component {...pageProps} />
       <ReactQueryDevtools initialIsOpen={false} position='bottom-right' />
     </QueryClientProvider>

@@ -1,9 +1,5 @@
-import {
-  CovidAllResponse,
-  CovidCountryResponses,
-  CovidStatesResponse,
-} from './response.type'
 import Axios from 'axios'
+
 import {
   covid_active_total,
   covid_cases_total,
@@ -12,6 +8,11 @@ import {
   covid_recovered_total,
   covid_tests_total,
 } from './metrics'
+import {
+  CovidAllResponse,
+  CovidCountryResponses,
+  CovidStatesResponse,
+} from './response.type'
 
 export async function fetchCovidAll(): Promise<CovidAllResponse | undefined> {
   const result = await Axios({
@@ -90,6 +91,6 @@ export async function collectMetrics() {
         .set(country.population)
     })
   }
-
+  /* eslint-disable-next-line  */
   console.log(`Metrics refreshed!`)
 }

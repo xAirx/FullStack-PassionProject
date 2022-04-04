@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from 'axios';
 
-const baseUrl: string = 'http://localhost:4000';
+const baseUrl = 'http://localhost:4000';
 
 //put into src/type.d.ts
 interface ITodo {

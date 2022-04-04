@@ -1,6 +1,7 @@
+import cors from 'cors';
 import express, { Express } from 'express';
 import mongoose from 'mongoose';
-import cors from 'cors';
+
 import todoRoutes from './routes';
 
 const app: Express = express();
@@ -18,8 +19,9 @@ const options = { useNewUrlParser: true, useUnifiedTopology: true };
 mongoose.set('useFindAndModify', false);
 
 mongoose
-  .connect(uri, options)
-  .then(() => app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`)))
-  .catch(error => {
-    throw error;
-  });
+	.connect(uri, options)
+	/* eslint-disable-next-line  */
+	.then(() => app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`)))
+	.catch(error => {
+		throw error;
+	});

@@ -1,4 +1,0 @@
-MONGO_ROOT_USER=admin
-MONGO_ROOT_PASSWORD=pass
-MONGO_DB_URL=mongodb://admin:pass@localhost:27017/db?ssl=false
-PORT=3000

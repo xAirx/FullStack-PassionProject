@@ -1,6 +1,7 @@
 *.min.js
 **/node_modules/**
-
+utils/**
+package.json
 # types and commitlint
 commitlint.config.js
 react-app-env.d.ts

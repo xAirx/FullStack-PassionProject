@@ -9,7 +9,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:jest/recommended',
-    'plugin:prettier/@typescript-eslint',
+    //'plugin:prettier/@typescript-eslint',
     //Prettier
     'react-app',
     'plugin:jsx-a11y/recommended',
@@ -21,12 +21,12 @@ module.exports = {
     ecmaFeatures: {
       jsx: true
     },
-    ecmaVersion: 2020,
+    ecmaVersion: 2022,
     sourceType: 'module'
   },
   rules: {
     'no-unused-vars': 'off',
-    'no-console': 'warn',
+    'no-console': 'error',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
 
     'react/display-name': 'off',
@@ -88,7 +88,7 @@ module.exports = {
     ],
     //#endregion  //*======== Import Sort ===========
     'endOfLine': 'off',
-    'indent': ['error', 2, { "MemberExpression": 1 }],
+    //'indent': ['error', 2, { "MemberExpression": 1 }],
     'comma-dangle': [0, 'always-multiline'],
     'object-shorthand': [
       2,
@@ -117,13 +117,13 @@ module.exports = {
     'prefer-object-spread': 2, // until node 8 is required
     'prefer-rest-params': 2, // until node 6 is required
     'prefer-spread': 2, // until node 6 is required
-    'function-call-argument-newline': 1, // TODO: enable
+    'function-call-argument-newline': 0, // TODO: enable
     'function-paren-newline': 0,
     'no-plusplus': 1,
     'no-param-reassign': 1,
     'no-unreachable-loop': 1, // TODO: enable
     'no-restricted-syntax': [
-      2,
+      0,
       {
         selector: 'ObjectPattern',
         message: 'Object destructuring is not compatible with Node v4'
@@ -131,7 +131,7 @@ module.exports = {
     ],
     strict: [0, 'safe'],
     'valid-jsdoc': [
-      2,
+      0,
       {
         requireReturn: false,
         requireParamDescription: false,
