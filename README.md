@@ -67,8 +67,6 @@ Modern web based applications consist of multiple services. For example, a backe
 
 <img src=https://user-images.githubusercontent.com/22436080/161449512-d436cd49-b2e9-4fc2-b566-febad177c5e1.svg width="700" height="600"/>
 
-    The Idea is that I can have several projects, a React Native project, A simple React project, among others, that can be spun up fast and run together with either technology choice in the backend.
-
 &nbsp;
 
 ### Setting up ENV files
