@@ -18,7 +18,7 @@ Modern web based applications consist of multiple services. For example, a backe
 - [x] [Deepsource.io](https://deepsource.io/) helps you write clean code on every pull-request. Built for engineering teams who move fast and don’t break things.
 - [x] [Codesee](https://www.codesee.io/) Auto-syncing code diagrams to drive collaboration, improve code reviews, reduce onboarding friction, and more. See the map here: https://app.codesee.io/maps/90748150-b28d-11ec-bc79-99929b29d669
 - [x] [Sentry](https://sentry.io/welcome) Tracking to performance monitoring, developers can see what actually matters, solve quicker, and learn continuously about their applications - from the frontend to the backend.
-- [x] [CI/CD - CircleCI & Docker hub -> Heroku](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde) 
+- [x] [CI/CD - CircleCI & Docker hub -> Heroku](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde)
 - [ ] Circle-CI boilerplate preconfigured for docker image - Dockerhub deploys -> Heroku (Container registry).
 
        https://github.com/marketplace/actions/deploy-to-heroku
@@ -102,15 +102,16 @@ Modern web based applications consist of multiple services. For example, a backe
 
 This is a list of all the packages in the repo and what they are used for.
 
-| Package                                  | Description                                   |
-| ---------------------------------------- | ----------------------------------------------|
-| [Frontend]("./frontend/")                | Next.js boilerplate (uses components from storybook)|
-| [ReactNative]("./ReactNative/")          | Expo React Native App                         | 
-| [Express]("./backend/**/")               | Express Boilerplate Api Examples              |
-| [Grapqhl]("./backend/Grapqhl/**")        | A Server with GraphQl and Express             |
-| [Storybook]("./frontend/.storybook")     | Storybook running in docker                   | 
+| Package                              | Description                                          |
+| ------------------------------------ | ---------------------------------------------------- |
+| [Frontend]("./frontend/")            | Next.js boilerplate (uses components from storybook) |
+| [ReactNative]("./ReactNative/")      | Expo React Native App                                |
+| [Express]("./backend/**/")           | Express Boilerplate Api Examples                     |
+| [Grapqhl]("./backend/Grapqhl/**")    | A Server with GraphQl and Express                    |
+| [Storybook]("./frontend/.storybook") | Storybook running in docker                          |
 
-##### TODO: 
+##### TODO:
+
     - Future experimentation may happen with VITE, Rollup and other cool tools.
 
 &nbsp;
@@ -131,29 +132,32 @@ This is a list of all the packages in the repo and what they are used for.
 - [x] [Absolute Imports](https://github.com/aleclarson/vite-tsconfig-paths) - Avoid ./././
 - [x] [https://testing-library.com/docs/react-testing-library/intro/]Unit-tests & React Testing Library
 
-
 ### Storybook component library
 
-- [x]  Storybook published as an npm package - with framework of choice (or custom build for infinite posibillities.
-- [x]  Rollup
-- [x]  SCSS
-- [x]  TypeScript
-- [x]  Storybook to help you create and show off your components
-- [x]  Jest and React Testing Library enabling testing of the components
-- [ ]  Reccomended Addons and fancy shiny ones... 
+- [x] Storybook published as an npm package - with framework of choice (or custom build for infinite posibillities.
+- [x] Rollup
+- [x] SCSS
+- [x] TypeScript
+- [x] Storybook to help you create and show off your components
+- [x] Jest and React Testing Library enabling testing of the components
+- [ ] Reccomended Addons and fancy shiny ones...
 
 #### Usage
 
 #### Storybook export
+
 Serve the story-book-static files in the dir, on github pages etc.
 
 #### Generating new components
+
 Creating a "new component template"
+
 ```
 npm run generate YourComponentName
 ```
 
 This will generate:
+
 ```
 /src
   /YourComponentName
@@ -168,21 +172,22 @@ Remember to add the component to the index.ts export for exporting the component
 
 ### Publish via NPM
 
-  Make sure npm login is run.
-  update name field in package.json to reflect npm package in private or public repo.
-  
-  run
-  ```
-  npm publish
-  ```
-  
-### Installing library into other projects 
+Make sure npm login is run.
+update name field in package.json to reflect npm package in private or public repo.
+
+run
+
+```
+npm publish
+```
+
+### Installing library into other projects
 
 ```
 yarn add mpw-storybook@latest
 ```
 
-### Usage 
+### Usage
 
 ```TSX
 import React from "react";
@@ -200,20 +205,20 @@ export default App;
 
 ### Rollup-plugin-copy - SASS variable exports
 
-  Will export scss files from the storybook into the build folder. 
-  Allowing for use in the project via the storybook library
-  
-  ```Sass
-    @import '~xairx-component-library/build/typography';
+Will export scss files from the storybook into the build folder.
+Allowing for use in the project via the storybook library
 
-    .example-container {
-        @include heading;
+```Sass
+  @import '~xairx-component-library/build/typography';
 
-        color: $harvey-white;
-    }
-  ```
-  
-### Understanding rollup 
+  .example-container {
+      @include heading;
+
+      color: $harvey-white;
+  }
+```
+
+### Understanding rollup
 
 Storybook component library
 
@@ -238,12 +243,12 @@ npm run generate YourComponentName
 This will generate:
 
 /src
-  /YourComponentName
-    YourComponentName.tsx
-    YourComponentName.stories.tsx
-    YourComponentName.test.tsx
-    YourComponentName.types.ts
-    YourComponentName.scss
+/YourComponentName
+YourComponentName.tsx
+YourComponentName.stories.tsx
+YourComponentName.test.tsx
+YourComponentName.types.ts
+YourComponentName.scss
 
 Remember to add the component to the index.ts export for exporting the component.
 Publish via NPM
@@ -257,7 +262,6 @@ npm publish
 Installing library into other projects
 
 yarn add mpw-storybook@latest
-
 
 #### Understanding rollup
 
@@ -273,7 +277,7 @@ yarn add mpw-storybook@latest
 
       In order to build our library lets add the following dev dependencies.
 
-      npm i -D rollup @rollup/plugin-babel rollup-plugin-peer-deps-external rollup-plugin-scss rollup-plugin-terser @babel/preset-react @rollup/plugin-node-resolve @rollup/plugin-typescript 
+      npm i -D rollup @rollup/plugin-babel rollup-plugin-peer-deps-external rollup-plugin-scss rollup-plugin-terser @babel/preset-react @rollup/plugin-node-resolve @rollup/plugin-typescript
 
       Let's understand these dependencies:
 
@@ -287,7 +291,6 @@ yarn add mpw-storybook@latest
           @rollup/plugin-typescript transpiles TypeScript files to JavaScript.
 
       Next, we create a rollup.config.js file and add the following contents.
-      
 
 #### Storybook & Unit-tests (Low level)
 
@@ -309,9 +312,8 @@ yarn add mpw-storybook@latest
 
 - [x] Authentication + OAuth
 - [x] Cloud Firestore
-- [x] Realtime Database 
+- [x] Realtime Database
 - [x] Storage
-
 
 ### More Tooling
 
@@ -324,8 +326,7 @@ yarn add mpw-storybook@latest
 &nbsp;
 &nbsp;
 
-
-## Getting started locally 
+## Getting started locally
 
 ### Commands
 
@@ -348,11 +349,9 @@ yarn add mpw-storybook@latest
     "postinstall": "cd ./packages/reactnative && expo-yarn-workspaces postinstall",
     "prebootstrap": "yarn",
     "storybook-component-tests": "yarn --cwd ./packages/frontend/storybook run test",
-		"storybook-build": "yarn --cwd ./packages/frontend/storybook run build",
-		"storybook-run": "yarn --cwd ./packages/frontend/storybook run storybook",
-		"storybook-export": "yarn --cwd ./packages/frontend/storybook run storybook:export"
-    
-    
+    	"storybook-build": "yarn --cwd ./packages/frontend/storybook run build",
+    	"storybook-run": "yarn --cwd ./packages/frontend/storybook run storybook",
+    	"storybook-export": "yarn --cwd ./packages/frontend/storybook run storybook:export"
 
 - [x] yarn commit - will run a flow composed of:
 - [x] [Husky](https://github.com/typicode/husky)
@@ -363,22 +362,19 @@ yarn add mpw-storybook@latest
 &nbsp;
 &nbsp;
 
-
 ## Getting started with docker
 
 ### **Example Docker images**
-
 
 - [x] React App Docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
 - [x] Barebones Express-api docker image
 - [ ] Graphql docker image
 - [x] Mongodb docker image
 - [x] Mongo seed docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
-- [x] Storybook Docker image 
+- [x] Storybook Docker image
 
-      The express server runs standalone  and connects to the MongoDB 
-      The GraphQL server runs standalone and connects to the MongoDB 
-
+      The express server runs standalone  and connects to the MongoDB
+      The GraphQL server runs standalone and connects to the MongoDB
 
 &nbsp;
 
@@ -454,7 +450,6 @@ A ReactJs application containerized for development and production.
 &nbsp;
 &nbsp;
 
-
 #### Simple Graphql-apollo-express setup (Todo-App Example)
 
 - [ ] [React query](https://react-query.tanstack.com/) React Query Api controller
@@ -484,7 +479,6 @@ A ReactJs application containerized for development and production.
 
 &nbsp;
 
-
 #### ON HOLD - Microservice preperation - Grapqhl example as bff on top of express backend (Todo-App Example expanded)
 
 - [ ] [GraphQL](https://graphql.org/) for backend magic
@@ -512,7 +506,6 @@ A ReactJs application containerized for development and production.
 
 &nbsp;
 &nbsp;
-
 
 ## Express backend and GraphQL Layer
 
