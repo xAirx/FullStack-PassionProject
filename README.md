@@ -70,7 +70,6 @@ Modern web based applications consist of multiple services. For example, a backe
     The Idea is that I can have several projects, a React Native project, A simple React project, among others, that can be spun up fast and run together with either technology choice in the backend.
 
 &nbsp;
-&nbsp;
 
 ### Setting up ENV files
 
@@ -85,7 +84,6 @@ Modern web based applications consist of multiple services. For example, a backe
                  # use db
 
 &nbsp;
-&nbsp;
 
 ### NVM usage for cross env node versions
 
@@ -96,7 +94,6 @@ Modern web based applications consist of multiple services. For example, a backe
 
     Running either of the above commands downloads a script and runs it. The script clones the nvm repository to `~/.nvm`, and attempts to add the source lines from the snippet below to the correct profile file (`~/.bash_profile`, `~/.zshrc`, `~/.profile`, or `~/.bashrc`).
 
-&nbsp;
 &nbsp;
 
 ## Project structure
