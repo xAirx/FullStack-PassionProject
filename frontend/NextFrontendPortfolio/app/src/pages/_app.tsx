@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app';
 import { QueryClient, QueryClientProvider, QueryOptions } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import TestComponent from '@/components/testcomponent/TestComponent';
+import { TestComponent } from 'mpw-storybook';
 import '@/styles/globals.css';
 
 import axiosClient from '@/lib/axios';
