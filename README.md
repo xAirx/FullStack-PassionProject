@@ -140,7 +140,7 @@ This is a list of all the packages in the repo and what they are used for.
 - [x]  TypeScript
 - [x]  Storybook to help you create and show off your components
 - [x]  Jest and React Testing Library enabling testing of the components
-
+- [ ]  Reccomended Addons and fancy shiny ones... 
 
 #### Usage
 
