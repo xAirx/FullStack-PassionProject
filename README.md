@@ -212,6 +212,82 @@ export default App;
         color: $harvey-white;
     }
   ```
+  
+### Understanding rollup 
+
+Storybook component library
+
+    Storybook published as an npm package - with framework of choice (or custom build for infinite posibillities.
+    Rollup
+    SCSS
+    TypeScript
+    Storybook to help you create and show off your components
+    Jest and React Testing Library enabling testing of the components
+    Reccomended Addons and fancy shiny ones...
+
+Usage
+Storybook export
+
+Serve the story-book-static files in the dir, on github pages etc.
+Generating new components
+
+Creating a "new component template"
+
+npm run generate YourComponentName
+
+This will generate:
+
+/src
+  /YourComponentName
+    YourComponentName.tsx
+    YourComponentName.stories.tsx
+    YourComponentName.test.tsx
+    YourComponentName.types.ts
+    YourComponentName.scss
+
+Remember to add the component to the index.ts export for exporting the component.
+Publish via NPM
+
+Make sure npm login is run. update name field in package.json to reflect npm package in private or public repo.
+
+run
+
+npm publish
+
+Installing library into other projects
+
+yarn add mpw-storybook@latest
+
+
+#### Understanding rollup
+
+      Bundling using Rollup
+
+      Rollup is a good bundling tool, if we want to package the React component library and reuse it in other projects.
+
+      Rollup needs an entry point to generate the bundle. We have already created an index.ts file in the src folder which will serve as our entry point for Rollup.
+
+      Add the exports of the components in this index.ts file which will be used by others and also import the global.scss file here so we can create CSS bundle.
+
+      scss-and-button-import-in-index.ts
+
+      In order to build our library lets add the following dev dependencies.
+
+      npm i -D rollup @rollup/plugin-babel rollup-plugin-peer-deps-external rollup-plugin-scss rollup-plugin-terser @babel/preset-react @rollup/plugin-node-resolve @rollup/plugin-typescript 
+
+      Let's understand these dependencies:
+
+          rollup gives the command-line interface (CLI) to bundle the library.
+          @rollup/plugin-babel allows us seamless integration between Rollup and existing Babel.
+          rollup-plugin-peer-deps-external prevents adding peer dependencies to the bundle because the consumer of the library is expected to have them. So we also get a smaller bundle size.
+          rollup-plugin-scss bundles scss files.
+          rollup-plugin-terser minify generated es bundle.
+          @babel/preset-react adds support for JSX.
+          @rollup/plugin-node-resolve helps resolve third-party modules in case you are using any third-party dependencies. If you use any third-party dependency it is going to resolve them and add them to the source code.
+          @rollup/plugin-typescript transpiles TypeScript files to JavaScript.
+
+      Next, we create a rollup.config.js file and add the following contents.
+      
 
 #### Storybook & Unit-tests (Low level)
 
