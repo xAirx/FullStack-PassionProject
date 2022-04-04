@@ -1,9 +1,10 @@
 // Generated with util/create-component.js
-import React from "react";
-import CardComponent from "./CardComponent";
+import React from 'react';
+
+import CardComponent from './CardComponent';
 
 export default {
-    title: "CardComponent"
+	title: 'CardComponent',
 };
 
 export const WithBar = () => <CardComponent foo="bar" />;

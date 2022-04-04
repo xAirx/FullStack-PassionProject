@@ -7,7 +7,7 @@
 		"dev:storybook": "yarn --cwd ./storybook run dev ",
 		"hooks:uninstall": "husky uninstall",
 		"hooks:install": "husky install",
-		"prettier": "prettier \"**/*.{md,css,scss,yaml,yml}\"",
+		"prettier": "prettier \"**/*.{css,scss,yml}\"",
 		"fix": "run-s fix:*",
 		"fix:code": "yarn lint:code --fix",
 		"fix:other": "yarn prettier --write **/*.js **/*.ts **/*.tsx **/*.json **/*.yml",

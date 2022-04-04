@@ -1,5 +1,0 @@
-MONGO_ROOT_USER = admin
-MONGO_ROOT_PASSWORD = pass
-MONGOEXPRESS_LOGIN = admin
-MONGOEXPRESS_PASSWORD = pass
-MONGO_URL = mongodb://admin:pass@localhost:27017/db?ssl=false

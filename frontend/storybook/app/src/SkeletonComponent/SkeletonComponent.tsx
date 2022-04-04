@@ -1,13 +1,14 @@
 // Generated with util/create-component.js
-import React from "react";
+import React from 'react';
 
-import { SkeletonComponentProps } from "./SkeletonComponent.types";
+import './SkeletonComponent.scss';
 
-import "./SkeletonComponent.scss";
+import { SkeletonComponentProps } from './SkeletonComponent.types';
 
 const SkeletonComponent: React.FC<SkeletonComponentProps> = ({ foo }) => (
-    <div data-testid="SkeletonComponent" className="foo-bar">{foo}</div>
+	<div data-testid="SkeletonComponent" className="foo-bar">
+		{foo}
+	</div>
 );
 
 export default SkeletonComponent;
-

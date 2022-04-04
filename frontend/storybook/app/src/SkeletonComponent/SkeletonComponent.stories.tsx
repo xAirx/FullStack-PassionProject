@@ -1,9 +1,10 @@
 // Generated with util/create-component.js
-import React from "react";
-import SkeletonComponent from "./SkeletonComponent";
+import React from 'react';
+
+import SkeletonComponent from './SkeletonComponent';
 
 export default {
-    title: "SkeletonComponent"
+	title: 'SkeletonComponent',
 };
 
 export const WithBar = () => <SkeletonComponent foo="bar" />;
