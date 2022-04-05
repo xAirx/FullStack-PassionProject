@@ -19,7 +19,7 @@ Modern web based applications consist of multiple services. For example, a backe
 - [x] [Deepsource.io](https://deepsource.io/) helps you write clean code on every pull-request. Built for engineering teams who move fast and don’t break things.
 - [x] [Codesee](https://www.codesee.io/) Auto-syncing code diagrams to drive collaboration, improve code reviews, reduce onboarding friction, and more. See the map here: https://app.codesee.io/maps/89924030-b41c-11ec-8182-53fb1661bf5c
 - [x] [Sentry](https://sentry.io/welcome) Tracking to performance monitoring, developers can see what actually matters, solve quicker, and learn continuously about their applications - from the frontend to the backend.
-
+- [x] [Better Docs (https://github.com/SoftwareBrothers/better-docs) Automatic Documentation generation via a JSDOC wrapper.
 ## CI/CD and Deploys
 
 ### Deploying Next.js App With TRPC  Api solution on vercel
