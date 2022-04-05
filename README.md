@@ -25,32 +25,11 @@ Modern web based applications consist of multiple services. For example, a backe
 ## BetterDocs
 - [x] [Better Docs (https://github.com/SoftwareBrothers/better-docs) Automatic Documentation generation via a JSDOC wrapper. - Example of final documentation result: https://softwarebrothers.github.io/example-design-system/index.html
 
-        With npm and configuration file
+        @component plugin 
 
-        In your projects package.json file - add a new script:
-
-        "script": {
-          "docs": "jsdoc -c jsdoc.json"
-        }
-
-        in your jsdoc.json file, set the template:
-
-        "opts": {
-          "template": "node_modules/better-docs"
-        }
-
-        It performs 4 operations:
-
-        First of all it transpiles all .ts and .tsx files to .js, so that all comments used by you are treated as a regular JSDoc comments.
-
-          Furthermore it:
-
-              Converts all your commented type aliases to @typedef
-              Converts all your commented interface definitions to @interface,
-              Converts descriptions for your public, protected, static class members
-
-          so they can be printed by JSDoc automatically.
-
+        Better-docs also allows you to document your React and Vue components automatically. The only thing you have to do is to add a @component tag. It will take all props from your components and along with an @example tag - will generate a live preview.
+        
+        yarn global add parcel-bundler
 
 
 &nbsp;
