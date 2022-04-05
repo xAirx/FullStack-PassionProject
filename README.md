@@ -22,13 +22,16 @@ Modern web based applications consist of multiple services. For example, a backe
 
 ## CI/CD and Deploys
 
-### Deploying Next.js App With TRPC  Api solution on vercel
+### Deploying Next.js App With TRPC Api solution on vercel
+
     "The easiest way to deploy a Next.js app is to use the Vercel Platform from the creators of Next.js."
-- [ ]    Setup Deploy Script for vercel
- 
+
+- [ ] Setup Deploy Script for vercel
+
 &nbsp;
 
 ### Docker Deploy example
+
 - [x] [CI/CD - CircleCI & Docker hub -> Heroku](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde)
 - [ ] Circle-CI boilerplate preconfigured for docker image - Dockerhub deploys -> Heroku (Container registry).
 
@@ -320,7 +323,7 @@ yarn add mpw-storybook@latest
 - [x] End to end typing
 - [x] Authentication and Authorization baked in
 - [x] SSR, SSG and ASO thanks to Next.js
-- [ ] 
+- [ ]
 
 ### More Tooling
 
