@@ -20,15 +20,19 @@ Modern web based applications consist of multiple services. For example, a backe
 - [x] [Codesee](https://www.codesee.io/) Auto-syncing code diagrams to drive collaboration, improve code reviews, reduce onboarding friction, and more. See the map here: https://app.codesee.io/maps/89924030-b41c-11ec-8182-53fb1661bf5c
 - [x] [Sentry](https://sentry.io/welcome) Tracking to performance monitoring, developers can see what actually matters, solve quicker, and learn continuously about their applications - from the frontend to the backend.
 - [x] [Better Docs (https://github.com/SoftwareBrothers/better-docs) Automatic Documentation generation via a JSDOC wrapper.
+
 ## CI/CD and Deploys
 
-### Deploying Next.js App With TRPC  Api solution on vercel
+### Deploying Next.js App With TRPC Api solution on vercel
+
     "The easiest way to deploy a Next.js app is to use the Vercel Platform from the creators of Next.js."
-- [ ]    Setup Deploy Script for vercel
- 
+
+- [ ] Setup Deploy Script for vercel
+
 &nbsp;
 
 ### Docker Deploy example
+
 - [x] [CI/CD - CircleCI & Docker hub -> Heroku](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde)
 - [ ] Circle-CI boilerplate preconfigured for docker image - Dockerhub deploys -> Heroku (Container registry).
 
@@ -320,7 +324,7 @@ yarn add mpw-storybook@latest
 - [x] End to end typing
 - [x] Authentication and Authorization baked in
 - [x] SSR, SSG and ASO thanks to Next.js
-- [ ] 
+- [ ]
 
 ### More Tooling
 
