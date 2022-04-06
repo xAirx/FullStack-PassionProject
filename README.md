@@ -62,9 +62,18 @@ Modern web based applications consist of multiple services. For example, a backe
 
 &nbsp;
 &nbsp;
-&nbsp;
-&nbsp;
+## Fail fast and early - lint-staged, husky, and pre-commit hooks 
 
+    ‘Move fast with confidence’.
+    Final thoughts
+
+    By adding a husky and a lint-staged object to your package.json you can quickly integrate pre-commit checks to your workflow, customise them to fit your individual preferences, and save time for all developers that work in that repository.
+
+    The hooks will allow common errors to be found, fixed, and added, without any additional interaction added — all before CI is even run.
+
+
+&nbsp;
+&nbsp;
 
 ## Testing Strategies
 
