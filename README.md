@@ -1,5 +1,6 @@
 
 
+
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) [![Made With Love](https://img.shields.io/badge/Made%20With-Love-orange.svg)](https://github.com/chetanraj/awesome-github-badges)
 [![Build status](https://badge.buildkite.com/90ff98db996bb137c5be1bdce666c4b1ce68a25b17af0a6a04.svg?branch=master)](https://buildkite.com/xairx/react-component-library)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
@@ -15,7 +16,7 @@ Modern web based applications consist of multiple services. For example, a backe
 
 &nbsp;
 
-## The "monorepo" structure is managed with
+# The "monorepo" structure is managed with
 
 - [x] [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) will scan all files in each repository to look for relevant package files. It will also group upgrades from the same monorepo into a single PR to ensure tests pass and PR noise is reduced. Natively supports Lerna and Yarn Workspaces with zero configuration necessary.
 
@@ -62,7 +63,7 @@ Modern web based applications consist of multiple services. For example, a backe
 
 &nbsp;
 &nbsp;
-## Fail fast and early - lint-staged, husky, and pre-commit hooks 
+# Fail fast and early - lint-staged, husky, and pre-commit hooks 
 
     ‘Move fast with confidence’.
     Final thoughts
@@ -71,61 +72,44 @@ Modern web based applications consist of multiple services. For example, a backe
 
     The hooks will allow common errors to be found, fixed, and added, without any additional interaction added — all before CI is even run.
 
-
 &nbsp;
 &nbsp;
-
-## Testing Strategies
-
-
-
-  ### Storybook & Unit-tests (Low level)
+# Testing Strategies
+  &nbsp;
+  ### Low level unit-testing (isolation in storybook)
 
       - Jest, and React-testing-library. Simple tests that focuses on testing the contracts between the back end and front end layers. Where as solid component testing is abstracted away into the Storybook setup.
         &nbsp;
 
-  ##### Unit-tests (High Level)
+  #### High level, Unit-tests 
 
   ###### Example:
 
       - Think mocking API responses, checking for loading and error states.
 
       - Testing a modal is opened or closed as a result of a POST being successful or reverse.
----------------------------------------
 
- ###  E2E Testing (cypress)
----------------------------------------
-      - End-to-end testing is a technique that tests the entire software product from beginning to end to ensure the application flow behaves as expected. It defines the product’s system dependencies and ensures all integrated pieces work together as expected.
-
-     The main purpose of End-to-end (E2E) testing is to test from the end user’s experience by simulating the real user scenario and validating the system under test and its components for integration and data integrity.
----------------------------------------     
-     
-     
-
-### CI/CD flows and testing
   ---------------------------------------
-	  All "FLOWS" in this monorepo will implement a test step.
+ &nbsp;
+  ### Husky - Lint-staged & Local Testing 
   
-  #####  Local Testing 
-  ---------------------------------------
 	  Husky will run tests before commiting to git
   
    - [ ]  Setup Testing step with unit-testing across the entire monorepo.
  
-&nbsp;
-
-
-  #####  CircleCI - CI/CD and Deploys
 ---------------------------------------
+&nbsp;
+  ### CircleCI - CI/CD and Deploys
+
  ##### Deploying Next.js App With TRPC API on vercel
       "The easiest way to deploy a Next.js app is to use the Vercel Platform from the creators of Next.js."
   - [ ]    Setup Deploy Script for vercel
   - [ ]    Setup CircleCI Integratation
   - [ ]    Setup Testing step with unit-testing and E2E
 ---------------------------------------
- 
+ &nbsp;
   ###  Docker container deploys to heroku
-  ---------------------------------------
+  
 	  Testing will be done in the CircleCI pipeline and E2E tests will be run as well. 
   
   ##### Docker Deploy example
@@ -135,12 +119,14 @@ Modern web based applications consist of multiple services. For example, a backe
   - [ ]    Setup Testing step with unit-testing and E2E
   ---------------------------------------
 
-    
+   &nbsp;
   ### React Native and AppCenter CI/CD
-  ---------------------------------------
+  
 	  AppCenter for IOS and Android Deploy will run unit-tests and then e2e tests.
    - [ ]    Setup Testing step with unit-testing and E2E
 ---------------------------------------
+
+
 &nbsp;
 &nbsp;
 &nbsp;
