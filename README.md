@@ -7,7 +7,7 @@
 
 # **Introduction to project architecture**
 
-## **Passion-Project "MonoRepo" **
+# **Passion-Project "MonoRepo" **
 
 Modern web based applications consist of multiple services. For example, a backend API and a frontend client. In larger projects, where scaling becomes an issue, the services can also be split into multiple microservices. The question arises, how to organize the source code in such a project. One solution is a monorepo, i. e. one repository for all the source code in the project.
 
@@ -18,12 +18,12 @@ Modern web based applications consist of multiple services. For example, a backe
 - [x] [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) will scan all files in each repository to look for relevant package files. It will also group upgrades from the same monorepo into a single PR to ensure tests pass and PR noise is reduced. Natively supports Lerna and Yarn Workspaces with zero configuration necessary.
 - [x] [Deepsource.io](https://deepsource.io/) helps you write clean code on every pull-request. Built for engineering teams who move fast and don’t break things.
 - [x] [Codesee](https://www.codesee.io/) Auto-syncing code diagrams to drive collaboration, improve code reviews, reduce onboarding friction, and more. See the map here: https://app.codesee.io/maps/89924030-b41c-11ec-8182-53fb1661bf5c
-- [x] [Sentry](https://sentry.io/welcome) Tracking to performance monitoring, developers can see what actually matters, solve quicker, and learn continuously about their applications - from the frontend to the backend.
+- [ ] [Sentry](https://sentry.io/welcome) Tracking to performance monitoring, developers can see what actually matters, solve quicker, and learn continuously about their applications - from the frontend to the backend.
 
 &nbsp;
 
 ## BetterDocs (Currently broken - WIP)
-- [x] [Better Docs (https://github.com/SoftwareBrothers/better-docs) Automatic Documentation generation via a JSDOC wrapper. - Example of final documentation result: https://softwarebrothers.github.io/example-design-system/index.html
+- [ ] [Better Docs (https://github.com/SoftwareBrothers/better-docs) Automatic Documentation generation via a JSDOC wrapper. - Example of final documentation result: https://softwarebrothers.github.io/example-design-system/index.html
 
         https://github.com/SoftwareBrothers/better-docs - refer to docs to fix it.
 
@@ -35,26 +35,75 @@ Modern web based applications consist of multiple services. For example, a backe
 
 
 &nbsp;
-
-
-## CI/CD and Deploys
-
-### Deploying Next.js App With TRPC  Api solution on vercel
-    "The easiest way to deploy a Next.js app is to use the Vercel Platform from the creators of Next.js."
-- [ ]    Setup Deploy Script for vercel
- 
 &nbsp;
 
-### Docker Deploy example
-- [x] [CI/CD - CircleCI & Docker hub -> Heroku](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde)
-- [ ] Circle-CI boilerplate preconfigured for docker image - Dockerhub deploys -> Heroku (Container registry).
 
-       https://github.com/marketplace/actions/deploy-to-heroku
-       https://www.heroku.com/deploy-with-docker
-       https://medium.com/nexton/deploying-docker-images-to-heroku-with-circleci-713c764e248d
+## Testing Strategies
 
+
+
+  #### Storybook & Unit-tests (Low level)
+
+      - Jest, and React-testing-library. Simple tests that focuses on testing the contracts between the back end and front end layers. Where as solid component testing is abstracted away into the Storybook setup.
+        &nbsp;
+
+  #### Unit-tests (High Level)
+
+  ##### Example:
+
+      - Think mocking API responses, checking for loading and error states.
+
+      - Testing a modal is opened or closed as a result of a POST being successful or reverse.
+
+
+ #### E2E Testing (cypress)
+
+      - End-to-end testing is a technique that tests the entire software product from beginning to end to ensure the application flow behaves as expected. It defines the product’s system dependencies and ensures all integrated pieces work together as expected.
+
+     The main purpose of End-to-end (E2E) testing is to test from the end user’s experience by simulating the real user scenario and validating the system under test and its components for integration and data integrity.
+     
+     
 &nbsp;
-&nbsp;
+     
+
+### CI/CD flows and testing
+  
+  All "FLOWS" in this monorepo will implement a test step.
+  
+  #### Local Testing 
+  Husky will run tests before commiting to git
+  
+   - [ ]  Setup Testing step with unit-testing across the entire monorepo.
+  
+  
+  #### CircleCI - CI/CD and Deploys
+
+  #####  Deploying Next.js App With TRPC API on vercel
+      "The easiest way to deploy a Next.js app is to use the Vercel Platform from the creators of Next.js."
+  - [ ]    Setup Deploy Script for vercel
+  - [ ]    Setup CircleCI Integratation
+  - [ ]    Setup Testing step with unit-testing and E2E
+
+  &nbsp;
+  
+  ##### Docker container deploys to heroku
+  Testing will be done in the CircleCI pipeline and E2E tests will be run as well. 
+  
+  ###### Docker Deploy example
+  
+  - [ ] [CI/CD - CircleCI & Docker hub -> Heroku](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde)
+  - [ ] Circle-CI boilerplate preconfigured for docker image - Dockerhub deploys -> Heroku (Container registry).
+  - [ ]    Setup Testing step with unit-testing and E2E
+  
+    &nbsp;
+    
+  ##### React Native and AppCenter
+  AppCenter for IOS and Android Deploy will run unit-tests and then e2e tests.
+   - [ ]    Setup Testing step with unit-testing and E2E
+
+
+    
+
 &nbsp;
 &nbsp;
 
@@ -93,20 +142,6 @@ Modern web based applications consist of multiple services. For example, a backe
 ## **A simple Architecture visualization:**
 
 <img src=https://user-images.githubusercontent.com/22436080/161449512-d436cd49-b2e9-4fc2-b566-febad177c5e1.svg width="700" height="600"/>
-
-&nbsp;
-
-### Setting up ENV files
-
-    Each of the projects has an ExampleENV.json file.
-    This is needed to start the projects
-
-
-                 #mongo
-                 #use admin
-                 db.auth("admin", "password")
-                 # Show dbs
-                 # use db
 
 &nbsp;
 
@@ -153,7 +188,8 @@ This is a list of all the packages in the repo and what they are used for.
 - [x] [Recoil](https://recoiljs.org/) Examples of using a simple state management with a small footprint
 - [x] [Tailwind CSS v3](https://tailwindcss.com) with a [basic reset for form styles](https://github.com/tailwindlabs/tailwindcss-forms)
 - [x] [Absolute Imports](https://github.com/aleclarson/vite-tsconfig-paths) - Avoid ./././
-- [x] [https://testing-library.com/docs/react-testing-library/intro/]Unit-tests & React Testing Library
+- [ ] [Unit-testing](https://testing-library.com/docs/react-testing-library/intro/]Unit-tests) React Testing Library & Jest
+- [ ] [E2E-testing with cypress] (https://www.cypress.io/) - E2E testing.
 
 ### Storybook component library
 
@@ -162,8 +198,9 @@ This is a list of all the packages in the repo and what they are used for.
 - [x] SCSS
 - [x] TypeScript
 - [x] Storybook to help you create and show off your components
-- [x] Jest and React Testing Library enabling testing of the components
+- [x] Jest and React Testing Library enabling testing of the components 
 - [ ] Reccomended Addons and fancy shiny ones...
+- [ ] Add way more components...
 
 #### Usage
 
@@ -256,35 +293,35 @@ Storybook component library
 Usage
 Storybook export
 
-Serve the story-book-static files in the dir, on github pages etc.
-Generating new components
+      Serve the story-book-static files in the dir, on github pages etc.
+      Generating new components
 
-Creating a "new component template"
+      Creating a "new component template"
 
-npm run generate YourComponentName
+      npm run generate YourComponentName
 
-This will generate:
+      This will generate:
 
-/src
-/YourComponentName
-YourComponentName.tsx
-YourComponentName.stories.tsx
-YourComponentName.test.tsx
-YourComponentName.types.ts
-YourComponentName.scss
+      /src
+      /YourComponentName
+      YourComponentName.tsx
+      YourComponentName.stories.tsx
+      YourComponentName.test.tsx
+      YourComponentName.types.ts
+      YourComponentName.scss
 
-Remember to add the component to the index.ts export for exporting the component.
-Publish via NPM
+      Remember to add the component to the index.ts export for exporting the component.
+      Publish via NPM
 
-Make sure npm login is run. update name field in package.json to reflect npm package in private or public repo.
+      Make sure npm login is run. update name field in package.json to reflect npm package in private or public repo.
 
-run
+      run
 
-npm publish
+      npm publish
 
-Installing library into other projects
+      Installing library into other projects
 
-yarn add mpw-storybook@latest
+      yarn add mpw-storybook@latest
 
 #### Understanding rollup
 
@@ -315,19 +352,7 @@ yarn add mpw-storybook@latest
 
       Next, we create a rollup.config.js file and add the following contents.
 
-#### Storybook & Unit-tests (Low level)
-
-    - Jest, and React-testing-library. Simple tests that focuses on testing the contracts between the back end and front end layers. Where as solid component testing is abstracted away into the Storybook setup.
-      &nbsp;
-
-#### Unit-tests (High Level)
-
-##### Example:
-
-    - Think mocking API responses, checking for loading and error states.
-
-    - Testing a modal is opened or closed as a result of a POST being successful or reverse.
-
+     
 &nbsp;
 &nbsp;
 
