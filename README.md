@@ -23,29 +23,31 @@ Modern web based applications consist of multiple services. For example, a backe
 &nbsp;
 
 ## BetterDocs (Currently broken - WIP)
+
 - [x] [Better Docs (https://github.com/SoftwareBrothers/better-docs) Automatic Documentation generation via a JSDOC wrapper. - Example of final documentation result: https://softwarebrothers.github.io/example-design-system/index.html
 
         https://github.com/SoftwareBrothers/better-docs - refer to docs to fix it.
 
-        @component plugin 
+        @component plugin
 
         Better-docs also allows you to document your React and Vue components automatically. The only thing you have to do is to add a @component tag. It will take all props from your components and along with an @example tag - will generate a live preview.
-        
+
         yarn global add parcel-bundler
 
-
 &nbsp;
-
 
 ## CI/CD and Deploys
 
-### Deploying Next.js App With TRPC  Api solution on vercel
+### Deploying Next.js App With TRPC Api solution on vercel
+
     "The easiest way to deploy a Next.js app is to use the Vercel Platform from the creators of Next.js."
-- [ ]    Setup Deploy Script for vercel
- 
+
+- [ ] Setup Deploy Script for vercel
+
 &nbsp;
 
 ### Docker Deploy example
+
 - [x] [CI/CD - CircleCI & Docker hub -> Heroku](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde)
 - [ ] Circle-CI boilerplate preconfigured for docker image - Dockerhub deploys -> Heroku (Container registry).
 
@@ -140,7 +142,7 @@ This is a list of all the packages in the repo and what they are used for.
 &nbsp;
 &nbsp;
 
-# React Next.js (For future projects and easy start-ups) 
+# React Next.js (For future projects and easy start-ups)
 
 ## **Contents & Setup:**
 
@@ -337,7 +339,7 @@ yarn add mpw-storybook@latest
 - [x] End to end typing
 - [x] Authentication and Authorization baked in
 - [x] SSR, SSG and ASO thanks to Next.js
-- [ ] 
+- [ ]
 
 ### More Tooling
 
