@@ -1,3 +1,4 @@
+
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) [![Made With Love](https://img.shields.io/badge/Made%20With-Love-orange.svg)](https://github.com/chetanraj/awesome-github-badges)
 [![Build status](https://badge.buildkite.com/90ff98db996bb137c5be1bdce666c4b1ce68a25b17af0a6a04.svg?branch=master)](https://buildkite.com/xairx/react-component-library)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
@@ -16,14 +17,39 @@ Modern web based applications consist of multiple services. For example, a backe
 ## The "monorepo" structure is managed with
 
 - [x] [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) will scan all files in each repository to look for relevant package files. It will also group upgrades from the same monorepo into a single PR to ensure tests pass and PR noise is reduced. Natively supports Lerna and Yarn Workspaces with zero configuration necessary.
+
+	### Renovate
+
+	      Renovate bumping packages and working together with codeQL, and GitGuardian
+
+	|                                                                 Renovate                                                                  |                                                                 Renovate                                                                  |
+	| :---------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
+	| <img src=https://user-images.githubusercontent.com/22436080/161400772-b5c86a25-5c54-438b-8374-835f9e74538c.png width="500" height="400"/> | <img src=https://user-images.githubusercontent.com/22436080/161400745-5a85b03a-a253-4a54-9826-d87b16b95f50.png width="600" height="300"/> |
+
 - [x] [Deepsource.io](https://deepsource.io/) helps you write clean code on every pull-request. Built for engineering teams who move fast and don’t break things.
+
+	### DeepSource
+
+	       Will scan the project for issues, will scan all commits, and branches and will help with hooking into PR's as well.
+
+	|                                                            DeepSource example                                                             |                                                            DeepSource example                                                             |
+	| :---------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
+	| <img src=https://user-images.githubusercontent.com/22436080/161400950-3c48227e-f8b0-4c13-899a-c0e0a958f691.png width="400" height="400"/> | <img src=https://user-images.githubusercontent.com/22436080/161400796-7a196b57-320e-4e49-bd6d-ef4e72e755b9.png width="600" height="300"/> |
+
 - [x] [Codesee](https://www.codesee.io/) Auto-syncing code diagrams to drive collaboration, improve code reviews, reduce onboarding friction, and more. See the map here: https://app.codesee.io/maps/89924030-b41c-11ec-8182-53fb1661bf5c
+
+	### Codesee
+
+	       Will show which files and where deepsource has reccomended changes and give a DIFF tool to see the exact changes in each component.
+	       It also comes with a heatmap, which easily can give an overview of where the code is being refactored or developed the most.
+
+	|                                                             CodeSee Example                                                              |                                                              CodeSee Example                                                              |
+	| :--------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
+	| <img src=https://user-images.githubusercontent.com/22436080/161400979-1a21703b-9acb-49c6-8d2d-86e94fbf3b90.png width="400" height="300"> | <img src=https://user-images.githubusercontent.com/22436080/161401207-4b1a7fdd-0cfe-470f-99ae-9d5242444cc9.png width="400" height="300"/> |
+
 - [ ] [Sentry](https://sentry.io/welcome) Tracking to performance monitoring, developers can see what actually matters, solve quicker, and learn continuously about their applications - from the frontend to the backend.
-
-&nbsp;
-
-## BetterDocs (Currently broken - WIP)
-- [ ] [Better Docs (https://github.com/SoftwareBrothers/better-docs) Automatic Documentation generation via a JSDOC wrapper. - Example of final documentation result: https://softwarebrothers.github.io/example-design-system/index.html
+#### BetterDocs (Currently broken - WIP)
+- [ ] [Better Docs (https://github.com/SoftwareBrothers/better-docs) Automatic Documentation generation via a JSDOC wrapper. - Example of final documentation result: https://softwarebrothers.github.io/example-design-system/index.html
 
         https://github.com/SoftwareBrothers/better-docs - refer to docs to fix it.
 
@@ -38,11 +64,12 @@ Modern web based applications consist of multiple services. For example, a backe
 &nbsp;
 
 
+
 ## Testing Strategies
 
 
 
-  #### Storybook & Unit-tests (Low level)
+  ### Storybook & Unit-tests (Low level)
 
       - Jest, and React-testing-library. Simple tests that focuses on testing the contracts between the back end and front end layers. Where as solid component testing is abstracted away into the Storybook setup.
         &nbsp;
@@ -54,85 +81,55 @@ Modern web based applications consist of multiple services. For example, a backe
       - Think mocking API responses, checking for loading and error states.
 
       - Testing a modal is opened or closed as a result of a POST being successful or reverse.
+---------------------------------------
+&nbsp;
 
-
- #### E2E Testing (cypress)
-
+ ###  E2E Testing (cypress)
+---------------------------------------
       - End-to-end testing is a technique that tests the entire software product from beginning to end to ensure the application flow behaves as expected. It defines the product’s system dependencies and ensures all integrated pieces work together as expected.
 
      The main purpose of End-to-end (E2E) testing is to test from the end user’s experience by simulating the real user scenario and validating the system under test and its components for integration and data integrity.
-     
+---------------------------------------     
      
 &nbsp;
      
 
 ### CI/CD flows and testing
+  ---------------------------------------
+	  All "FLOWS" in this monorepo will implement a test step.
   
-  All "FLOWS" in this monorepo will implement a test step.
-  
-  #### Local Testing 
-  Husky will run tests before commiting to git
+  ###  Local Testing 
+	  Husky will run tests before commiting to git
   
    - [ ]  Setup Testing step with unit-testing across the entire monorepo.
-  
-  
-  #### CircleCI - CI/CD and Deploys
-
-  #####  Deploying Next.js App With TRPC API on vercel
+  ---------------------------------------
+  &nbsp;
+  ###  CircleCI - CI/CD and Deploys
+---------------------------------------
+ #### Deploying Next.js App With TRPC API on vercel
       "The easiest way to deploy a Next.js app is to use the Vercel Platform from the creators of Next.js."
   - [ ]    Setup Deploy Script for vercel
   - [ ]    Setup CircleCI Integratation
   - [ ]    Setup Testing step with unit-testing and E2E
-
+---------------------------------------
   &nbsp;
   
-  ##### Docker container deploys to heroku
-  Testing will be done in the CircleCI pipeline and E2E tests will be run as well. 
+  ###  Docker container deploys to heroku
+  ---------------------------------------
+	  Testing will be done in the CircleCI pipeline and E2E tests will be run as well. 
   
-  ###### Docker Deploy example
+  ### Docker Deploy example
   
   - [ ] [CI/CD - CircleCI & Docker hub -> Heroku](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde)
   - [ ] Circle-CI boilerplate preconfigured for docker image - Dockerhub deploys -> Heroku (Container registry).
   - [ ]    Setup Testing step with unit-testing and E2E
-  
-    &nbsp;
+  ---------------------------------------
+   &nbsp;
     
-  ##### React Native and AppCenter
-  AppCenter for IOS and Android Deploy will run unit-tests and then e2e tests.
+  ### React Native and AppCenter CI/CD
+  ---------------------------------------
+	  AppCenter for IOS and Android Deploy will run unit-tests and then e2e tests.
    - [ ]    Setup Testing step with unit-testing and E2E
-
-
-    
-
-&nbsp;
-&nbsp;
-
-## Example of Deepsource working together with Codesee:
-
-### DeepSource
-
-       Will scan the project for issues, will scan all commits, and branches and will help with hooking into PR's as well.
-
-|                                                            DeepSource example                                                             |                                                            DeepSource example                                                             |
-| :---------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
-| <img src=https://user-images.githubusercontent.com/22436080/161400950-3c48227e-f8b0-4c13-899a-c0e0a958f691.png width="400" height="400"/> | <img src=https://user-images.githubusercontent.com/22436080/161400796-7a196b57-320e-4e49-bd6d-ef4e72e755b9.png width="600" height="300"/> |
-
-### Codesee
-
-       Will show which files and where deepsource has reccomended changes and give a DIFF tool to see the exact changes in each component.
-       It also comes with a heatmap, which easily can give an overview of where the code is being refactored or developed the most.
-
-|                                                             CodeSee Example                                                              |                                                              CodeSee Example                                                              |
-| :--------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
-| <img src=https://user-images.githubusercontent.com/22436080/161400979-1a21703b-9acb-49c6-8d2d-86e94fbf3b90.png width="400" height="300"> | <img src=https://user-images.githubusercontent.com/22436080/161401207-4b1a7fdd-0cfe-470f-99ae-9d5242444cc9.png width="400" height="300"/> |
-
-### Renovate
-
-      Renovate bumping packages and working together with codeQL, and GitGuardian
-
-|                                                                 Renovate                                                                  |                                                                 Renovate                                                                  |
-| :---------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
-| <img src=https://user-images.githubusercontent.com/22436080/161400772-b5c86a25-5c54-438b-8374-835f9e74538c.png width="500" height="400"/> | <img src=https://user-images.githubusercontent.com/22436080/161400745-5a85b03a-a253-4a54-9826-d87b16b95f50.png width="600" height="300"/> |
 
 &nbsp;
 &nbsp;
@@ -142,19 +139,6 @@ Modern web based applications consist of multiple services. For example, a backe
 ## **A simple Architecture visualization:**
 
 <img src=https://user-images.githubusercontent.com/22436080/161449512-d436cd49-b2e9-4fc2-b566-febad177c5e1.svg width="700" height="600"/>
-
-&nbsp;
-
-### NVM usage for cross env node versions
-
-    Install & Update Script
-
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-
-
-    Running either of the above commands downloads a script and runs it. The script clones the nvm repository to `~/.nvm`, and attempts to add the source lines from the snippet below to the correct profile file (`~/.bash_profile`, `~/.zshrc`, `~/.profile`, or `~/.bashrc`).
-
-&nbsp;
 
 ## Project structure
 
@@ -175,9 +159,9 @@ This is a list of all the packages in the repo and what they are used for.
 &nbsp;
 &nbsp;
 
-# React Next.js (For future projects and easy start-ups) 
+## React Next.js (For future projects and easy start-ups) 
 
-## **Contents & Setup:**
+
 
 ### Main tools
 
@@ -190,8 +174,31 @@ This is a list of all the packages in the repo and what they are used for.
 - [x] [Absolute Imports](https://github.com/aleclarson/vite-tsconfig-paths) - Avoid ./././
 - [ ] [Unit-testing](https://testing-library.com/docs/react-testing-library/intro/]Unit-tests) React Testing Library & Jest
 - [ ] [E2E-testing with cypress] (https://www.cypress.io/) - E2E testing.
+ ---------------------------------------
+ &nbsp;
+&nbsp;
 
-### Storybook component library
+## Backend for Next.js Project (TRPC)
+
+- [x] Authentication + OAuth
+- [x] End to end typing
+- [x] Authentication and Authorization baked in
+- [x] SSR, SSG and ASO thanks to Next.js
+- [  ] More to come
+
+### More Tooling
+
+- [x] [Husky](https://github.com/typicode/husky) - Git pre hooks
+- [x] [Prettier-Standard](https://github.com/sheerun/prettier-standard) for formatting and linting
+- [x] [lint-staged](https://github.com/okonet/lint-staged) with precommit task for linting
+- [x] [Commitizen](https://github.com/commitizen/cz-cli) intercepting your commits to help you add nice formatted messages
+- [x] [Absolute Imports](https://medium.com/geekculture/making-life-easier-with-absolute-imports-react-in-javascript-and-typescript-bbdab8a8a3a1) - Avoid ./././
+
+&nbsp;
+&nbsp;
+
+ &nbsp;
+## Storybook component library
 
 - [x] Storybook published as an npm package - with framework of choice (or custom build for infinite posibillities.
 - [x] Rollup
@@ -201,98 +208,11 @@ This is a list of all the packages in the repo and what they are used for.
 - [x] Jest and React Testing Library enabling testing of the components 
 - [ ] Reccomended Addons and fancy shiny ones...
 - [ ] Add way more components...
+&nbsp;
+ ---------------------------------------
 
-#### Usage
-
-#### Storybook export
-
-Serve the story-book-static files in the dir, on github pages etc.
-
-#### Generating new components
-
-Creating a "new component template"
-
-```
-npm run generate YourComponentName
-```
-
-This will generate:
-
-```
-/src
-  /YourComponentName
-    YourComponentName.tsx
-    YourComponentName.stories.tsx
-    YourComponentName.test.tsx
-    YourComponentName.types.ts
-    YourComponentName.scss
-```
-
-Remember to add the component to the index.ts export for exporting the component.
-
-### Publish via NPM
-
-Make sure npm login is run.
-update name field in package.json to reflect npm package in private or public repo.
-
-run
-
-```
-npm publish
-```
-
-### Installing library into other projects
-
-```
-yarn add mpw-storybook@latest
-```
-
-### Usage
-
-```TSX
-import React from "react";
-import { TestComponent } from "xairx-component-library";
-
-const App = () => (
-  <div className="app-container">
-    <h1>Hello I'm consuming the component library</h1>
-    <TestComponent theme="primary" />
-  </div>
-);
-
-export default App;
-```
-
-### Rollup-plugin-copy - SASS variable exports
-
-Will export scss files from the storybook into the build folder.
-Allowing for use in the project via the storybook library
-
-```Sass
-  @import '~xairx-component-library/build/typography';
-
-  .example-container {
-      @include heading;
-
-      color: $harvey-white;
-  }
-```
-
-### Understanding rollup
-
-Storybook component library
-
-    Storybook published as an npm package - with framework of choice (or custom build for infinite posibillities.
-    Rollup
-    SCSS
-    TypeScript
-    Storybook to help you create and show off your components
-    Jest and React Testing Library enabling testing of the components
-    Reccomended Addons and fancy shiny ones...
-
-Usage
-Storybook export
-
+### Storybook export
+---------------------------------------
       Serve the story-book-static files in the dir, on github pages etc.
       Generating new components
 
@@ -322,6 +242,84 @@ Storybook export
       Installing library into other projects
 
       yarn add mpw-storybook@latest
+   ---------------------------------------
+&nbsp;
+
+#### Automatically generating new components
+---------------------------------------
+Creating a "new component template"
+
+```
+npm run generate YourComponentName
+```
+
+This will generate:
+
+```
+/src
+  /YourComponentName
+    YourComponentName.tsx
+    YourComponentName.stories.tsx
+    YourComponentName.test.tsx
+    YourComponentName.types.ts
+    YourComponentName.scss
+```
+
+Remember to add the component to the index.ts export for exporting the component.
+
+---------------------------------------
+&nbsp;
+ 
+ 
+ 
+### Publish via NPM
+---------------------------------------
+Make sure npm login is run.
+update name field in package.json to reflect npm package in private or public repo.
+
+run
+
+```
+npm publish
+```
+
+### Installing library into other projects
+
+```
+yarn add mpw-storybook@latest
+```
+
+#### Usage
+
+```TSX
+import React from "react";
+import { TestComponent } from "xairx-component-library";
+
+const App = () => (
+  <div className="app-container">
+    <h1>Hello I'm consuming the component library</h1>
+    <TestComponent theme="primary" />
+  </div>
+);
+
+export default App;
+```
+---------------------------------------
+&nbsp;
+### Rollup & rollup-plugin-copy - SASS variable exports
+---------------------------------------
+Will export scss files from the storybook into the build folder.
+Allowing for use in the project via the storybook library
+
+```Sass
+  @import '~xairx-component-library/build/typography';
+
+  .example-container {
+      @include heading;
+
+      color: $white;
+  }
+```
 
 #### Understanding rollup
 
@@ -352,29 +350,10 @@ Storybook export
 
       Next, we create a rollup.config.js file and add the following contents.
 
-     
-&nbsp;
-&nbsp;
-
-### Backend for Next.js Project (TRPC)
-
-- [x] Authentication + OAuth
-- [x] End to end typing
-- [x] Authentication and Authorization baked in
-- [x] SSR, SSG and ASO thanks to Next.js
-- [ ] 
-
-### More Tooling
-
-- [x] [Husky](https://github.com/typicode/husky) - Git pre hooks
-- [x] [Prettier-Standard](https://github.com/sheerun/prettier-standard) for formatting and linting
-- [x] [lint-staged](https://github.com/okonet/lint-staged) with precommit task for linting
-- [x] [Commitizen](https://github.com/commitizen/cz-cli) intercepting your commits to help you add nice formatted messages
-- [x] [Absolute Imports](https://medium.com/geekculture/making-life-easier-with-absolute-imports-react-in-javascript-and-typescript-bbdab8a8a3a1) - Avoid ./././
+  ---------------------------------------   
 
 &nbsp;
 &nbsp;
-
 ## Getting started locally
 
 ### Commands
@@ -407,11 +386,23 @@ Storybook export
 - [x] Linting with: [ESLint](https://eslint.org), [stylelint](https://stylelint.io) & [Prettier](https://prettier.io)
 - [x] [lint-staged](https://github.com/okonet/lint-staged)
 - [x] [Commitizen](https://github.com/commitizen/cz-cli)
-
+---------------------------------------
 &nbsp;
 &nbsp;
 
 ## Getting started with docker
+
+
+### NVM usage for cross env node versions
+
+    Install & Update Script
+
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
+
+    Running either of the above commands downloads a script and runs it. The script clones the nvm repository to `~/.nvm`, and attempts to add the source lines from the snippet below to the correct profile file (`~/.bash_profile`, `~/.zshrc`, `~/.profile`, or `~/.bashrc`).
+---------------------------------------
+&nbsp;
 
 ### **Example Docker images**
 
@@ -424,12 +415,7 @@ Storybook export
 
       The express server runs standalone  and connects to the MongoDB
       The GraphQL server runs standalone and connects to the MongoDB
-
-&nbsp;
-
-A ReactJs application containerized for development and production.
-
-    	`Nginx` for serving production build of our ReactJs application.
+---------------------------------------
 
 #### Explaining the environments:
 
@@ -446,7 +432,7 @@ A ReactJs application containerized for development and production.
      - To serve these files we use Nginx
 
 &nbsp;
-&nbsp;
+---------------------------------------
 
 ### docker-compose(dev):
 
@@ -466,7 +452,7 @@ A ReactJs application containerized for development and production.
     docker-compose up -d
 
     ```
-
+---------------------------------------
 &nbsp;
 &nbsp;
 &nbsp;
@@ -483,7 +469,7 @@ A ReactJs application containerized for development and production.
 # Backend Boilerplates (WIP)
 
 ### Backend consists of several setups for boilerplate purposes and exploration
-
+---------------------------------------
     The Backends are connected to the mongoDB which needs to be spun up via the docker image.
 
 ### Express API (Todo-App Example)
@@ -492,7 +478,7 @@ A ReactJs application containerized for development and production.
 - [x] [Express](https://www.npmjs.com/package/express) For magic.
 - [x] [Mongoose](https://www.npmjs.com/package/mongoose) For Schemas.
 - [x] Login / register - JWT Auth, Nodemon, Cors, Cross-env
-
+---------------------------------------
 &nbsp;
 &nbsp;
 &nbsp;
@@ -511,7 +497,7 @@ A ReactJs application containerized for development and production.
 - [ ] [Unit-testing](https://blog.testproject.io/2020/06/23/testing-graphql-api/) for future testing
 - [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
 - [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
-
+---------------------------------------
 &nbsp;
 &nbsp;
 
@@ -525,7 +511,7 @@ A ReactJs application containerized for development and production.
 - [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
 - [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
 - [ ] Login / register - JWT Auth, Nodemon, Cors, Cross-env
-
+---------------------------------------
 &nbsp;
 
 #### ON HOLD - Microservice preperation - Grapqhl example as bff on top of express backend (Todo-App Example expanded)
@@ -538,7 +524,7 @@ A ReactJs application containerized for development and production.
 - [ ] [TypeScript-Graphql](TypeScript-Graphql) - obviously..
 - [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
 - [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
-
+---------------------------------------
 &nbsp;
 &nbsp;
 
@@ -552,7 +538,7 @@ A ReactJs application containerized for development and production.
 - [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
 - [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
 - [Apollo Federation](https://www.apollographql.com/docs/federation/) - For Managing GraphQL Schema
-
+---------------------------------------
 &nbsp;
 &nbsp;
 
@@ -593,20 +579,20 @@ A ReactJs application containerized for development and production.
 &nbsp;
 &nbsp;
 
-# (WIP - Work in progress (MVP) - Prometheus & Node Exporter & Grafana setup.
+## (WIP - Work in progress (MVP) - Prometheus & Node Exporter & Grafana setup.
 
 ## **Docker compose**
 
     I have decided to run Prometheus along with Alert manager, NodeExporter, in Docker to allow for easy deployment using Docker Compose.
 
     Configuring one or more of the applications to communicate is made easy by Docker networking in bridge mode. Since I’m using Docker Compose, we can reach each container via their container name as Docker Compose configures every container to be reachable in the Docker network.
-
+---------------------------------------
 &nbsp;
 
 ### **Running locally & Pre-requisites**
 
     Before we get started installing the Prometheus stack. Ensure you install the latest version of docker and docker-compose on your Docker host machine. Installation & Configuration
-
+---------------------------------------
 &nbsp;
 
 ### **Docker-compose builds:**
@@ -614,7 +600,7 @@ A ReactJs application containerized for development and production.
     - NodeExporter - currently a default version of a node-exporter for prometheus
     - Prometheus
     - AlertManager
-
+---------------------------------------
 &nbsp;
 
 ### WIP - **Oauth2 + Proxy (Reverse NGINX proxy)**
@@ -624,7 +610,7 @@ A ReactJs application containerized for development and production.
     By default, Nginx HTTP server listens for incoming connection and binds on port 80, which represents the standard web port. all things but nginx listen on 127.0.0.1 only;
 
     all of the above authenticate using proxy_forward and nginx’s auth_request directive.
-
+---------------------------------------
 &nbsp;
 
 ## Prometheus Server
@@ -648,7 +634,7 @@ A ReactJs application containerized for development and production.
               `environment:`
                `\- VIRTUAL_HOST=prometheus.example.com`
                `\- VIRTUAL_PORT=**9090**`
-
+---------------------------------------
 &nbsp;
 
 ### Prometheus server and prometheus.yml specificities
@@ -656,7 +642,7 @@ A ReactJs application containerized for development and production.
     targets: ‘localhost:9090’ tells Prometheus server to collect metrics related to **prometheus monitoring operation** with related query expressions starting with **prometheus_** (e.g. *prometheus_build_info* and *prometheus_engine_queries* etc.)
 
     whereas ‘node-exporter:9100’ scrape the Prometheus server for various hardware monitoring metrics of Linux, including temperature, fans, and voltages.
-
+---------------------------------------
 &nbsp;
 
 ## NodeExporter (Node exporter)
@@ -710,7 +696,7 @@ This project is going to act as an express server which utilizes the logClient t
          `metricServer.listen(9991, () =>`
           `console.log(🚨 Prometheus listening on port 9991 /metrics)`
          `)`
-
+---------------------------------------
 &nbsp;
 
 ## Prometheus Alert Manager
@@ -729,7 +715,7 @@ This project is going to act as an express server which utilizes the logClient t
            `environment:`
             `\- VIRTUAL_HOST=prometheus.example.com`
             `\- VIRTUAL_PORT=9093`
-
+---------------------------------------
 &nbsp;
 
 #### Alerting has been added to the stack, Alerts have been added and are managed via - prometheus/alert.rules
@@ -739,7 +725,7 @@ This project is going to act as an express server which utilizes the logClient t
     - View Prometheus alerts http://<Host IP Address>:9090/alerts
 
     - View Alert Manager http://<Host IP Address>:9093
-
+---------------------------------------
 &nbsp;
 
 ### Running Test Alerts
@@ -775,11 +761,11 @@ This project is going to act as an express server which utilizes the logClient t
          ​    `auth_username: prometheus_alerts@gmail.com`
          ​    `auth_password: secret`
          ​    `send_resolved: true`
-
+---------------------------------------
 &nbsp;
 
 ### AlertManager and custom webhooks.
 
     A custom webhook is currently in the works, exposing specific alerts to our incidents management system (see below for explanation)
-
+---------------------------------------
 &nbsp;
