@@ -22,7 +22,7 @@ Modern web based applications consist of multiple services. For example, a backe
 
 &nbsp;
 
-## BetterDocs
+## BetterDocs (Currently broken - WIP)
 - [x] [Better Docs (https://github.com/SoftwareBrothers/better-docs) Automatic Documentation generation via a JSDOC wrapper. - Example of final documentation result: https://softwarebrothers.github.io/example-design-system/index.html
 
         @component plugin 
