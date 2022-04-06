@@ -211,7 +211,7 @@ This is a list of all the packages in the repo and what they are used for.
 - [ ] Reccomended Addons and fancy shiny ones...
 - [ ] Add way more components...
 &nbsp;
- ---------------------------------------
+ 
 
 ### Storybook export
 ---------------------------------------
@@ -244,7 +244,7 @@ This is a list of all the packages in the repo and what they are used for.
       Installing library into other projects
 
       yarn add mpw-storybook@latest
-   ---------------------------------------
+   
 &nbsp;
 
 #### Automatically generating new components
@@ -269,7 +269,7 @@ This will generate:
 
 Remember to add the component to the index.ts export for exporting the component.
 
----------------------------------------
+
 &nbsp;
  
  
@@ -306,7 +306,7 @@ const App = () => (
 
 export default App;
 ```
----------------------------------------
+
 &nbsp;
 ### Rollup & rollup-plugin-copy - SASS variable exports
 ---------------------------------------
@@ -352,12 +352,12 @@ Allowing for use in the project via the storybook library
 
       Next, we create a rollup.config.js file and add the following contents.
 
-  ---------------------------------------   
+     
 
 &nbsp;
 &nbsp;
 ## Getting started locally
-
+---------------------------------------
 ### Commands
 
     "dev:frontend": "config for your needs: - yarn --cwd ./packages/frontend run dev ",
@@ -388,12 +388,12 @@ Allowing for use in the project via the storybook library
 - [x] Linting with: [ESLint](https://eslint.org), [stylelint](https://stylelint.io) & [Prettier](https://prettier.io)
 - [x] [lint-staged](https://github.com/okonet/lint-staged)
 - [x] [Commitizen](https://github.com/commitizen/cz-cli)
----------------------------------------
+
 &nbsp;
 &nbsp;
 
 ## Getting started with docker
-
+---------------------------------------
 
 ### NVM usage for cross env node versions
 
@@ -403,11 +403,11 @@ Allowing for use in the project via the storybook library
 
 
     Running either of the above commands downloads a script and runs it. The script clones the nvm repository to `~/.nvm`, and attempts to add the source lines from the snippet below to the correct profile file (`~/.bash_profile`, `~/.zshrc`, `~/.profile`, or `~/.bashrc`).
----------------------------------------
+
 &nbsp;
 
 ### **Example Docker images**
-
+---------------------------------------
 - [x] React App Docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
 - [x] Barebones Express-api docker image
 - [ ] Graphql docker image
@@ -417,10 +417,10 @@ Allowing for use in the project via the storybook library
 
       The express server runs standalone  and connects to the MongoDB
       The GraphQL server runs standalone and connects to the MongoDB
----------------------------------------
+
 
 #### Explaining the environments:
-
+---------------------------------------
 ##### Development environment
 
     - Hot reloading on code changes
@@ -434,7 +434,7 @@ Allowing for use in the project via the storybook library
      - To serve these files we use Nginx
 
 &nbsp;
----------------------------------------
+
 
 ### docker-compose(dev):
 
@@ -475,12 +475,12 @@ Allowing for use in the project via the storybook library
     The Backends are connected to the mongoDB which needs to be spun up via the docker image.
 
 ### Express API (Todo-App Example)
-
+---------------------------------------
 - [x] [Typescript](https://www.typescriptlang.org/) For types...
 - [x] [Express](https://www.npmjs.com/package/express) For magic.
 - [x] [Mongoose](https://www.npmjs.com/package/mongoose) For Schemas.
 - [x] Login / register - JWT Auth, Nodemon, Cors, Cross-env
----------------------------------------
+
 &nbsp;
 &nbsp;
 &nbsp;
@@ -488,7 +488,7 @@ Allowing for use in the project via the storybook library
 &nbsp;
 
 #### Simple Graphql-apollo-express setup (Todo-App Example)
-
+---------------------------------------
 - [ ] [React query](https://react-query.tanstack.com/) React Query Api controller
 - [ ] [Typescript](https://www.typescriptlang.org/)
 - [ ] [Graphql-Request](https://www.npmjs.com/package/graphql-request)
@@ -499,12 +499,12 @@ Allowing for use in the project via the storybook library
 - [ ] [Unit-testing](https://blog.testproject.io/2020/06/23/testing-graphql-api/) for future testing
 - [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
 - [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
----------------------------------------
+
 &nbsp;
 &nbsp;
 
 #### Grapqhl Api Example with JWT Auth and various tools.
-
+---------------------------------------
 - [ ] [GraphQL](https://graphql.org/) for backend magic
 - [ ] [GraphQL Generator integration ](https://www.graphql-code-generator.com/) for instant generated types for the backend and frontend
 - [ ] [GraphQL-Dataloader](https://github.com/graphql/dataloader) for performance reasons and caching
@@ -513,11 +513,11 @@ Allowing for use in the project via the storybook library
 - [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
 - [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
 - [ ] Login / register - JWT Auth, Nodemon, Cors, Cross-env
----------------------------------------
+
 &nbsp;
 
 #### ON HOLD - Microservice preperation - Grapqhl example as bff on top of express backend (Todo-App Example expanded)
-
+---------------------------------------
 - [ ] [GraphQL](https://graphql.org/) for backend magic
 - [ ] [Graphql-Request](https://www.npmjs.com/package/graphql-request)
 - [ ] [GraphQL Generator integration ](https://www.graphql-code-generator.com/) for instant generated types for the backend and frontend
@@ -540,12 +540,12 @@ Allowing for use in the project via the storybook library
 - [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
 - [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
 - [Apollo Federation](https://www.apollographql.com/docs/federation/) - For Managing GraphQL Schema
----------------------------------------
+
 &nbsp;
 &nbsp;
 
 ## Express backend and GraphQL Layer
-
+---------------------------------------
 ### **Introduction**
 
     - An express server utilizing different endpoints, meant for being the backbone of the entire stack
@@ -582,41 +582,41 @@ Allowing for use in the project via the storybook library
 &nbsp;
 
 ## (WIP - Work in progress (MVP) - Prometheus & Node Exporter & Grafana setup.
-
+---------------------------------------
 ## **Docker compose**
 
     I have decided to run Prometheus along with Alert manager, NodeExporter, in Docker to allow for easy deployment using Docker Compose.
 
     Configuring one or more of the applications to communicate is made easy by Docker networking in bridge mode. Since I’m using Docker Compose, we can reach each container via their container name as Docker Compose configures every container to be reachable in the Docker network.
----------------------------------------
+
 &nbsp;
 
 ### **Running locally & Pre-requisites**
-
-    Before we get started installing the Prometheus stack. Ensure you install the latest version of docker and docker-compose on your Docker host machine. Installation & Configuration
 ---------------------------------------
+    Before we get started installing the Prometheus stack. Ensure you install the latest version of docker and docker-compose on your Docker host machine. Installation & Configuration
+
 &nbsp;
 
 ### **Docker-compose builds:**
-
+---------------------------------------
     - NodeExporter - currently a default version of a node-exporter for prometheus
     - Prometheus
     - AlertManager
----------------------------------------
+
 &nbsp;
 
 ### WIP - **Oauth2 + Proxy (Reverse NGINX proxy)**
-
+---------------------------------------
     The general idea is quite simple:
 
     By default, Nginx HTTP server listens for incoming connection and binds on port 80, which represents the standard web port. all things but nginx listen on 127.0.0.1 only;
 
     all of the above authenticate using proxy_forward and nginx’s auth_request directive.
----------------------------------------
+
 &nbsp;
 
 ## Prometheus Server
-
+---------------------------------------
     The time series data collected is stored in the **./prometheus** directory.
 
     We can refer to Prometheus docs on[ storage](https://prometheus.io/docs/prometheus/latest/storage/) to see the on-disk layout of the server’s data directory. The lines –config.file is pretty standard across all web tutorials and –storage.tsdb.retention.time is optional as this determines when to remove old data.
@@ -636,11 +636,11 @@ Allowing for use in the project via the storybook library
               `environment:`
                `\- VIRTUAL_HOST=prometheus.example.com`
                `\- VIRTUAL_PORT=**9090**`
----------------------------------------
+
 &nbsp;
 
 ### Prometheus server and prometheus.yml specificities
-
+---------------------------------------
     targets: ‘localhost:9090’ tells Prometheus server to collect metrics related to **prometheus monitoring operation** with related query expressions starting with **prometheus_** (e.g. *prometheus_build_info* and *prometheus_engine_queries* etc.)
 
     whereas ‘node-exporter:9100’ scrape the Prometheus server for various hardware monitoring metrics of Linux, including temperature, fans, and voltages.
@@ -648,7 +648,7 @@ Allowing for use in the project via the storybook library
 &nbsp;
 
 ## NodeExporter (Node exporter)
-
+---------------------------------------
     **Node Exporter**, like Alertmanager is optional because Prometheus will run fine without it.
 
     Node Exporter exposes hardware and kernel related metrics on local and remote hosts. If installed on remote Server A, Prometheus server (using **prometheus.yml**) can be configured to scrape metrics via URL, e.g., **http://<serverA-ip>:9100/metrics**.
@@ -698,11 +698,11 @@ This project is going to act as an express server which utilizes the logClient t
          `metricServer.listen(9991, () =>`
           `console.log(🚨 Prometheus listening on port 9991 /metrics)`
          `)`
----------------------------------------
+
 &nbsp;
 
 ## Prometheus Alert Manager
-
+---------------------------------------
     - In order to use **Alertmanager**, we add it as a Docker service.
     - The data for Alertmanager is stored in the alertmanager directory.
     - Ports: – “9093:9093” in the docker file is only required If you wish to curl or access http://localhost:9093/**
@@ -727,11 +727,11 @@ This project is going to act as an express server which utilizes the logClient t
     - View Prometheus alerts http://<Host IP Address>:9090/alerts
 
     - View Alert Manager http://<Host IP Address>:9093
----------------------------------------
+
 &nbsp;
 
 ### Running Test Alerts
-
+---------------------------------------
     *These examples are based on mock data for now which exists within the Node Exporter ( see the section about the Node Exporter above)*
 
     Examples:
@@ -763,11 +763,11 @@ This project is going to act as an express server which utilizes the logClient t
          ​    `auth_username: prometheus_alerts@gmail.com`
          ​    `auth_password: secret`
          ​    `send_resolved: true`
----------------------------------------
+
 &nbsp;
 
 ### AlertManager and custom webhooks.
-
-    A custom webhook is currently in the works, exposing specific alerts to our incidents management system (see below for explanation)
 ---------------------------------------
+    A custom webhook is currently in the works, exposing specific alerts to our incidents management system (see below for explanation)
+
 &nbsp;
