@@ -1,4 +1,5 @@
 
+
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) [![Made With Love](https://img.shields.io/badge/Made%20With-Love-orange.svg)](https://github.com/chetanraj/awesome-github-badges)
 [![Build status](https://badge.buildkite.com/90ff98db996bb137c5be1bdce666c4b1ce68a25b17af0a6a04.svg?branch=master)](https://buildkite.com/xairx/react-component-library)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
@@ -74,15 +75,14 @@ Modern web based applications consist of multiple services. For example, a backe
       - Jest, and React-testing-library. Simple tests that focuses on testing the contracts between the back end and front end layers. Where as solid component testing is abstracted away into the Storybook setup.
         &nbsp;
 
-  #### Unit-tests (High Level)
+  ##### Unit-tests (High Level)
 
-  ##### Example:
+  ###### Example:
 
       - Think mocking API responses, checking for loading and error states.
 
       - Testing a modal is opened or closed as a result of a POST being successful or reverse.
 ---------------------------------------
-&nbsp;
 
  ###  E2E Testing (cypress)
 ---------------------------------------
@@ -91,46 +91,47 @@ Modern web based applications consist of multiple services. For example, a backe
      The main purpose of End-to-end (E2E) testing is to test from the end user’s experience by simulating the real user scenario and validating the system under test and its components for integration and data integrity.
 ---------------------------------------     
      
-&nbsp;
      
 
 ### CI/CD flows and testing
   ---------------------------------------
 	  All "FLOWS" in this monorepo will implement a test step.
   
-  ###  Local Testing 
+  #####  Local Testing 
+  ---------------------------------------
 	  Husky will run tests before commiting to git
   
    - [ ]  Setup Testing step with unit-testing across the entire monorepo.
-  ---------------------------------------
-  &nbsp;
-  ###  CircleCI - CI/CD and Deploys
+ 
+&nbsp;
+
+
+  #####  CircleCI - CI/CD and Deploys
 ---------------------------------------
- #### Deploying Next.js App With TRPC API on vercel
+ ##### Deploying Next.js App With TRPC API on vercel
       "The easiest way to deploy a Next.js app is to use the Vercel Platform from the creators of Next.js."
   - [ ]    Setup Deploy Script for vercel
   - [ ]    Setup CircleCI Integratation
   - [ ]    Setup Testing step with unit-testing and E2E
 ---------------------------------------
-  &nbsp;
-  
+ 
   ###  Docker container deploys to heroku
   ---------------------------------------
 	  Testing will be done in the CircleCI pipeline and E2E tests will be run as well. 
   
-  ### Docker Deploy example
+  ##### Docker Deploy example
   
   - [ ] [CI/CD - CircleCI & Docker hub -> Heroku](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde)
   - [ ] Circle-CI boilerplate preconfigured for docker image - Dockerhub deploys -> Heroku (Container registry).
   - [ ]    Setup Testing step with unit-testing and E2E
   ---------------------------------------
-   &nbsp;
+
     
   ### React Native and AppCenter CI/CD
   ---------------------------------------
 	  AppCenter for IOS and Android Deploy will run unit-tests and then e2e tests.
    - [ ]    Setup Testing step with unit-testing and E2E
-
+---------------------------------------
 &nbsp;
 &nbsp;
 &nbsp;
@@ -210,8 +211,7 @@ This is a list of all the packages in the repo and what they are used for.
 - [x] Jest and React Testing Library enabling testing of the components 
 - [ ] Reccomended Addons and fancy shiny ones...
 - [ ] Add way more components...
-&nbsp;
- 
+
 
 ### Storybook export
 ---------------------------------------
@@ -244,10 +244,10 @@ This is a list of all the packages in the repo and what they are used for.
       Installing library into other projects
 
       yarn add mpw-storybook@latest
-   
-&nbsp;
+   ---------------------------------------
 
-#### Automatically generating new components
+
+### Automatically generating new components
 ---------------------------------------
 Creating a "new component template"
 
@@ -269,9 +269,8 @@ This will generate:
 
 Remember to add the component to the index.ts export for exporting the component.
 
+---------------------------------------
 
-&nbsp;
- 
  
  
 ### Publish via NPM
@@ -285,13 +284,13 @@ run
 npm publish
 ```
 
-### Installing library into other projects
+#### Installing library into other projects
 
 ```
 yarn add mpw-storybook@latest
 ```
 
-#### Usage
+##### Usage
 
 ```TSX
 import React from "react";
@@ -306,8 +305,8 @@ const App = () => (
 
 export default App;
 ```
+---------------------------------------
 
-&nbsp;
 ### Rollup & rollup-plugin-copy - SASS variable exports
 ---------------------------------------
 Will export scss files from the storybook into the build folder.
@@ -351,13 +350,10 @@ Allowing for use in the project via the storybook library
           @rollup/plugin-typescript transpiles TypeScript files to JavaScript.
 
       Next, we create a rollup.config.js file and add the following contents.
-
-     
-
 &nbsp;
-&nbsp;
+
 ## Getting started locally
----------------------------------------
+
 ### Commands
 
     "dev:frontend": "config for your needs: - yarn --cwd ./packages/frontend run dev ",
@@ -388,12 +384,13 @@ Allowing for use in the project via the storybook library
 - [x] Linting with: [ESLint](https://eslint.org), [stylelint](https://stylelint.io) & [Prettier](https://prettier.io)
 - [x] [lint-staged](https://github.com/okonet/lint-staged)
 - [x] [Commitizen](https://github.com/commitizen/cz-cli)
+---------------------------------------
 
-&nbsp;
+
 &nbsp;
 
 ## Getting started with docker
----------------------------------------
+
 
 ### NVM usage for cross env node versions
 
@@ -403,8 +400,8 @@ Allowing for use in the project via the storybook library
 
 
     Running either of the above commands downloads a script and runs it. The script clones the nvm repository to `~/.nvm`, and attempts to add the source lines from the snippet below to the correct profile file (`~/.bash_profile`, `~/.zshrc`, `~/.profile`, or `~/.bashrc`).
+---------------------------------------
 
-&nbsp;
 
 ### **Example Docker images**
 ---------------------------------------
@@ -419,7 +416,7 @@ Allowing for use in the project via the storybook library
       The GraphQL server runs standalone and connects to the MongoDB
 
 
-#### Explaining the environments:
+### Explaining the environments:
 ---------------------------------------
 ##### Development environment
 
@@ -433,18 +430,17 @@ Allowing for use in the project via the storybook library
      - When the react application is "BUILD", the output is optimized static assets, (html, css and the js file)
      - To serve these files we use Nginx
 
-&nbsp;
 
 
-### docker-compose(dev):
+#### docker-compose(dev):
 
     docker-compose -f docker-compose.dev.yml up -d
 
-### docker-compose(prod):
+#### docker-compose(prod):
 
     docker-compose -f docker-compose.prod.yml up --build
 
-### Setup .env file for docker-compose
+#### Setup .env file for docker-compose
 
     The latest Docker Compose allows you to access environment variables from your compose file. So you can source your environment variables, then run Compose like so:
 
