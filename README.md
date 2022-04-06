@@ -62,6 +62,8 @@ Modern web based applications consist of multiple services. For example, a backe
 
 &nbsp;
 &nbsp;
+&nbsp;
+&nbsp;
 
 
 
@@ -131,6 +133,8 @@ Modern web based applications consist of multiple services. For example, a backe
 	  AppCenter for IOS and Android Deploy will run unit-tests and then e2e tests.
    - [ ]    Setup Testing step with unit-testing and E2E
 
+&nbsp;
+&nbsp;
 &nbsp;
 &nbsp;
 
