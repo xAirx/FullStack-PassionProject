@@ -9,6 +9,7 @@
 		"hooks:install": "husky install",
 		"prettier": "prettier \"**/*.{css,scss,yml}\"",
 		"fix": "run-s fix:*",
+		"test": "jest",
 		"fix:code": "yarn lint:code --fix",
 		"fix:other": "yarn prettier --write **/*.js **/*.ts **/*.tsx **/*.json **/*.yml",
 		"lint": "yarn lint:code && yarn fix:code && yarn fix:other",
@@ -79,7 +80,7 @@
 		"fs-extra": "10.0.0",
 		"husky": "7.0.4",
 		"inquirer": "8.2.0",
-		"jest": "27.3.1",
+		"jest": "^27.5.1",
 		"lint-staged": "^12.3.7",
 		"lodash.camelcase": "4.3.0",
 		"nodemon": "2.0.15",
@@ -102,6 +103,9 @@
 		],
 		"*.{md,css,scss,yaml,yml}": [
 			"yarn fix:other"
+		],
+		"*.{ts,tsx}": [
+			"jest --bail --findRelatedTests"
 		]
 	},
 	"commitlint": {

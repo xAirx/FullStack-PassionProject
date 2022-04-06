@@ -6,6 +6,9 @@
 	"files": [
 		"build"
 	],
+	"resolutions": {
+		"webpack": "^5"
+	},
 	"types": "build/index.d.ts",
 	"description": "A skeleton to create your own React component library using Rollup, TypeScript, Sass and Storybook",
 	"scripts": {
@@ -39,6 +42,7 @@
 		"@babel/core": "^7.15.0",
 		"@rollup/plugin-commonjs": "^17.1.0",
 		"@rollup/plugin-node-resolve": "^11.2.1",
+		"@storybook/addon-postcss": "^2.0.0",
 		"@storybook/react": "^6.3.7",
 		"@testing-library/jest-dom": "^5.14.1",
 		"@testing-library/react": "^11.2.7",

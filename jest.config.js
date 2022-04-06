@@ -1,6 +1,13 @@
 module.exports = {
     preset: 'ts-jest',
-    moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
+    moduleFileExtensions: [
+        'ts',
+        'tsx',
+        'js',
+        'jsx',
+        'json',
+        'node',
+    ],
     modulePathIgnorePatterns: ['<rootDir>/website/.cache', '<rootDir>/examples', '<rootDir>/docs'],
     transform: {
         '^.+\\.(ts|tsx)?$': 'ts-jest/dist',
@@ -8,7 +15,7 @@ module.exports = {
     transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$'],
     globals: {
         'ts-jest': {
-            tsconfig: 'tsconfig.json',
+            tsconfig: './tsconfig.json',
         },
     },
 };

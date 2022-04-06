@@ -1,0 +1,50 @@
+{
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": ["jsdoc", "closure"]
+  },
+  "source": {
+    "include": ["src"],
+    "includePattern": "\\.(jsx|js|ts|tsx)$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "plugins": [
+    "plugins/markdown",
+    "node_modules/better-docs/category",
+    "node_modules/better-docs/component",
+    "node_modules/better-docs/typescript",
+    "node_modules/better-docs/typedef-import"
+  ],
+  "typescript": {
+    "moduleRoot": "test"
+  },
+  "templates": {
+    "better-docs": {
+      "name": "My React components"
+    }
+  },
+  "opts": {
+    "template": "node_modules/better-docs",
+    "destination": "docs",
+    "recurse": true,
+    "readme": "README.md"
+  },
+  "better-docs": {
+    "name": "Sample Documentation",
+    "logo": "images/logo.png",
+    "title": "My Next.js Portfolio Documentation",
+    "css": "style.css",
+    "trackingCode": "tracking-code-which-will-go-to-the-HEAD",
+    "hideGenerator": false,
+    "navLinks": [
+      {
+        "label": "Github",
+        "href": "https://github.com/SoftwareBrothers/admin-bro"
+      },
+      {
+        "label": "Example Application",
+        "href": "https://admin-bro-example-app-staging.herokuapp.com/admin"
+      }
+    ]
+  }
+}
