@@ -59,12 +59,10 @@ Modern web based applications consist of multiple services. For example, a backe
         
         yarn global add parcel-bundler
 
-
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-
 
 
 ## Testing Strategies
