@@ -25,6 +25,8 @@ Modern web based applications consist of multiple services. For example, a backe
 ## BetterDocs (Currently broken - WIP)
 - [x] [Better Docs (https://github.com/SoftwareBrothers/better-docs) Automatic Documentation generation via a JSDOC wrapper. - Example of final documentation result: https://softwarebrothers.github.io/example-design-system/index.html
 
+        https://github.com/SoftwareBrothers/better-docs - refer to docs to fix it.
+
         @component plugin 
 
         Better-docs also allows you to document your React and Vue components automatically. The only thing you have to do is to add a @component tag. It will take all props from your components and along with an @example tag - will generate a live preview.
@@ -138,7 +140,7 @@ This is a list of all the packages in the repo and what they are used for.
 &nbsp;
 &nbsp;
 
-# React Next.js (For future projects and easy start-ups)
+# React Next.js (For future projects and easy start-ups) 
 
 ## **Contents & Setup:**
 
