@@ -103,9 +103,6 @@
 		],
 		"*.{md,css,scss,yaml,yml}": [
 			"yarn fix:other"
-		],
-		"*.{ts,tsx}": [
-			"jest --bail --findRelatedTests"
 		]
 	},
 	"commitlint": {

@@ -1,9 +1,10 @@
 // Generated with util/create-component.js
-import React from "react";
-import HeaderComponent from "./HeaderComponent";
+import React from 'react';
+
+import HeaderComponent from './HeaderComponent';
 
 export default {
-    title: "HeaderComponent"
+	title: 'HeaderComponent',
 };
 
 export const WithBar = () => <HeaderComponent foo="bar" />;
