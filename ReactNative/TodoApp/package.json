@@ -16,7 +16,7 @@
   "dependencies": {
     "@react-navigation/drawer": "^6.1.8",
     "@react-navigation/native": "^6.0.6",
-    "expo": "~43.0.2",
+    "expo": "~45.0.0",
     "expo-linking": "^2.4.2",
     "expo-status-bar": "~1.1.0",
     "moti": "^0.16.1",
