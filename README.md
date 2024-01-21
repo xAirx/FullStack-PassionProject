@@ -32,80 +32,102 @@ A monorepo, short for monolithic repository, is a version control repository tha
 
 # Overview of Microservices Architecture
 
+---------------------------------------------------------------------------------------------------------
+
+
 ## GraphQL API
 
-    **Explanation:** The GraphQL API, implemented using the GraphQL-Apollo-Express stack, serves as the interface for efficient data retrieval and manipulation. It ties into various microservices by providing a unified endpoint for communication, fostering seamless interactions between frontend and backend services.
+  **Explanation:** The GraphQL API, implemented using the GraphQL-Apollo-Express stack, serves as the interface for efficient data retrieval and manipulation. It ties into various microservices by providing a unified endpoint for communication, fostering seamless interactions between frontend and backend services.
     
-    **Why It's Its Own Microservice:** The GraphQL API, while a part of the larger microservices architecture, functions independently to facilitate efficient data retrieval and manipulation. Its autonomy allows seamless communication with other services and clients within the architecture.
-
-## React Native App and Next.js Site
-    
-    **Explanation:** Both the React Native App and Next.js Site, while distinct microservices, share a common purpose in offering versatile solutions for web and mobile application development. They tie into the GraphQL API, ensuring a consistent user experience across platforms.
-
-## Storybook
-
-    **Explanation:** Storybook serves as a valuable tool for developing and documenting UI components in isolation. While it may not directly tie into other microservices, its impact resonates across the architecture by ensuring a consistent and well-documented user interface.
-    
-    **Why It's Its Own Microservice:** Storybook serves as a standalone tool for developing and documenting UI components in isolation. Its autonomy facilitates independent development and testing of UI elements, contributing to a modular development approach.
-
-
-### Prometheus Server
-    
-    **Explanation:** The Prometheus Server stands as the cornerstone, collecting time-series data for monitoring microservices. It forms the foundation for other components to rely on real-time metrics and insights into the performance of the entire system.
-    
-    **Why It's Its Own Microservice:** The Prometheus Server operates as an independent microservice dedicated to collecting time-series data for monitoring microservices. Its autonomy ensures centralized and efficient data collection, providing critical insights into the health and performance of the system.
-
-### NodeExporter
-
-    **Explanation:** NodeExporter complements the Prometheus Server by exposing hardware and kernel-related metrics. This collaboration provides a holistic view of system-level performance, crucial for identifying potential bottlenecks and ensuring optimal operation.
-    
-    **Why It's Its Own Microservice:** NodeExporter stands as a standalone microservice to expose hardware and kernel-related metrics. Its autonomy enables it to efficiently collaborate with Prometheus, offering essential insights into system-level performance.
-
-### LogNet
-
-    **Explanation:** LogNet, acting as an Express server connected to Prometheus, synergizes with the Prometheus Server by gathering metrics from MongoDB and Express/GraphQL layers. This real-time data collection offers a comprehensive understanding of the health and performance of both the database and the application layer.
-    
-    **Why It's Its Own Microservice:** LogNet functions independently as an Express server, acting as a log client connected to Prometheus. Its singular focus on gathering metrics from MongoDB and Express/GraphQL layers ensures focused and efficient real-time data collection.
-
-### Prometheus Alert Manager
-
-    **Explanation:** The Prometheus Alert Manager collaborates with the Prometheus Server to manage and trigger alerts based on predefined rules. By integrating seamlessly, it enhances the incident management capabilities of the system, ensuring swift responses to potential issues.
-    
-    **Why It's Its Own Microservice:** The Prometheus Alert Manager operates autonomously, managing and triggering alerts based on predefined rules. Its independence ensures centralized incident management, seamlessly integrating with external tools and systems.
-
-## MongoDB Query Exporter
-
-    **Explanation:** The MongoDB Query Exporter adds real-time data to the microservices architecture. Its integration ensures that the microservices have access to up-to-date information, enhancing the dynamic nature of the entire system.
-    
-    **Why It's Its Own Microservice:** The MongoDB Query Exporter operates as a standalone microservice, fetching real-time data from MongoDB. Its singular purpose ensures an efficient and dedicated connection to MongoDB, offering valuable data for other microservices.
+  **Why It's Its Own Microservice:** The GraphQL API, while a part of the larger microservices architecture, functions independently to facilitate efficient data retrieval and manipulation. Its autonomy allows seamless communication with other services and clients within the architecture.
 
 
 ## MongoExpress GUI
 
-    **Explanation:** The MongoExpress GUI functions independently, providing a graphical interface for managing MongoDB data. Its autonomy simplifies database visualization and interaction, enhancing developer efficiency.
+  **Explanation:** The MongoExpress GUI functions independently, providing a graphical interface for managing MongoDB data. Its autonomy simplifies database visualization and interaction, enhancing developer efficiency.
     
-    **Why It's Its Own Microservice:** The MongoExpress GUI operates independently, providing a graphical interface for managing MongoDB data. Its autonomy simplifies database visualization and interaction, contributing to the development and maintenance of MongoDB-related microservices.
+  **Why It's Its Own Microservice:** The MongoExpress GUI operates independently, providing a graphical interface for managing MongoDB data. Its autonomy simplifies database visualization and interaction, contributing to the development and maintenance of MongoDB-related microservices.
+
+---------------------------------------------------------------------------------------------------------
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+
+## React Native App and Next.js Site
+    
+  **Explanation:** Both the React Native App and Next.js Site, while distinct microservices, share a common purpose in offering versatile solutions for web and mobile application development. They tie into the GraphQL API, ensuring a consistent user experience across platforms.
+
+## Storybook
+
+  **Explanation:** Storybook serves as a valuable tool for developing and documenting UI components in isolation. While it may not directly tie into other microservices, its impact resonates across the architecture by ensuring a consistent and well-documented user interface.
+    
+  **Why It's Its Own Microservice:** Storybook serves as a standalone tool for developing and documenting UI components in isolation. Its autonomy facilitates independent development and testing of UI elements, contributing to a modular development approach.
+
+
+---------------------------------------------------------------------------------------------------------
+
+&nbsp;
+&nbsp;
+&nbsp;
+
 
 ## Traefik and Load Balancing
 
-    **Explanation:** Traefik functions as the ingress controller, dynamically routing traffic and providing load balancing within the microservices cluster. It ensures efficient distribution of requests among healthy instances, promoting optimal resource utilization across the entire system.
+  **Explanation:** Traefik functions as the ingress controller, dynamically routing traffic and providing load balancing within the microservices cluster. It ensures efficient distribution of requests among healthy instances, promoting optimal resource utilization across the entire system.
     
-    **Why It's Its Own Microservice:** Traefik operates as the ingress controller, handling external requests and dynamically routing traffic within the microservices cluster. Its independence provides load balancing to ensure efficient distribution of requests among healthy instances, enhancing the architecture's scalability.
+  **Why It's Its Own Microservice:** Traefik operates as the ingress controller, handling external requests and dynamically routing traffic within the microservices cluster. Its independence provides load balancing to ensure efficient distribution of requests among healthy instances, enhancing the architecture's scalability.
 
 ## LogNet and Incident Monitoring Systems
     
-    **Explanation:** LogNet, connected to Prometheus, collaborates with the Incident Management System by collecting real-time metrics. This integration enhances the incident management approach, ensuring a proactive understanding of the system's behavior and enabling swift resolution of potential issues.
+  **Explanation:** LogNet, connected to Prometheus, collaborates with the Incident Management System by collecting real-time metrics. This integration enhances the incident management approach, ensuring a proactive understanding of the system's behavior and enabling swift resolution of potential issues.
     
-    **Why It's Its Own Microservice:** LogNet, connected to Prometheus, operates independently to collect real-time metrics from MongoDB and Express/GraphQL layers. The Incident Management System functions autonomously, centrally managing incidents. Both systems integrate seamlessly with Prometheus for metric collection and Traefik for authentication and forwarding requests.
+  **Why It's Its Own Microservice:** LogNet, connected to Prometheus, operates independently to collect real-time metrics from MongoDB and Express/GraphQL layers. The Incident Management System functions autonomously, centrally managing incidents. Both systems integrate seamlessly with Prometheus for metric collection and Traefik for authentication and forwarding requests.
+
+### Prometheus Server
+    
+  **Explanation:** The Prometheus Server stands as the cornerstone, collecting time-series data for monitoring microservices. It forms the foundation for other components to rely on real-time metrics and insights into the performance of the entire system.
+    
+  **Why It's Its Own Microservice:** The Prometheus Server operates as an independent microservice dedicated to collecting time-series data for monitoring microservices. Its autonomy ensures centralized and efficient data collection, providing critical insights into the health and performance of the system.
+
+## MongoDB Query Exporter
+
+  **Explanation:** The MongoDB Query Exporter adds real-time data to the microservices architecture. Its integration ensures that the microservices have access to up-to-date information, enhancing the dynamic nature of the entire system.
+    
+  **Why It's Its Own Microservice:** The MongoDB Query Exporter operates as a standalone microservice, fetching real-time data from MongoDB. Its singular purpose ensures an efficient and dedicated connection to MongoDB, offering valuable data for other microservices.
+  
+### NodeExporter
+
+  **Explanation:** NodeExporter complements the Prometheus Server by exposing hardware and kernel-related metrics. This collaboration provides a holistic view of system-level performance, crucial for identifying potential bottlenecks and ensuring optimal operation.
+    
+  **Why It's Its Own Microservice:** NodeExporter stands as a standalone microservice to expose hardware and kernel-related metrics. Its autonomy enables it to efficiently collaborate with Prometheus, offering essential insights into system-level performance.
+
+### LogNet
+
+  **Explanation:** LogNet, acting as an Express server connected to Prometheus, synergizes with the Prometheus Server by gathering metrics from MongoDB and Express/GraphQL layers. This real-time data collection offers a comprehensive understanding of the health and performance of both the database and the application layer.
+    
+  **Why It's Its Own Microservice:** LogNet functions independently as an Express server, acting as a log client connected to Prometheus. Its singular focus on gathering metrics from MongoDB and Express/GraphQL layers ensures focused and efficient real-time data collection.
+
+### Prometheus Alert Manager
+
+  **Explanation:** The Prometheus Alert Manager collaborates with the Prometheus Server to manage and trigger alerts based on predefined rules. By integrating seamlessly, it enhances the incident management capabilities of the system, ensuring swift responses to potential issues.
+    
+  **Why It's Its Own Microservice:** The Prometheus Alert Manager operates autonomously, managing and triggering alerts based on predefined rules. Its independence ensures centralized incident management, seamlessly integrating with external tools and systems.
 
 ## Usage of Consul
 
-    **Explanation:** Consul, facilitating service discovery and dynamic mapping, ties into the microservices architecture by enhancing scalability. It simplifies communication and orchestrates efficient interactions between microservices, promoting a streamlined and adaptive system.
+  **Explanation:** Consul, facilitating service discovery and dynamic mapping, ties into the microservices architecture by enhancing scalability. It simplifies communication and orchestrates efficient interactions between microservices, promoting a streamlined and adaptive system.
     
-    **Why It's Its Own Microservice:** Consul stands alone as a crucial component for service discovery and dynamic mapping between test servers and web or app projects. Its autonomy enhances scalability within the microservices structure by simplifying communication and orchestrating efficient interactions between microservices.
+  **Why It's Its Own Microservice:** Consul stands alone as a crucial component for service discovery and dynamic mapping between test servers and web or app projects. Its autonomy enhances scalability within the microservices structure by simplifying communication and orchestrating efficient interactions between microservices.
 
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 ## Authentication Microservice
+---------------------------------------------------------------------------------------------------------
 
 ### Purpose
 
