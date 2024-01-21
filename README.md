@@ -79,11 +79,15 @@ A monorepo, short for monolithic repository, is a version control repository tha
     
   **Why It's Its Own Microservice:** Traefik operates as the ingress controller, handling external requests and dynamically routing traffic within the microservices cluster. Its independence provides load balancing to ensure efficient distribution of requests among healthy instances, enhancing the architecture's scalability.
 
+&nbsp;
+
 ## LogNet and Incident Monitoring Systems
     
   **Explanation:** LogNet, connected to Prometheus, collaborates with the Incident Management System by collecting real-time metrics. This integration enhances the incident management approach, ensuring a proactive understanding of the system's behavior and enabling swift resolution of potential issues.
     
   **Why It's Its Own Microservice:** LogNet, connected to Prometheus, operates independently to collect real-time metrics from MongoDB and Express/GraphQL layers. The Incident Management System functions autonomously, centrally managing incidents. Both systems integrate seamlessly with Prometheus for metric collection and Traefik for authentication and forwarding requests.
+
+&nbsp;
 
 ### Prometheus Server
     
@@ -91,17 +95,22 @@ A monorepo, short for monolithic repository, is a version control repository tha
     
   **Why It's Its Own Microservice:** The Prometheus Server operates as an independent microservice dedicated to collecting time-series data for monitoring microservices. Its autonomy ensures centralized and efficient data collection, providing critical insights into the health and performance of the system.
 
+&nbsp;
+
 ## MongoDB Query Exporter
 
   **Explanation:** The MongoDB Query Exporter adds real-time data to the microservices architecture. Its integration ensures that the microservices have access to up-to-date information, enhancing the dynamic nature of the entire system.
     
   **Why It's Its Own Microservice:** The MongoDB Query Exporter operates as a standalone microservice, fetching real-time data from MongoDB. Its singular purpose ensures an efficient and dedicated connection to MongoDB, offering valuable data for other microservices.
-  
+
+&nbsp;
 ### NodeExporter
 
   **Explanation:** NodeExporter complements the Prometheus Server by exposing hardware and kernel-related metrics. This collaboration provides a holistic view of system-level performance, crucial for identifying potential bottlenecks and ensuring optimal operation.
     
   **Why It's Its Own Microservice:** NodeExporter stands as a standalone microservice to expose hardware and kernel-related metrics. Its autonomy enables it to efficiently collaborate with Prometheus, offering essential insights into system-level performance.
+
+&nbsp;
 
 ### LogNet
 
@@ -109,11 +118,15 @@ A monorepo, short for monolithic repository, is a version control repository tha
     
   **Why It's Its Own Microservice:** LogNet functions independently as an Express server, acting as a log client connected to Prometheus. Its singular focus on gathering metrics from MongoDB and Express/GraphQL layers ensures focused and efficient real-time data collection.
 
+&nbsp;
+
 ### Prometheus Alert Manager
 
   **Explanation:** The Prometheus Alert Manager collaborates with the Prometheus Server to manage and trigger alerts based on predefined rules. By integrating seamlessly, it enhances the incident management capabilities of the system, ensuring swift responses to potential issues.
     
   **Why It's Its Own Microservice:** The Prometheus Alert Manager operates autonomously, managing and triggering alerts based on predefined rules. Its independence ensures centralized incident management, seamlessly integrating with external tools and systems.
+
+&nbsp;
 
 ## Usage of Consul
 
@@ -131,47 +144,48 @@ A monorepo, short for monolithic repository, is a version control repository tha
 
 ### Purpose
 
-    This microservice is designed to handle user authentication securely for React web apps using Auth0, ensure authorized access to microservice endpoints through OAuth2, and incorporate JWTs for token-based security. The components are carefully selected to address specific security concerns and create a robust authentication and authorization system.
+This microservice is designed to handle user authentication securely for React web apps using Auth0, ensure authorized access to microservice endpoints through OAuth2, and incorporate JWTs for token-based security. The components are carefully selected to address specific security concerns and create a robust authentication and authorization system.
 
 ### Components
 
 #### Auth0 Integration
-    - **Description:** Integrate Auth0 for user authentication in the React web apps.
-    - **Technology:** Auth0
-    - **Why:** Auth0 provides a comprehensive and secure identity management solution. Its integration allows for seamless and standardized user authentication in React web apps, enhancing security by leveraging Auth0's robust authentication mechanisms.
+   - **Description:** Integrate Auth0 for user authentication in the React web apps.
+   - **Technology:** Auth0
+   - **Why:** Auth0 provides a comprehensive and secure identity management solution. Its integration allows for seamless and standardized user authentication in React web apps, enhancing security by leveraging Auth0's robust authentication mechanisms.
 
 #### JWT Generation and Validation
-    - **Description:** Generate and validate JSON Web Tokens (JWTs) for secure communication between the React web apps and microservices.
-    - **Technology:** JSON Web Tokens (JWT)
-    - **Why:** JWTs serve as secure tokens for validating the identity of users and ensuring the integrity of data exchanged between the React web apps and microservices. Their lightweight nature and token-based approach enhance security and efficiency.
+   - **Description:** Generate and validate JSON Web Tokens (JWTs) for secure communication between the React web apps and microservices.
+   - **Technology:** JSON Web Tokens (JWT)
+   - **Why:** JWTs serve as secure tokens for validating the identity of users and ensuring the integrity of data exchanged between the React web apps and microservices. Their lightweight nature and token-based approach enhance security and efficiency.
 
 #### OAuth2 for Microservices
-    - **Description:** Implement OAuth2 to secure microservice endpoints.
-    - **Technology:** OAuth2
-    - **Why:** OAuth2 is a standardized protocol for authorization, ensuring secure access to microservices. By implementing OAuth2, the microservices can enforce fine-grained access controls, validate access tokens, and facilitate secure communication between different components.
+   - **Description:** Implement OAuth2 to secure microservice endpoints.
+   - **Technology:** OAuth2
+   - **Why:** OAuth2 is a standardized protocol for authorization, ensuring secure access to microservices. By implementing OAuth2, the microservices can enforce fine-grained access controls, validate access tokens, and facilitate secure communication between different components.
 
 #### User Authorization
-    - **Description:** Implement role-based access control (RBAC) for authorizing users to access specific resources within the microservices.
-    - **Technology:** Role-Based Access Control (RBAC)
-    - **Why:** RBAC ensures that users have the appropriate permissions based on their roles. This component enhances security by controlling access at a granular level, preventing unauthorized actions within the microservices.
+   - **Description:** Implement role-based access control (RBAC) for authorizing users to access specific resources within the microservices.
+   - **Technology:** Role-Based Access Control (RBAC)
+   - **Why:** RBAC ensures that users have the appropriate permissions based on their roles. This component enhances security by controlling access at a granular level, preventing unauthorized actions within the microservices.
 
 #### Security Middleware
-    - **Description:** Develop middleware for securing microservice routes, ensuring that only authenticated and authorized requests are processed.
-    - **Technology:** Custom middleware for securing routes
-    - **Why:** Middleware acts as a gatekeeper, intercepting incoming requests and validating the associated JWTs and OAuth2 tokens. This ensures that only legitimate and authorized requests proceed, enhancing the overall security of the microservices.
+
+   - **Description:** Develop middleware for securing microservice routes, ensuring that only authenticated and authorized requests are processed.
+   - **Technology:** Custom middleware for securing routes
+   - **Why:** Middleware acts as a gatekeeper, intercepting incoming requests and validating the associated JWTs and OAuth2 tokens. This ensures that only legitimate and authorized requests proceed, enhancing the overall security of the microservices.
 
 #### Token Refresh Mechanism
-    - **Description:** Implement a token refresh mechanism to maintain secure sessions and prevent unauthorized access.
-    - **Technology:** Token refresh logic
-    - **Why:** Token refresh mechanisms enhance user experience by seamlessly renewing tokens without requiring reauthentication. This prevents disruptions in service due to expired tokens while maintaining a high level of security.
+   - **Description:** Implement a token refresh mechanism to maintain secure sessions and prevent unauthorized access.
+   - **Technology:** Token refresh logic
+   - **Why:** Token refresh mechanisms enhance user experience by seamlessly renewing tokens without requiring reauthentication. This prevents disruptions in service due to expired tokens while maintaining a high level of security.
 
 #### Considerations
 
-    - **AWS Integration**
-      - **Why:** Integrating with AWS services like IAM adds an additional layer of security by leveraging AWS's robust identity and access management features.
+  - **AWS Integration**
+  - **Why:** Integrating with AWS services like IAM adds an additional layer of security by leveraging AWS's robust identity and access management features.
     
-    - **Logging and Monitoring**
-      - **Why:** Comprehensive logging and monitoring ensure that any security-related events, authentication attempts, or authorization failures are tracked, enabling proactive identification and response to potential security threats.
+  - **Logging and Monitoring**
+  - **Why:** Comprehensive logging and monitoring ensure that any security-related events, authentication attempts, or authorization failures are tracked, enabling proactive identification and response to potential security threats.
     
     This authentication microservice is meticulously designed to address security concerns at various levels, providing a reliable and secure foundation for user authentication and microservice access control. Each component plays a crucial role in creating a robust and trustworthy authentication system. Adjustments can be made based on specific requirements and technology stacks.
 
