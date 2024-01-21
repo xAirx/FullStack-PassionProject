@@ -1,6 +1,3 @@
-
-
-
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome) [![Made With Love](https://img.shields.io/badge/Made%20With-Love-orange.svg)](https://github.com/chetanraj/awesome-github-badges)
 [![Build status](https://badge.buildkite.com/90ff98db996bb137c5be1bdce666c4b1ce68a25b17af0a6a04.svg?branch=master)](https://buildkite.com/xairx/react-component-library)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
@@ -8,7 +5,11 @@
 [![npm version](https://badge.fury.io/js/mpw-storybook.svg)](https://badge.fury.io/js/mpw-storybook)
 [![runs with Expo Go](https://img.shields.io/badge/Runs%20with%20Expo%20Go-000.svg?style=flat-square&logo=EXPO&labelColor=f3f3f3&logoColor=000)](https://expo.dev/client)
 
-# **Introduction to project architecture**
+# **Introduction to project architecture** (My personal growth playground (always keep learning)
+
+Embarking on the design of this microservices architecture is driven by a desire to explore the intricacies of modern development stacks. Based on past experiences in larger systems, the goal is to delve into the technologies that make up this architecture, fostering a deep understanding of their individual functionalities and how they synergize to create a robust and scalable ecosystem. This approach diverges from serverless solutions, emphasizing a hands-on learning experience that extends beyond what Firebase alone could offer in terms of scalability. 
+
+
 
 # **Passion-Project "MonoRepo" **
 
@@ -19,14 +20,24 @@ A monorepo, short for monolithic repository, is a version control repository tha
 &nbsp;
 &nbsp;
 &nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
 
 # **Architecture explanation**
+---------------------------------------
+
 
 ## **A simple Architecture visualization:**
 
 <img src=https://user-images.githubusercontent.com/22436080/161449512-d436cd49-b2e9-4fc2-b566-febad177c5e1.svg width="700" height="600"/>
 
-## Project structure
+# The "monorepo" structure 
+---------------------------------------
+
+
+
+#  Project structure
 
 This is a list of all the packages in the repo and what they are used for.
 
@@ -36,80 +47,70 @@ This is a list of all the packages in the repo and what they are used for.
 | [ReactNative]("./ReactNative/")      | Expo React Native App (uses storybook npm package    |
 | [Express]("./backend/**/")           | Express Boilerplate Api Examples                     |
 | [Grapqhl]("./backend/Grapqhl/**")    | A Server with GraphQl and Express                    |
-| [Storybook]("./frontend/.storybook") | Storybook running in docker                          |
+| [Storybook]("./frontend/.storybook") | Storybook running in docker (Lives as NPM package)   |
 
+&nbsp;
+&nbsp;
 &nbsp;
 &nbsp;
 
 
-# The "monorepo" structure is managed with
+## Renovate
+---------------------------------------
+
 
 - [x] [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) will scan all files in each repository to look for relevant package files. It will also group upgrades from the same monorepo into a single PR to ensure tests pass and PR noise is reduced. Natively supports Lerna and Yarn Workspaces with zero configuration necessary.
 
-	### Renovate
-
-	      Renovate bumping packages and working together with codeQL, and GitGuardian
-
-	|                                                                 Renovate                                                                  |                                                                 Renovate                                                                  |
+  Renovate bumping packages and working together with codeQL, and GitGuardian
+	|                                                                Renovate                                                                  |                                                                 Renovate                                                                  |
 	| :---------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
 	| <img src=https://user-images.githubusercontent.com/22436080/161400772-b5c86a25-5c54-438b-8374-835f9e74538c.png width="500" height="400"/> | <img src=https://user-images.githubusercontent.com/22436080/161400745-5a85b03a-a253-4a54-9826-d87b16b95f50.png width="600" height="300"/> |
 
-- [x] [Deepsource.io](https://deepsource.io/) helps you write clean code on every pull-request. Built for engineering teams who move fast and don’t break things.
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
 
-	### DeepSource
+## DeepSource
+---------------------------------------
 
-	       Will scan the project for issues, will scan all commits, and branches and will help with hooking into PR's as well.
+
+
+  
+- [x] [Deepsource](https://deepsource.io/)  Will scan the project for issues, will scan all commits, and branches and will help with hooking into PR's as well.
 
 	|                                                            DeepSource example                                                             |                                                            DeepSource example                                                             |
 	| :---------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
 	| <img src=https://user-images.githubusercontent.com/22436080/161400950-3c48227e-f8b0-4c13-899a-c0e0a958f691.png width="400" height="400"/> | <img src=https://user-images.githubusercontent.com/22436080/161400796-7a196b57-320e-4e49-bd6d-ef4e72e755b9.png width="600" height="300"/> |
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
 
-	### Codesee
+## Codesee
+---------------------------------------
+
 
 - [x] [Codesee](https://www.codesee.io/) Auto-syncing code diagrams to drive collaboration, improve code reviews, reduce onboarding friction, and more. See the map here: https://app.codesee.io/maps/89924030-b41c-11ec-8182-53fb1661bf5c
 
-	       Will show which files and where deepsource has reccomended changes and give a DIFF tool to see the exact changes in each component.
+  Will show which files and where deepsource has reccomended changes and give a DIFF tool to see the exact changes in each component.
 	       It also comes with a heatmap, which easily can give an overview of where the code is being refactored or developed the most.
 
 	|                                                             CodeSee Example                                                              |                                                              CodeSee Example                                                              |
 	| :--------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
 	| <img src=https://user-images.githubusercontent.com/22436080/161400979-1a21703b-9acb-49c6-8d2d-86e94fbf3b90.png width="400" height="300"> | <img src=https://user-images.githubusercontent.com/22436080/161401207-4b1a7fdd-0cfe-470f-99ae-9d5242444cc9.png width="400" height="300"/> |
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
 
-   ### Sentry 
+
+## Sentry 
+---------------------------------------
+
 
 - [ ] [Sentry](https://sentry.io/welcome) Tracking to performance monitoring, developers can see what actually matters, solve quicker, and learn continuously about their applications - from the frontend to the backend.
-#### BetterDocs (Currently broken - WIP)
-- [ ] [Better Docs (https://github.com/SoftwareBrothers/better-docs) Automatic Documentation generation via a JSDOC wrapper. - Example of final documentation result: https://softwarebrothers.github.io/example-design-system/index.html
 
-        https://github.com/SoftwareBrothers/better-docs - refer to docs to fix it.
-
-        @component plugin 
-
-        Better-docs also allows you to document your React and Vue components automatically. The only thing you have to do is to add a @component tag. It will take all props from your components and along with an @example tag - will generate a live preview.
-        
-        yarn global add parcel-bundler
-
-&nbsp;
-&nbsp;
-# Fail fast and early - lint-staged, husky, and pre-commit hooks 
-
-    ‘Move fast with confidence’.
-    Final thoughts
-
-    By adding a husky and a lint-staged object to your package.json you can quickly integrate pre-commit checks to your workflow, customise them to fit your individual preferences, and save time for all developers that work in that repository.
-
-    The hooks will allow common errors to be found, fixed, and added, without any additional interaction added — all before CI is even run.
-
-&nbsp;
-&nbsp;
- &nbsp;
-  ### Husky - Lint-staged & Local Testing 
-  
-	  Husky will run tests before commiting to git
-  
-   - [ ]  Setup Testing step with unit-testing across the entire monorepo.
- 
----------------------------------------
 
 
 &nbsp;
@@ -117,44 +118,135 @@ This is a list of all the packages in the repo and what they are used for.
 &nbsp;
 &nbsp;
 
-# CI/CDCD
 
-  ### CircleCI - CI/CD and Deploys
+# Overview of Microservices Architecture
 
- ## Deploying Next.js App With TRPC API on vercel
-      "The easiest way to deploy a Next.js app is to use the Vercel Platform from the creators of Next.js."
-  - [ ]    Setup Deploy Script for vercel
-  - [ ]    Setup CircleCI Integratation
-  - [ ]    Setup Testing step with unit-testing and E2E
----------------------------------------
- &nbsp;
- &nbsp;
-  ##  Docker container deploys to "Cluster"
-  
-	  Testing will be done in the CircleCI pipeline and E2E tests will be run as well. 
-  
-  #### Docker Deploy example
-  
-  - [ ] [CI/CD - CircleCI & Docker hub -> Heroku](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde)
-  - [ ] Circle-CI boilerplate preconfigured for docker image - Dockerhub deploys -> Heroku (Container registry).
-  - [ ]    Setup Testing step with unit-testing and E2E
-  ---------------------------------------
-   &nbsp;
-   &nbsp;
-   &nbsp;
-  ### React Native and AppCenter CI/CD
-  
-	  AppCenter for IOS and Android Deploy will run unit-tests and then e2e tests.
-   - [ ]    Setup Testing step with unit-testing and E2E
----------------------------------------
+## GraphQL API
 
- &nbsp;
- &nbsp;
- &nbsp;
- &nbsp;
+    **Explanation:** The GraphQL API, implemented using the GraphQL-Apollo-Express stack, serves as the interface for efficient data retrieval and manipulation. It ties into various microservices by providing a unified endpoint for communication, fostering seamless interactions between frontend and backend services.
+    
+    **Why It's Its Own Microservice:** The GraphQL API, while a part of the larger microservices architecture, functions independently to facilitate efficient data retrieval and manipulation. Its autonomy allows seamless communication with other services and clients within the architecture.
+
+## React Native App and Next.js Site
+    
+    **Explanation:** Both the React Native App and Next.js Site, while distinct microservices, share a common purpose in offering versatile solutions for web and mobile application development. They tie into the GraphQL API, ensuring a consistent user experience across platforms.
+
+## Storybook
+
+    **Explanation:** Storybook serves as a valuable tool for developing and documenting UI components in isolation. While it may not directly tie into other microservices, its impact resonates across the architecture by ensuring a consistent and well-documented user interface.
+    
+    **Why It's Its Own Microservice:** Storybook serves as a standalone tool for developing and documenting UI components in isolation. Its autonomy facilitates independent development and testing of UI elements, contributing to a modular development approach.
+
+
+### Prometheus Server
+    
+    **Explanation:** The Prometheus Server stands as the cornerstone, collecting time-series data for monitoring microservices. It forms the foundation for other components to rely on real-time metrics and insights into the performance of the entire system.
+    
+    **Why It's Its Own Microservice:** The Prometheus Server operates as an independent microservice dedicated to collecting time-series data for monitoring microservices. Its autonomy ensures centralized and efficient data collection, providing critical insights into the health and performance of the system.
+
+### NodeExporter
+
+    **Explanation:** NodeExporter complements the Prometheus Server by exposing hardware and kernel-related metrics. This collaboration provides a holistic view of system-level performance, crucial for identifying potential bottlenecks and ensuring optimal operation.
+    
+    **Why It's Its Own Microservice:** NodeExporter stands as a standalone microservice to expose hardware and kernel-related metrics. Its autonomy enables it to efficiently collaborate with Prometheus, offering essential insights into system-level performance.
+
+### LogNet
+
+    **Explanation:** LogNet, acting as an Express server connected to Prometheus, synergizes with the Prometheus Server by gathering metrics from MongoDB and Express/GraphQL layers. This real-time data collection offers a comprehensive understanding of the health and performance of both the database and the application layer.
+    
+    **Why It's Its Own Microservice:** LogNet functions independently as an Express server, acting as a log client connected to Prometheus. Its singular focus on gathering metrics from MongoDB and Express/GraphQL layers ensures focused and efficient real-time data collection.
+
+### Prometheus Alert Manager
+
+    **Explanation:** The Prometheus Alert Manager collaborates with the Prometheus Server to manage and trigger alerts based on predefined rules. By integrating seamlessly, it enhances the incident management capabilities of the system, ensuring swift responses to potential issues.
+    
+    **Why It's Its Own Microservice:** The Prometheus Alert Manager operates autonomously, managing and triggering alerts based on predefined rules. Its independence ensures centralized incident management, seamlessly integrating with external tools and systems.
+
+## MongoDB Query Exporter
+
+    **Explanation:** The MongoDB Query Exporter adds real-time data to the microservices architecture. Its integration ensures that the microservices have access to up-to-date information, enhancing the dynamic nature of the entire system.
+    
+    **Why It's Its Own Microservice:** The MongoDB Query Exporter operates as a standalone microservice, fetching real-time data from MongoDB. Its singular purpose ensures an efficient and dedicated connection to MongoDB, offering valuable data for other microservices.
+
+
+## MongoExpress GUI
+
+    **Explanation:** The MongoExpress GUI functions independently, providing a graphical interface for managing MongoDB data. Its autonomy simplifies database visualization and interaction, enhancing developer efficiency.
+    
+    **Why It's Its Own Microservice:** The MongoExpress GUI operates independently, providing a graphical interface for managing MongoDB data. Its autonomy simplifies database visualization and interaction, contributing to the development and maintenance of MongoDB-related microservices.
+
+## Traefik and Load Balancing
+
+    **Explanation:** Traefik functions as the ingress controller, dynamically routing traffic and providing load balancing within the microservices cluster. It ensures efficient distribution of requests among healthy instances, promoting optimal resource utilization across the entire system.
+    
+    **Why It's Its Own Microservice:** Traefik operates as the ingress controller, handling external requests and dynamically routing traffic within the microservices cluster. Its independence provides load balancing to ensure efficient distribution of requests among healthy instances, enhancing the architecture's scalability.
+
+## LogNet and Incident Monitoring Systems
+    
+    **Explanation:** LogNet, connected to Prometheus, collaborates with the Incident Management System by collecting real-time metrics. This integration enhances the incident management approach, ensuring a proactive understanding of the system's behavior and enabling swift resolution of potential issues.
+    
+    **Why It's Its Own Microservice:** LogNet, connected to Prometheus, operates independently to collect real-time metrics from MongoDB and Express/GraphQL layers. The Incident Management System functions autonomously, centrally managing incidents. Both systems integrate seamlessly with Prometheus for metric collection and Traefik for authentication and forwarding requests.
+
+## Usage of Consul
+
+    **Explanation:** Consul, facilitating service discovery and dynamic mapping, ties into the microservices architecture by enhancing scalability. It simplifies communication and orchestrates efficient interactions between microservices, promoting a streamlined and adaptive system.
+    
+    **Why It's Its Own Microservice:** Consul stands alone as a crucial component for service discovery and dynamic mapping between test servers and web or app projects. Its autonomy enhances scalability within the microservices structure by simplifying communication and orchestrating efficient interactions between microservices.
+
+
+## Authentication Microservice
+
+### Purpose
+
+    This microservice is designed to handle user authentication securely for React web apps using Auth0, ensure authorized access to microservice endpoints through OAuth2, and incorporate JWTs for token-based security. The components are carefully selected to address specific security concerns and create a robust authentication and authorization system.
+
+### Components
+
+#### 1. Auth0 Integration
+    - **Description:** Integrate Auth0 for user authentication in the React web apps.
+    - **Technology:** Auth0
+    - **Why:** Auth0 provides a comprehensive and secure identity management solution. Its integration allows for seamless and standardized user authentication in React web apps, enhancing security by leveraging Auth0's robust authentication mechanisms.
+
+#### 2. JWT Generation and Validation
+    - **Description:** Generate and validate JSON Web Tokens (JWTs) for secure communication between the React web apps and microservices.
+    - **Technology:** JSON Web Tokens (JWT)
+    - **Why:** JWTs serve as secure tokens for validating the identity of users and ensuring the integrity of data exchanged between the React web apps and microservices. Their lightweight nature and token-based approach enhance security and efficiency.
+
+#### 3. OAuth2 for Microservices
+    - **Description:** Implement OAuth2 to secure microservice endpoints.
+    - **Technology:** OAuth2
+    - **Why:** OAuth2 is a standardized protocol for authorization, ensuring secure access to microservices. By implementing OAuth2, the microservices can enforce fine-grained access controls, validate access tokens, and facilitate secure communication between different components.
+
+#### 4. User Authorization
+    - **Description:** Implement role-based access control (RBAC) for authorizing users to access specific resources within the microservices.
+    - **Technology:** Role-Based Access Control (RBAC)
+    - **Why:** RBAC ensures that users have the appropriate permissions based on their roles. This component enhances security by controlling access at a granular level, preventing unauthorized actions within the microservices.
+
+#### 5. Security Middleware
+    - **Description:** Develop middleware for securing microservice routes, ensuring that only authenticated and authorized requests are processed.
+    - **Technology:** Custom middleware for securing routes
+    - **Why:** Middleware acts as a gatekeeper, intercepting incoming requests and validating the associated JWTs and OAuth2 tokens. This ensures that only legitimate and authorized requests proceed, enhancing the overall security of the microservices.
+
+#### 6. Token Refresh Mechanism
+    - **Description:** Implement a token refresh mechanism to maintain secure sessions and prevent unauthorized access.
+    - **Technology:** Token refresh logic
+    - **Why:** Token refresh mechanisms enhance user experience by seamlessly renewing tokens without requiring reauthentication. This prevents disruptions in service due to expired tokens while maintaining a high level of security.
+
+#### Considerations
+
+    - **AWS Integration**
+      - **Why:** Integrating with AWS services like IAM adds an additional layer of security by leveraging AWS's robust identity and access management features.
+    
+    - **Logging and Monitoring**
+      - **Why:** Comprehensive logging and monitoring ensure that any security-related events, authentication attempts, or authorization failures are tracked, enabling proactive identification and response to potential security threats.
+    
+    This authentication microservice is meticulously designed to address security concerns at various levels, providing a reliable and secure foundation for user authentication and microservice access control. Each component plays a crucial role in creating a robust and trustworthy authentication system. Adjustments can be made based on specific requirements and technology stacks.
+
 
 
 # Getting started locally
+---------------------------------------
+
 
 ### Commands
 
@@ -181,30 +273,29 @@ This is a list of all the packages in the repo and what they are used for.
     	"storybook-run": "yarn --cwd ./packages/frontend/storybook run storybook",
     	"storybook-export": "yarn --cwd ./packages/frontend/storybook run storybook:export"
 
-- [x] yarn commit - will run a flow composed of:
+### yarn commit - will run a flow composed of:
 - [x] [Husky](https://github.com/typicode/husky)
 - [x] Linting with: [ESLint](https://eslint.org), [stylelint](https://stylelint.io) & [Prettier](https://prettier.io)
 - [x] [lint-staged](https://github.com/okonet/lint-staged)
 - [x] [Commitizen](https://github.com/commitizen/cz-cli)
 ---------------------------------------
-
-
 &nbsp;
 
 ## Getting started with docker
+&nbsp;
+&nbsp;
 
-
+    
 ### NVM usage for cross env node versions
 
+  
     Install & Update Script
-
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-
-
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash 
     Running either of the above commands downloads a script and runs it. The script clones the nvm repository to `~/.nvm`, and attempts to add the source lines from the snippet below to the correct profile file (`~/.bash_profile`, `~/.zshrc`, `~/.profile`, or `~/.bashrc`).
+
 ---------------------------------------
-
-
+&nbsp;
+&nbsp;
 ### **Example Docker images**
 ---------------------------------------
 - [x] React App Docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
@@ -217,14 +308,15 @@ This is a list of all the packages in the repo and what they are used for.
       The express server runs standalone  and connects to the MongoDB
       The GraphQL server runs standalone and connects to the MongoDB
 
-
+&nbsp;
+&nbsp;
 ### Explaining the environments:
 ---------------------------------------
-##### Development environment
+### Development environment
 
     - Hot reloading on code changes
 
-##### Production environment
+### Production environment
 
      - Optimized, building static assets and served through a web server or CDN.
      - Here Nginx is used to serve static assets.
@@ -234,15 +326,15 @@ This is a list of all the packages in the repo and what they are used for.
 
 
 
-#### docker-compose(dev):
+### docker-compose(dev):
 
     docker-compose -f docker-compose.dev.yml up -d
 
-#### docker-compose(prod):
+### docker-compose(prod):
 
     docker-compose -f docker-compose.prod.yml up --build
 
-#### Setup .env file for docker-compose
+### Setup .env file for docker-compose
 
     The latest Docker Compose allows you to access environment variables from your compose file. So you can source your environment variables, then run Compose like so:
 
@@ -410,7 +502,80 @@ This is a list of all the packages in the repo and what they are used for.
 
 ## App Boilerplates (TODO)
 
+    🚀 Technology Choices:
+    
+    📱 React Native: We chose React Native as our development tool for its flexibility and control over native components, making it suitable for complex apps that require custom native functionality. While it requires more setup and configuration compared to Expo, it provides direct access to native APIs, custom native modules, and better performance optimization.
+    
+    🚀 React functional components: Functional components are used to build our app for their simplicity and use of hooks.
+    
+    📊 Environment variables: We use dotenv to manage environment variables for local development and production-ready builds. This allows us to keep sensitive information, such as API keys and database credentials, separate from the codebase and secure.
+    
+    🔍 TypeScript: We opted for TypeScript for its strong typing system, which makes our code more reliable and easier to maintain.
+    
+    🔥 React Query: We chose React Query for its ability to handle data fetching and caching, making our app more performant and responsive.
+    
+    🧪 Simple unit-testing: We included simple unit testing to ensure the reliability of our code, reducing the chances of unexpected bugs and issues. Snapshot testing captures and verifies rendered component changes, ensuring the app's functionality and reducing the likelihood of bugs. It saves time and improves code quality by automating testing and detecting regressions early on.
+    
+    🎨 Material UI: We used the Material UI library for our app's design.
+    
+    💻 Why it's good to use: It provides a wide range of pre-built UI components, follows Google's Material Design principles, and has excellent support for customization.
+    
+    👍 ESLint, Prettier, and Commitizen: We used ESLint and Prettier for code formatting and style consistency, and Commitizen for commit message consistency. This ensures that the codebase is easy to read and maintain, and commits are descriptive and follow best practices.
+    
+    👍 .nvmrc file for specifying the Node version required for a project because different versions of Node may introduce new features, bug fixes, or breaking changes that could affect the functionality of the project. By specifying the required version in the .nvmrc file, all developers working on the project can ensure they are using the same version, which helps to avoid version conflicts or unexpected behavior.
+    
+    Additionally, using a script like check_node_version.js can help to ensure that the correct Node version is being used before running any other scripts or starting the project. This can be especially useful in automated build and deployment pipelines where multiple scripts are run in sequence, as it helps to catch any version mismatches early on in the process
+    
+    👍 Reactotron for live debugging on endpoints and asyncstorage.
 
+###  Scaling Up:
+
+    Our app follows a parent-child component structure, where three simple components interact with each other. As the app scales up, we can use the Context API to share data between components without passing props manually. Alternatively, we can use Redux, which allows us to manage the state of the entire app in one central location.
+    
+    State management: As the app grows, it may become challenging to manage the state of the app and ensure that the data flows correctly between different components. One way to address this is to use a state management library such as Redux or MobX to manage the app's state.
+    
+    Navigation: As the app grows, it may require more complex navigation between different screens and components. One way to address this is to use a navigation library such as React Native Navigation or React Navigation, which provides a more extensive set of navigation options and customizations.
+    
+    Performance: As the app grows, it may become more challenging to maintain performance and ensure that the app runs smoothly. One way to address this is to use performance optimization techniques such as code splitting, lazy loading, and caching to reduce the app's size and improve performance.
+    
+    Testing: As the app grows, it may become more challenging to test and ensure that the app works correctly across different platforms and devices. One way to address this is to use a testing framework such as Jest or React Native Testing Library to automate testing and ensure that the app works correctly.
+    
+    Code organization: As the app grows, it may become more challenging to organize the code and ensure that it remains maintainable and scalable. One way to address this is to use a modular code structure that separates the app's different components into smaller, reusable modules.
+    
+    Overall, scaling up a simple React Native app to a larger app structure requires careful planning, design, and development. By addressing these challenges and adopting best practices, developers can create a scalable and maintainable app that meets the needs of users and stakeholders.
+    
+    Extra packages:
+    
+    "@react-native-async-storage/async-storage": "^1.17.6",
+    "@react-native-community/netinfo": "^5.6.2",
+    "react-native-device-info": "9.0.2",
+
+
+### Deployment and Pipelines
+
+    Use of Appcenter
+    
+    When deploying the app, a deployment script can be used to automate the process of building and packaging the app with the correct configuration file. For example, a GitHub CI/CD pipeline can be set up to automatically build and deploy the app when changes are pushed to the code repository.
+    
+    In addition to building and packaging the app with the correct configuration file, there are also other important steps that need to be taken before the app can be deployed to app stores such as the App Store Connect and Google Play Store. One of these steps is code signing, which is the process of digitally signing the app with a certificate to verify its authenticity.
+    
+    XCode
+    
+    For iOS apps, code signing involves using certificates and provisioning profiles provided by Apple's developer program. These certificates and profiles are used to sign the app and authorize it to run on devices. In order to distribute the app through the App Store, the app must be signed with a distribution certificate and provisioning profile.
+    
+    Android studio
+    
+    Similarly, for Android apps, code signing involves using a signing key to sign the app. This signing key can be generated using Android Studio or the keytool command-line tool. The signed app is then uploaded to the Google Play Console along with other app metadata such as the app name, description, and screenshots.
+    
+    Both Apple and Google have strict guidelines and requirements for code signing, and failure to comply with these requirements can result in app rejection or removal from the app stores. It's important to follow these guidelines and properly sign the app before deploying it to the app stores.
+    
+    When using a tool like Appcenter for deployment, it's important to ensure that the correct certificates and keys are used for code signing. Appcenter allows for easy integration with Apple's App Store Connect and Google Play Store, simplifying the process of deploying apps to these app stores. By properly signing the app with the correct certificates and keys, developers can ensure that their app is securely and accurately distributed to their users.
+
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
 
 ## Web Frontend Boilerplates (WIP)
 
@@ -437,6 +602,12 @@ This is a list of all the packages in the repo and what they are used for.
 - [x] [lint-staged](https://github.com/okonet/lint-staged) with precommit task for linting
 - [x] [Commitizen](https://github.com/commitizen/cz-cli) intercepting your commits to help you add nice formatted messages
 - [x] [Absolute Imports](https://medium.com/geekculture/making-life-easier-with-absolute-imports-react-in-javascript-and-typescript-bbdab8a8a3a1) - Avoid ./././
+
+## CI/CD - Web project Deploys to Vercel:
+
+- Setting up a deploy script for Vercel.
+- Integrating with CircleCI for continuous integration and deployment.
+- Implementing a testing step within CircleCI, E2E tests.
 
 &nbsp;
 &nbsp;
@@ -557,194 +728,11 @@ This is a list of all the packages in the repo and what they are used for.
 &nbsp;
 &nbsp;
 &nbsp;
-
-# Monitoring Microservice cluster - (WIP - Work in progress (MVP) - Prometheus & Node Exporter & Grafana setup.
----------------------------------------
-## **Docker compose**
-
-    I have decided to run Prometheus along with Alert manager, NodeExporter, in Docker to allow for easy deployment using Docker Compose.
-
-    Configuring one or more of the applications to communicate is made easy by Docker networking in bridge mode. Since I’m using Docker Compose, we can reach each container via their container name as Docker Compose configures every container to be reachable in the Docker network.
-
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
 &nbsp;
 
-### **Running locally & Pre-requisites**
----------------------------------------
-    Before we get started installing the Prometheus stack. Ensure you install the latest version of docker and docker-compose on your Docker host machine. Installation & Configuration
 
-&nbsp;
 
-### **Docker-compose builds:**
----------------------------------------
-    - NodeExporter - currently a default version of a node-exporter for prometheus
-    - Prometheus
-    - AlertManager
-
-&nbsp;
-
-### WIP - **Oauth2 + Proxy (Reverse NGINX proxy)**
----------------------------------------
-    The general idea is quite simple:
-
-    By default, Nginx HTTP server listens for incoming connection and binds on port 80, which represents the standard web port. all things but nginx listen on 127.0.0.1 only;
-
-    all of the above authenticate using proxy_forward and nginx’s auth_request directive.
-
-&nbsp;
-
-## Prometheus Server
----------------------------------------
-    The time series data collected is stored in the **./prometheus** directory.
-
-    We can refer to Prometheus docs on[ storage](https://prometheus.io/docs/prometheus/latest/storage/) to see the on-disk layout of the server’s data directory. The lines –config.file is pretty standard across all web tutorials and –storage.tsdb.retention.time is optional as this determines when to remove old data.
-
-    If not used, the default is 15 days.
-
-    - ports: – “9090:9090” in the docker file is only required If you wish to curl or access http://localhost:**9090**/**
-    - Later when he nginx reverse proxy is implemented:
-    - We will be able to access Alertmanager in a browser via URL **alertmanager.example.com** because of nginx-proxy.
-    - The docker file will contain: expose: with – VIRTUAL_PORT=**9090** for[ the nginx-proxy](https://techsch.com/tutorials/multiple-websites-jwilder-nginx-proxy-letsencrypt).
-
-#####Code example:
-
-            `Example:`
-            `\#ports:`
-               `\#- "**9090**:**91090900**"`
-              `environment:`
-               `\- VIRTUAL_HOST=prometheus.example.com`
-               `\- VIRTUAL_PORT=**9090**`
-
-&nbsp;
-
-### Prometheus server and prometheus.yml specificities
----------------------------------------
-    targets: ‘localhost:9090’ tells Prometheus server to collect metrics related to **prometheus monitoring operation** with related query expressions starting with **prometheus_** (e.g. *prometheus_build_info* and *prometheus_engine_queries* etc.)
-
-    whereas ‘node-exporter:9100’ scrape the Prometheus server for various hardware monitoring metrics of Linux, including temperature, fans, and voltages.
----------------------------------------
-&nbsp;
-
-## NodeExporter (Node exporter)
----------------------------------------
-    **Node Exporter**, like Alertmanager is optional because Prometheus will run fine without it.
-
-    Node Exporter exposes hardware and kernel related metrics on local and remote hosts. If installed on remote Server A, Prometheus server (using **prometheus.yml**) can be configured to scrape metrics via URL, e.g., **http://<serverA-ip>:9100/metrics**.
-
-    - ports: – “9100:9100” in the docker file is only required If you wish to curl or access **http://localhost:9100/**
-
-    - Later when the nginx reverse proxy is implemented:
-
-    - We will be able to access nodeexporter a browser via URL nodeexporter**.example.com** because of the nginx-proxy.
-
-    - The docker file will contain: expose: with – VIRTUAL_PORT=**9100** for[ the nginx-proxy](https://techsch.com/tutorials/multiple-websites-jwilder-nginx-proxy-letsencrypt).
-
-#####Code example:
-
-              `\#ports:`
-               `\#- "**9100**:**9100**"`
-               `environment:`
-               `\- VIRTUAL_HOST=prometheus.example.com`
-               `\- VIRTUAL_PORT=**9100**`
-
-This project is going to act as an express server which utilizes the logClient to connect to prometheus, the idea here is to collect metrics from the mongoDB & of the express / graphQL layer, which contains different endpoints with data.
-
-#####Code example:
-
-         `import express from 'express'`
-         `import promClient from 'prom-client'`
-         `import { collectMetrics } from './data-fetcher'`
-         `promClient.collectDefaultMetrics()`
-
-         `console.log(`
-          `Hello folks. We will setup a process that hits an api every 5 minutes, and update prometheus metrics.`
-         `)`
-
-         `setInterval(() => {`
-          `collectMetrics()`
-         `}, 5 * 60 * 1000)`
-
-         `collectMetrics()`
-
-         `const metricServer = express()`
-
-         `metricServer.get('/metrics', (req, res) => {`
-          `console.log('Scraped')`
-          `res.send(promClient.register.metrics())`
-         `})`
-
-         `metricServer.listen(9991, () =>`
-          `console.log(🚨 Prometheus listening on port 9991 /metrics)`
-         `)`
-
-&nbsp;
-
-## Prometheus Alert Manager
----------------------------------------
-    - In order to use **Alertmanager**, we add it as a Docker service.
-    - The data for Alertmanager is stored in the alertmanager directory.
-    - Ports: – “9093:9093” in the docker file is only required If you wish to curl or access http://localhost:9093/**
-    - Later when the nginx reverse proxy is implemented:
-    -  we are able to access Alertmanager in a browser via URL **alertmanager.example.com** because of nginx-proxy.
-    - The docker file will contain: expose: with – VIRTUAL_PORT=**9093** for[ the nginx-proxy](https://techsch.com/tutorials/multiple-websites-jwilder-nginx-proxy-letsencrypt).
-
-#####Code example:
-
-         `\#ports:`
-            `\#- "9093:9093"`
-           `environment:`
-            `\- VIRTUAL_HOST=prometheus.example.com`
-            `\- VIRTUAL_PORT=9093`
----------------------------------------
-&nbsp;
-
-#### Alerting has been added to the stack, Alerts have been added and are managed via - prometheus/alert.rules
-
-    - AlertManager configuration - alertmanager/config.yml
-
-    - View Prometheus alerts http://<Host IP Address>:9090/alerts
-
-    - View Alert Manager http://<Host IP Address>:9093
-
-&nbsp;
-
-### Running Test Alerts
----------------------------------------
-    *These examples are based on mock data for now which exists within the Node Exporter ( see the section about the Node Exporter above)*
-
-    Examples:
-
-    - *Also check the alerts in both the Alert Manager and Prometheus Alerts just to understand how they flow through the system.*
-
-    - Example: High load test alert - docker run --rm -it busybox sh -c "while true; do :; done"
-
-    - Let this run for a few minutes and you will notice the load alert appear.
-
-##### Example config for alert manager utilizing slack notifications forexample
-
-         `route:`
-          `receiver: 'slack_gmail'`
-
-         `receivers:`
-          `\- name: 'slack_mxroute'`
-           `slack_configs:`
-            `\- send_resolved: true`
-         ​    `text: "{{ .CommonAnnotations.description }}"`
-         ​    `username: 'Prometheus'`
-         ​    `channel: '#<channel-name>'`
-         ​    `api_url: 'https://hooks.slack.com/services/<webhook-id>'`
-
-           `email_configs:`
-            `\- to: hello@gmail.com`
-         ​    `from: prometheus_alerts@gmail.com`
-         ​    `smarthost: smtp.gmail.com:587`
-         ​    `auth_username: prometheus_alerts@gmail.com`
-         ​    `auth_password: secret`
-         ​    `send_resolved: true`
-
-&nbsp;
-
-### AlertManager and custom webhooks.
----------------------------------------
-    A custom webhook is currently in the works, exposing specific alerts to our incidents management system (see below for explanation)
-
-&nbsp;
