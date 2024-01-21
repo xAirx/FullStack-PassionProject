@@ -1,14 +1,14 @@
-import { Feather } from '@expo/vector-icons'
-import { DrawerNavigationProp } from '@react-navigation/drawer'
-import { useNavigation } from '@react-navigation/native'
-import { HStack, IconButton } from 'native-base'
-import React, { useCallback } from 'react'
+import { Feather } from "@expo/vector-icons";
+import { DrawerNavigationProp } from "@react-navigation/drawer";
+import { useNavigation } from "@react-navigation/native";
+import { HStack, IconButton } from "native-base";
+import React, { useCallback } from "react";
 
 const NavBar = () => {
-  const navigation = useNavigation<DrawerNavigationProp<object>>()
+  const navigation = useNavigation<DrawerNavigationProp<object>>();
   const handlePressMenuButton = useCallback(() => {
-    navigation.openDrawer()
-  }, [navigation])
+    navigation.openDrawer();
+  }, [navigation]);
 
   return (
     <HStack w="full" h={40} alignItems="center" alignContent="center" p={4}>
@@ -17,13 +17,13 @@ const NavBar = () => {
         borderRadius={100}
         _icon={{
           as: Feather,
-          name: 'menu',
+          name: "menu",
           size: 6,
-          color: 'white'
+          color: "white",
         }}
       />
     </HStack>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;

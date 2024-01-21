@@ -13,7 +13,7 @@ type OptionType = {
 
 export default function useRQWithToast<T, E>(
   query: UseQueryResult<T, E>,
-  { runCondition = true, ...customMessages }: OptionType = {}
+  { runCondition = true, ...customMessages }: OptionType = {},
 ) {
   const { data, isError, isLoading } = query;
 

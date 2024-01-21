@@ -30,7 +30,7 @@ export default function NextImage({
         loader={customLoader}
         placeholder='blur'
         blurDataURL={`data:image/svg+xml;base64,${toBase64(
-          shimmer(width ? +width : 700, height ? +height : 475)
+          shimmer(width ? +width : 700, height ? +height : 475),
         )}`}
         {...rest}
       />

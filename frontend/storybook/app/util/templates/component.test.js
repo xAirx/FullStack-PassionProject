@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 module.exports = componentName => ({
-    content: `// Generated with util/create-component.js
+	content: `// Generated with util/create-component.js
   import React from "react";
   import { render } from "@testing-library/react";
   import ${componentName} from "./${componentName}";
@@ -21,5 +21,5 @@ module.exports = componentName => ({
     });
   });
   `,
-    extension: `.test.tsx`,
+	extension: '.test.tsx',
 });

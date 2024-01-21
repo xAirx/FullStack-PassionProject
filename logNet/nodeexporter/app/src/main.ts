@@ -9,9 +9,12 @@ console.log(
   `Hello folks. We will setup a process that hits an api every 5 minutes, and update prometheus metrics.`
 )
 
-setInterval(() => {
-  collectMetrics()
-}, 5 * 60 * 1000)
+setInterval(
+  () => {
+    collectMetrics()
+  },
+  5 * 60 * 1000
+)
 
 collectMetrics()
 
