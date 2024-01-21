@@ -29,11 +29,70 @@ A monorepo, short for monolithic repository, is a version control repository tha
 
 ## **A "simple" Architecture mental visualization:**
 
+## GraphQL API Stack
+- GraphQL Apollo Express ![GraphQL Icon](https://example.com/graphql-icon.png)
 
-# Overview of Microservices Architecture
+## MongoExpress GUI Stack
+- MongoExpress ![MongoDB Icon](https://example.com/mongodb-icon.png)
+
+## Frontend Solutions
+- React Native App ![React Icon](https://example.com/react-icon.png)
+- Next.js Site ![Next.js Icon](https://example.com/nextjs-icon.png)
+
+## UI Development
+- Storybook ![Storybook Icon](https://example.com/storybook-icon.png)
+
+## Routing and Load Balancing
+- Traefik ![Traefik Icon](https://example.com/traefik-icon.png)
+
+## Monitoring Systems
+- LogNet ![Express Icon](https://example.com/express-icon.png)
+- Incident Monitoring ![Bell Icon](https://example.com/bell-icon.png)
+
+## Metrics Collection
+- Prometheus Server ![Prometheus Icon](https://example.com/prometheus-icon.png)
+- MongoDB Query Exporter ![Database Icon](https://example.com/database-icon.png)
+- NodeExporter ![Server Icon](https://example.com/server-icon.png)
+- Prometheus Alert Manager ![Alert Icon](https://example.com/alert-icon.png)
+
+## Service Discovery
+- Consul ![Consul Icon](https://example.com/consul-icon.png)
+
+## Authentication Service
+- Auth0 Integration ![Auth0 Icon](https://example.com/auth0-icon.png)
+- JWT Generation Validation ![Key Icon](https://example.com/key-icon.png)
+- OAuth2 Microservices ![OAuth Icon](https://example.com/oauth-icon.png)
+- User Authorization RBAC ![Users Icon](https://example.com/users-icon.png)
+- Security Middleware ![Shield Icon](https://example.com/shield-icon.png)
+- Token Refresh Mechanism ![Refresh Icon](https://example.com/refresh-icon.png)
+
+## Monorepo Packages
+- Frontend ![Code Icon](https://example.com/code-icon.png)
+- ReactNative ![Mobile Icon](https://example.com/mobile-icon.png)
+- Express ![Terminal Icon](https://example.com/terminal-icon.png)
+- Graphql ![Code Branch Icon](https://example.com/code-branch-icon.png)
+- Storybook Package ![NPM Icon](https://example.com/npm-icon.png)
+
+## Dependency Management
+- Renovate ![Package Icon](https://example.com/package-icon.png)
+
+## Code Analysis
+- DeepSource ![Search Icon](https://example.com/search-icon.png)
+
+## Code Collaboration
+- CodeSee ![Eye Icon](https://example.com/eye-icon.png)
+
+## Error Tracking
+- Sentry ![Sentry Icon](https://example.com/sentry-icon.png)
+
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+# Overview of Architecture
 
 ---------------------------------------------------------------------------------------------------------
-
 
 ## GraphQL API
 
