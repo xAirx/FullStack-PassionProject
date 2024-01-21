@@ -135,32 +135,32 @@ A monorepo, short for monolithic repository, is a version control repository tha
 
 ### Components
 
-#### 1. Auth0 Integration
+#### Auth0 Integration
     - **Description:** Integrate Auth0 for user authentication in the React web apps.
     - **Technology:** Auth0
     - **Why:** Auth0 provides a comprehensive and secure identity management solution. Its integration allows for seamless and standardized user authentication in React web apps, enhancing security by leveraging Auth0's robust authentication mechanisms.
 
-#### 2. JWT Generation and Validation
+#### JWT Generation and Validation
     - **Description:** Generate and validate JSON Web Tokens (JWTs) for secure communication between the React web apps and microservices.
     - **Technology:** JSON Web Tokens (JWT)
     - **Why:** JWTs serve as secure tokens for validating the identity of users and ensuring the integrity of data exchanged between the React web apps and microservices. Their lightweight nature and token-based approach enhance security and efficiency.
 
-#### 3. OAuth2 for Microservices
+#### OAuth2 for Microservices
     - **Description:** Implement OAuth2 to secure microservice endpoints.
     - **Technology:** OAuth2
     - **Why:** OAuth2 is a standardized protocol for authorization, ensuring secure access to microservices. By implementing OAuth2, the microservices can enforce fine-grained access controls, validate access tokens, and facilitate secure communication between different components.
 
-#### 4. User Authorization
+#### User Authorization
     - **Description:** Implement role-based access control (RBAC) for authorizing users to access specific resources within the microservices.
     - **Technology:** Role-Based Access Control (RBAC)
     - **Why:** RBAC ensures that users have the appropriate permissions based on their roles. This component enhances security by controlling access at a granular level, preventing unauthorized actions within the microservices.
 
-#### 5. Security Middleware
+#### Security Middleware
     - **Description:** Develop middleware for securing microservice routes, ensuring that only authenticated and authorized requests are processed.
     - **Technology:** Custom middleware for securing routes
     - **Why:** Middleware acts as a gatekeeper, intercepting incoming requests and validating the associated JWTs and OAuth2 tokens. This ensures that only legitimate and authorized requests proceed, enhancing the overall security of the microservices.
 
-#### 6. Token Refresh Mechanism
+#### Token Refresh Mechanism
     - **Description:** Implement a token refresh mechanism to maintain secure sessions and prevent unauthorized access.
     - **Technology:** Token refresh logic
     - **Why:** Token refresh mechanisms enhance user experience by seamlessly renewing tokens without requiring reauthentication. This prevents disruptions in service due to expired tokens while maintaining a high level of security.
@@ -188,8 +188,6 @@ A monorepo, short for monolithic repository, is a version control repository tha
 
 # The "monorepo" structure (WORK IN PROGRESS)
 ---------------------------------------
-
-
 
 #  Project structure
 
