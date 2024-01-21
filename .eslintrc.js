@@ -9,11 +9,11 @@ module.exports = {
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended',
 		'plugin:jest/recommended',
-		//'plugin:prettier/@typescript-eslint',
-		//Prettier
+		// 'plugin:prettier/@typescript-eslint',
+		// Prettier
 		'react-app',
 		'plugin:jsx-a11y/recommended',
-		//'plugin:prettier/recommended',
+		// 'plugin:prettier/recommended',
 		'prettier',
 	],
 	parser: '@typescript-eslint/parser',
@@ -32,7 +32,7 @@ module.exports = {
 		'react/display-name': 'off',
 		'react/jsx-curly-brace-presence': ['warn', { props: 'never', children: 'never' }],
 
-		//#region  //*=========== Unused Import ===========
+		// #region  //*=========== Unused Import ===========
 		'@typescript-eslint/no-unused-vars': 'off',
 		'unused-imports/no-unused-imports': 'warn',
 		'unused-imports/no-unused-vars': [
@@ -44,9 +44,9 @@ module.exports = {
 				argsIgnorePattern: '^_',
 			},
 		],
-		//#endregion  //*======== Unused Import ===========
+		// #endregion  //*======== Unused Import ===========
 
-		//#region  //*=========== Import Sort ===========
+		// #region  //*=========== Import Sort ===========
 		'simple-import-sort/exports': 'warn',
 		'simple-import-sort/imports': [
 			'warn',
@@ -83,9 +83,9 @@ module.exports = {
 				],
 			},
 		],
-		//#endregion  //*======== Import Sort ===========
+		// #endregion  //*======== Import Sort ===========
 		endOfLine: 'off',
-		//'indent': ['error', 2, { "MemberExpression": 1 }],
+		// 'indent': ['error', 2, { "MemberExpression": 1 }],
 		'comma-dangle': [0, 'always-multiline'],
 		'object-shorthand': [
 			2,

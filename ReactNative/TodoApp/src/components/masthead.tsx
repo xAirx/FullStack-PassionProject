@@ -1,11 +1,11 @@
-import { Box, Heading, Image, VStack } from 'native-base'
-import React from 'react'
-import { ImageSourcePropType } from 'react-native'
+import { Box, Heading, Image, VStack } from "native-base";
+import React from "react";
+import { ImageSourcePropType } from "react-native";
 
 interface Props {
-  title: string
-  image: ImageSourcePropType
-  children: React.ReactNode
+  title: string;
+  image: ImageSourcePropType;
+  children: React.ReactNode;
 }
 
 const Masthead = ({ title, image, children }: Props) => {
@@ -28,7 +28,7 @@ const Masthead = ({ title, image, children }: Props) => {
         {title}
       </Heading>
     </VStack>
-  )
-}
+  );
+};
 
-export default Masthead
+export default Masthead;
