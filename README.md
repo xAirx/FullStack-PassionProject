@@ -7,9 +7,7 @@
 
 # **Introduction to project architecture** (My personal growth playground (always keep learning)
 
-Embarking on the design of this microservices architecture is driven by a desire to explore the intricacies of modern development stacks. Based on past experiences in larger systems, the goal is to delve into the technologies that make up this architecture, fostering a deep understanding of their individual functionalities and how they synergize to create a robust and scalable ecosystem. This approach diverges from serverless solutions, emphasizing a hands-on learning experience that extends beyond what Firebase alone could offer in terms of scalability. 
-
-
+Embarking on the design of this microservices architecture is driven by a desire to explore the intricacies of modern development stacks. Based on past experiences in larger systems, the goal is to delve into the technologies that make up this architecture, fostering a deep understanding of their individual functionalities and how they synergize to create a robust and scalable ecosystem. This approach diverges from serverless solutions, emphasizing a hands-on learning experience that extends beyond what Firebase alone could offer in terms of scalability.
 
 # **Passion-Project "MonoRepo" **
 
@@ -25,40 +23,50 @@ A monorepo, short for monolithic repository, is a version control repository tha
 &nbsp;
 
 # **Architecture explanation**
----------------------------------------
+
+---
 
 ## **A "simple" Architecture mental visualization:**
 
 ## GraphQL API Stack
+
 - GraphQL Apollo Express ![GraphQL Icon](https://example.com/graphql-icon.png)
 
 ## MongoExpress GUI Stack
+
 - MongoExpress ![MongoDB Icon](https://example.com/mongodb-icon.png)
 
 ## Frontend Solutions
+
 - React Native App ![React Icon](https://example.com/react-icon.png)
 - Next.js Site ![Next.js Icon](https://example.com/nextjs-icon.png)
 
 ## UI Development
+
 - Storybook ![Storybook Icon](https://example.com/storybook-icon.png)
 
 ## Routing and Load Balancing
+
 - Traefik ![Traefik Icon](https://example.com/traefik-icon.png)
 
 ## Monitoring Systems
+
 - LogNet ![Express Icon](https://example.com/express-icon.png)
 - Incident Monitoring ![Bell Icon](https://example.com/bell-icon.png)
 
 ## Metrics Collection
+
 - Prometheus Server ![Prometheus Icon](https://example.com/prometheus-icon.png)
 - MongoDB Query Exporter ![Database Icon](https://example.com/database-icon.png)
 - NodeExporter ![Server Icon](https://example.com/server-icon.png)
 - Prometheus Alert Manager ![Alert Icon](https://example.com/alert-icon.png)
 
 ## Service Discovery
+
 - Consul ![Consul Icon](https://example.com/consul-icon.png)
 
 ## Authentication Service
+
 - Auth0 Integration ![Auth0 Icon](https://example.com/auth0-icon.png)
 - JWT Generation Validation ![Key Icon](https://example.com/key-icon.png)
 - OAuth2 Microservices ![OAuth Icon](https://example.com/oauth-icon.png)
@@ -67,6 +75,7 @@ A monorepo, short for monolithic repository, is a version control repository tha
 - Token Refresh Mechanism ![Refresh Icon](https://example.com/refresh-icon.png)
 
 ## Monorepo Packages
+
 - Frontend ![Code Icon](https://example.com/code-icon.png)
 - ReactNative ![Mobile Icon](https://example.com/mobile-icon.png)
 - Express ![Terminal Icon](https://example.com/terminal-icon.png)
@@ -74,17 +83,20 @@ A monorepo, short for monolithic repository, is a version control repository tha
 - Storybook Package ![NPM Icon](https://example.com/npm-icon.png)
 
 ## Dependency Management
+
 - Renovate ![Package Icon](https://example.com/package-icon.png)
 
 ## Code Analysis
+
 - DeepSource ![Search Icon](https://example.com/search-icon.png)
 
 ## Code Collaboration
+
 - CodeSee ![Eye Icon](https://example.com/eye-icon.png)
 
 ## Error Tracking
-- Sentry ![Sentry Icon](https://example.com/sentry-icon.png)
 
+- Sentry ![Sentry Icon](https://example.com/sentry-icon.png)
 
 &nbsp;
 &nbsp;
@@ -92,114 +104,111 @@ A monorepo, short for monolithic repository, is a version control repository tha
 
 # Overview of Architecture
 
----------------------------------------------------------------------------------------------------------
+---
 
 ## GraphQL API
 
-  **Explanation:** The GraphQL API, implemented using the GraphQL-Apollo-Express stack, serves as the interface for efficient data retrieval and manipulation. It ties into various microservices by providing a unified endpoint for communication, fostering seamless interactions between frontend and backend services.
-    
-  **Why It's Its Own Microservice:** The GraphQL API, while a part of the larger microservices architecture, functions independently to facilitate efficient data retrieval and manipulation. Its autonomy allows seamless communication with other services and clients within the architecture.
+**Explanation:** The GraphQL API, implemented using the GraphQL-Apollo-Express stack, serves as the interface for efficient data retrieval and manipulation. It ties into various microservices by providing a unified endpoint for communication, fostering seamless interactions between frontend and backend services.
 
+**Why It's Its Own Microservice:** The GraphQL API, while a part of the larger microservices architecture, functions independently to facilitate efficient data retrieval and manipulation. Its autonomy allows seamless communication with other services and clients within the architecture.
 
 ## MongoExpress GUI
 
-  **Explanation:** The MongoExpress GUI functions independently, providing a graphical interface for managing MongoDB data. Its autonomy simplifies database visualization and interaction, enhancing developer efficiency.
-    
-  **Why It's Its Own Microservice:** The MongoExpress GUI operates independently, providing a graphical interface for managing MongoDB data. Its autonomy simplifies database visualization and interaction, contributing to the development and maintenance of MongoDB-related microservices.
+**Explanation:** The MongoExpress GUI functions independently, providing a graphical interface for managing MongoDB data. Its autonomy simplifies database visualization and interaction, enhancing developer efficiency.
 
----------------------------------------------------------------------------------------------------------
+**Why It's Its Own Microservice:** The MongoExpress GUI operates independently, providing a graphical interface for managing MongoDB data. Its autonomy simplifies database visualization and interaction, contributing to the development and maintenance of MongoDB-related microservices.
+
+---
 
 &nbsp;
 &nbsp;
 &nbsp;
-
 
 ## React Native App and Next.js Site
-    
-  **Explanation:** Both the React Native App and Next.js Site, while distinct microservices, share a common purpose in offering versatile solutions for web and mobile application development. They tie into the GraphQL API, ensuring a consistent user experience across platforms.
+
+**Explanation:** Both the React Native App and Next.js Site, while distinct microservices, share a common purpose in offering versatile solutions for web and mobile application development. They tie into the GraphQL API, ensuring a consistent user experience across platforms.
 
 ## Storybook
 
-  **Explanation:** Storybook serves as a valuable tool for developing and documenting UI components in isolation. While it may not directly tie into other microservices, its impact resonates across the architecture by ensuring a consistent and well-documented user interface.
-    
-  **Why It's Its Own Microservice:** Storybook serves as a standalone tool for developing and documenting UI components in isolation. Its autonomy facilitates independent development and testing of UI elements, contributing to a modular development approach.
+**Explanation:** Storybook serves as a valuable tool for developing and documenting UI components in isolation. While it may not directly tie into other microservices, its impact resonates across the architecture by ensuring a consistent and well-documented user interface.
 
+**Why It's Its Own Microservice:** Storybook serves as a standalone tool for developing and documenting UI components in isolation. Its autonomy facilitates independent development and testing of UI elements, contributing to a modular development approach.
 
----------------------------------------------------------------------------------------------------------
+---
 
 &nbsp;
 &nbsp;
 &nbsp;
-
 
 ## Traefik and Load Balancing
 
-  **Explanation:** Traefik functions as the ingress controller, dynamically routing traffic and providing load balancing within the microservices cluster. It ensures efficient distribution of requests among healthy instances, promoting optimal resource utilization across the entire system.
-    
-  **Why It's Its Own Microservice:** Traefik operates as the ingress controller, handling external requests and dynamically routing traffic within the microservices cluster. Its independence provides load balancing to ensure efficient distribution of requests among healthy instances, enhancing the architecture's scalability.
+**Explanation:** Traefik functions as the ingress controller, dynamically routing traffic and providing load balancing within the microservices cluster. It ensures efficient distribution of requests among healthy instances, promoting optimal resource utilization across the entire system.
+
+**Why It's Its Own Microservice:** Traefik operates as the ingress controller, handling external requests and dynamically routing traffic within the microservices cluster. Its independence provides load balancing to ensure efficient distribution of requests among healthy instances, enhancing the architecture's scalability.
 
 &nbsp;
 
 ## LogNet and Incident Monitoring Systems
-    
-  **Explanation:** LogNet, connected to Prometheus, collaborates with the Incident Management System by collecting real-time metrics. This integration enhances the incident management approach, ensuring a proactive understanding of the system's behavior and enabling swift resolution of potential issues.
-    
-  **Why It's Its Own Microservice:** LogNet, connected to Prometheus, operates independently to collect real-time metrics from MongoDB and Express/GraphQL layers. The Incident Management System functions autonomously, centrally managing incidents. Both systems integrate seamlessly with Prometheus for metric collection and Traefik for authentication and forwarding requests.
+
+**Explanation:** LogNet, connected to Prometheus, collaborates with the Incident Management System by collecting real-time metrics. This integration enhances the incident management approach, ensuring a proactive understanding of the system's behavior and enabling swift resolution of potential issues.
+
+**Why It's Its Own Microservice:** LogNet, connected to Prometheus, operates independently to collect real-time metrics from MongoDB and Express/GraphQL layers. The Incident Management System functions autonomously, centrally managing incidents. Both systems integrate seamlessly with Prometheus for metric collection and Traefik for authentication and forwarding requests.
 
 &nbsp;
 
 ### Prometheus Server
-    
-  **Explanation:** The Prometheus Server stands as the cornerstone, collecting time-series data for monitoring microservices. It forms the foundation for other components to rely on real-time metrics and insights into the performance of the entire system.
-    
-  **Why It's Its Own Microservice:** The Prometheus Server operates as an independent microservice dedicated to collecting time-series data for monitoring microservices. Its autonomy ensures centralized and efficient data collection, providing critical insights into the health and performance of the system.
+
+**Explanation:** The Prometheus Server stands as the cornerstone, collecting time-series data for monitoring microservices. It forms the foundation for other components to rely on real-time metrics and insights into the performance of the entire system.
+
+**Why It's Its Own Microservice:** The Prometheus Server operates as an independent microservice dedicated to collecting time-series data for monitoring microservices. Its autonomy ensures centralized and efficient data collection, providing critical insights into the health and performance of the system.
 
 &nbsp;
 
 ## MongoDB Query Exporter
 
-  **Explanation:** The MongoDB Query Exporter adds real-time data to the microservices architecture. Its integration ensures that the microservices have access to up-to-date information, enhancing the dynamic nature of the entire system.
-    
-  **Why It's Its Own Microservice:** The MongoDB Query Exporter operates as a standalone microservice, fetching real-time data from MongoDB. Its singular purpose ensures an efficient and dedicated connection to MongoDB, offering valuable data for other microservices.
+**Explanation:** The MongoDB Query Exporter adds real-time data to the microservices architecture. Its integration ensures that the microservices have access to up-to-date information, enhancing the dynamic nature of the entire system.
+
+**Why It's Its Own Microservice:** The MongoDB Query Exporter operates as a standalone microservice, fetching real-time data from MongoDB. Its singular purpose ensures an efficient and dedicated connection to MongoDB, offering valuable data for other microservices.
 
 &nbsp;
+
 ### NodeExporter
 
-  **Explanation:** NodeExporter complements the Prometheus Server by exposing hardware and kernel-related metrics. This collaboration provides a holistic view of system-level performance, crucial for identifying potential bottlenecks and ensuring optimal operation.
-    
-  **Why It's Its Own Microservice:** NodeExporter stands as a standalone microservice to expose hardware and kernel-related metrics. Its autonomy enables it to efficiently collaborate with Prometheus, offering essential insights into system-level performance.
+**Explanation:** NodeExporter complements the Prometheus Server by exposing hardware and kernel-related metrics. This collaboration provides a holistic view of system-level performance, crucial for identifying potential bottlenecks and ensuring optimal operation.
+
+**Why It's Its Own Microservice:** NodeExporter stands as a standalone microservice to expose hardware and kernel-related metrics. Its autonomy enables it to efficiently collaborate with Prometheus, offering essential insights into system-level performance.
 
 &nbsp;
 
 ### LogNet
 
-  **Explanation:** LogNet, acting as an Express server connected to Prometheus, synergizes with the Prometheus Server by gathering metrics from MongoDB and Express/GraphQL layers. This real-time data collection offers a comprehensive understanding of the health and performance of both the database and the application layer.
-    
-  **Why It's Its Own Microservice:** LogNet functions independently as an Express server, acting as a log client connected to Prometheus. Its singular focus on gathering metrics from MongoDB and Express/GraphQL layers ensures focused and efficient real-time data collection.
+**Explanation:** LogNet, acting as an Express server connected to Prometheus, synergizes with the Prometheus Server by gathering metrics from MongoDB and Express/GraphQL layers. This real-time data collection offers a comprehensive understanding of the health and performance of both the database and the application layer.
+
+**Why It's Its Own Microservice:** LogNet functions independently as an Express server, acting as a log client connected to Prometheus. Its singular focus on gathering metrics from MongoDB and Express/GraphQL layers ensures focused and efficient real-time data collection.
 
 &nbsp;
 
 ### Prometheus Alert Manager
 
-  **Explanation:** The Prometheus Alert Manager collaborates with the Prometheus Server to manage and trigger alerts based on predefined rules. By integrating seamlessly, it enhances the incident management capabilities of the system, ensuring swift responses to potential issues.
-    
-  **Why It's Its Own Microservice:** The Prometheus Alert Manager operates autonomously, managing and triggering alerts based on predefined rules. Its independence ensures centralized incident management, seamlessly integrating with external tools and systems.
+**Explanation:** The Prometheus Alert Manager collaborates with the Prometheus Server to manage and trigger alerts based on predefined rules. By integrating seamlessly, it enhances the incident management capabilities of the system, ensuring swift responses to potential issues.
+
+**Why It's Its Own Microservice:** The Prometheus Alert Manager operates autonomously, managing and triggering alerts based on predefined rules. Its independence ensures centralized incident management, seamlessly integrating with external tools and systems.
 
 &nbsp;
 
 ## Usage of Consul
 
-  **Explanation:** Consul, facilitating service discovery and dynamic mapping, ties into the microservices architecture by enhancing scalability. It simplifies communication and orchestrates efficient interactions between microservices, promoting a streamlined and adaptive system.
-    
-  **Why It's Its Own Microservice:** Consul stands alone as a crucial component for service discovery and dynamic mapping between test servers and web or app projects. Its autonomy enhances scalability within the microservices structure by simplifying communication and orchestrating efficient interactions between microservices.
+**Explanation:** Consul, facilitating service discovery and dynamic mapping, ties into the microservices architecture by enhancing scalability. It simplifies communication and orchestrates efficient interactions between microservices, promoting a streamlined and adaptive system.
 
+**Why It's Its Own Microservice:** Consul stands alone as a crucial component for service discovery and dynamic mapping between test servers and web or app projects. Its autonomy enhances scalability within the microservices structure by simplifying communication and orchestrating efficient interactions between microservices.
 
 &nbsp;
 &nbsp;
 &nbsp;
 
 ## Authentication Microservice
----------------------------------------------------------------------------------------------------------
+
+---
 
 ### Purpose
 
@@ -208,46 +217,49 @@ This microservice is designed to handle user authentication securely for React w
 ### Components
 
 #### Auth0 Integration
-   - **Description:** Integrate Auth0 for user authentication in the React web apps.
-   - **Technology:** Auth0
-   - **Why:** Auth0 provides a comprehensive and secure identity management solution. Its integration allows for seamless and standardized user authentication in React web apps, enhancing security by leveraging Auth0's robust authentication mechanisms.
+
+- **Description:** Integrate Auth0 for user authentication in the React web apps.
+- **Technology:** Auth0
+- **Why:** Auth0 provides a comprehensive and secure identity management solution. Its integration allows for seamless and standardized user authentication in React web apps, enhancing security by leveraging Auth0's robust authentication mechanisms.
 
 #### JWT Generation and Validation
-   - **Description:** Generate and validate JSON Web Tokens (JWTs) for secure communication between the React web apps and microservices.
-   - **Technology:** JSON Web Tokens (JWT)
-   - **Why:** JWTs serve as secure tokens for validating the identity of users and ensuring the integrity of data exchanged between the React web apps and microservices. Their lightweight nature and token-based approach enhance security and efficiency.
+
+- **Description:** Generate and validate JSON Web Tokens (JWTs) for secure communication between the React web apps and microservices.
+- **Technology:** JSON Web Tokens (JWT)
+- **Why:** JWTs serve as secure tokens for validating the identity of users and ensuring the integrity of data exchanged between the React web apps and microservices. Their lightweight nature and token-based approach enhance security and efficiency.
 
 #### OAuth2 for Microservices
-   - **Description:** Implement OAuth2 to secure microservice endpoints.
-   - **Technology:** OAuth2
-   - **Why:** OAuth2 is a standardized protocol for authorization, ensuring secure access to microservices. By implementing OAuth2, the microservices can enforce fine-grained access controls, validate access tokens, and facilitate secure communication between different components.
+
+- **Description:** Implement OAuth2 to secure microservice endpoints.
+- **Technology:** OAuth2
+- **Why:** OAuth2 is a standardized protocol for authorization, ensuring secure access to microservices. By implementing OAuth2, the microservices can enforce fine-grained access controls, validate access tokens, and facilitate secure communication between different components.
 
 #### User Authorization
-   - **Description:** Implement role-based access control (RBAC) for authorizing users to access specific resources within the microservices.
-   - **Technology:** Role-Based Access Control (RBAC)
-   - **Why:** RBAC ensures that users have the appropriate permissions based on their roles. This component enhances security by controlling access at a granular level, preventing unauthorized actions within the microservices.
+
+- **Description:** Implement role-based access control (RBAC) for authorizing users to access specific resources within the microservices.
+- **Technology:** Role-Based Access Control (RBAC)
+- **Why:** RBAC ensures that users have the appropriate permissions based on their roles. This component enhances security by controlling access at a granular level, preventing unauthorized actions within the microservices.
 
 #### Security Middleware
 
-   - **Description:** Develop middleware for securing microservice routes, ensuring that only authenticated and authorized requests are processed.
-   - **Technology:** Custom middleware for securing routes
-   - **Why:** Middleware acts as a gatekeeper, intercepting incoming requests and validating the associated JWTs and OAuth2 tokens. This ensures that only legitimate and authorized requests proceed, enhancing the overall security of the microservices.
+- **Description:** Develop middleware for securing microservice routes, ensuring that only authenticated and authorized requests are processed.
+- **Technology:** Custom middleware for securing routes
+- **Why:** Middleware acts as a gatekeeper, intercepting incoming requests and validating the associated JWTs and OAuth2 tokens. This ensures that only legitimate and authorized requests proceed, enhancing the overall security of the microservices.
 
 #### Token Refresh Mechanism
-   - **Description:** Implement a token refresh mechanism to maintain secure sessions and prevent unauthorized access.
-   - **Technology:** Token refresh logic
-   - **Why:** Token refresh mechanisms enhance user experience by seamlessly renewing tokens without requiring reauthentication. This prevents disruptions in service due to expired tokens while maintaining a high level of security.
+
+- **Description:** Implement a token refresh mechanism to maintain secure sessions and prevent unauthorized access.
+- **Technology:** Token refresh logic
+- **Why:** Token refresh mechanisms enhance user experience by seamlessly renewing tokens without requiring reauthentication. This prevents disruptions in service due to expired tokens while maintaining a high level of security.
 
 #### Considerations
 
-  - **AWS Integration**
-  - **Why:** Integrating with AWS services like IAM adds an additional layer of security by leveraging AWS's robust identity and access management features.
-    
-  - **Logging and Monitoring**
-  - **Why:** Comprehensive logging and monitoring ensure that any security-related events, authentication attempts, or authorization failures are tracked, enabling proactive identification and response to potential security threats.
-    
-    This authentication microservice is meticulously designed to address security concerns at various levels, providing a reliable and secure foundation for user authentication and microservice access control. Each component plays a crucial role in creating a robust and trustworthy authentication system. Adjustments can be made based on specific requirements and technology stacks.
+- **AWS Integration**
+- **Why:** Integrating with AWS services like IAM adds an additional layer of security by leveraging AWS's robust identity and access management features.
+- **Logging and Monitoring**
+- **Why:** Comprehensive logging and monitoring ensure that any security-related events, authentication attempts, or authorization failures are tracked, enabling proactive identification and response to potential security threats.
 
+  This authentication microservice is meticulously designed to address security concerns at various levels, providing a reliable and secure foundation for user authentication and microservice access control. Each component plays a crucial role in creating a robust and trustworthy authentication system. Adjustments can be made based on specific requirements and technology stacks.
 
 &nbsp;
 &nbsp;
@@ -255,41 +267,38 @@ This microservice is designed to handle user authentication securely for React w
 &nbsp;
 &nbsp;
 &nbsp;
-
-
-
 
 # The "monorepo" structure (WORK IN PROGRESS)
----------------------------------------
 
-#  Project structure
+---
+
+# Project structure
 
 This is a list of all the packages in the repo and what they are used for.
 
-| Package                              | Description                                          |
-| ------------------------------------ | ---------------------------------------------------- |
-| [Frontend]("./frontend/")            | Next.js boilerplate (uses storybook npm package)     |
-| [ReactNative]("./ReactNative/")      | Expo React Native App (uses storybook npm package    |
-| [Express]("./backend/**/")           | Express Boilerplate Api Examples                     |
-| [Grapqhl]("./backend/Grapqhl/**")    | A Server with GraphQl and Express                    |
-| [Storybook]("./frontend/.storybook") | Storybook running in docker (Lives as NPM package)   |
+| Package                              | Description                                        |
+| ------------------------------------ | -------------------------------------------------- |
+| [Frontend]("./frontend/")            | Next.js boilerplate (uses storybook npm package)   |
+| [ReactNative]("./ReactNative/")      | Expo React Native App (uses storybook npm package  |
+| [Express]("./backend/**/")           | Express Boilerplate Api Examples                   |
+| [Grapqhl]("./backend/Grapqhl/**")    | A Server with GraphQl and Express                  |
+| [Storybook]("./frontend/.storybook") | Storybook running in docker (Lives as NPM package) |
 
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
-
 
 ## Renovate
----------------------------------------
 
+---
 
 - [x] [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) will scan all files in each repository to look for relevant package files. It will also group upgrades from the same monorepo into a single PR to ensure tests pass and PR noise is reduced. Natively supports Lerna and Yarn Workspaces with zero configuration necessary.
 
   Renovate bumping packages and working together with codeQL, and GitGuardian
-	|                                                                Renovate                                                                  |                                                                 Renovate                                                                  |
-	| :---------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
-	| <img src=https://user-images.githubusercontent.com/22436080/161400772-b5c86a25-5c54-438b-8374-835f9e74538c.png width="500" height="400"/> | <img src=https://user-images.githubusercontent.com/22436080/161400745-5a85b03a-a253-4a54-9826-d87b16b95f50.png width="600" height="300"/> |
+  | Renovate | Renovate |
+  | :---------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
+  | <img src=https://user-images.githubusercontent.com/22436080/161400772-b5c86a25-5c54-438b-8374-835f9e74538c.png width="500" height="400"/> | <img src=https://user-images.githubusercontent.com/22436080/161400745-5a85b03a-a253-4a54-9826-d87b16b95f50.png width="600" height="300"/> |
 
 &nbsp;
 &nbsp;
@@ -297,46 +306,43 @@ This is a list of all the packages in the repo and what they are used for.
 &nbsp;
 
 ## DeepSource
----------------------------------------
 
+---
 
+- [x] [Deepsource](https://deepsource.io/) Will scan the project for issues, will scan all commits, and branches and will help with hooking into PR's as well.
 
-  
-- [x] [Deepsource](https://deepsource.io/)  Will scan the project for issues, will scan all commits, and branches and will help with hooking into PR's as well.
+      |                                                            DeepSource example                                                             |                                                            DeepSource example                                                             |
+      | :---------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
+      | <img src=https://user-images.githubusercontent.com/22436080/161400950-3c48227e-f8b0-4c13-899a-c0e0a958f691.png width="400" height="400"/> | <img src=https://user-images.githubusercontent.com/22436080/161400796-7a196b57-320e-4e49-bd6d-ef4e72e755b9.png width="600" height="300"/> |
 
-	|                                                            DeepSource example                                                             |                                                            DeepSource example                                                             |
-	| :---------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
-	| <img src=https://user-images.githubusercontent.com/22436080/161400950-3c48227e-f8b0-4c13-899a-c0e0a958f691.png width="400" height="400"/> | <img src=https://user-images.githubusercontent.com/22436080/161400796-7a196b57-320e-4e49-bd6d-ef4e72e755b9.png width="600" height="300"/> |
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
 
 ## Codesee
----------------------------------------
 
+---
 
 - [x] [Codesee](https://www.codesee.io/) Auto-syncing code diagrams to drive collaboration, improve code reviews, reduce onboarding friction, and more. See the map here: https://app.codesee.io/maps/89924030-b41c-11ec-8182-53fb1661bf5c
 
   Will show which files and where deepsource has reccomended changes and give a DIFF tool to see the exact changes in each component.
-	       It also comes with a heatmap, which easily can give an overview of where the code is being refactored or developed the most.
+  It also comes with a heatmap, which easily can give an overview of where the code is being refactored or developed the most.
 
-	|                                                             CodeSee Example                                                              |                                                              CodeSee Example                                                              |
-	| :--------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
-	| <img src=https://user-images.githubusercontent.com/22436080/161400979-1a21703b-9acb-49c6-8d2d-86e94fbf3b90.png width="400" height="300"> | <img src=https://user-images.githubusercontent.com/22436080/161401207-4b1a7fdd-0cfe-470f-99ae-9d5242444cc9.png width="400" height="300"/> |
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
+      |                                                             CodeSee Example                                                              |                                                              CodeSee Example                                                              |
+      | :--------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
+      | <img src=https://user-images.githubusercontent.com/22436080/161400979-1a21703b-9acb-49c6-8d2d-86e94fbf3b90.png width="400" height="300"> | <img src=https://user-images.githubusercontent.com/22436080/161401207-4b1a7fdd-0cfe-470f-99ae-9d5242444cc9.png width="400" height="300"/> |
 
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
 
-## Sentry 
----------------------------------------
+## Sentry
 
+---
 
 - [ ] [Sentry](https://sentry.io/welcome) Tracking to performance monitoring, developers can see what actually matters, solve quicker, and learn continuously about their applications - from the frontend to the backend.
-
-
 
 &nbsp;
 &nbsp;
@@ -344,8 +350,8 @@ This is a list of all the packages in the repo and what they are used for.
 &nbsp;
 
 # Getting started locally
----------------------------------------
 
+---
 
 ### Commands
 
@@ -373,30 +379,36 @@ This is a list of all the packages in the repo and what they are used for.
     	"storybook-export": "yarn --cwd ./packages/frontend/storybook run storybook:export"
 
 ### yarn commit - will run a flow composed of:
+
 - [x] [Husky](https://github.com/typicode/husky)
 - [x] Linting with: [ESLint](https://eslint.org), [stylelint](https://stylelint.io) & [Prettier](https://prettier.io)
 - [x] [lint-staged](https://github.com/okonet/lint-staged)
 - [x] [Commitizen](https://github.com/commitizen/cz-cli)
----------------------------------------
+
+---
+
 &nbsp;
 
 ## Getting started with docker
+
 &nbsp;
 &nbsp;
 
-    
 ### NVM usage for cross env node versions
 
-  
     Install & Update Script
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash 
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
     Running either of the above commands downloads a script and runs it. The script clones the nvm repository to `~/.nvm`, and attempts to add the source lines from the snippet below to the correct profile file (`~/.bash_profile`, `~/.zshrc`, `~/.profile`, or `~/.bashrc`).
 
----------------------------------------
+---
+
 &nbsp;
 &nbsp;
+
 ### **Example Docker images**
----------------------------------------
+
+---
+
 - [x] React App Docker image - can be started with a parameter based on the chosen backend above, to seed the correct starter data.
 - [x] Barebones Express-api docker image
 - [ ] Graphql docker image
@@ -409,8 +421,11 @@ This is a list of all the packages in the repo and what they are used for.
 
 &nbsp;
 &nbsp;
+
 ### Explaining the environments:
----------------------------------------
+
+---
+
 ### Development environment
 
     - Hot reloading on code changes
@@ -422,8 +437,6 @@ This is a list of all the packages in the repo and what they are used for.
      - The Production and development docker configs are as "close" to each other as possible to minimize unforeseen issues once deployed.
      - When the react application is "BUILD", the output is optimized static assets, (html, css and the js file)
      - To serve these files we use Nginx
-
-
 
 ### docker-compose(dev):
 
@@ -443,12 +456,13 @@ This is a list of all the packages in the repo and what they are used for.
     docker-compose up -d
 
     ```
----------------------------------------
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
 
+---
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
 
 # Service overviews
 
@@ -460,47 +474,47 @@ This is a list of all the packages in the repo and what they are used for.
       ---------------------------------------
       Make sure npm login is run.
       update name field in package.json to reflect npm package in private or public repo.
-      
+
       run
-      
+
       ```
       npm publish
       ```
-      
+
       #### Installing library into other projects
-      
+
       ```
       yarn add mpw-storybook@latest
       ```
-      
+
       ##### Usage
-      
+
       ```TSX
       import React from "react";
       import { TestComponent } from "xairx-component-library";
-      
+
       const App = () => (
         <div className="app-container">
           <h1>Hello I'm consuming the component library</h1>
           <TestComponent theme="primary" />
         </div>
       );
-      
+
       export default App;
       ```
       ---------------------------------------
-      
+
       ### Rollup & rollup-plugin-copy - SASS variable exports
       ---------------------------------------
       Will export scss files from the storybook into the build folder.
       Allowing for use in the project via the storybook library
-      
+
       ```Sass
         @import '~xairx-component-library/build/typography';
-      
+
         .example-container {
             @include heading;
-      
+
             color: $white;
         }
       ```
@@ -513,30 +527,34 @@ This is a list of all the packages in the repo and what they are used for.
 - [x] SCSS
 - [x] TypeScript
 - [x] Storybook to help you create and show off your components
-- [x] Jest and React Testing Library enabling testing of the components 
+- [x] Jest and React Testing Library enabling testing of the components
 - [ ] Reccomended Addons and fancy shiny ones...
 - [ ] Add way more components...
 
 ### Testing Strategies
-  &nbsp;
-  &nbsp;
-  ### Low level unit-testing (isolation in storybook)
+
+&nbsp;
+&nbsp;
+
+### Low level unit-testing (isolation in storybook)
 
       - Jest, and React-testing-library. Simple tests that focuses on testing the contracts between the back end and front end layers. Where as solid component testing is abstracted away into the Storybook setup.
         &nbsp;
 
-  ### High level, Unit-tests 
+### High level, Unit-tests
 
-  ###### Example:
+###### Example:
 
       - Think mocking API responses, checking for loading and error states.
 
       - Testing a modal is opened or closed as a result of a POST being successful or reverse.
 
-  ---------------------------------------
+---
 
 ### Storybook export
----------------------------------------
+
+---
+
       Serve the story-book-static files in the dir, on github pages etc.
       Generating new components
 
@@ -566,19 +584,21 @@ This is a list of all the packages in the repo and what they are used for.
       Installing library into other projects
 
       yarn add mpw-storybook@latest
-   ---------------------------------------
 
+---
 
-  ### Autogen components - Automatically generating new components
-  ---------------------------------------
+### Autogen components - Automatically generating new components
+
+---
+
     Creating a "new component template"
-    
+
     ```
     npm run generate YourComponentName
     ```
-    
+
     This will generate:
-    
+
     ```
     /src
       /YourComponentName
@@ -588,9 +608,9 @@ This is a list of all the packages in the repo and what they are used for.
         YourComponentName.types.ts
         YourComponentName.scss
     ```
-    
+
     Remember to add the component to the index.ts export for exporting the component.
-    
+
     ---------------------------------------
 
 &nbsp;
@@ -600,76 +620,76 @@ This is a list of all the packages in the repo and what they are used for.
 &nbsp;
 
 ## App Boilerplates
------------------------------------------------------------------------------
+
+---
+
     🚀 Technology Choices:
-    
+
     📱 React Native: We chose React Native as our development tool for its flexibility and control over native components, making it suitable for complex apps that require custom native functionality. While it requires more setup and configuration compared to Expo, it provides direct access to native APIs, custom native modules, and better performance optimization.
-    
+
     🚀 React functional components: Functional components are used to build our app for their simplicity and use of hooks.
-    
+
     📊 Environment variables: We use dotenv to manage environment variables for local development and production-ready builds. This allows us to keep sensitive information, such as API keys and database credentials, separate from the codebase and secure.
-    
+
     🔍 TypeScript: We opted for TypeScript for its strong typing system, which makes our code more reliable and easier to maintain.
-    
+
     🔥 React Query: We chose React Query for its ability to handle data fetching and caching, making our app more performant and responsive.
-    
+
     🧪 Simple unit-testing: We included simple unit testing to ensure the reliability of our code, reducing the chances of unexpected bugs and issues. Snapshot testing captures and verifies rendered component changes, ensuring the app's functionality and reducing the likelihood of bugs. It saves time and improves code quality by automating testing and detecting regressions early on.
-    
+
     🎨 Material UI: We used the Material UI library for our app's design.
-    
+
     💻 Why it's good to use: It provides a wide range of pre-built UI components, follows Google's Material Design principles, and has excellent support for customization.
-    
+
     👍 ESLint, Prettier, and Commitizen: We used ESLint and Prettier for code formatting and style consistency, and Commitizen for commit message consistency. This ensures that the codebase is easy to read and maintain, and commits are descriptive and follow best practices.
-    
+
     👍 .nvmrc file for specifying the Node version required for a project because different versions of Node may introduce new features, bug fixes, or breaking changes that could affect the functionality of the project. By specifying the required version in the .nvmrc file, all developers working on the project can ensure they are using the same version, which helps to avoid version conflicts or unexpected behavior.
-    
+
     Additionally, using a script like check_node_version.js can help to ensure that the correct Node version is being used before running any other scripts or starting the project. This can be especially useful in automated build and deployment pipelines where multiple scripts are run in sequence, as it helps to catch any version mismatches early on in the process
-    
+
     👍 Reactotron for live debugging on endpoints and asyncstorage.
 
-###  Scaling Up:
+### Scaling Up:
 
     Our app follows a parent-child component structure, where three simple components interact with each other. As the app scales up, we can use the Context API to share data between components without passing props manually. Alternatively, we can use Redux, which allows us to manage the state of the entire app in one central location.
-    
+
     State management: As the app grows, it may become challenging to manage the state of the app and ensure that the data flows correctly between different components. One way to address this is to use a state management library such as Redux or MobX to manage the app's state.
-    
+
     Navigation: As the app grows, it may require more complex navigation between different screens and components. One way to address this is to use a navigation library such as React Native Navigation or React Navigation, which provides a more extensive set of navigation options and customizations.
-    
+
     Performance: As the app grows, it may become more challenging to maintain performance and ensure that the app runs smoothly. One way to address this is to use performance optimization techniques such as code splitting, lazy loading, and caching to reduce the app's size and improve performance.
-    
+
     Testing: As the app grows, it may become more challenging to test and ensure that the app works correctly across different platforms and devices. One way to address this is to use a testing framework such as Jest or React Native Testing Library to automate testing and ensure that the app works correctly.
-    
+
     Code organization: As the app grows, it may become more challenging to organize the code and ensure that it remains maintainable and scalable. One way to address this is to use a modular code structure that separates the app's different components into smaller, reusable modules.
-    
+
     Overall, scaling up a simple React Native app to a larger app structure requires careful planning, design, and development. By addressing these challenges and adopting best practices, developers can create a scalable and maintainable app that meets the needs of users and stakeholders.
-    
+
     Extra packages:
-    
+
     "@react-native-async-storage/async-storage": "^1.17.6",
     "@react-native-community/netinfo": "^5.6.2",
     "react-native-device-info": "9.0.2",
 
-
 ### Deployment and Pipelines
 
     Use of Appcenter
-    
-    When deploying the app, a deployment script can be used to automate the process of building and packaging the app with the correct configuration file. For example, a GitHub CI/CD pipeline can be set up to automatically build and deploy the app when changes are pushed to the code repository.
-    
-    In addition to building and packaging the app with the correct configuration file, there are also other important steps that need to be taken before the app can be deployed to app stores such as the App Store Connect and Google Play Store. One of these steps is code signing, which is the process of digitally signing the app with a certificate to verify its authenticity.
-    
-    XCode
-    
-    For iOS apps, code signing involves using certificates and provisioning profiles provided by Apple's developer program. These certificates and profiles are used to sign the app and authorize it to run on devices. In order to distribute the app through the App Store, the app must be signed with a distribution certificate and provisioning profile.
-    
-    Android studio
-    
-    Similarly, for Android apps, code signing involves using a signing key to sign the app. This signing key can be generated using Android Studio or the keytool command-line tool. The signed app is then uploaded to the Google Play Console along with other app metadata such as the app name, description, and screenshots.
-    
-    Both Apple and Google have strict guidelines and requirements for code signing, and failure to comply with these requirements can result in app rejection or removal from the app stores. It's important to follow these guidelines and properly sign the app before deploying it to the app stores.
-    
-    When using a tool like Appcenter for deployment, it's important to ensure that the correct certificates and keys are used for code signing. Appcenter allows for easy integration with Apple's App Store Connect and Google Play Store, simplifying the process of deploying apps to these app stores. By properly signing the app with the correct certificates and keys, developers can ensure that their app is securely and accurately distributed to their users.
 
+    When deploying the app, a deployment script can be used to automate the process of building and packaging the app with the correct configuration file. For example, a GitHub CI/CD pipeline can be set up to automatically build and deploy the app when changes are pushed to the code repository.
+
+    In addition to building and packaging the app with the correct configuration file, there are also other important steps that need to be taken before the app can be deployed to app stores such as the App Store Connect and Google Play Store. One of these steps is code signing, which is the process of digitally signing the app with a certificate to verify its authenticity.
+
+    XCode
+
+    For iOS apps, code signing involves using certificates and provisioning profiles provided by Apple's developer program. These certificates and profiles are used to sign the app and authorize it to run on devices. In order to distribute the app through the App Store, the app must be signed with a distribution certificate and provisioning profile.
+
+    Android studio
+
+    Similarly, for Android apps, code signing involves using a signing key to sign the app. This signing key can be generated using Android Studio or the keytool command-line tool. The signed app is then uploaded to the Google Play Console along with other app metadata such as the app name, description, and screenshots.
+
+    Both Apple and Google have strict guidelines and requirements for code signing, and failure to comply with these requirements can result in app rejection or removal from the app stores. It's important to follow these guidelines and properly sign the app before deploying it to the app stores.
+
+    When using a tool like Appcenter for deployment, it's important to ensure that the correct certificates and keys are used for code signing. Appcenter allows for easy integration with Apple's App Store Connect and Google Play Store, simplifying the process of deploying apps to these app stores. By properly signing the app with the correct certificates and keys, developers can ensure that their app is securely and accurately distributed to their users.
 
 &nbsp;
 &nbsp;
@@ -690,9 +710,9 @@ This is a list of all the packages in the repo and what they are used for.
 - [x] [Absolute Imports](https://github.com/aleclarson/vite-tsconfig-paths) - Avoid ./././
 - [ ] [Unit-testing](https://testing-library.com/docs/react-testing-library/intro/]Unit-tests) React Testing Library & Jest
 - [ ] [E2E-testing with cypress] (https://www.cypress.io/) - E2E testing.
- ---------------------------------------
-&nbsp;
-&nbsp;
+  ***
+  &nbsp;
+  &nbsp;
 
 ### More Tooling
 
@@ -714,15 +734,18 @@ This is a list of all the packages in the repo and what they are used for.
 &nbsp;
 &nbsp;
 
-
 ## Backend Boilerplates (WIP)
 
 ### Backend consists of several setups for boilerplate purposes and exploration
----------------------------------------
+
+---
+
     The Backends are connected to the mongoDB which needs to be spun up via the docker image.
 
-## Simple Express API 
----------------------------------------
+## Simple Express API
+
+---
+
 - [x] [Typescript](https://www.typescriptlang.org/) For types...
 - [x] [Express](https://www.npmjs.com/package/express) For magic.
 - [x] [Mongoose](https://www.npmjs.com/package/mongoose) For Schemas.
@@ -734,8 +757,10 @@ This is a list of all the packages in the repo and what they are used for.
 &nbsp;
 &nbsp;
 
-## Simple Graphql-apollo-express setup 
----------------------------------------
+## Simple Graphql-apollo-express setup
+
+---
+
 - [ ] [React query](https://react-query.tanstack.com/) React Query Api controller
 - [ ] [Typescript](https://www.typescriptlang.org/)
 - [ ] [Graphql-Request](https://www.npmjs.com/package/graphql-request)
@@ -751,7 +776,9 @@ This is a list of all the packages in the repo and what they are used for.
 &nbsp;
 
 ## Grapqhl Api Example with JWT Auth and various tools.
----------------------------------------
+
+---
+
 - [ ] [GraphQL](https://graphql.org/) for backend magic
 - [ ] [GraphQL Generator integration ](https://www.graphql-code-generator.com/) for instant generated types for the backend and frontend
 - [ ] [GraphQL-Dataloader](https://github.com/graphql/dataloader) for performance reasons and caching
@@ -764,7 +791,9 @@ This is a list of all the packages in the repo and what they are used for.
 &nbsp;
 
 ## ON HOLD - Microservice preperation - Grapqhl example as bff on top of express backend (Todo-App Example expanded)
----------------------------------------
+
+---
+
 - [ ] [GraphQL](https://graphql.org/) for backend magic
 - [ ] [Graphql-Request](https://www.npmjs.com/package/graphql-request)
 - [ ] [GraphQL Generator integration ](https://www.graphql-code-generator.com/) for instant generated types for the backend and frontend
@@ -773,11 +802,13 @@ This is a list of all the packages in the repo and what they are used for.
 - [ ] [TypeScript-Graphql](TypeScript-Graphql) - obviously..
 - [ ] [Eslint plugin graphql](https://github.com/apollographql/eslint-plugin-graphql) handy eslint for GraphQL
 - [ ] [GraphQl Schema Linter](https://github.com/cjoudrey/graphql-schema-linter) for schema linting
----------------------------------------
+
+---
+
 &nbsp;
 &nbsp;
 
-###  ON HOLD - GrapQL Experimenting with federated GraphQL Microservices.
+### ON HOLD - GrapQL Experimenting with federated GraphQL Microservices.
 
 - [ ] [GraphQL](https://graphql.org/) for backend magic
 - [ ] [GraphQL Generator integration ](https://www.graphql-code-generator.com/) for instant generated types for the backend and frontend
@@ -792,7 +823,9 @@ This is a list of all the packages in the repo and what they are used for.
 &nbsp;
 
 ## Express backend and GraphQL Layer
----------------------------------------
+
+---
+
 ### **Introduction**
 
     - An express server utilizing different endpoints, meant for being the backbone of the entire stack
@@ -832,6 +865,3 @@ This is a list of all the packages in the repo and what they are used for.
 &nbsp;
 &nbsp;
 &nbsp;
-
-
-
