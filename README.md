@@ -27,96 +27,7 @@ A monorepo, short for monolithic repository, is a version control repository tha
 # **Architecture explanation**
 ---------------------------------------
 
-
-## **A simple Architecture visualization:**
-
-<img src=https://user-images.githubusercontent.com/22436080/161449512-d436cd49-b2e9-4fc2-b566-febad177c5e1.svg width="700" height="600"/>
-
-# The "monorepo" structure 
----------------------------------------
-
-
-
-#  Project structure
-
-This is a list of all the packages in the repo and what they are used for.
-
-| Package                              | Description                                          |
-| ------------------------------------ | ---------------------------------------------------- |
-| [Frontend]("./frontend/")            | Next.js boilerplate (uses storybook npm package)     |
-| [ReactNative]("./ReactNative/")      | Expo React Native App (uses storybook npm package    |
-| [Express]("./backend/**/")           | Express Boilerplate Api Examples                     |
-| [Grapqhl]("./backend/Grapqhl/**")    | A Server with GraphQl and Express                    |
-| [Storybook]("./frontend/.storybook") | Storybook running in docker (Lives as NPM package)   |
-
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-
-
-## Renovate
----------------------------------------
-
-
-- [x] [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) will scan all files in each repository to look for relevant package files. It will also group upgrades from the same monorepo into a single PR to ensure tests pass and PR noise is reduced. Natively supports Lerna and Yarn Workspaces with zero configuration necessary.
-
-  Renovate bumping packages and working together with codeQL, and GitGuardian
-	|                                                                Renovate                                                                  |                                                                 Renovate                                                                  |
-	| :---------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
-	| <img src=https://user-images.githubusercontent.com/22436080/161400772-b5c86a25-5c54-438b-8374-835f9e74538c.png width="500" height="400"/> | <img src=https://user-images.githubusercontent.com/22436080/161400745-5a85b03a-a253-4a54-9826-d87b16b95f50.png width="600" height="300"/> |
-
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-
-## DeepSource
----------------------------------------
-
-
-
-  
-- [x] [Deepsource](https://deepsource.io/)  Will scan the project for issues, will scan all commits, and branches and will help with hooking into PR's as well.
-
-	|                                                            DeepSource example                                                             |                                                            DeepSource example                                                             |
-	| :---------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
-	| <img src=https://user-images.githubusercontent.com/22436080/161400950-3c48227e-f8b0-4c13-899a-c0e0a958f691.png width="400" height="400"/> | <img src=https://user-images.githubusercontent.com/22436080/161400796-7a196b57-320e-4e49-bd6d-ef4e72e755b9.png width="600" height="300"/> |
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-
-## Codesee
----------------------------------------
-
-
-- [x] [Codesee](https://www.codesee.io/) Auto-syncing code diagrams to drive collaboration, improve code reviews, reduce onboarding friction, and more. See the map here: https://app.codesee.io/maps/89924030-b41c-11ec-8182-53fb1661bf5c
-
-  Will show which files and where deepsource has reccomended changes and give a DIFF tool to see the exact changes in each component.
-	       It also comes with a heatmap, which easily can give an overview of where the code is being refactored or developed the most.
-
-	|                                                             CodeSee Example                                                              |                                                              CodeSee Example                                                              |
-	| :--------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
-	| <img src=https://user-images.githubusercontent.com/22436080/161400979-1a21703b-9acb-49c6-8d2d-86e94fbf3b90.png width="400" height="300"> | <img src=https://user-images.githubusercontent.com/22436080/161401207-4b1a7fdd-0cfe-470f-99ae-9d5242444cc9.png width="400" height="300"/> |
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-
-
-## Sentry 
----------------------------------------
-
-
-- [ ] [Sentry](https://sentry.io/welcome) Tracking to performance monitoring, developers can see what actually matters, solve quicker, and learn continuously about their applications - from the frontend to the backend.
-
-
-
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
+## **A "simple" Architecture mental visualization:**
 
 
 # Overview of Microservices Architecture
@@ -243,6 +154,101 @@ This is a list of all the packages in the repo and what they are used for.
     This authentication microservice is meticulously designed to address security concerns at various levels, providing a reliable and secure foundation for user authentication and microservice access control. Each component plays a crucial role in creating a robust and trustworthy authentication system. Adjustments can be made based on specific requirements and technology stacks.
 
 
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+
+
+
+# The "monorepo" structure (WORK IN PROGRESS)
+---------------------------------------
+
+
+
+#  Project structure
+
+This is a list of all the packages in the repo and what they are used for.
+
+| Package                              | Description                                          |
+| ------------------------------------ | ---------------------------------------------------- |
+| [Frontend]("./frontend/")            | Next.js boilerplate (uses storybook npm package)     |
+| [ReactNative]("./ReactNative/")      | Expo React Native App (uses storybook npm package    |
+| [Express]("./backend/**/")           | Express Boilerplate Api Examples                     |
+| [Grapqhl]("./backend/Grapqhl/**")    | A Server with GraphQl and Express                    |
+| [Storybook]("./frontend/.storybook") | Storybook running in docker (Lives as NPM package)   |
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+
+## Renovate
+---------------------------------------
+
+
+- [x] [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate/) will scan all files in each repository to look for relevant package files. It will also group upgrades from the same monorepo into a single PR to ensure tests pass and PR noise is reduced. Natively supports Lerna and Yarn Workspaces with zero configuration necessary.
+
+  Renovate bumping packages and working together with codeQL, and GitGuardian
+	|                                                                Renovate                                                                  |                                                                 Renovate                                                                  |
+	| :---------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
+	| <img src=https://user-images.githubusercontent.com/22436080/161400772-b5c86a25-5c54-438b-8374-835f9e74538c.png width="500" height="400"/> | <img src=https://user-images.githubusercontent.com/22436080/161400745-5a85b03a-a253-4a54-9826-d87b16b95f50.png width="600" height="300"/> |
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+## DeepSource
+---------------------------------------
+
+
+
+  
+- [x] [Deepsource](https://deepsource.io/)  Will scan the project for issues, will scan all commits, and branches and will help with hooking into PR's as well.
+
+	|                                                            DeepSource example                                                             |                                                            DeepSource example                                                             |
+	| :---------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
+	| <img src=https://user-images.githubusercontent.com/22436080/161400950-3c48227e-f8b0-4c13-899a-c0e0a958f691.png width="400" height="400"/> | <img src=https://user-images.githubusercontent.com/22436080/161400796-7a196b57-320e-4e49-bd6d-ef4e72e755b9.png width="600" height="300"/> |
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+## Codesee
+---------------------------------------
+
+
+- [x] [Codesee](https://www.codesee.io/) Auto-syncing code diagrams to drive collaboration, improve code reviews, reduce onboarding friction, and more. See the map here: https://app.codesee.io/maps/89924030-b41c-11ec-8182-53fb1661bf5c
+
+  Will show which files and where deepsource has reccomended changes and give a DIFF tool to see the exact changes in each component.
+	       It also comes with a heatmap, which easily can give an overview of where the code is being refactored or developed the most.
+
+	|                                                             CodeSee Example                                                              |                                                              CodeSee Example                                                              |
+	| :--------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
+	| <img src=https://user-images.githubusercontent.com/22436080/161400979-1a21703b-9acb-49c6-8d2d-86e94fbf3b90.png width="400" height="300"> | <img src=https://user-images.githubusercontent.com/22436080/161401207-4b1a7fdd-0cfe-470f-99ae-9d5242444cc9.png width="400" height="300"/> |
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+
+## Sentry 
+---------------------------------------
+
+
+- [ ] [Sentry](https://sentry.io/welcome) Tracking to performance monitoring, developers can see what actually matters, solve quicker, and learn continuously about their applications - from the frontend to the backend.
+
+
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
 
 # Getting started locally
 ---------------------------------------
