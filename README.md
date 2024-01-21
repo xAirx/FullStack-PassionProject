@@ -540,8 +540,8 @@ This is a list of all the packages in the repo and what they are used for.
 &nbsp;
 &nbsp;
 
-## App Boilerplates (TODO)
-
+## App Boilerplates
+-----------------------------------------------------------------------------
     🚀 Technology Choices:
     
     📱 React Native: We chose React Native as our development tool for its flexibility and control over native components, making it suitable for complex apps that require custom native functionality. While it requires more setup and configuration compared to Expo, it provides direct access to native APIs, custom native modules, and better performance optimization.
