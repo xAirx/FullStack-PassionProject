@@ -14,7 +14,33 @@
 
 Modern web based applications consist of multiple services. For example, a backend API and a frontend client. In larger projects, where scaling becomes an issue, the services can also be split into multiple microservices. The question arises, how to organize the source code in such a project. One solution is a monorepo, i. e. one repository for all the source code in the project.
 
+A monorepo, short for monolithic repository, is a version control repository that contains multiple projects. This approach is often used to manage related codebases together, making it easier to share code, dependencies, and coordinate changes across projects.
+
 &nbsp;
+&nbsp;
+&nbsp;
+
+# **Architecture explanation**
+
+## **A simple Architecture visualization:**
+
+<img src=https://user-images.githubusercontent.com/22436080/161449512-d436cd49-b2e9-4fc2-b566-febad177c5e1.svg width="700" height="600"/>
+
+## Project structure
+
+This is a list of all the packages in the repo and what they are used for.
+
+| Package                              | Description                                          |
+| ------------------------------------ | ---------------------------------------------------- |
+| [Frontend]("./frontend/")            | Next.js boilerplate (uses storybook npm package)     |
+| [ReactNative]("./ReactNative/")      | Expo React Native App (uses storybook npm package    |
+| [Express]("./backend/**/")           | Express Boilerplate Api Examples                     |
+| [Grapqhl]("./backend/Grapqhl/**")    | A Server with GraphQl and Express                    |
+| [Storybook]("./frontend/.storybook") | Storybook running in docker                          |
+
+&nbsp;
+&nbsp;
+
 
 # The "monorepo" structure is managed with
 
@@ -38,9 +64,9 @@ Modern web based applications consist of multiple services. For example, a backe
 	| :---------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
 	| <img src=https://user-images.githubusercontent.com/22436080/161400950-3c48227e-f8b0-4c13-899a-c0e0a958f691.png width="400" height="400"/> | <img src=https://user-images.githubusercontent.com/22436080/161400796-7a196b57-320e-4e49-bd6d-ef4e72e755b9.png width="600" height="300"/> |
 
-- [x] [Codesee](https://www.codesee.io/) Auto-syncing code diagrams to drive collaboration, improve code reviews, reduce onboarding friction, and more. See the map here: https://app.codesee.io/maps/89924030-b41c-11ec-8182-53fb1661bf5c
-
 	### Codesee
+
+- [x] [Codesee](https://www.codesee.io/) Auto-syncing code diagrams to drive collaboration, improve code reviews, reduce onboarding friction, and more. See the map here: https://app.codesee.io/maps/89924030-b41c-11ec-8182-53fb1661bf5c
 
 	       Will show which files and where deepsource has reccomended changes and give a DIFF tool to see the exact changes in each component.
 	       It also comes with a heatmap, which easily can give an overview of where the code is being refactored or developed the most.
@@ -48,6 +74,8 @@ Modern web based applications consist of multiple services. For example, a backe
 	|                                                             CodeSee Example                                                              |                                                              CodeSee Example                                                              |
 	| :--------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
 	| <img src=https://user-images.githubusercontent.com/22436080/161400979-1a21703b-9acb-49c6-8d2d-86e94fbf3b90.png width="400" height="300"> | <img src=https://user-images.githubusercontent.com/22436080/161401207-4b1a7fdd-0cfe-470f-99ae-9d5242444cc9.png width="400" height="300"/> |
+
+   ### Sentry 
 
 - [ ] [Sentry](https://sentry.io/welcome) Tracking to performance monitoring, developers can see what actually matters, solve quicker, and learn continuously about their applications - from the frontend to the backend.
 #### BetterDocs (Currently broken - WIP)
@@ -74,22 +102,6 @@ Modern web based applications consist of multiple services. For example, a backe
 
 &nbsp;
 &nbsp;
-# Testing Strategies
-  &nbsp;
-  ### Low level unit-testing (isolation in storybook)
-
-      - Jest, and React-testing-library. Simple tests that focuses on testing the contracts between the back end and front end layers. Where as solid component testing is abstracted away into the Storybook setup.
-        &nbsp;
-
-  ### High level, Unit-tests 
-
-  ###### Example:
-
-      - Think mocking API responses, checking for loading and error states.
-
-      - Testing a modal is opened or closed as a result of a POST being successful or reverse.
-
-  ---------------------------------------
  &nbsp;
   ### Husky - Lint-staged & Local Testing 
   
@@ -98,27 +110,37 @@ Modern web based applications consist of multiple services. For example, a backe
    - [ ]  Setup Testing step with unit-testing across the entire monorepo.
  
 ---------------------------------------
+
+
 &nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+# CI/CDCD
+
   ### CircleCI - CI/CD and Deploys
 
- ##### Deploying Next.js App With TRPC API on vercel
+ ## Deploying Next.js App With TRPC API on vercel
       "The easiest way to deploy a Next.js app is to use the Vercel Platform from the creators of Next.js."
   - [ ]    Setup Deploy Script for vercel
   - [ ]    Setup CircleCI Integratation
   - [ ]    Setup Testing step with unit-testing and E2E
 ---------------------------------------
  &nbsp;
-  ###  Docker container deploys to heroku
+ &nbsp;
+  ##  Docker container deploys to "Cluster"
   
 	  Testing will be done in the CircleCI pipeline and E2E tests will be run as well. 
   
-  ##### Docker Deploy example
+  #### Docker Deploy example
   
   - [ ] [CI/CD - CircleCI & Docker hub -> Heroku](https://itnext.io/continuous-integration-and-deployment-of-docker-images-using-github-actions-7077991bcfde)
   - [ ] Circle-CI boilerplate preconfigured for docker image - Dockerhub deploys -> Heroku (Container registry).
   - [ ]    Setup Testing step with unit-testing and E2E
   ---------------------------------------
-
+   &nbsp;
+   &nbsp;
    &nbsp;
   ### React Native and AppCenter CI/CD
   
@@ -126,228 +148,13 @@ Modern web based applications consist of multiple services. For example, a backe
    - [ ]    Setup Testing step with unit-testing and E2E
 ---------------------------------------
 
-
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-
-# **Architecture explanation**
-
-## **A simple Architecture visualization:**
-
-<img src=https://user-images.githubusercontent.com/22436080/161449512-d436cd49-b2e9-4fc2-b566-febad177c5e1.svg width="700" height="600"/>
-
-## Project structure
-
-This is a list of all the packages in the repo and what they are used for.
-
-| Package                              | Description                                          |
-| ------------------------------------ | ---------------------------------------------------- |
-| [Frontend]("./frontend/")            | Next.js boilerplate (uses components from storybook) |
-| [ReactNative]("./ReactNative/")      | Expo React Native App                                |
-| [Express]("./backend/**/")           | Express Boilerplate Api Examples                     |
-| [Grapqhl]("./backend/Grapqhl/**")    | A Server with GraphQl and Express                    |
-| [Storybook]("./frontend/.storybook") | Storybook running in docker                          |
-
-##### TODO:
-
-    - Future experimentation may happen with VITE, Rollup and other cool tools.
-
-&nbsp;
-&nbsp;
-
-## React Next.js (For future projects and easy start-ups) 
-
-
-
-### Main tools
-
-- [x] [React](https://reactjs.org/docs/getting-started.html)
-- [x] [Next.js](https://nextjs.org/)
-- [x] [Typescript](https://www.typescriptlang.org/)
-- [x] [React query](https://react-query.tanstack.com/) A simple fetchHook is setup for easy usage
-- [x] [Recoil](https://recoiljs.org/) Examples of using a simple state management with a small footprint
-- [x] [Tailwind CSS v3](https://tailwindcss.com) with a [basic reset for form styles](https://github.com/tailwindlabs/tailwindcss-forms)
-- [x] [Absolute Imports](https://github.com/aleclarson/vite-tsconfig-paths) - Avoid ./././
-- [ ] [Unit-testing](https://testing-library.com/docs/react-testing-library/intro/]Unit-tests) React Testing Library & Jest
-- [ ] [E2E-testing with cypress] (https://www.cypress.io/) - E2E testing.
- ---------------------------------------
  &nbsp;
-&nbsp;
-
-## Backend for Next.js Project (TRPC)
-
-- [x] Authentication + OAuth
-- [x] End to end typing
-- [x] Authentication and Authorization baked in
-- [x] SSR, SSG and ASO thanks to Next.js
-- [  ] More to come
-
-### More Tooling
-
-- [x] [Husky](https://github.com/typicode/husky) - Git pre hooks
-- [x] [Prettier-Standard](https://github.com/sheerun/prettier-standard) for formatting and linting
-- [x] [lint-staged](https://github.com/okonet/lint-staged) with precommit task for linting
-- [x] [Commitizen](https://github.com/commitizen/cz-cli) intercepting your commits to help you add nice formatted messages
-- [x] [Absolute Imports](https://medium.com/geekculture/making-life-easier-with-absolute-imports-react-in-javascript-and-typescript-bbdab8a8a3a1) - Avoid ./././
-
-&nbsp;
-&nbsp;
-
  &nbsp;
-## Storybook component library
-
-- [x] Storybook published as an npm package - with framework of choice (or custom build for infinite posibillities.
-- [x] Rollup
-- [x] SCSS
-- [x] TypeScript
-- [x] Storybook to help you create and show off your components
-- [x] Jest and React Testing Library enabling testing of the components 
-- [ ] Reccomended Addons and fancy shiny ones...
-- [ ] Add way more components...
+ &nbsp;
+ &nbsp;
 
 
-### Storybook export
----------------------------------------
-      Serve the story-book-static files in the dir, on github pages etc.
-      Generating new components
-
-      Creating a "new component template"
-
-      npm run generate YourComponentName
-
-      This will generate:
-
-      /src
-      /YourComponentName
-      YourComponentName.tsx
-      YourComponentName.stories.tsx
-      YourComponentName.test.tsx
-      YourComponentName.types.ts
-      YourComponentName.scss
-
-      Remember to add the component to the index.ts export for exporting the component.
-      Publish via NPM
-
-      Make sure npm login is run. update name field in package.json to reflect npm package in private or public repo.
-
-      run
-
-      npm publish
-
-      Installing library into other projects
-
-      yarn add mpw-storybook@latest
-   ---------------------------------------
-
-
-### Automatically generating new components
----------------------------------------
-Creating a "new component template"
-
-```
-npm run generate YourComponentName
-```
-
-This will generate:
-
-```
-/src
-  /YourComponentName
-    YourComponentName.tsx
-    YourComponentName.stories.tsx
-    YourComponentName.test.tsx
-    YourComponentName.types.ts
-    YourComponentName.scss
-```
-
-Remember to add the component to the index.ts export for exporting the component.
-
----------------------------------------
-
- 
- 
-### Publish via NPM
----------------------------------------
-Make sure npm login is run.
-update name field in package.json to reflect npm package in private or public repo.
-
-run
-
-```
-npm publish
-```
-
-#### Installing library into other projects
-
-```
-yarn add mpw-storybook@latest
-```
-
-##### Usage
-
-```TSX
-import React from "react";
-import { TestComponent } from "xairx-component-library";
-
-const App = () => (
-  <div className="app-container">
-    <h1>Hello I'm consuming the component library</h1>
-    <TestComponent theme="primary" />
-  </div>
-);
-
-export default App;
-```
----------------------------------------
-
-### Rollup & rollup-plugin-copy - SASS variable exports
----------------------------------------
-Will export scss files from the storybook into the build folder.
-Allowing for use in the project via the storybook library
-
-```Sass
-  @import '~xairx-component-library/build/typography';
-
-  .example-container {
-      @include heading;
-
-      color: $white;
-  }
-```
-
-#### Understanding rollup
-
-      Bundling using Rollup
-
-      Rollup is a good bundling tool, if we want to package the React component library and reuse it in other projects.
-
-      Rollup needs an entry point to generate the bundle. We have already created an index.ts file in the src folder which will serve as our entry point for Rollup.
-
-      Add the exports of the components in this index.ts file which will be used by others and also import the global.scss file here so we can create CSS bundle.
-
-      scss-and-button-import-in-index.ts
-
-      In order to build our library lets add the following dev dependencies.
-
-      npm i -D rollup @rollup/plugin-babel rollup-plugin-peer-deps-external rollup-plugin-scss rollup-plugin-terser @babel/preset-react @rollup/plugin-node-resolve @rollup/plugin-typescript
-
-      Let's understand these dependencies:
-
-          rollup gives the command-line interface (CLI) to bundle the library.
-          @rollup/plugin-babel allows us seamless integration between Rollup and existing Babel.
-          rollup-plugin-peer-deps-external prevents adding peer dependencies to the bundle because the consumer of the library is expected to have them. So we also get a smaller bundle size.
-          rollup-plugin-scss bundles scss files.
-          rollup-plugin-terser minify generated es bundle.
-          @babel/preset-react adds support for JSX.
-          @rollup/plugin-node-resolve helps resolve third-party modules in case you are using any third-party dependencies. If you use any third-party dependency it is going to resolve them and add them to the source code.
-          @rollup/plugin-typescript transpiles TypeScript files to JavaScript.
-
-      Next, we create a rollup.config.js file and add the following contents.
-&nbsp;
-
-## Getting started locally
+# Getting started locally
 
 ### Commands
 
@@ -450,22 +257,201 @@ Allowing for use in the project via the storybook library
 &nbsp;
 &nbsp;
 &nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
+
+
+# Service overviews
+
+## Storybook component library as npm package
+
+- [x] Storybook published as an npm package - with framework of choice (or custom build for infinite posibillities.
+
+      ### Publish via NPM (Npm package)
+      ---------------------------------------
+      Make sure npm login is run.
+      update name field in package.json to reflect npm package in private or public repo.
+      
+      run
+      
+      ```
+      npm publish
+      ```
+      
+      #### Installing library into other projects
+      
+      ```
+      yarn add mpw-storybook@latest
+      ```
+      
+      ##### Usage
+      
+      ```TSX
+      import React from "react";
+      import { TestComponent } from "xairx-component-library";
+      
+      const App = () => (
+        <div className="app-container">
+          <h1>Hello I'm consuming the component library</h1>
+          <TestComponent theme="primary" />
+        </div>
+      );
+      
+      export default App;
+      ```
+      ---------------------------------------
+      
+      ### Rollup & rollup-plugin-copy - SASS variable exports
+      ---------------------------------------
+      Will export scss files from the storybook into the build folder.
+      Allowing for use in the project via the storybook library
+      
+      ```Sass
+        @import '~xairx-component-library/build/typography';
+      
+        .example-container {
+            @include heading;
+      
+            color: $white;
+        }
+      ```
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+
+- [x] Rollup
+- [x] SCSS
+- [x] TypeScript
+- [x] Storybook to help you create and show off your components
+- [x] Jest and React Testing Library enabling testing of the components 
+- [ ] Reccomended Addons and fancy shiny ones...
+- [ ] Add way more components...
+
+### Testing Strategies
+  &nbsp;
+  &nbsp;
+  ### Low level unit-testing (isolation in storybook)
+
+      - Jest, and React-testing-library. Simple tests that focuses on testing the contracts between the back end and front end layers. Where as solid component testing is abstracted away into the Storybook setup.
+        &nbsp;
+
+  ### High level, Unit-tests 
+
+  ###### Example:
+
+      - Think mocking API responses, checking for loading and error states.
+
+      - Testing a modal is opened or closed as a result of a POST being successful or reverse.
+
+  ---------------------------------------
+
+### Storybook export
+---------------------------------------
+      Serve the story-book-static files in the dir, on github pages etc.
+      Generating new components
+
+      Creating a "new component template"
+
+      npm run generate YourComponentName
+
+      This will generate:
+
+      /src
+      /YourComponentName
+      YourComponentName.tsx
+      YourComponentName.stories.tsx
+      YourComponentName.test.tsx
+      YourComponentName.types.ts
+      YourComponentName.scss
+
+      Remember to add the component to the index.ts export for exporting the component.
+      Publish via NPM
+
+      Make sure npm login is run. update name field in package.json to reflect npm package in private or public repo.
+
+      run
+
+      npm publish
+
+      Installing library into other projects
+
+      yarn add mpw-storybook@latest
+   ---------------------------------------
+
+
+  ### Autogen components - Automatically generating new components
+  ---------------------------------------
+    Creating a "new component template"
+    
+    ```
+    npm run generate YourComponentName
+    ```
+    
+    This will generate:
+    
+    ```
+    /src
+      /YourComponentName
+        YourComponentName.tsx
+        YourComponentName.stories.tsx
+        YourComponentName.test.tsx
+        YourComponentName.types.ts
+        YourComponentName.scss
+    ```
+    
+    Remember to add the component to the index.ts export for exporting the component.
+    
+    ---------------------------------------
+
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
 &nbsp;
 
-# Backend Boilerplates (WIP)
+## App Boilerplates (TODO)
+
+
+
+## Web Frontend Boilerplates (WIP)
+
+### Main tools
+
+- [ ] Replace webpack with - VITE
+- [x] [React](https://reactjs.org/docs/getting-started.html)
+- [x] [Next.js](https://nextjs.org/)
+- [x] [Typescript](https://www.typescriptlang.org/)
+- [x] [React query](https://react-query.tanstack.com/) A simple fetchHook is setup for easy usage
+- [x] [Recoil](https://recoiljs.org/) Examples of using a simple state management with a small footprint
+- [x] [Tailwind CSS v3](https://tailwindcss.com) with a [basic reset for form styles](https://github.com/tailwindlabs/tailwindcss-forms)
+- [x] [Absolute Imports](https://github.com/aleclarson/vite-tsconfig-paths) - Avoid ./././
+- [ ] [Unit-testing](https://testing-library.com/docs/react-testing-library/intro/]Unit-tests) React Testing Library & Jest
+- [ ] [E2E-testing with cypress] (https://www.cypress.io/) - E2E testing.
+ ---------------------------------------
+&nbsp;
+&nbsp;
+
+### More Tooling
+
+- [x] [Husky](https://github.com/typicode/husky) - Git pre hooks
+- [x] [Prettier-Standard](https://github.com/sheerun/prettier-standard) for formatting and linting
+- [x] [lint-staged](https://github.com/okonet/lint-staged) with precommit task for linting
+- [x] [Commitizen](https://github.com/commitizen/cz-cli) intercepting your commits to help you add nice formatted messages
+- [x] [Absolute Imports](https://medium.com/geekculture/making-life-easier-with-absolute-imports-react-in-javascript-and-typescript-bbdab8a8a3a1) - Avoid ./././
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+
+## Backend Boilerplates (WIP)
 
 ### Backend consists of several setups for boilerplate purposes and exploration
 ---------------------------------------
     The Backends are connected to the mongoDB which needs to be spun up via the docker image.
 
-### Express API (Todo-App Example)
+## Simple Express API 
 ---------------------------------------
 - [x] [Typescript](https://www.typescriptlang.org/) For types...
 - [x] [Express](https://www.npmjs.com/package/express) For magic.
@@ -478,7 +464,7 @@ Allowing for use in the project via the storybook library
 &nbsp;
 &nbsp;
 
-#### Simple Graphql-apollo-express setup (Todo-App Example)
+## Simple Graphql-apollo-express setup 
 ---------------------------------------
 - [ ] [React query](https://react-query.tanstack.com/) React Query Api controller
 - [ ] [Typescript](https://www.typescriptlang.org/)
@@ -494,7 +480,7 @@ Allowing for use in the project via the storybook library
 &nbsp;
 &nbsp;
 
-#### Grapqhl Api Example with JWT Auth and various tools.
+## Grapqhl Api Example with JWT Auth and various tools.
 ---------------------------------------
 - [ ] [GraphQL](https://graphql.org/) for backend magic
 - [ ] [GraphQL Generator integration ](https://www.graphql-code-generator.com/) for instant generated types for the backend and frontend
@@ -507,7 +493,7 @@ Allowing for use in the project via the storybook library
 
 &nbsp;
 
-#### ON HOLD - Microservice preperation - Grapqhl example as bff on top of express backend (Todo-App Example expanded)
+## ON HOLD - Microservice preperation - Grapqhl example as bff on top of express backend (Todo-App Example expanded)
 ---------------------------------------
 - [ ] [GraphQL](https://graphql.org/) for backend magic
 - [ ] [Graphql-Request](https://www.npmjs.com/package/graphql-request)
@@ -521,7 +507,7 @@ Allowing for use in the project via the storybook library
 &nbsp;
 &nbsp;
 
-### GrapQL Experimenting with federated GraphQL Microservices.
+###  ON HOLD - GrapQL Experimenting with federated GraphQL Microservices.
 
 - [ ] [GraphQL](https://graphql.org/) for backend magic
 - [ ] [GraphQL Generator integration ](https://www.graphql-code-generator.com/) for instant generated types for the backend and frontend
@@ -572,7 +558,7 @@ Allowing for use in the project via the storybook library
 &nbsp;
 &nbsp;
 
-## (WIP - Work in progress (MVP) - Prometheus & Node Exporter & Grafana setup.
+# Monitoring Microservice cluster - (WIP - Work in progress (MVP) - Prometheus & Node Exporter & Grafana setup.
 ---------------------------------------
 ## **Docker compose**
 
